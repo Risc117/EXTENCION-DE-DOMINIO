@@ -9,6 +9,7 @@ import {
   ZOOM_MAXIMO,
   ZOOM_MINIMO,
 } from '../nucleo/constantes'
+import { guardarPanelAbierto, leerPanelAbierto } from './preferenciaPanel'
 
 /** apagado: sin gestos · iniciando: pidiendo cámara · activo: leyendo la mano · denegado: sin permiso · error: otro fallo. */
 export type EstadoGestos = 'apagado' | 'iniciando' | 'activo' | 'denegado' | 'error'
@@ -44,6 +45,9 @@ interface Estado {
   gestosPedidos: boolean
   pedirGestos: (valor: boolean) => void
   ajusteGestos: AjusteGestos
+  /** El panel de ajuste está desplegado (se recuerda entre visitas). */
+  panelAjusteAbierto: boolean
+  alternarPanelAjuste: () => void
   cambiarAjusteGestos: (cambio: Partial<AjusteGestos>) => void
   restablecerAjusteGestos: () => void
   gestos: EstadoGestos
@@ -74,6 +78,12 @@ export const useEstado = create<Estado>((set) => ({
   gestosPedidos: false,
   pedirGestos: (valor) => set({ gestosPedidos: valor }),
   ajusteGestos: { ...AJUSTE_GESTOS_DEFECTO },
+  panelAjusteAbierto: leerPanelAbierto(),
+  alternarPanelAjuste: () =>
+    set((s) => {
+      guardarPanelAbierto(!s.panelAjusteAbierto)
+      return { panelAjusteAbierto: !s.panelAjusteAbierto }
+    }),
   cambiarAjusteGestos: (cambio) => set((s) => ({ ajusteGestos: { ...s.ajusteGestos, ...cambio } })),
   restablecerAjusteGestos: () => set({ ajusteGestos: { ...AJUSTE_GESTOS_DEFECTO } }),
   gestos: 'apagado',

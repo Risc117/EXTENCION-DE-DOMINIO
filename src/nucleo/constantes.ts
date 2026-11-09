@@ -45,6 +45,8 @@ export const ZOOM_RUEDA = 0.001
 
 /** Mano: ajustes por defecto y rango de cada deslizador (más suaves que antes). */
 export const AJUSTE_GESTOS_DEFECTO = { giro: 2, zoom: 1, suavizado: 0.75, zonaMuerta: 0.004 }
+/** Clave de localStorage donde se recuerda si el panel de ajuste quedó abierto. */
+export const CLAVE_PANEL_AJUSTE = 'ptar.panelAjusteAbierto'
 export const AJUSTE_GESTOS_RANGO = {
   /** Radianes por ancho de imagen. */
   giro: { min: 0.5, max: 6, paso: 0.1 },

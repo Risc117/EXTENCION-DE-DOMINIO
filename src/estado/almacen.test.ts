@@ -51,6 +51,22 @@ describe('estado de los gestos', () => {
   })
 })
 
+describe('panel de ajuste retráctil', () => {
+  it('arranca plegado', () => {
+    expect(useEstado.getState().panelAjusteAbierto).toBe(false)
+  })
+
+  it('alternar abre y cierra sin tocar los valores', () => {
+    useEstado.getState().cambiarAjusteGestos({ giro: 5 })
+    useEstado.getState().alternarPanelAjuste()
+    expect(useEstado.getState().panelAjusteAbierto).toBe(true)
+    useEstado.getState().alternarPanelAjuste()
+    expect(useEstado.getState().panelAjusteAbierto).toBe(false)
+    expect(useEstado.getState().ajusteGestos.giro).toBe(5)
+    useEstado.getState().restablecerAjusteGestos()
+  })
+})
+
 describe('ajuste de gestos', () => {
   it('empieza con los valores por defecto', () => {
     expect(useEstado.getState().ajusteGestos).toEqual(AJUSTE_GESTOS_DEFECTO)

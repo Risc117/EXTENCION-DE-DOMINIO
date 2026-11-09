@@ -19,4 +19,6 @@ export const TEXTO_AJUSTE = {
   suavizado: 'Suavizado',
   zonaMuerta: 'Zona muerta (temblores)',
   restablecer: 'Restablecer',
+  abrirPanel: 'Mostrar ajuste de gestos',
+  cerrarPanel: 'Ocultar ajuste de gestos',
 }
