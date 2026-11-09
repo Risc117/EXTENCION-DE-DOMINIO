@@ -35,7 +35,7 @@ export async function iniciarMano(): Promise<() => void> {
     if (video.readyState < 2 || video.currentTime === ultimoVideo) return
     ultimoVideo = video.currentTime
     const puntos = detector.detectForVideo(video, performance.now()).landmarks[0] ?? null
-    const r = interpretar(memoria, puntos)
+    const r = interpretar(memoria, puntos, useEstado.getState().ajusteGestos)
     memoria = r.memoria
     const s = useEstado.getState()
     if (r.detectada !== detectada) {

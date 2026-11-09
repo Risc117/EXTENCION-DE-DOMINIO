@@ -9,3 +9,8 @@ canvas { touch-action: none; }
 .mano-no { color: var(--color-mano-no); }
 .mano-pausa { color: var(--color-aviso-fondo); }
 .mensaje-gestos { margin: 0; padding: 8px 10px; border-radius: 6px; background: var(--color-panel-fondo); color: var(--color-error); font-size: 0.9rem; }
+.ajuste-gestos { position: fixed; right: 12px; bottom: 12px; width: 260px; display: flex; flex-direction: column; gap: 6px; padding: 10px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.9rem; }
+.ajuste-gestos h2 { margin: 0; font-size: 0.95rem; }
+.ajuste-gestos label { display: flex; flex-direction: column; gap: 2px; }
+.ajuste-gestos input { width: 100%; }
+.ajuste-gestos button { padding: 6px 12px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }

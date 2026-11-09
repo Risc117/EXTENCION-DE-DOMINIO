@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { DISTANCIA_INICIAL, ELEVACION_MAXIMA, ELEVACION_MINIMA, ZOOM_MAXIMO, ZOOM_MINIMO } from '../nucleo/constantes'
+import { AJUSTE_GESTOS_DEFECTO, DISTANCIA_INICIAL, ELEVACION_MAXIMA, ELEVACION_MINIMA, ZOOM_MAXIMO, ZOOM_MINIMO } from '../nucleo/constantes'
 import { useEstado } from './almacen'
 
 beforeEach(() => useEstado.getState().reiniciarCamara())
@@ -48,5 +48,18 @@ describe('estado de los gestos', () => {
     useEstado.getState().fijarManoDetectada(true)
     useEstado.getState().fijarGestos('apagado')
     expect(useEstado.getState().manoDetectada).toBe(false)
+  })
+})
+
+describe('ajuste de gestos', () => {
+  it('empieza con los valores por defecto', () => {
+    expect(useEstado.getState().ajusteGestos).toEqual(AJUSTE_GESTOS_DEFECTO)
+  })
+
+  it('cambiar un valor no toca los demás y restablecer los devuelve', () => {
+    useEstado.getState().cambiarAjusteGestos({ giro: 5 })
+    expect(useEstado.getState().ajusteGestos).toEqual({ ...AJUSTE_GESTOS_DEFECTO, giro: 5 })
+    useEstado.getState().restablecerAjusteGestos()
+    expect(useEstado.getState().ajusteGestos).toEqual(AJUSTE_GESTOS_DEFECTO)
   })
 })

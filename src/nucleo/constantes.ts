@@ -43,13 +43,20 @@ export const AMORTIGUACION_CAMARA = 12
 export const GIRO_MOUSE = 0.005
 export const ZOOM_RUEDA = 0.001
 
-/** Mano: radianes por ancho de imagen, zoom por cambio de pinza y suavizado (0-1). */
-export const GIRO_MANO = 4
-export const ZOOM_PINZA = 2
-export const SUAVIZADO_MANO = 0.4
-/** Cambios menores a estos valores (por cuadro) se ignoran como temblor. */
-export const UMBRAL_MOVIMIENTO_PALMA = 0.002
-export const UMBRAL_CAMBIO_PINZA = 0.01
+/** Mano: ajustes por defecto y rango de cada deslizador (más suaves que antes). */
+export const AJUSTE_GESTOS_DEFECTO = { giro: 2, zoom: 1, suavizado: 0.75, zonaMuerta: 0.004 }
+export const AJUSTE_GESTOS_RANGO = {
+  /** Radianes por ancho de imagen. */
+  giro: { min: 0.5, max: 6, paso: 0.1 },
+  /** Zoom por cambio de pinza. */
+  zoom: { min: 0.25, max: 4, paso: 0.05 },
+  /** 0 = sin suavizado, 0.95 = muy suave. */
+  suavizado: { min: 0, max: 0.95, paso: 0.01 },
+  /** Movimiento mínimo por cuadro (fracción de la imagen) para que cuente. */
+  zonaMuerta: { min: 0, max: 0.02, paso: 0.001 },
+} as const
+/** La zona muerta de la pinza es esta cantidad de veces la de la palma. */
+export const RAZON_ZONA_MUERTA_PINZA = 5
 /** Puño: la punta de cada dedo queda más cerca de la muñeca que su articulación media. */
 export const UMBRAL_PUNO = 1
 /** Cuadros seguidos con puño para considerar pausa. */

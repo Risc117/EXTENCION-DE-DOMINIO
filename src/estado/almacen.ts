@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import {
   ACIMUT_INICIAL,
+  AJUSTE_GESTOS_DEFECTO,
   DISTANCIA_INICIAL,
   ELEVACION_INICIAL,
   ELEVACION_MAXIMA,
@@ -19,6 +20,9 @@ export interface Camara {
   /** Distancia al tanque, como múltiplo del lado mayor. */
   distancia: number
 }
+
+/** Ajuste fino de los gestos de mano (lo cambian los deslizadores). */
+export type AjusteGestos = { giro: number; zoom: number; suavizado: number; zonaMuerta: number }
 
 const camaraInicial = (): Camara => ({ acimut: ACIMUT_INICIAL, elevacion: ELEVACION_INICIAL, distancia: DISTANCIA_INICIAL })
 const acotar = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v))
@@ -39,6 +43,9 @@ interface Estado {
   /** El usuario pidió gestos (botón). La capa de entrada lo atiende y reporta en `gestos`. */
   gestosPedidos: boolean
   pedirGestos: (valor: boolean) => void
+  ajusteGestos: AjusteGestos
+  cambiarAjusteGestos: (cambio: Partial<AjusteGestos>) => void
+  restablecerAjusteGestos: () => void
   gestos: EstadoGestos
   manoDetectada: boolean
   fijarGestos: (valor: EstadoGestos) => void
@@ -66,6 +73,9 @@ export const useEstado = create<Estado>((set) => ({
 
   gestosPedidos: false,
   pedirGestos: (valor) => set({ gestosPedidos: valor }),
+  ajusteGestos: { ...AJUSTE_GESTOS_DEFECTO },
+  cambiarAjusteGestos: (cambio) => set((s) => ({ ajusteGestos: { ...s.ajusteGestos, ...cambio } })),
+  restablecerAjusteGestos: () => set({ ajusteGestos: { ...AJUSTE_GESTOS_DEFECTO } }),
   gestos: 'apagado',
   manoDetectada: false,
   fijarGestos: (valor) => set(valor === 'apagado' ? { gestos: valor, manoDetectada: false } : { gestos: valor }),

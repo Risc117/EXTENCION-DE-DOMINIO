@@ -1,14 +1,14 @@
 import { describe, expect, it } from 'vitest'
-import { CUADROS_PUNO } from '../../nucleo/constantes'
+import { AJUSTE_GESTOS_DEFECTO, CUADROS_PUNO } from '../../nucleo/constantes'
 import { manoAbierta, manoPuno } from './ejemplos'
 import { interpretar, type Memoria } from './interpretar'
 import type { Punto } from './puntos'
 
-function correr(cuadros: (Punto[] | null)[]) {
+function correr(cuadros: (Punto[] | null)[], ajuste = AJUSTE_GESTOS_DEFECTO) {
   let memoria: Memoria | null = null
   let ultimo = interpretar(null, null)
   for (const c of cuadros) {
-    ultimo = interpretar(memoria, c)
+    ultimo = interpretar(memoria, c, ajuste)
     memoria = ultimo.memoria
   }
   return ultimo
@@ -68,5 +68,37 @@ describe('interpretar un cuadro', () => {
   it('al perder la mano se olvida la referencia', () => {
     const r = correr([manoAbierta(), null, manoAbierta(0.3, 0)])
     expect(r.giro).toEqual(QUIETO)
+  })
+})
+
+describe('ajuste de gestos', () => {
+  it('con los valores por defecto un temblor leve no mueve la cámara', () => {
+    const r = correr([manoAbierta(), manoAbierta(0.005, 0.005)])
+    expect(r.giro).toEqual(QUIETO)
+    expect(r.zoom).toBe(1)
+  })
+
+  it('más sensibilidad de giro gira más', () => {
+    const base = correr([manoAbierta(), manoAbierta(0.1, 0)])
+    const mas = correr([manoAbierta(), manoAbierta(0.1, 0)], { ...AJUSTE_GESTOS_DEFECTO, giro: AJUSTE_GESTOS_DEFECTO.giro * 2 })
+    expect(mas.giro.acimut).toBeCloseTo(base.giro.acimut * 2)
+  })
+
+  it('más sensibilidad de zoom cambia más la distancia', () => {
+    const base = correr([manoAbierta(0, 0, 0.05), manoAbierta(0, 0, 0.2)])
+    const mas = correr([manoAbierta(0, 0, 0.05), manoAbierta(0, 0, 0.2)], { ...AJUSTE_GESTOS_DEFECTO, zoom: AJUSTE_GESTOS_DEFECTO.zoom * 2 })
+    expect(mas.zoom).toBeLessThan(base.zoom)
+  })
+
+  it('más suavizado reduce el movimiento por cuadro', () => {
+    const base = correr([manoAbierta(), manoAbierta(0.1, 0)])
+    const suave = correr([manoAbierta(), manoAbierta(0.1, 0)], { ...AJUSTE_GESTOS_DEFECTO, suavizado: 0.9 })
+    expect(suave.giro.acimut).toBeLessThan(base.giro.acimut)
+  })
+
+  it('una zona muerta mayor ignora movimientos que antes contaban', () => {
+    const movimiento = [manoAbierta(), manoAbierta(0.04, 0)]
+    expect(correr(movimiento).giro.acimut).toBeGreaterThan(0)
+    expect(correr(movimiento, { ...AJUSTE_GESTOS_DEFECTO, zonaMuerta: 0.02 }).giro).toEqual(QUIETO)
   })
 })
