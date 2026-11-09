@@ -1,0 +1,2 @@
+html, body, #raiz { margin: 0; height: 100%; background: var(--color-fondo); color: var(--color-texto); font-family: system-ui, sans-serif; }
+.aviso-demo { position: fixed; top: 12px; left: 12px; padding: 6px 12px; border-radius: 6px; font-weight: 600; background: var(--color-aviso-fondo); color: var(--color-aviso-texto); }

@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run lint)",
+      "Bash(npm run typecheck)",
+      "Bash(npm run test:*)",
+      "Bash(npm run build)",
+      "Bash(git status)",
+      "Bash(git diff:*)"
+    ],
+    "ask": ["Bash(git push:*)"],
+    "deny": ["Read(./.env)", "Read(./.env.*)", "Bash(git push --force:*)"]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [{ "type": "command", "command": "[ ! -f package.json ] || npm run typecheck --if-present" }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "homogeneizador",
+  "nombre": "Tanque homogeneizador",
+  "demo": true,
+  "tanque": {
+    "largo": { "valor": 10, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
+    "ancho": { "valor": 6, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
+    "profundidad": { "valor": 4, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
+    "espesorMuro": { "valor": 0.3, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true }
+  },
+  "ingreso": {
+    "diametro": { "valor": 0.4, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
+    "altura": { "valor": 3, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true }
+  },
+  "salida": {
+    "diametro": { "valor": 0.4, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
+    "altura": { "valor": 0.8, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true }
+  },
+  "difusores": {
+    "cantidad": { "valor": 4, "unidad": "u", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
+    "diametro": { "valor": 0.5, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
+    "altura": { "valor": 0.2, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true }
+  }
+}
