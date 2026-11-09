@@ -28,3 +28,36 @@ export const OBJETIVO_CAMARA: [number, number, number] = [0, 1, 0]
 export const LUZ_AMBIENTE = 0.6
 export const LUZ_DIRECCIONAL = 1.4
 export const LUZ_ALTURA_FACTOR = 2
+
+/** Cámara orbital: posición inicial (radianes y múltiplo del lado mayor). */
+export const ACIMUT_INICIAL = Math.PI / 4
+export const ELEVACION_INICIAL = Math.atan(CAMARA_ALTURA_FACTOR / Math.SQRT2)
+export const DISTANCIA_INICIAL = DISTANCIA_CAMARA * Math.hypot(Math.SQRT2, CAMARA_ALTURA_FACTOR)
+/** Límites de la elevación (radianes). */
+export const ELEVACION_MINIMA = 0.05
+export const ELEVACION_MAXIMA = 1.5
+/** Rapidez con que la cámara alcanza su destino (1/segundos). */
+export const AMORTIGUACION_CAMARA = 12
+
+/** Mouse: radianes por píxel arrastrado y zoom por unidad de rueda. */
+export const GIRO_MOUSE = 0.005
+export const ZOOM_RUEDA = 0.001
+
+/** Mano: radianes por ancho de imagen, zoom por cambio de pinza y suavizado (0-1). */
+export const GIRO_MANO = 4
+export const ZOOM_PINZA = 2
+export const SUAVIZADO_MANO = 0.4
+/** Cambios menores a estos valores (por cuadro) se ignoran como temblor. */
+export const UMBRAL_MOVIMIENTO_PALMA = 0.002
+export const UMBRAL_CAMBIO_PINZA = 0.01
+/** Puño: la punta de cada dedo queda más cerca de la muñeca que su articulación media. */
+export const UMBRAL_PUNO = 1
+/** Cuadros seguidos con puño para considerar pausa. */
+export const CUADROS_PUNO = 3
+
+/** Modelo y motor WASM de la mano (copias locales en public/, de @mediapipe/tasks-vision) y tamaño de captura. */
+export const RUTA_WASM_CARGADOR = '/mediapipe/vision_wasm_internal.js'
+export const RUTA_WASM_BINARIO = '/mediapipe/vision_wasm_internal.wasm'
+export const RUTA_MODELO_MANO = '/modelos/hand_landmarker.task'
+export const CAMARA_ANCHO = 640
+export const CAMARA_ALTO = 480

@@ -1,1 +1,1 @@
-export {}
+export { useEntrada } from './useEntrada'

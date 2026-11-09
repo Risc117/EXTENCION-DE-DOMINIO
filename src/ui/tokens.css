@@ -8,4 +8,10 @@
   --color-texto: #eef3f7;
   --color-aviso-fondo: #d9a441;
   --color-aviso-texto: #1b1405;
+  --color-panel-fondo: #16232f;
+  --color-boton: #3b82c4;
+  --color-boton-texto: #ffffff;
+  --color-mano-si: #3fa37a;
+  --color-mano-no: #8e9aa5;
+  --color-error: #e07a6b;
 }

@@ -24,6 +24,11 @@ describe('reglas de arquitectura (ESLint)', () => {
     expect((await mensajes('src/entrada/falso.ts', "import '../ui/AvisoDemo'\n")).length).toBeGreaterThan(0)
   })
 
+  it('falla si escena/ o ui/ importan de entrada/', async () => {
+    expect((await mensajes('src/escena/falso.ts', "import '../entrada/mouse'\n")).length).toBeGreaterThan(0)
+    expect((await mensajes('src/ui/falso.ts', "import '../entrada/mouse'\n")).length).toBeGreaterThan(0)
+  })
+
   it('permite que escena/ importe de estado/', async () => {
     expect(await mensajes('src/escena/falso.ts', "import '../estado/almacen'\n")).toHaveLength(0)
   })

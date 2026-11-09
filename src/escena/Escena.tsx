@@ -1,5 +1,4 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
 import {
   CAMARA_ALTURA_FACTOR,
   CAMARA_FAR_FACTOR,
@@ -9,11 +8,9 @@ import {
   LUZ_ALTURA_FACTOR,
   LUZ_AMBIENTE,
   LUZ_DIRECCIONAL,
-  OBJETIVO_CAMARA,
-  ZOOM_MAXIMO,
-  ZOOM_MINIMO,
 } from '../nucleo/constantes'
 import { unidades } from '../unidades/registro'
+import { ControlCamara } from './ControlCamara'
 
 export function Escena() {
   const tamano = Math.max(...unidades.map((u) => u.tamano))
@@ -25,7 +22,7 @@ export function Escena() {
       {unidades.map((u) => (
         <u.Componente key={u.id} />
       ))}
-      <OrbitControls makeDefault target={OBJETIVO_CAMARA} minDistance={tamano * ZOOM_MINIMO} maxDistance={tamano * ZOOM_MAXIMO} />
+      <ControlCamara tamano={tamano} />
     </Canvas>
   )
 }
