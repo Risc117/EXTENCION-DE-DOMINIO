@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { OPACIDAD_MURO, OPACIDAD_TECHO, OPACIDAD_ZONA_MEZCLA, SEGMENTOS_CILINDRO } from '../../nucleo/constantes'
 import { leerColor } from '../../nucleo/colores'
+import { Agua } from './Agua'
 import { GeometriaAnillo } from './Anillo'
 import type { DatosHomogeneizador } from './esquema'
 import { construirPiezas, type TipoPieza } from './geometria'
@@ -47,6 +48,7 @@ export function Homogeneizador({ datos }: { datos: DatosHomogeneizador }) {
           </mesh>
         )
       })}
+      <Agua radio={datos.tanque.diametroInterior.valor / 2} />
     </group>
   )
 }

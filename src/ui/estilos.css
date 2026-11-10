@@ -17,3 +17,14 @@ canvas { touch-action: none; }
 .ajuste-gestos label { display: flex; flex-direction: column; gap: 2px; }
 .ajuste-gestos input { width: 100%; }
 .ajuste-gestos button { padding: 6px 12px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }
+.panel-simulacion { position: fixed; left: 12px; bottom: 12px; width: 280px; display: flex; flex-direction: column; gap: 8px; padding: 10px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.9rem; }
+.panel-simulacion h2 { margin: 0; font-size: 0.95rem; }
+.panel-simulacion label { display: flex; flex-direction: column; gap: 2px; }
+.panel-simulacion input[type='range'] { width: 100%; }
+.panel-simulacion select { font: inherit; }
+.panel-simulacion__fila { display: flex; gap: 8px; align-items: flex-end; }
+.panel-simulacion button { padding: 6px 12px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }
+.panel-simulacion dl { display: grid; grid-template-columns: auto auto; gap: 2px 12px; margin: 0; }
+.panel-simulacion dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.panel-simulacion__nota { margin: 0; font-size: 0.8rem; opacity: 0.8; }
+.panel-simulacion__aviso { margin: 0; padding: 6px 8px; border-radius: 6px; font-weight: 600; background: var(--color-aviso-fondo); color: var(--color-aviso-texto); }

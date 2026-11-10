@@ -16,6 +16,26 @@ export const OPACIDAD_ZONA_MEZCLA = 0.3
 /** Diferencia máxima (m) aceptada entre medidas del plano que deben cuadrar. */
 export const TOLERANCIA_MEDIDAS = 0.005
 
+/** Opacidad (0 a 1) del agua. */
+export const OPACIDAD_AGUA = 0.55
+
+/** Simulación: gravedad (m/s²) y coeficiente de descarga Cd de la salida (DATO DE EJEMPLO, confirmar con el diseño). */
+export const GRAVEDAD = 9.81
+export const CD_SALIDA = 0.6
+export const CD_SALIDA_ES_EJEMPLO = true
+/** Conversiones de tiempo y volumen. */
+export const HORAS_POR_DIA = 24
+export const SEGUNDOS_POR_HORA = 3600
+export const LITROS_POR_M3 = 1000
+/** Reloj: velocidades (segundos simulados por segundo real) y la inicial. */
+export const VELOCIDADES_SIMULACION = [1, 60, 600, 3600]
+export const VELOCIDAD_INICIAL = 600
+/** Paso máximo de cálculo (s simulados) y tope de tiempo real por cuadro (s) para no dar saltos. */
+export const PASO_MAXIMO_SIMULACION = 60
+export const TOPE_CUADRO_SEGUNDOS = 0.25
+/** Rango del deslizador del caudal de salida (L/s) y su paso. */
+export const SALIDA_AJUSTE_RANGO = { min: 0, max: 40, paso: 0.1 }
+
 /** Lados del cilindro que dibuja tubos, losas y agitador. */
 export const SEGMENTOS_CILINDRO = 32
 

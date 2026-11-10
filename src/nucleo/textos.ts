@@ -22,3 +22,24 @@ export const TEXTO_AJUSTE = {
   abrirPanel: 'Mostrar ajuste de gestos',
   cerrarPanel: 'Ocultar ajuste de gestos',
 }
+
+/** Panel de simulación de nivel y caudales. */
+export const TEXTO_SIMULACION = {
+  titulo: 'Nivel y caudales',
+  dia: 'Día',
+  hora: 'Hora simulada',
+  reproducir: 'Reproducir',
+  pausar: 'Pausar',
+  velocidad: 'Velocidad',
+  modo: 'Salida',
+  modoConstante: 'Constante (promedio del día)',
+  modoGravedad: 'Por gravedad',
+  caudalSalidaAjuste: 'Caudal de salida (L/s)',
+  caudalEntrada: 'Caudal de entrada',
+  caudalSalida: 'Caudal de salida',
+  nivel: 'Nivel',
+  volumen: 'Volumen',
+  avisoNivel: 'El nivel supera la altura útil',
+  avisoRebose: 'El tanque está rebosando',
+  cdEjemplo: 'Coeficiente de descarga Cd: dato de ejemplo',
+}
