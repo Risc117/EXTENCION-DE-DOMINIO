@@ -1,12 +1,7 @@
 import { z } from 'zod'
 import { TOLERANCIA_MEDIDAS } from '../../nucleo/constantes'
-
-const medida = z.object({
-  valor: z.number().positive(),
-  unidad: z.enum(['m', 'u']),
-  fuente: z.string().min(1),
-  demo: z.boolean().optional(),
-})
+import { esquemaAccesorios, revisarAccesorios } from './esquemaAccesorios'
+import { medida } from './medida'
 
 const tubo = z.object({ diametro: medida, altura: medida })
 
@@ -47,6 +42,10 @@ export const esquemaHomogeneizador = z.object({
     alturaImpulsor: medida,
     diametroZonaMezcla: medida,
   }),
+  accesorios: esquemaAccesorios,
+}).superRefine((d, ctx) => {
+  const problema = revisarAccesorios(d)
+  if (problema) ctx.addIssue({ code: 'custom', message: problema, path: ['accesorios'] })
 })
 
 export type DatosHomogeneizador = z.infer<typeof esquemaHomogeneizador>

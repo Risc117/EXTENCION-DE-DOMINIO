@@ -148,3 +148,18 @@ export const RUTA_WASM_BINARIO = '/mediapipe/vision_wasm_internal.wasm'
 export const RUTA_MODELO_MANO = '/modelos/hand_landmarker.task'
 export const CAMARA_ANCHO = 640
 export const CAMARA_ALTO = 480
+
+/** Accesorios: opacidad (0 a 1) del terreno natural y del relleno compactado. */
+export const OPACIDAD_TERRENO = 0.22
+export const OPACIDAD_RELLENO = 0.3
+/** Accesorios: la baranda lleva un pasamanos arriba y otro a esta fracción de su altura. */
+export const FRACCION_RIEL_MEDIO = 0.5
+/** Escalera marinera: radio (m) de los peldaños, de los rieles y de las barras de la jaula; grosor (m) de los aros. */
+export const RADIO_PELDANO = 0.015
+export const RADIO_RIEL_ESCALERA = 0.025
+export const RADIO_BARRA_JAULA = 0.012
+export const GROSOR_ARO_JAULA = 0.02
+/** Cuánto (m) se acerca la jaula al muro más allá del eje de la escalera. */
+export const HOLGURA_JAULA_MURO = 0.1
+/** Válvula: su cuerpo es este múltiplo del diámetro del tubo. */
+export const FACTOR_CUERPO_VALVULA = 1.6

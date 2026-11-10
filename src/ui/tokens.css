@@ -22,3 +22,13 @@
   --color-mano-no: #8e9aa5;
   --color-error: #e07a6b;
 }
+:root {
+  --color-baranda: #e0c341;
+  --color-portillo: #d98b3b;
+  --color-acceso: #6f7b86;
+  --color-escalera: #c9d1d8;
+  --color-ventilacion: #7fb3d6;
+  --color-valvula: #c4453b;
+  --color-relleno: #a68a64;
+  --color-terreno: #6b5a3e;
+}

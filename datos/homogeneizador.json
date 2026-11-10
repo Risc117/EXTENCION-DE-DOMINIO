@@ -32,5 +32,51 @@
     "altoCuerpo": { "valor": 0.8, "unidad": "m", "fuente": "Estimado (el plano no da el tamaño); confirmar", "demo": true },
     "alturaImpulsor": { "valor": 0.5, "unidad": "m", "fuente": "Estimado: impulsor cerca del fondo; confirmar", "demo": true },
     "diametroZonaMezcla": { "valor": 3, "unidad": "m", "fuente": "Estimado (círculo alrededor del agitador); confirmar", "demo": true }
+  },
+  "accesorios": {
+    "baranda": {
+      "altura": { "valor": 1.05, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta y corte A-A (baranda h = 1.05 m)", "demo": false },
+      "diametroTubo": { "valor": 0.04, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "retranqueBorde": { "valor": 0.1, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "numeroPostes": { "valor": 24, "unidad": "u", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true }
+    },
+    "bocaAcceso": {
+      "lado": { "valor": 1.0, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta y corte A-A (boca de acceso 1.00 x 1.00 m)", "demo": false },
+      "alturaBrocal": { "valor": 0.2, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "espesorTapa": { "valor": 0.05, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "distanciaAlCentro": { "valor": 3.15, "unidad": "m", "fuente": "Estimado: lado de la salida, cerca del muro (el plano no lo acota); confirmar", "demo": true }
+    },
+    "portillo": {
+      "ancho": { "valor": 1.0, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta y corte A-A (portillo de acceso 1.00 m)", "demo": false },
+      "espesor": { "valor": 0.04, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true }
+    },
+    "escalera": {
+      "ancho": { "valor": 0.4, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "separacionPeldanos": { "valor": 0.3, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "separacionMuro": { "valor": 0.2, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "prolongacionSobreBoca": { "valor": 0.9, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "alturaInicioJaula": { "valor": 2.2, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "diametroJaula": { "valor": 0.7, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "separacionAros": { "valor": 0.6, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true }
+    },
+    "ventilacion": {
+      "diametroTubo": { "valor": 0.0508, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta y corte A-A (tubo de ventilación Ø 2\")", "demo": false },
+      "altura": { "valor": 0.9, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "diametroHongo": { "valor": 0.15, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "alturaHongo": { "valor": 0.08, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "distanciaAlCentro": { "valor": 2.5, "unidad": "m", "fuente": "Estimado: sobre la losa de techo, lado del ingreso (el plano no lo acota); confirmar", "demo": true }
+    },
+    "cajaValvula": {
+      "diametroValvula": { "valor": 0.16, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta y corte A-A (válvulas de compuerta Ø 6\")", "demo": false },
+      "lado": { "valor": 0.5, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "alto": { "valor": 0.3, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "diametroVarilla": { "valor": 0.025, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "distanciaAlMuro": { "valor": 1.5, "unidad": "m", "fuente": "Estimado: sobre el terreno, sobre el tubo (el plano no lo acota); confirmar", "demo": true }
+    },
+    "terreno": {
+      "anchoRelleno": { "valor": 0.8, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "anchoTerreno": { "valor": 4, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "profundidadBajoSolado": { "valor": 0.5, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true }
+    }
   }
 }

@@ -78,3 +78,8 @@ export const TEXTO_SIMULACION = {
   corteQuitar: 'Quitar corte',
   cortePosicion: 'Posición del corte',
 }
+
+export const TEXTO_ACCESORIOS = {
+  mostrar: 'Mostrar accesorios',
+  ocultar: 'Ocultar accesorios',
+}
