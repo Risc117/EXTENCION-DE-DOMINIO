@@ -1,7 +1,22 @@
 /** Largo (m) que el tubo de ingreso y de salida sobresale del muro. */
 export const PROLONGACION_TUBO = 1.5
+/** Largo (m) que el tubo de ingreso y de salida entra al tanque. */
+export const PROLONGACION_INTERIOR_TUBO = 0.5
+/** Largo (m) del tramo vertical del rebose después del codo de 90°. */
+export const LARGO_BAJADA_REBOSE = 1
+/** Ángulo (radianes) del rebose respecto del ingreso, medido sobre el muro. */
+export const ANGULO_REBOSE = Math.PI / 6
+/** Radio (m) del riel guía del agitador y espesor (m) del disco de la zona de mezcla. */
+export const RADIO_RIEL = 0.03
+export const ESPESOR_ZONA_MEZCLA = 0.02
+/** Opacidad (0 a 1) del muro, la losa de techo y la zona de mezcla para ver el interior. */
+export const OPACIDAD_MURO = 0.35
+export const OPACIDAD_TECHO = 0.3
+export const OPACIDAD_ZONA_MEZCLA = 0.3
+/** Diferencia máxima (m) aceptada entre medidas del plano que deben cuadrar. */
+export const TOLERANCIA_MEDIDAS = 0.005
 
-/** Lados del cilindro que dibuja tubos y difusores. */
+/** Lados del cilindro que dibuja tubos, losas y agitador. */
 export const SEGMENTOS_CILINDRO = 32
 
 /** Cámara inicial, como múltiplo del lado mayor del tanque. */

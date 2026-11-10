@@ -9,6 +9,6 @@ export const unidadHomogeneizador: Unidad = {
   id: datos.id,
   nombre: datos.nombre,
   demo: datos.demo === true,
-  tamano: Math.max(datos.tanque.largo.valor, datos.tanque.ancho.valor),
+  tamano: datos.tanque.diametroExterior.valor,
   Componente: () => <Homogeneizador datos={datos} />,
 }

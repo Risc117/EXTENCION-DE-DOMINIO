@@ -3,22 +3,34 @@
   "nombre": "Tanque homogeneizador",
   "demo": true,
   "tanque": {
-    "largo": { "valor": 10, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
-    "ancho": { "valor": 6, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
-    "profundidad": { "valor": 4, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
-    "espesorMuro": { "valor": 0.3, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true }
+    "forma": "circular",
+    "diametroInterior": { "valor": 7.58, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta/corte A-A", "demo": false },
+    "diametroExterior": { "valor": 7.98, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta/corte A-A", "demo": false },
+    "espesorMuro": { "valor": 0.2, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta/corte A-A", "demo": false },
+    "alturaUtil": { "valor": 4.9, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta/corte A-A (N.A.)", "demo": false },
+    "bordeLibre": { "valor": 0.5, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta/corte A-A", "demo": false },
+    "alturaTotal": { "valor": 5.4, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta/corte A-A", "demo": false },
+    "espesorLosaFondo": { "valor": 0.3, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta/corte A-A", "demo": false },
+    "espesorSolado": { "valor": 0.3, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta/corte A-A (concreto pobre)", "demo": false },
+    "espesorLosaTecho": { "valor": 0.15, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1, planta/corte A-A", "demo": false }
   },
   "ingreso": {
-    "diametro": { "valor": 0.4, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
-    "altura": { "valor": 3, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true }
+    "diametro": { "valor": 0.16, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1: tubería Ø 6\" PVC (DN 160)", "demo": false },
+    "altura": { "valor": 5.1, "unidad": "m", "fuente": "Estimado del plano (5.0 a 5.2 m sobre el fondo, justo sobre el N.A.); confirmar", "demo": true }
   },
   "salida": {
-    "diametro": { "valor": 0.4, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
-    "altura": { "valor": 0.8, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true }
+    "diametro": { "valor": 0.16, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1: tubería Ø 6\" PVC (DN 160)", "demo": false },
+    "altura": { "valor": 0.3, "unidad": "m", "fuente": "Estimado: baja, cerca del fondo (el plano no da la cota); confirmar", "demo": true }
   },
-  "difusores": {
-    "cantidad": { "valor": 4, "unidad": "u", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
-    "diametro": { "valor": 0.5, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true },
-    "altura": { "valor": 0.2, "unidad": "m", "fuente": "Valor de ejemplo, pendiente de medidas reales", "demo": true }
+  "rebose": {
+    "diametro": { "valor": 0.2, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1: Ø 0.20, unidad por confirmar", "demo": true },
+    "altura": { "valor": 4.9, "unidad": "m", "fuente": "Estimado: cerca del nivel máximo (el plano no da la cota); confirmar", "demo": true }
+  },
+  "agitador": {
+    "cantidad": { "valor": 1, "unidad": "u", "fuente": "plano HOMOGENIZADOR_enterrado_v1: 1 agitador sumergible al centro", "demo": false },
+    "diametroCuerpo": { "valor": 0.4, "unidad": "m", "fuente": "Estimado (el plano no da el tamaño); confirmar", "demo": true },
+    "altoCuerpo": { "valor": 0.8, "unidad": "m", "fuente": "Estimado (el plano no da el tamaño); confirmar", "demo": true },
+    "alturaImpulsor": { "valor": 0.5, "unidad": "m", "fuente": "Estimado: impulsor cerca del fondo; confirmar", "demo": true },
+    "diametroZonaMezcla": { "valor": 3, "unidad": "m", "fuente": "Estimado (círculo alrededor del agitador); confirmar", "demo": true }
   }
 }
