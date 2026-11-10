@@ -78,5 +78,24 @@
       "anchoTerreno": { "valor": 4, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
       "profundidadBajoSolado": { "valor": 0.5, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true }
     }
+  },
+  "anotaciones": {
+    "cotas": [
+      { "id": "di", "tipo": "diametro", "medida": "tanque.diametroInterior", "texto": "Di = {valor} m" },
+      { "id": "h", "tipo": "altura", "medida": "tanque.alturaUtil", "angulo": 60, "columna": 0, "texto": "H = {valor} m (N.A.)" },
+      { "id": "bl", "tipo": "altura", "medida": "tanque.bordeLibre", "base": "tanque.alturaUtil", "angulo": 60, "columna": 0, "texto": "BL = {valor} m" },
+      { "id": "ht", "tipo": "altura", "medida": "tanque.alturaTotal", "angulo": 60, "columna": 1, "texto": "Ht = {valor} m" },
+      { "id": "e", "tipo": "espesor", "medida": "tanque.espesorMuro", "angulo": 100, "texto": "e = {valor} m" }
+    ],
+    "etiquetas": [
+      { "id": "entrada", "objetivo": "ingreso", "texto": "ENTRADA, tubería Ø 6\" PVC (agua residual)", "desfase": [-0.5, 1.5, 1.2], "prioridad": true },
+      { "id": "salida", "objetivo": "salida", "texto": "SALIDA, tubería Ø 6\" PVC (a RAFA)", "desfase": [1.5, 1.2, 1.2], "prioridad": true },
+      { "id": "agitador", "objetivo": "agitador", "texto": "Agitador sumergible", "desfase": [1.5, 2.5, 1.5], "prioridad": true },
+      { "id": "nivel", "objetivo": "nivelAgua", "texto": "Nivel de agua (N.A.) = {valor} m", "desfase": [1.5, 1, 1], "prioridad": true },
+      { "id": "rebose", "objetivo": "rebose", "texto": "Rebose Ø {valor}", "medida": "rebose.diametro", "desfase": [-1.2, 1.2, 1.2] },
+      { "id": "boca", "objetivo": "bocaAcceso", "texto": "Boca de acceso {valor} x {valor}", "medida": "accesorios.bocaAcceso.lado", "desfase": [1.5, 1.8, 1] },
+      { "id": "baranda", "objetivo": "baranda", "texto": "Baranda h = {valor}", "medida": "accesorios.baranda.altura", "desfase": [-1, 1.5, 1] },
+      { "id": "zona", "objetivo": "zonaMezcla", "texto": "Zona de mezcla", "desfase": [2, 1.5, 0.5] }
+    ]
   }
 }

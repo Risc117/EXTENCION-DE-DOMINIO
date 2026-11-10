@@ -61,3 +61,9 @@ canvas { touch-action: none; }
 }
 .panel-simulacion summary { cursor: pointer; font-weight: 600; }
 .panel-simulacion[open] > summary { margin-bottom: 8px; }
+.panel-anotaciones { flex-direction: row; }
+.panel-anotaciones button { flex: 1; }
+.panel-anotaciones button[aria-pressed='false'], .panel-corte button[aria-pressed='false'] { opacity: 0.55; }
+.anotacion { padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; pointer-events: none; user-select: none; background: var(--color-anotacion-fondo); color: var(--color-anotacion-texto); }
+.anotacion--cota { color: var(--color-cota); }
+.anotacion--etiqueta { border: 1px solid var(--color-etiqueta-linea); }

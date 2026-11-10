@@ -83,3 +83,10 @@ export const TEXTO_ACCESORIOS = {
   mostrar: 'Mostrar accesorios',
   ocultar: 'Ocultar accesorios',
 }
+
+/** Cotas y etiquetas con flechas (los textos de cada una vienen de datos/homogeneizador.json). */
+export const TEXTO_ANOTACIONES = {
+  cotas: 'Cotas',
+  etiquetas: 'Etiquetas',
+  sufijoEjemplo: ' (ej.)',
+}

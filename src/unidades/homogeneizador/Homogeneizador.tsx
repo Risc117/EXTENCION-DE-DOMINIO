@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { OPACIDAD_MURO, OPACIDAD_TECHO, OPACIDAD_ZONA_MEZCLA, SEGMENTOS_CILINDRO } from '../../nucleo/constantes'
 import { leerColor } from '../../nucleo/colores'
 import { Accesorios } from './accesorios/Accesorios'
+import { Anotaciones } from './anotaciones/Anotaciones'
 import { Agua } from './Agua'
 import { GeometriaAnillo } from './Anillo'
 import type { DatosHomogeneizador } from './esquema'
@@ -56,6 +57,7 @@ export function Homogeneizador({ datos }: { datos: DatosHomogeneizador }) {
         )
       })}
       <Accesorios datos={datos} />
+      <Anotaciones datos={datos} />
       <Agua radio={radio} />
       <Particulas radioTanque={radio} />
       <Remolino radioZona={datos.agitador.diametroZonaMezcla.valor / 2} altura={datos.agitador.alturaImpulsor.valor} radioTanque={radio} />
