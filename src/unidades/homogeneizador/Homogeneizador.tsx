@@ -5,6 +5,9 @@ import { Agua } from './Agua'
 import { GeometriaAnillo } from './Anillo'
 import type { DatosHomogeneizador } from './esquema'
 import { construirPiezas, type TipoPieza } from './geometria'
+import { Particulas } from './Particulas'
+import { Remolino } from './Remolino'
+import { usePlanosCorte } from './usePlanosCorte'
 
 const COLOR: Record<TipoPieza, string> = {
   solado: '--color-solado',
@@ -28,6 +31,8 @@ const OPACIDAD: Partial<Record<TipoPieza, number>> = {
 
 export function Homogeneizador({ datos }: { datos: DatosHomogeneizador }) {
   const piezas = useMemo(() => construirPiezas(datos), [datos])
+  const radio = datos.tanque.diametroInterior.valor / 2
+  const planos = usePlanosCorte(radio)
   return (
     <group>
       {piezas.map((p) => {
@@ -44,11 +49,14 @@ export function Homogeneizador({ datos }: { datos: DatosHomogeneizador }) {
               transparent={opacidad !== undefined}
               opacity={opacidad ?? 1}
               depthWrite={opacidad === undefined}
+              clippingPlanes={planos}
             />
           </mesh>
         )
       })}
-      <Agua radio={datos.tanque.diametroInterior.valor / 2} />
+      <Agua radio={radio} />
+      <Particulas radioTanque={radio} />
+      <Remolino radioZona={datos.agitador.diametroZonaMezcla.valor / 2} altura={datos.agitador.alturaImpulsor.valor} radioTanque={radio} />
     </group>
   )
 }

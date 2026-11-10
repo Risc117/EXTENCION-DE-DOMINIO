@@ -4,12 +4,15 @@ import './ui/tokens.css'
 import './ui/estilos.css'
 import { App } from './App'
 import { useEstado } from './estado/almacen'
+import { useFlujo } from './estado/flujo'
 import { useSim } from './estado/simulacion'
 import { unidades } from './unidades/registro'
 
 useEstado.getState().fijarDatosDemo(unidades.some((u) => u.demo))
 const hidraulica = unidades.find((u) => u.hidraulica)?.hidraulica
 if (hidraulica) useSim.getState().fijarTanque(hidraulica)
+const flujo = unidades.find((u) => u.flujo)?.flujo
+if (flujo) useFlujo.getState().fijarFlujo(flujo)
 
 createRoot(document.getElementById('raiz')!).render(
   <StrictMode>

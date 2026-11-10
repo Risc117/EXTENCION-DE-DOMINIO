@@ -42,4 +42,9 @@ export const TEXTO_SIMULACION = {
   avisoNivel: 'El nivel supera la altura útil',
   avisoRebose: 'El tanque está rebosando',
   cdEjemplo: 'Coeficiente de descarga Cd: dato de ejemplo',
+  leyenda: 'Esquema ilustrativo',
+  corte: 'Corte',
+  corteActivar: 'Ver corte',
+  corteQuitar: 'Quitar corte',
+  cortePosicion: 'Posición del corte',
 }

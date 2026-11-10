@@ -16,7 +16,7 @@ export function Escena() {
   const tamano = Math.max(...unidades.map((u) => u.tamano))
   const d = tamano * DISTANCIA_CAMARA
   return (
-    <Canvas camera={{ position: [d, d * CAMARA_ALTURA_FACTOR, d], fov: CAMARA_FOV, near: CAMARA_NEAR, far: tamano * CAMARA_FAR_FACTOR }}>
+    <Canvas gl={{ localClippingEnabled: true }} camera={{ position: [d, d * CAMARA_ALTURA_FACTOR, d], fov: CAMARA_FOV, near: CAMARA_NEAR, far: tamano * CAMARA_FAR_FACTOR }}>
       <ambientLight intensity={LUZ_AMBIENTE} />
       <directionalLight position={[tamano, tamano * LUZ_ALTURA_FACTOR, tamano]} intensity={LUZ_DIRECCIONAL} />
       {unidades.map((u) => (

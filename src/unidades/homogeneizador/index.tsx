@@ -18,5 +18,12 @@ export const unidadHomogeneizador: Unidad = {
     alturaEjeSalida: datos.salida.altura.valor,
     diametroSalida: datos.salida.diametro.valor,
   },
+  flujo: {
+    radioInterior: datos.tanque.diametroInterior.valor / 2,
+    alturaIngreso: datos.ingreso.altura.valor,
+    alturaSalida: datos.salida.altura.valor,
+    radioZonaMezcla: datos.agitador.diametroZonaMezcla.valor / 2,
+    alturaAgitador: datos.agitador.alturaImpulsor.valor,
+  },
   Componente: () => <Homogeneizador datos={datos} />,
 }

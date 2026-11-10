@@ -28,3 +28,8 @@ canvas { touch-action: none; }
 .panel-simulacion dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
 .panel-simulacion__nota { margin: 0; font-size: 0.8rem; opacity: 0.8; }
 .panel-simulacion__aviso { margin: 0; padding: 6px 8px; border-radius: 6px; font-weight: 600; background: var(--color-aviso-fondo); color: var(--color-aviso-texto); }
+.panel-corte { position: fixed; top: 56px; left: 12px; display: flex; flex-direction: column; gap: 6px; width: 200px; padding: 8px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.9rem; }
+.panel-corte label { display: flex; flex-direction: column; gap: 2px; }
+.panel-corte input { width: 100%; }
+.panel-corte button { padding: 6px 12px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }
+.leyenda { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); padding: 4px 12px; border-radius: 6px; font-size: 0.85rem; background: var(--color-panel-fondo); color: var(--color-texto); opacity: 0.85; pointer-events: none; }
