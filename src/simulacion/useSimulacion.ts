@@ -1,11 +1,8 @@
 import { useEffect } from 'react'
-import crudo from '../../datos/hidrograma.json'
 import { TOPE_CUADRO_SEGUNDOS } from '../nucleo/constantes'
 import { useSim } from '../estado/simulacion'
 import { avanzar } from './avanzar'
-import { crearHidrograma } from './hidrograma'
-
-const hidrograma = crearHidrograma(crudo)
+import { hidrograma } from './hidrogramaCargado'
 
 /** Arranca el reloj de la simulación. Se llama una vez, desde App. */
 export function useSimulacion() {

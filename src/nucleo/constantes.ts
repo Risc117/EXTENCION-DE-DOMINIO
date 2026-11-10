@@ -36,8 +36,12 @@ export const TOPE_CUADRO_SEGUNDOS = 0.25
 /** Rango del deslizador del caudal de salida (L/s) y su paso. */
 export const SALIDA_AJUSTE_RANGO = { min: 0, max: 40, paso: 0.1 }
 
-/** Partículas del flujo (efecto ilustrativo, no es una simulación de fluidos). */
-export const NUMERO_PARTICULAS = 400
+/** Partículas del flujo (efecto ilustrativo): cantidad según la calidad elegida; la alta es el tope del buffer. */
+export const CALIDAD_PARTICULAS = { baja: 150, alta: 400 }
+export const NUMERO_PARTICULAS = CALIDAD_PARTICULAS.alta
+/** Clave de localStorage de la calidad, y ancho (px) bajo el cual la pantalla se considera chica. */
+export const CLAVE_CALIDAD = 'ptar.calidad'
+export const UMBRAL_PANTALLA_CHICA = 700
 export const RADIO_PARTICULA = 0.05
 /** Caudal (L/s) con el que las partículas van a velocidad normal, y tope del factor de velocidad. */
 export const CAUDAL_REFERENCIA_LS = 13

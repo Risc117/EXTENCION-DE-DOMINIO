@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { InstancedMesh, Object3D } from 'three'
 import { NUMERO_PARTICULAS, RADIO_PARTICULA } from '../../nucleo/constantes'
 import { leerColor } from '../../nucleo/colores'
+import { cantidadParticulas, useCalidad } from '../../estado/calidad'
 import { bufferParticulas } from '../../estado/flujo'
 import { usePlanosCorte } from './usePlanosCorte'
 
@@ -17,7 +18,9 @@ export function Particulas({ radioTanque }: { radioTanque: number }) {
     const m = malla.current
     if (!m) return
     const datos = bufferParticulas.posiciones
-    for (let i = 0; i < NUMERO_PARTICULAS; i++) {
+    const cantidad = cantidadParticulas(useCalidad.getState().calidad)
+    m.count = cantidad
+    for (let i = 0; i < cantidad; i++) {
       const o = i * 4
       apoyo.position.set(datos[o], datos[o + 1], datos[o + 2])
       apoyo.scale.setScalar(datos[o + 3])

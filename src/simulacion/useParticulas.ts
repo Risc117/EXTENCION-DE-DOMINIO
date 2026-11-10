@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { NUMERO_PARTICULAS, SEMILLA_PARTICULAS, TOPE_CUADRO_SEGUNDOS } from '../nucleo/constantes'
+import { SEMILLA_PARTICULAS, TOPE_CUADRO_SEGUNDOS } from '../nucleo/constantes'
+import { cantidadParticulas, useCalidad } from '../estado/calidad'
 import { bufferParticulas, useFlujo } from '../estado/flujo'
 import { useSim } from '../estado/simulacion'
 import { crearAzar } from './azar'
@@ -17,7 +18,8 @@ export function useParticulas() {
       ultimo = ahora
       const { flujo } = useFlujo.getState()
       if (flujo) {
-        if (particulas.length === 0) particulas = crearParticulas(NUMERO_PARTICULAS, flujo, azar)
+        const cantidad = cantidadParticulas(useCalidad.getState().calidad)
+        if (particulas.length !== cantidad) particulas = crearParticulas(cantidad, flujo, azar)
         const s = useSim.getState()
         if (s.corriendo) avanzarParticulas(particulas, flujo, s.nivel, s.caudalEntrada, s.caudalSalida, dt, azar)
         escribirPosiciones(particulas, s.nivel, bufferParticulas.posiciones)

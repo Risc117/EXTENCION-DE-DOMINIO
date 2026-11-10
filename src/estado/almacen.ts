@@ -38,6 +38,8 @@ interface Estado {
   /** Intenciones: las emiten el mouse y la mano. */
   girar: (dAcimut: number, dElevacion: number) => void
   hacerZoom: (factor: number) => void
+  /** Pone la cámara en una vista (la usa la demo). */
+  fijarCamara: (camara: Camara) => void
   fijarPausa: (valor: boolean) => void
   reiniciarCamara: () => void
 
@@ -72,6 +74,7 @@ export const useEstado = create<Estado>((set) => ({
     })),
   hacerZoom: (factor) =>
     set((s) => ({ camara: { ...s.camara, distancia: acotar(s.camara.distancia * factor, ZOOM_MINIMO, ZOOM_MAXIMO) } })),
+  fijarCamara: (camara) => set({ camara: { ...camara } }),
   fijarPausa: (valor) => set({ pausado: valor }),
   reiniciarCamara: () => set({ camara: camaraInicial(), pausado: false }),
 

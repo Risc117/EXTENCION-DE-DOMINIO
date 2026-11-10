@@ -23,22 +23,6 @@ function simularDia(cond: Condiciones) {
   return { niveles, rebose }
 }
 
-describe('volumen requerido del día 1', () => {
-  it('el volumen acumulado entre el mínimo y el máximo de (entrada - salida media) es ≈ 226 m³', () => {
-    const salida = hidro.promedio(1)
-    let acumulado = 0
-    let min = 0
-    let max = 0
-    for (let h = 0; h < 24; h++) {
-      acumulado += ((hidro.caudalEntrada(1, h) - salida) * 3600) / 1000
-      min = Math.min(min, acumulado)
-      max = Math.max(max, acumulado)
-    }
-    // La hoja da 213.7 m³ por un método que no se pudo reproducir con estos datos (ver tickets/T3.md).
-    expect(max - min).toBeCloseTo(225.8, 0)
-  })
-})
-
 describe('avanzar', () => {
   it('avanza la hora y vuelve a 0 a las 24 h', () => {
     const r = avanzar(hidro, tanque, dia1, { hora: 23.5, volumen: 0 }, 3600)

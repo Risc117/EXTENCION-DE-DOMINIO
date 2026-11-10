@@ -24,6 +24,8 @@ export type DatosHidrograma = z.infer<typeof esquemaHidrograma>
 export interface Hidrograma {
   /** Números de día disponibles. */
   dias: number[]
+  /** Horas que dura cada valor del caudal. */
+  pasoHoras: number
   /** true si los datos son de ejemplo. */
   demo: boolean
   /** Caudal de entrada (L/s) del día a la hora simulada; constante dentro de cada paso. */
@@ -41,6 +43,7 @@ export function crearHidrograma(crudo: unknown): Hidrograma {
   }
   return {
     dias: datos.dias.map((d) => d.dia),
+    pasoHoras: datos.paso_horas,
     demo: datos.demo,
     caudalEntrada: (n, hora) => {
       const q = buscar(n)

@@ -28,8 +28,36 @@ canvas { touch-action: none; }
 .panel-simulacion dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
 .panel-simulacion__nota { margin: 0; font-size: 0.8rem; opacity: 0.8; }
 .panel-simulacion__aviso { margin: 0; padding: 6px 8px; border-radius: 6px; font-weight: 600; background: var(--color-aviso-fondo); color: var(--color-aviso-texto); }
-.panel-corte { position: fixed; top: 56px; left: 12px; display: flex; flex-direction: column; gap: 6px; width: 200px; padding: 8px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.9rem; }
+.herramientas { position: fixed; top: 56px; left: 12px; display: flex; flex-direction: column; gap: 8px; width: 200px; }
+.panel-corte { display: flex; flex-direction: column; gap: 6px; padding: 8px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.9rem; }
 .panel-corte label { display: flex; flex-direction: column; gap: 2px; }
 .panel-corte input { width: 100%; }
 .panel-corte button { padding: 6px 12px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }
 .leyenda { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); padding: 4px 12px; border-radius: 6px; font-size: 0.85rem; background: var(--color-panel-fondo); color: var(--color-texto); opacity: 0.85; pointer-events: none; }
+.panel-calidad { padding: 8px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.9rem; }
+.panel-calidad label { display: flex; flex-direction: column; gap: 2px; }
+.panel-calidad select { font: inherit; }
+.panel-demo { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; width: min(420px, calc(100vw - 24px)); pointer-events: none; }
+.panel-demo > *, .panel-demo button { pointer-events: auto; }
+.panel-demo button, .bienvenida button { padding: 8px 14px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }
+.panel-demo button:disabled { opacity: 0.5; cursor: default; }
+.panel-demo__tarjeta { display: flex; flex-direction: column; gap: 6px; width: 100%; box-sizing: border-box; padding: 12px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.95rem; }
+.panel-demo__tarjeta h2, .panel-demo__tarjeta p { margin: 0; }
+.panel-demo__paso { font-size: 0.8rem; opacity: 0.8; }
+.panel-demo__tarjeta progress { width: 100%; }
+.panel-demo__botones { display: flex; gap: 8px; justify-content: flex-end; }
+.bienvenida { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; padding: 12px; background: var(--color-fondo); overflow: auto; }
+.bienvenida__caja { max-width: 560px; display: flex; flex-direction: column; gap: 10px; }
+.bienvenida__caja h1 { margin: 0; font-size: 1.5rem; }
+.bienvenida__caja h2 { margin: 6px 0 0; font-size: 1rem; }
+.bienvenida__caja p, .bienvenida__caja ul { margin: 0; line-height: 1.45; }
+.bienvenida__botones { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+@media (max-width: 700px) {
+  .herramientas { width: 150px; }
+  .panel-simulacion { left: 12px; right: 12px; bottom: 44px; width: auto; max-height: 40vh; overflow: auto; }
+  .ajuste-gestos { display: none; }
+  .panel-demo { top: auto; bottom: 44px; }
+  .panel-gestos { max-width: 150px; }
+}
+.panel-simulacion summary { cursor: pointer; font-weight: 600; }
+.panel-simulacion[open] > summary { margin-bottom: 8px; }

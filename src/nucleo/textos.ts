@@ -23,6 +23,36 @@ export const TEXTO_AJUSTE = {
   cerrarPanel: 'Ocultar ajuste de gestos',
 }
 
+/** Demo guiada. */
+export const TEXTO_DEMO = {
+  iniciar: 'Iniciar demo',
+  detener: 'Detener demo',
+  anterior: 'Anterior',
+  siguiente: 'Siguiente',
+  paso: 'Paso',
+  de: 'de',
+}
+
+/** Calidad de las partículas. */
+export const TEXTO_CALIDAD = {
+  etiqueta: 'Calidad',
+  baja: 'Baja (más fluida)',
+  alta: 'Alta',
+}
+
+/** Pantalla inicial. */
+export const TEXTO_BIENVENIDA = {
+  titulo: 'Tanque homogeneizador de la PTAR',
+  queEs:
+    'Un tanque donde llega el agua residual con caudales que cambian durante el día. Aquí se mezcla y sale pareja hacia el tratamiento: así se amortiguan los picos. Lo que ves es un esquema ilustrativo.',
+  controles: 'Cómo moverte',
+  mouse: 'Mouse o dedo: arrastra para girar el tanque; con la rueda, acercas y alejas.',
+  gestos:
+    'Gestos con la cámara (opcional): mueve la palma abierta para girar, separa el pulgar y el índice para acercar y júntalos para alejar, y cierra el puño para pausar. Sin cámara, todo se maneja con el mouse.',
+  verTanque: 'Ver el tanque',
+  verDemo: 'Ver la demo guiada',
+}
+
 /** Panel de simulación de nivel y caudales. */
 export const TEXTO_SIMULACION = {
   titulo: 'Nivel y caudales',

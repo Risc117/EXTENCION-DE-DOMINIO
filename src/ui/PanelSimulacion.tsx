@@ -1,4 +1,4 @@
-import { SALIDA_AJUSTE_RANGO, TEXTO_DATO_EJEMPLO, VELOCIDADES_SIMULACION, CD_SALIDA, CD_SALIDA_ES_EJEMPLO } from '../nucleo/constantes'
+import { CD_SALIDA, CD_SALIDA_ES_EJEMPLO, SALIDA_AJUSTE_RANGO, TEXTO_DATO_EJEMPLO, UMBRAL_PANTALLA_CHICA, VELOCIDADES_SIMULACION } from '../nucleo/constantes'
 import { TEXTO_SIMULACION as T } from '../nucleo/textos'
 import { useSim, type ModoSalida } from '../estado/simulacion'
 
@@ -16,8 +16,8 @@ export function PanelSimulacion() {
   const salidaFija = s.salidaAjuste ?? s.promedioDia
 
   return (
-    <section className="panel-simulacion">
-      <h2>{T.titulo}</h2>
+    <details className="panel-simulacion" open={window.innerWidth >= UMBRAL_PANTALLA_CHICA}>
+      <summary>{T.titulo}</summary>
       <label>
         {T.dia}
         <select value={s.dia} onChange={(e) => s.elegirDia(Number(e.target.value))}>
@@ -67,6 +67,6 @@ export function PanelSimulacion() {
         <dt>{T.volumen}</dt><dd>{dosDecimales(s.volumen)} m³</dd>
       </dl>
       {sobreAlturaUtil && <p className="panel-simulacion__aviso">{s.caudalRebose > 0 ? T.avisoRebose : T.avisoNivel}</p>}
-    </section>
+    </details>
   )
 }

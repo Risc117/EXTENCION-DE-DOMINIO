@@ -1,0 +1,41 @@
+{
+  "fuente": "Guion de la demostración, redactado a partir de los tickets T3, T4 y T5.1 y del plano HOMOGENIZADOR_enterrado_v1. Los textos usan {marcadores} que se llenan con los datos (ej.: {diametroInterior:2} = 2 decimales).",
+  "demo": false,
+  "pasos": [
+    {
+      "titulo": "El tanque homogeneizador",
+      "texto": "Es un tanque circular enterrado, de {diametroInterior:2} m de diámetro interior y {alturaUtil:2} m de altura útil. El agua residual entra por la tubería alta y cae sobre la superficie, el agitador del centro la mezcla y sale por la tubería baja hacia RAFA.",
+      "duracionSegundos": 20,
+      "vista": { "acimut": 0.785, "elevacion": 0.46, "distancia": 2.8 },
+      "accion": { "dia": 1, "velocidad": 3600, "modoSalida": "constante", "salidaAjuste": null }
+    },
+    {
+      "titulo": "Un día de caudales",
+      "texto": "El caudal de entrada cambia durante el día, pero la salida es pareja: el promedio del día. Por eso el nivel sube de día, cuando llega más agua, y baja de noche. El tanque amortigua esas diferencias.",
+      "duracionSegundos": 28,
+      "vista": { "acimut": 0.4, "elevacion": 0.5, "distancia": 2.2 },
+      "accion": {}
+    },
+    {
+      "titulo": "Salida por gravedad",
+      "texto": "Si la salida depende solo del nivel, el caudal ya no es parejo: sale más agua cuando el tanque está más lleno. Por eso la salida se regula con una válvula de compuerta. (El coeficiente de descarga es un dato de ejemplo.)",
+      "duracionSegundos": 18,
+      "vista": { "acimut": 1.2, "elevacion": 0.35, "distancia": 2.0 },
+      "accion": { "modoSalida": "gravedad" }
+    },
+    {
+      "titulo": "Qué pasa si sale poca agua",
+      "texto": "Con la salida fija en 2 L/s entra más agua de la que sale: el tanque se llena y rebosa. Mira el aviso en el panel de nivel y caudales.",
+      "duracionSegundos": 22,
+      "vista": { "acimut": -1.2, "elevacion": 0.6, "distancia": 2.4 },
+      "accion": { "modoSalida": "constante", "salidaAjuste": 2, "velocidad": 3600 }
+    },
+    {
+      "titulo": "Verificación del volumen",
+      "texto": "Con los caudales del día {dia:0}, el volumen requerido es de unos {volumenRequerido:0} m³, frente a {volumenUtil:1} m³ de volumen útil. Queda muy justo y conviene verificarlo. Recuerda que esto es un esquema ilustrativo.",
+      "duracionSegundos": 18,
+      "vista": { "acimut": 0.785, "elevacion": 0.46, "distancia": 2.8 },
+      "accion": { "salidaAjuste": null, "velocidad": 600 }
+    }
+  ]
+}
