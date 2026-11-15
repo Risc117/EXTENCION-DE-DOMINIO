@@ -1,0 +1,466 @@
+{
+  "fuente": "Plano general de la PTAR (pendiente de leer, T9). Mientras tanto todo es de ejemplo.",
+  "demo": true,
+  "unidades": [
+    {
+      "id": "rejas",
+      "nombre": "Cámara de rejas",
+      "x": {
+        "valor": 0,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "y": {
+        "valor": 0,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "giro": {
+        "valor": 0,
+        "unidad": "grados",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "cotaFondo": {
+        "valor": 2992,
+        "unidad": "m",
+        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "marcador": {
+        "largo": {
+          "valor": 6,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "ancho": {
+          "valor": 2,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "alto": {
+          "valor": 1.5,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        }
+      }
+    },
+    {
+      "id": "desarenador",
+      "nombre": "Desarenador",
+      "x": {
+        "valor": 14,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "y": {
+        "valor": 0,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "giro": {
+        "valor": 0,
+        "unidad": "grados",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "cotaFondo": {
+        "valor": 2991.8,
+        "unidad": "m",
+        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "marcador": {
+        "largo": {
+          "valor": 10,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "ancho": {
+          "valor": 3,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "alto": {
+          "valor": 2,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        }
+      }
+    },
+    {
+      "id": "parshall",
+      "nombre": "Canal Parshall",
+      "x": {
+        "valor": 28,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "y": {
+        "valor": 0,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "giro": {
+        "valor": 0,
+        "unidad": "grados",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "cotaFondo": {
+        "valor": 2991.6,
+        "unidad": "m",
+        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "marcador": {
+        "largo": {
+          "valor": 8,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "ancho": {
+          "valor": 1.5,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "alto": {
+          "valor": 1,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        }
+      }
+    },
+    {
+      "id": "homogeneizador",
+      "nombre": "Tanque homogeneizador",
+      "x": {
+        "valor": 48,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "y": {
+        "valor": 0,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "giro": {
+        "valor": 0,
+        "unidad": "grados",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "cotaFondo": {
+        "valor": 2988,
+        "unidad": "m",
+        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "demo": true
+      }
+    },
+    {
+      "id": "rafa",
+      "nombre": "RAFA (UASB)",
+      "x": {
+        "valor": 72,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "y": {
+        "valor": 0,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "giro": {
+        "valor": 0,
+        "unidad": "grados",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "cotaFondo": {
+        "valor": 2987,
+        "unidad": "m",
+        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "marcador": {
+        "largo": {
+          "valor": 12,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "ancho": {
+          "valor": 8,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "alto": {
+          "valor": 5,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        }
+      }
+    },
+    {
+      "id": "percolador",
+      "nombre": "Filtro percolador",
+      "x": {
+        "valor": 98,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "y": {
+        "valor": 0,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "giro": {
+        "valor": 0,
+        "unidad": "grados",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "cotaFondo": {
+        "valor": 2985.5,
+        "unidad": "m",
+        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "marcador": {
+        "largo": {
+          "valor": 12,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "ancho": {
+          "valor": 12,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "alto": {
+          "valor": 4,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        }
+      }
+    },
+    {
+      "id": "sedimentador-1",
+      "nombre": "Sedimentador 1",
+      "x": {
+        "valor": 98,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "y": {
+        "valor": -26,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "giro": {
+        "valor": 0,
+        "unidad": "grados",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "cotaFondo": {
+        "valor": 2984.5,
+        "unidad": "m",
+        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "marcador": {
+        "largo": {
+          "valor": 8,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "ancho": {
+          "valor": 8,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "alto": {
+          "valor": 3,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        }
+      }
+    },
+    {
+      "id": "sedimentador-2",
+      "nombre": "Sedimentador 2",
+      "x": {
+        "valor": 80,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "y": {
+        "valor": -26,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "giro": {
+        "valor": 0,
+        "unidad": "grados",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "cotaFondo": {
+        "valor": 2984.5,
+        "unidad": "m",
+        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "marcador": {
+        "largo": {
+          "valor": 8,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "ancho": {
+          "valor": 8,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "alto": {
+          "valor": 3,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        }
+      }
+    },
+    {
+      "id": "camara-contacto",
+      "nombre": "Cámara de contacto",
+      "x": {
+        "valor": 60,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "y": {
+        "valor": -26,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "giro": {
+        "valor": 0,
+        "unidad": "grados",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "cotaFondo": {
+        "valor": 2983.5,
+        "unidad": "m",
+        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "marcador": {
+        "largo": {
+          "valor": 10,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "ancho": {
+          "valor": 4,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "alto": {
+          "valor": 2.5,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        }
+      }
+    },
+    {
+      "id": "lechos-secado",
+      "nombre": "Lechos de secado",
+      "x": {
+        "valor": 36,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "y": {
+        "valor": -26,
+        "unidad": "m",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "giro": {
+        "valor": 0,
+        "unidad": "grados",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "cotaFondo": {
+        "valor": 2983,
+        "unidad": "m",
+        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "marcador": {
+        "largo": {
+          "valor": 16,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "ancho": {
+          "valor": 8,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        },
+        "alto": {
+          "valor": 0.8,
+          "unidad": "m",
+          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
+          "demo": true
+        }
+      }
+    }
+  ]
+}

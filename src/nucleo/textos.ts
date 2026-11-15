@@ -90,3 +90,9 @@ export const TEXTO_ANOTACIONES = {
   etiquetas: 'Etiquetas',
   sufijoEjemplo: ' (ej.)',
 }
+
+/** Botones para volar a cada unidad. */
+export const TEXTO_UNIDADES = {
+  titulo: 'Ir a',
+  general: 'Vista general',
+}

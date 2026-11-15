@@ -33,7 +33,15 @@ interface Estado {
   hayDatosDemo: boolean
   fijarDatosDemo: (valor: boolean) => void
 
+  /** Unidades que se pueden enfocar (las registra main.tsx; la interfaz arma sus botones con ellas). */
+  unidadesEnfocables: { id: string; nombre: string }[]
+  fijarUnidadesEnfocables: (lista: { id: string; nombre: string }[]) => void
+
   camara: Camara
+  /** Unidad que mira la cámara; null = vista general de toda la planta. */
+  foco: string | null
+  /** Intención: llevar la cámara a una unidad (o a la vista general con null). */
+  irA: (id: string | null) => void
   pausado: boolean
   /** Intenciones: las emiten el mouse y la mano. */
   girar: (dAcimut: number, dElevacion: number) => void
@@ -62,7 +70,12 @@ export const useEstado = create<Estado>((set) => ({
   hayDatosDemo: false,
   fijarDatosDemo: (valor) => set({ hayDatosDemo: valor }),
 
+  unidadesEnfocables: [],
+  fijarUnidadesEnfocables: (lista) => set({ unidadesEnfocables: lista }),
+
   camara: camaraInicial(),
+  foco: null,
+  irA: (id) => set((s) => ({ foco: id, camara: { ...s.camara, distancia: DISTANCIA_INICIAL } })),
   pausado: false,
   girar: (dAcimut, dElevacion) =>
     set((s) => ({

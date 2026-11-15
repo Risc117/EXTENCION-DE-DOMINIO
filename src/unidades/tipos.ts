@@ -2,7 +2,8 @@ import type { ComponentType } from 'react'
 import type { ParametrosFlujo } from '../estado/flujo'
 import type { ParametrosTanque } from '../estado/simulacion'
 
-export interface Unidad {
+/** Lo que cada unidad sabe de sí misma (sin dónde está). */
+export interface UnidadBase {
   id: string
   nombre: string
   /** true si sus datos son de ejemplo. */
@@ -15,3 +16,15 @@ export interface Unidad {
   flujo?: ParametrosFlujo
   Componente: ComponentType
 }
+
+/** Dónde está la unidad en el plano general (viene de datos/planta.json). */
+export interface Ubicacion {
+  /** Metros locales: x hacia el este, y hacia el norte. */
+  posicion: { x: number; y: number }
+  /** Grados, sentido antihorario visto desde arriba. */
+  giro: number
+  /** Cota del fondo (m s.n.m.). */
+  cotaFondo: number
+}
+
+export type Unidad = UnidadBase & Ubicacion

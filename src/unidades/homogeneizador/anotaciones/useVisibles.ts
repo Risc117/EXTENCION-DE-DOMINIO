@@ -1,6 +1,8 @@
 import { useFrame, useThree } from '@react-three/fiber'
-import { useMemo, useRef, useState } from 'react'
+import { useContext, useMemo, useRef, useState } from 'react'
 import { useCorte } from '../../../estado/flujo'
+import { ContextoUbicacion } from '../../contextoUbicacion'
+import { aLocal } from '../../ubicacion'
 import { quedaCortado, tapaElTanque } from './visibilidad'
 import type { Vec3 } from './tipos'
 
@@ -25,12 +27,13 @@ export interface LimitesTanque {
  */
 export function useVisibles(candidatos: Candidato[], limites: LimitesTanque, activo: boolean): Set<string> {
   const camara = useThree((s) => s.camera)
+  const ubicacion = useContext(ContextoUbicacion)
   const [clave, setClave] = useState('')
   const claveRef = useRef('')
   useFrame(() => {
     if (!activo) return
     const corte = useCorte.getState()
-    const cam: Vec3 = [camara.position.x, camara.position.y, camara.position.z]
+    const cam = aLocal([camara.position.x, camara.position.y, camara.position.z], ubicacion)
     const ids = candidatos
       .filter((c) => !quedaCortado(c.anclaje, corte.activo, corte.posicion, limites.radioInterior))
       .filter((c) => !c.tapable || !tapaElTanque(cam, c.anclaje, limites.radioExterior, limites.yMin, limites.yMax))

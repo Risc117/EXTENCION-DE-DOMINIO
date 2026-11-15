@@ -10,19 +10,25 @@ import {
   LUZ_DIRECCIONAL,
 } from '../nucleo/constantes'
 import { unidades } from '../unidades/registro'
+import { cotaReferencia } from '../unidades/ubicar'
 import { ControlCamara } from './ControlCamara'
+import { encuadre } from './encuadre'
+import { UnidadColocada } from './UnidadColocada'
+
+const referencia = cotaReferencia(unidades)
 
 export function Escena() {
-  const tamano = Math.max(...unidades.map((u) => u.tamano))
-  const d = tamano * DISTANCIA_CAMARA
+  const { objetivo, escala } = encuadre(unidades, null)
+  const d = escala * DISTANCIA_CAMARA
+  const [ox, , oz] = objetivo
   return (
-    <Canvas gl={{ localClippingEnabled: true }} camera={{ position: [d, d * CAMARA_ALTURA_FACTOR, d], fov: CAMARA_FOV, near: CAMARA_NEAR, far: tamano * CAMARA_FAR_FACTOR }}>
+    <Canvas gl={{ localClippingEnabled: true }} camera={{ position: [ox + d, d * CAMARA_ALTURA_FACTOR, oz + d], fov: CAMARA_FOV, near: CAMARA_NEAR, far: escala * CAMARA_FAR_FACTOR }}>
       <ambientLight intensity={LUZ_AMBIENTE} />
-      <directionalLight position={[tamano, tamano * LUZ_ALTURA_FACTOR, tamano]} intensity={LUZ_DIRECCIONAL} />
+      <directionalLight position={[ox + escala, escala * LUZ_ALTURA_FACTOR, oz + escala]} intensity={LUZ_DIRECCIONAL} />
       {unidades.map((u) => (
-        <u.Componente key={u.id} />
+        <UnidadColocada key={u.id} unidad={u} referencia={referencia} />
       ))}
-      <ControlCamara tamano={tamano} />
+      <ControlCamara unidades={unidades} />
     </Canvas>
   )
 }

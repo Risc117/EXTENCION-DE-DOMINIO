@@ -123,6 +123,15 @@ describe('demo: salir', () => {
     expect(ahora.nivel).toBeCloseTo(40 / tanque.area, 6)
     expect(useEstado.getState().camara).toEqual(camaraAntes)
   })
+
+  it('enfoca el homogeneizador mientras dura y devuelve el foco anterior', () => {
+    useEstado.setState({ foco: null })
+    const demo = crear()
+    demo.iniciar()
+    expect(useEstado.getState().foco).toBe('homogeneizador')
+    demo.salir()
+    expect(useEstado.getState().foco).toBeNull()
+  })
 })
 
 describe('demo: órdenes de la interfaz', () => {

@@ -185,3 +185,9 @@ export const ORDEN_ANOTACIONES = 999
 export const CAPA_TEXTO_ANOTACION: [number, number] = [0, 0]
 /** Un segmento que roza el tanque menos que esto (fracción del recorrido) no cuenta como tapado. */
 export const MARGEN_OCLUSION = 1e-6
+
+/** Unidades marcadoras (cajas de ejemplo): opacidad de la caja. */
+export const OPACIDAD_MARCADOR = 0.85
+
+/** Vista general: margen extra alrededor de la planta, como múltiplo de su tamaño. */
+export const MARGEN_VISTA_GENERAL = 1.15

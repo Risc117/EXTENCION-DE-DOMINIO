@@ -79,3 +79,19 @@ describe('ajuste de gestos', () => {
     expect(useEstado.getState().ajusteGestos).toEqual(AJUSTE_GESTOS_DEFECTO)
   })
 })
+
+describe('foco de la cámara', () => {
+  it('al iniciar se ve toda la planta (sin foco)', () => {
+    useEstado.setState({ foco: null })
+    expect(useEstado.getState().foco).toBeNull()
+  })
+
+  it('irA fija la unidad y vuelve a la distancia inicial; irA(null) vuelve a la vista general', () => {
+    useEstado.getState().hacerZoom(0.5)
+    useEstado.getState().irA('rafa')
+    expect(useEstado.getState().foco).toBe('rafa')
+    expect(useEstado.getState().camara.distancia).toBe(DISTANCIA_INICIAL)
+    useEstado.getState().irA(null)
+    expect(useEstado.getState().foco).toBeNull()
+  })
+})

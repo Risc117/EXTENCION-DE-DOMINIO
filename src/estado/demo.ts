@@ -29,6 +29,7 @@ export interface Respaldo {
   hora: number
   volumen: number
   camara: Camara
+  foco: string | null
 }
 
 /** Órdenes que da la interfaz; las atiende la demo (igual que los gestos pedidos). */

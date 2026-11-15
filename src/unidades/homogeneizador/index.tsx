@@ -1,12 +1,12 @@
 import crudo from '../../../datos/homogeneizador.json'
-import type { Unidad } from '../tipos'
+import type { UnidadBase } from '../tipos'
 import { areaUtil } from './calculos'
 import { esquemaHomogeneizador } from './esquema'
 import { Homogeneizador } from './Homogeneizador'
 
 const datos = esquemaHomogeneizador.parse(crudo)
 
-export const unidadHomogeneizador: Unidad = {
+export const unidadHomogeneizador: UnidadBase = {
   id: datos.id,
   nombre: datos.nombre,
   demo: datos.demo === true,

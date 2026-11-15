@@ -4,6 +4,9 @@ import { useSim } from '../estado/simulacion'
 import type { Hidrograma } from './hidrograma'
 import { textoConValores, valoresDemo } from './guion'
 
+/** La demo cuenta la historia del homogeneizador: la cámara se enfoca en él. */
+const UNIDAD_DEMO = 'homogeneizador'
+
 function aplicarAccion(a: AccionDemo) {
   const s = useSim.getState()
   if (a.dia !== undefined) s.elegirDia(a.dia)
@@ -23,6 +26,7 @@ function tomarRespaldo(): Respaldo {
     hora: s.hora,
     volumen: s.volumen,
     camara: { ...useEstado.getState().camara },
+    foco: useEstado.getState().foco,
   }
 }
 
@@ -39,6 +43,7 @@ function restaurar(r: Respaldo) {
     ...(area ? { nivel: r.volumen / area } : {}),
   })
   useEstado.getState().fijarCamara(r.camara)
+  useEstado.setState({ foco: r.foco })
 }
 
 /**
@@ -49,6 +54,7 @@ export function crearControlDemo(pasos: PasoDemo[], hidro: Hidrograma) {
   const ir = (i: number) => {
     const p = pasos[i]
     aplicarAccion(p.accion)
+    useEstado.setState({ foco: UNIDAD_DEMO })
     useEstado.getState().fijarCamara(p.vista)
     const { tanque, dia } = useSim.getState()
     const texto = tanque ? textoConValores(p.texto, valoresDemo(tanque, hidro, dia)) : p.texto

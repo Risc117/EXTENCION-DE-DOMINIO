@@ -9,6 +9,7 @@ import { useSim } from './estado/simulacion'
 import { unidades } from './unidades/registro'
 
 useEstado.getState().fijarDatosDemo(unidades.some((u) => u.demo))
+useEstado.getState().fijarUnidadesEnfocables(unidades.map((u) => ({ id: u.id, nombre: u.nombre })))
 const hidraulica = unidades.find((u) => u.hidraulica)?.hidraulica
 if (hidraulica) useSim.getState().fijarTanque(hidraulica)
 const flujo = unidades.find((u) => u.flujo)?.flujo

@@ -12,6 +12,7 @@ import { PanelCorte } from './ui/PanelCorte'
 import { PanelDemo } from './ui/PanelDemo'
 import { PanelGestos } from './ui/PanelGestos'
 import { PanelSimulacion } from './ui/PanelSimulacion'
+import { PanelUnidades } from './ui/PanelUnidades'
 
 export function App() {
   useEntrada()
@@ -23,6 +24,7 @@ export function App() {
       <Escena />
       <AvisoDemo />
       <div className="herramientas">
+        <PanelUnidades />
         <PanelCorte />
         <PanelAccesorios />
         <PanelAnotaciones />
