@@ -1,0 +1,76 @@
+{
+  "fuente": "Línea de agua del plano general PTAR-PICOY (plan.md, sección 10) y tiempos de retención de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx",
+  "demo": true,
+  "entrada": "bombeo",
+  "nodos": [
+    {
+      "id": "bombeo",
+      "tipo": "paso",
+      "retencion": { "valor": 60, "unidad": "s", "fuente": "Valor de ejemplo: la hoja de cálculo no calcula la estación de bombeo", "demo": true },
+      "destinos": [{ "id": "rejas", "fraccion": 1 }]
+    },
+    {
+      "id": "rejas",
+      "tipo": "paso",
+      "retencion": { "valor": 1.8, "unidad": "s", "fuente": "Derivado, no está en la hoja: hoja '1 CÁMARA REJAS Y BYPASS', longitud de la reja L (G30 = 0.99 m) / velocidad en el canal Vc (G23 = 0.56 m/s)", "demo": true },
+      "destinos": [{ "id": "desarenador", "fraccion": 1 }]
+    },
+    {
+      "id": "desarenador",
+      "tipo": "paso",
+      "retencion": { "valor": 17.3, "unidad": "s", "fuente": "Derivado, no está en la hoja: hoja 'DESARENADOR', longitud real Lr (J41 = 5.2 m) / velocidad horizontal Vh (C9 = 0.3 m/s)", "demo": true },
+      "destinos": [{ "id": "parshall", "fraccion": 1 }]
+    },
+    {
+      "id": "parshall",
+      "tipo": "paso",
+      "retencion": { "valor": 10, "unidad": "s", "fuente": "Valor de ejemplo: la hoja 'CANAL PARSHAL' no trae tiempo de retención", "demo": true },
+      "destinos": [{ "id": "homogeneizador", "fraccion": 1 }]
+    },
+    {
+      "id": "homogeneizador",
+      "tipo": "homogeneizador",
+      "destinos": [{ "id": "rafa", "fraccion": 1 }]
+    },
+    {
+      "id": "rafa",
+      "tipo": "paso",
+      "retencion": { "valor": 11.0159, "unidad": "h", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'RAFA', celda G71 (TR = Vd / Qmed × 24)", "demo": false },
+      "destinos": [{ "id": "percolador", "fraccion": 1 }]
+    },
+    {
+      "id": "percolador",
+      "tipo": "paso",
+      "retencion": { "valor": 30, "unidad": "min", "fuente": "Valor de ejemplo: la hoja 'FILTRO PERCOLADOR' no trae tiempo de retención (el medio no está lleno de agua, no sirve Vf / Q)", "demo": true },
+      "destinos": [{ "id": "camara-reparto", "fraccion": 1 }]
+    },
+    {
+      "id": "camara-reparto",
+      "tipo": "paso",
+      "retencion": { "valor": 30, "unidad": "s", "fuente": "Valor de ejemplo: la hoja de cálculo no calcula la cámara de reparto", "demo": true },
+      "destinos": [
+        { "id": "sedimentador-1", "fraccion": 0.5, "fuente": "Reparto igual a los dos sedimentadores (ticket T8); confirmar con el diseño", "demo": true },
+        { "id": "sedimentador-2", "fraccion": 0.5, "fuente": "Reparto igual a los dos sedimentadores (ticket T8); confirmar con el diseño", "demo": true }
+      ]
+    },
+    {
+      "id": "sedimentador-1",
+      "tipo": "paso",
+      "retencion": { "valor": 1.5683, "unidad": "h", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda G35 (TR medio). La hoja calcula un solo sedimentador con todo el caudal y el plano tiene dos", "demo": true },
+      "destinos": [{ "id": "camara-contacto", "fraccion": 1 }]
+    },
+    {
+      "id": "sedimentador-2",
+      "tipo": "paso",
+      "retencion": { "valor": 1.5683, "unidad": "h", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda G35 (TR medio). La hoja calcula un solo sedimentador con todo el caudal y el plano tiene dos", "demo": true },
+      "destinos": [{ "id": "camara-contacto", "fraccion": 1 }]
+    },
+    {
+      "id": "camara-contacto",
+      "tipo": "paso",
+      "retencion": { "valor": 30, "unidad": "min", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESINFECCION', celda C5 (tiempo de contacto)", "demo": false },
+      "destinos": [{ "id": "salida", "fraccion": 1 }]
+    },
+    { "id": "salida", "tipo": "salida", "destinos": [] }
+  ]
+}
