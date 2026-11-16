@@ -48,12 +48,12 @@
       "id": "rejas",
       "nombre": "Cámara de rejas",
       "x": {
-        "valor": -26.63,
+        "valor": -26.59,
         "unidad": "m",
         "fuente": "datos/pretratamiento.json: centro del tramo \"rejas\" de la fila continua (ESTRUCTURAS2.dxf, vista en planta) sobre el mapa general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS)"
       },
       "y": {
-        "valor": -49.47,
+        "valor": -49.9,
         "unidad": "m",
         "fuente": "datos/pretratamiento.json: centro del tramo \"rejas\" de la fila continua (ESTRUCTURAS2.dxf, vista en planta) sobre el mapa general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS)"
       },
@@ -88,12 +88,12 @@
       "id": "desarenador",
       "nombre": "Desarenador",
       "x": {
-        "valor": -27.1,
+        "valor": -27.05,
         "unidad": "m",
         "fuente": "datos/pretratamiento.json: centro del tramo \"desarenador\" de la fila continua (ESTRUCTURAS2.dxf, vista en planta) sobre el mapa general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS)"
       },
       "y": {
-        "valor": -44.71,
+        "valor": -45.25,
         "unidad": "m",
         "fuente": "datos/pretratamiento.json: centro del tramo \"desarenador\" de la fila continua (ESTRUCTURAS2.dxf, vista en planta) sobre el mapa general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS)"
       },
@@ -128,12 +128,12 @@
       "id": "parshall",
       "nombre": "Canal Parshall",
       "x": {
-        "valor": -27.57,
+        "valor": -27.55,
         "unidad": "m",
         "fuente": "datos/pretratamiento.json: centro del tramo \"parshall\" de la fila continua (ESTRUCTURAS2.dxf, vista en planta) sobre el mapa general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS)"
       },
       "y": {
-        "valor": -40.03,
+        "valor": -40.27,
         "unidad": "m",
         "fuente": "datos/pretratamiento.json: centro del tramo \"parshall\" de la fila continua (ESTRUCTURAS2.dxf, vista en planta) sobre el mapa general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS)"
       },

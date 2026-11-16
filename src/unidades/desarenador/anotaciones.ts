@@ -8,7 +8,7 @@ import type { DatosDesarenador } from './esquema'
 /** Cotas del desarenador: ancho de canal, muro central, largo, transición, altura de la tolva y ancho del vertedero. */
 export function construirCotas(d: DatosDesarenador): CotaCalculada[] {
   const s = disponer(d)
-  const h = d.canal.alturaMuro.valor
+  const h = d.canal.alturaSalida.valor
   const b = d.canal.ancho.valor
   const zc = s.zCanales[0]
   const afuera: Vec3 = [0, 0, -(s.semiancho + DESFASE_COTA_CANAL)]

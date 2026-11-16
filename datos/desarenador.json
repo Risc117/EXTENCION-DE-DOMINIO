@@ -33,10 +33,16 @@
       "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, entidades DIMENSION de la vista en planta y cortes (capa concreto armado): cota 5.17 m (largo del canal en planta, x ≈ −88.5); insumos/medidas-pretratamiento.md (lectura de ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf, cortes C-C y D-D). La hoja DESARENADOR J41 da 5.2 m (longitud real hidráulica)",
       "demo": false
     },
-    "alturaMuro": {
-      "valor": 1.17,
+    "alturaEntrada": {
+      "valor": 0.95,
       "unidad": "m",
-      "fuente": "derivado de datos/planta.json: cota de coronación (2992.64) − cota de fondo (2991.47), medida del perfil, ±0.2 m, por confirmar (el plano da 0.95 m en el corte C-C y 1.47 m en el D-D)",
+      "fuente": "insumos/medidas-pretratamiento.md (plano ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf, corte C-C: altura 0.95 m, donde el fondo está más alto). Se supone que C-C es la sección de aguas arriba; confirmar. DIFERENCIA POR REVISAR: datos/planta.json trae 1.17 m del perfil (cota coronación − cota fondo, ±0.2 m)",
+      "demo": true
+    },
+    "alturaSalida": {
+      "valor": 1.47,
+      "unidad": "m",
+      "fuente": "insumos/medidas-pretratamiento.md (plano ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf, corte D-D: altura 1.47 m, donde el fondo está más bajo). El fondo tiene pendiente: los muros tienen la misma coronación y la altura crece de 0.95 a 1.47 m. DIFERENCIA POR REVISAR: datos/planta.json trae 1.17 m del perfil (±0.2 m)",
       "demo": false
     },
     "espesorMuro": {
@@ -54,18 +60,18 @@
   },
   "transicion": {
     "largo": {
-      "valor": 1,
+      "valor": 1.48,
       "unidad": "m",
-      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESARENADOR', celda J46 (longitud de la zona de transición)",
+      "fuente": "insumos/medidas-pretratamiento.md (plano, zona de transición: 0.50 + 0.98 m); contrastado con ESTRUCTURAS2.dxf, cotas 0.502 m y 0.98 m (capa concreto armado, x ≈ −94.7 y −93.7). La hoja DESARENADOR J46 da 1.0 m (valor hidráulico)",
       "demo": false
     }
   },
   "salida": {
     "largo": {
-      "valor": 0.238,
+      "valor": 0.4,
       "unidad": "m",
-      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, vista en planta, capa Muro: derivado, de 6.558 m (x = −94.730 a −88.172) menos transición 1.0 m, canal 5.17 m y muro del vertedero 0.15 m",
-      "demo": false
+      "fuente": "insumos/medidas-pretratamiento.md (plano ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf y ESTRUCTURAS2.dxf): largo total 12.15 m del plano menos los tramos medidos (recepción 0.45, transición de rejas 0.40, reja 0.70, salida de rejas 0.60, transición 1.48, canal 5.17 y Parshall 2.80), 0.55 m entre el fin del canal y el Parshall, de los que 0.15 m son el muro del vertedero. Derivado: por confirmar",
+      "demo": true
     }
   },
   "tolva": {

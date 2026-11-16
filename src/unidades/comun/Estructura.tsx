@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, type ReactNode } from 'react'
 import type { Plane } from 'three'
 import { SEGMENTOS_CILINDRO } from '../../nucleo/constantes'
 import { OPACIDAD_AGUA_CANAL } from '../../nucleo/constantesCanales'
@@ -12,7 +12,7 @@ import { GeometriaAnillo } from './Anillo'
 import { GeometriaCuna } from './GeometriaCuna'
 import { GeometriaPrisma } from './GeometriaPrisma'
 import { usePlanosCorte } from './usePlanosCorte'
-import type { Agua, Pieza } from './tipos'
+import type { Agua, Inclinacion, Pieza } from './tipos'
 
 interface Props {
   piezas: Pieza[]
@@ -23,6 +23,19 @@ interface Props {
   radioCorte: number
 }
 
+/** Grupo que gira alrededor de z en su pivote; sin inclinación deja pasar a los hijos tal cual. */
+function Inclinada({ inclinacion, children }: { inclinacion?: Inclinacion; children: ReactNode }) {
+  if (!inclinacion) return <>{children}</>
+  return (
+    <group position={[inclinacion.pivote[0], inclinacion.pivote[1], 0]} rotation={[0, 0, inclinacion.angulo]}>
+      {children}
+    </group>
+  )
+}
+
+/** Posición dentro del grupo inclinado: relativa al pivote. */
+const relativa = (pos: [number, number, number], inc?: Inclinacion): [number, number, number] => (inc ? [pos[0] - inc.pivote[0], pos[1] - inc.pivote[1], pos[2]] : pos)
+
 function MallaPieza({ pieza, planos }: { pieza: Pieza; planos: Plane[] }) {
   const color = useMemo(() => leerColor(pieza.color), [pieza.color])
   const opacidad = pieza.opacidad
@@ -30,13 +43,15 @@ function MallaPieza({ pieza, planos }: { pieza: Pieza; planos: Plane[] }) {
   const rotacion: [number, number, number] =
     acostado === 'x' ? [0, pieza.giroY ?? 0, Math.PI / 2] : acostado === 'z' ? [Math.PI / 2, pieza.giroY ?? 0, 0] : [pieza.giroX ?? 0, pieza.giroY ?? 0, pieza.giroZ ?? 0]
   return (
-    <mesh position={pieza.pos} rotation={rotacion}>
+    <Inclinada inclinacion={pieza.inclinacion}>
+    <mesh position={relativa(pieza.pos, pieza.inclinacion)} rotation={rotacion}>
       {pieza.forma === 'caja' && <boxGeometry args={pieza.tam} />}
       {pieza.forma === 'cilindro' && <cylinderGeometry args={[pieza.radio, pieza.radio, pieza.alto, SEGMENTOS_CILINDRO]} />}
       {pieza.forma === 'anillo' && <GeometriaAnillo radioInterior={pieza.radioInterior} radioExterior={pieza.radioExterior} alto={pieza.alto} />}
       {pieza.forma === 'prisma' && <GeometriaPrisma largo={pieza.largo} anchoSuperior={pieza.anchoSuperior} anchoInferior={pieza.anchoInferior} alto={pieza.alto} />}
       <meshStandardMaterial color={color} transparent={opacidad !== undefined} opacity={opacidad ?? 1} depthWrite={opacidad === undefined} clippingPlanes={planos} />
     </mesh>
+    </Inclinada>
   )
 }
 
@@ -52,11 +67,14 @@ function MallaAgua({ agua, planos }: { agua: Agua; planos: Plane[] }) {
     )
   }
   const y = agua.y0 + agua.nivel / 2
+  const inc = agua.forma === 'caja' ? agua.inclinacion : undefined
   return (
-    <mesh position={[agua.centro[0], y, agua.centro[1]]} scale={[1, agua.nivel, 1]}>
+    <Inclinada inclinacion={inc}>
+    <mesh position={relativa([agua.centro[0], y, agua.centro[1]], inc)} scale={[1, agua.nivel, 1]}>
       {agua.forma === 'caja' ? <boxGeometry args={[agua.largo, 1, agua.ancho]} /> : <cylinderGeometry args={[agua.radio, agua.radio, 1, SEGMENTOS_CILINDRO]} />}
       <meshStandardMaterial color={color} transparent opacity={OPACIDAD_AGUA_CANAL} depthWrite={false} clippingPlanes={planos} />
     </mesh>
+    </Inclinada>
   )
 }
 

@@ -14,7 +14,8 @@ export const esquemaDesarenador = z
       anchoHoja: metros,
       espesorMuroCentral: metros,
       largo: metros,
-      alturaMuro: metros,
+      alturaEntrada: metros,
+      alturaSalida: metros,
       espesorMuro: metros,
       espesorLosa: metros,
     }),
@@ -23,7 +24,8 @@ export const esquemaDesarenador = z
     tolva: z.object({ altura: metros }),
     vertedero: z.object({ ancho: metros, alturaMinima: metros, coeficiente: positivo('adim') }),
   })
-  .refine((d) => d.tolva.altura.valor + d.vertedero.alturaMinima.valor < d.canal.alturaMuro.valor, 'La tolva y el vertedero deben caber bajo el muro')
+  .refine((d) => d.tolva.altura.valor + d.vertedero.alturaMinima.valor < d.canal.alturaEntrada.valor, 'La tolva y el vertedero deben caber bajo el muro')
+  .refine((d) => d.canal.alturaEntrada.valor <= d.canal.alturaSalida.valor, 'El fondo baja hacia la salida: la altura de entrada no puede superar la de salida')
   .refine((d) => d.vertedero.ancho.valor <= d.canal.ancho.valor, 'El vertedero no puede ser más ancho que el canal')
 
 export type DatosDesarenador = z.infer<typeof esquemaDesarenador>

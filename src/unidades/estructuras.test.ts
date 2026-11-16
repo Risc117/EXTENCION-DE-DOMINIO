@@ -48,7 +48,11 @@ describe('datos de la estación de bombeo y del pretratamiento', () => {
       return u.cotaCoronacion.valor - u.cotaFondo.valor
     }
     expect(esquemaRejas.parse(rejasCrudo).canal.alturaMuro.valor).toBeCloseTo(alto('rejas'), 6)
-    expect(esquemaDesarenador.parse(desarenadorCrudo).canal.alturaMuro.valor).toBeCloseTo(alto('desarenador'), 6)
+    // El desarenador se dibuja con el plano (0.95 a 1.47 m, fondo con pendiente); el 1.17 m del perfil queda como diferencia por revisar.
+    const canal = esquemaDesarenador.parse(desarenadorCrudo).canal
+    expect([canal.alturaEntrada.valor, canal.alturaSalida.valor]).toEqual([0.95, 1.47])
+    expect(canal.alturaSalida.fuente).toContain('DIFERENCIA POR REVISAR')
+    expect(alto('desarenador')).toBeCloseTo(1.17, 6)
     expect(esquemaParshall.parse(parshallCrudo).estructura.alturaMuro.valor).toBeCloseTo(alto('parshall'), 6)
     expect(esquemaBombeo.parse(bombeoCrudo).carcamo.profundidad.valor).toBeCloseTo(alto('bombeo'), 6)
   })

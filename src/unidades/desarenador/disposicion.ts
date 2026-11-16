@@ -15,6 +15,8 @@ export interface DisposicionDesarenador {
   semiancho: number
   /** z del centro de cada canal (el conjunto está centrado en z = 0). */
   zCanales: number[]
+  /** Giro (rad) del fondo: sube hacia la entrada con la diferencia entre las alturas de entrada y de salida, repartida en el largo hasta el vertedero. */
+  inclinacionFondo: number
 }
 
 export function disponer(d: DatosDesarenador): DisposicionDesarenador {
@@ -27,5 +29,6 @@ export function disponer(d: DatosDesarenador): DisposicionDesarenador {
   const paso = d.canal.ancho.valor + d.canal.espesorMuroCentral.valor
   const zCanales = Array.from({ length: n }, (_, i) => (i - (n - 1) / 2) * paso)
   const semiancho = (n * d.canal.ancho.valor + (n - 1) * d.canal.espesorMuroCentral.valor) / 2 + e
-  return { largoTotal, xInicio, xCanal, xVertedero, xSalida: xVertedero + e, xFin: xInicio + largoTotal, semiancho, zCanales }
+  const inclinacionFondo = -Math.atan2(d.canal.alturaSalida.valor - d.canal.alturaEntrada.valor, xVertedero - xInicio)
+  return { largoTotal, xInicio, xCanal, xVertedero, xSalida: xVertedero + e, xFin: xInicio + largoTotal, semiancho, zCanales, inclinacionFondo }
 }

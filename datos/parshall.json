@@ -94,9 +94,9 @@
       "demo": true
     },
     "largoSalida": {
-      "valor": 1.059,
+      "valor": 1.016,
       "unidad": "m",
-      "fuente": "Por confirmar (el DXF solo dibuja un eje del Parshall; el plano PDF da 2.80 m en total y otras longitudes que la hoja). insumos/DFX/ESTRUCTURAS2.dxf, vista en planta CAMARA DE REJAS - DESARENADOR - PARSHALL, capa Muro: derivado, de 2.843 m (x = −88.172 a −85.329) menos entrada, convergente, garganta y divergente",
+      "fuente": "Por confirmar (el DXF solo dibuja un eje del Parshall; el plano PDF da 2.80 m en total y otras longitudes que la hoja). insumos/DFX/ESTRUCTURAS2.dxf, vista en planta CAMARA DE REJAS - DESARENADOR - PARSHALL, capa Muro: derivado, de 2.80 m (largo del Parshall del plano; cota 2.804 m en el DXF) menos entrada, convergente, garganta y divergente",
       "demo": true
     }
   },

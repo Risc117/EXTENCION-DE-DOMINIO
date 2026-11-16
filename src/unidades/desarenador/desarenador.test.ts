@@ -25,7 +25,7 @@ describe('desarenador', () => {
   })
 
   it('el agua no sube más que el muro', () => {
-    for (const a of construirAguas(datos, 500)) expect(a.y0 + a.nivel).toBeLessThanOrEqual(datos.canal.alturaMuro.valor + 1e-9)
+    for (const a of construirAguas(datos, 500)) expect(a.y0 + a.nivel).toBeLessThanOrEqual(datos.canal.alturaSalida.valor + 1e-9)
   })
 
   it('hay dos canales de 0.32 m con muro central de 0.20 m y muros laterales de 0.15 m (plano, 1.14 m en total)', () => {
@@ -40,6 +40,24 @@ describe('desarenador', () => {
     const tolva = aguas.find((a) => a.id === 'agua-tolva-1')!
     expect(tolva.forma === 'caja' && tolva.largo).toBeCloseTo(5.17, 6)
     expect(tolva.nivel).toBeCloseTo(0.2, 6)
+  })
+
+  it('el caudal se reparte: cada canal usa la mitad y su nivel sale de la fórmula de la hoja', () => {
+    const q = 6.536
+    const aguas = construirAguas(datos, q).filter((a) => a.id.startsWith('agua-canal'))
+    expect(aguas).toHaveLength(2)
+    for (const a of aguas) expect(a.nivel).toBeCloseTo(alturaAgua(datos, q / 2), 9)
+    expect(aguas[0].nivel).toBeLessThan(alturaAgua(datos, q))
+  })
+
+  it('los muros miden 0.95 m a la entrada y 1.47 m a la salida: el fondo sube hacia la entrada y los muros tienen la misma coronación', () => {
+    const s = disponer(datos)
+    const largo = s.xVertedero - s.xInicio
+    expect(-Math.tan(s.inclinacionFondo) * largo).toBeCloseTo(1.47 - 0.95, 6)
+    const muros = construirPiezas(datos).filter((p) => p.id.startsWith('muro-') && p.forma === 'caja')
+    for (const m of muros) if (m.forma === 'caja') expect(m.pos[1] + m.tam[1] / 2).toBeCloseTo(1.47, 6)
+    const piso = construirPiezas(datos).find((p) => p.id === 'piso-transicion-1')!
+    expect(piso.inclinacion?.angulo).toBeCloseTo(s.inclinacionFondo, 9)
   })
 
   it('el 0.30 de la hoja queda solo como dato hidráulico, no como medida del 3D', () => {

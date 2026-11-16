@@ -1,25 +1,61 @@
 {
-  "fuente": "Fila continua del pretratamiento (caja de recepción, rejas, transición, desarenador, transición, Parshall): largos medidos de la vista en planta de insumos/DFX/ESTRUCTURAS2.dxf (x del dibujo, capas concreto armado, Muro y Vertedero sutro) y colocada sobre el mapa general insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (capa PTAR-ESTRUCTURAS). Precisión ±0.05 m",
+  "fuente": "Fila continua del pretratamiento (caja de recepción, rejas, transición, desarenador, Parshall) de 12.15 m según el plano ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf, contrastada con las cotas DIMENSION de insumos/DFX/ESTRUCTURAS2.dxf, y colocada sobre el mapa general insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (capa PTAR-ESTRUCTURAS). DIFERENCIA POR REVISAR: la fila medida de las líneas del DXF sumaba 12.413 m (0.26 m más). Precisión ±0.05 m",
   "anclaje": {
-    "x": { "valor": -26.48, "unidad": "m", "fuente": "LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS: punto medio del muro de fondo de la caja de recepción, UTM (309313.52, 8791209.03) menos el origen (309340, 8791260) de datos/terreno.json" },
-    "y": { "valor": -50.97, "unidad": "m", "fuente": "LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS: punto medio del muro de fondo de la caja de recepción, UTM (309313.52, 8791209.03) menos el origen (309340, 8791260) de datos/terreno.json" }
+    "x": {
+      "valor": -26.48,
+      "unidad": "m",
+      "fuente": "LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS: punto medio del muro de fondo de la caja de recepción, UTM (309313.52, 8791209.03) menos el origen (309340, 8791260) de datos/terreno.json"
+    },
+    "y": {
+      "valor": -50.97,
+      "unidad": "m",
+      "fuente": "LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS: punto medio del muro de fondo de la caja de recepción, UTM (309313.52, 8791209.03) menos el origen (309340, 8791260) de datos/terreno.json"
+    }
   },
-  "giro": { "valor": 95.7, "unidad": "grados", "fuente": "LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS: dirección del flujo (hacia el norte, 5.7° al oeste), ajustada a los muros largos de la fila (95.5° a 95.8°)" },
+  "giro": {
+    "valor": 95.7,
+    "unidad": "grados",
+    "fuente": "LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS: dirección del flujo (hacia el norte, 5.7° al oeste), ajustada a los muros largos de la fila (95.5° a 95.8°)"
+  },
   "tramos": [
     {
       "id": "rejas",
-      "desde": { "valor": 0, "unidad": "m", "fuente": "ESTRUCTURAS2.dxf, vista en planta, capa concreto armado: muro de fondo de la caja de recepción en x = −97.742" },
-      "hasta": { "valor": 3.012, "unidad": "m", "fuente": "ESTRUCTURAS2.dxf, vista en planta, capa concreto armado: fin de los muros de la cámara de rejas en x = −94.730" }
+      "desde": {
+        "valor": 0,
+        "unidad": "m",
+        "fuente": "insumos/medidas-pretratamiento.md y ESTRUCTURAS2.dxf (cotas DIMENSION) — rejas: recepción 0.45 + transición 0.40 + reja 0.70 + salida 0.60 m. insumos/medidas-pretratamiento.md (plano ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf): largo total del conjunto 12.15 m (cota 12.154 en ESTRUCTURAS2.dxf). DIFERENCIA POR REVISAR: las líneas del DXF medidas antes sumaban 12.413 m"
+      },
+      "hasta": {
+        "valor": 2.15,
+        "unidad": "m",
+        "fuente": "insumos/medidas-pretratamiento.md y ESTRUCTURAS2.dxf (cotas DIMENSION) — rejas: recepción 0.45 + transición 0.40 + reja 0.70 + salida 0.60 m. insumos/medidas-pretratamiento.md (plano ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf): largo total del conjunto 12.15 m (cota 12.154 en ESTRUCTURAS2.dxf). DIFERENCIA POR REVISAR: las líneas del DXF medidas antes sumaban 12.413 m"
+      }
     },
     {
       "id": "desarenador",
-      "desde": { "valor": 3.012, "unidad": "m", "fuente": "ESTRUCTURAS2.dxf, vista en planta: fin de la cámara de rejas, x = −94.730 (zona de transición de 1 m hasta el desarenador, que arranca en x = −93.71)" },
-      "hasta": { "valor": 9.57, "unidad": "m", "fuente": "ESTRUCTURAS2.dxf, vista en planta, capa Muro: inicio del Parshall en x = −88.172 (zona de transición de unos 0.3 m después del vertedero Sutro, en x = −88.465)" }
+      "desde": {
+        "valor": 2.15,
+        "unidad": "m",
+        "fuente": "insumos/medidas-pretratamiento.md y ESTRUCTURAS2.dxf (cotas DIMENSION) — desarenador: transición 1.48 + canal 5.17 + muro del vertedero 0.15 + salida 0.40 m. insumos/medidas-pretratamiento.md (plano ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf): largo total del conjunto 12.15 m (cota 12.154 en ESTRUCTURAS2.dxf). DIFERENCIA POR REVISAR: las líneas del DXF medidas antes sumaban 12.413 m"
+      },
+      "hasta": {
+        "valor": 9.35,
+        "unidad": "m",
+        "fuente": "insumos/medidas-pretratamiento.md y ESTRUCTURAS2.dxf (cotas DIMENSION) — desarenador: transición 1.48 + canal 5.17 + muro del vertedero 0.15 + salida 0.40 m. insumos/medidas-pretratamiento.md (plano ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf): largo total del conjunto 12.15 m (cota 12.154 en ESTRUCTURAS2.dxf). DIFERENCIA POR REVISAR: las líneas del DXF medidas antes sumaban 12.413 m"
+      }
     },
     {
       "id": "parshall",
-      "desde": { "valor": 9.57, "unidad": "m", "fuente": "ESTRUCTURAS2.dxf, vista en planta, capa Muro: inicio del Parshall en x = −88.172" },
-      "hasta": { "valor": 12.413, "unidad": "m", "fuente": "ESTRUCTURAS2.dxf, vista en planta, capa Muro: fin del Parshall en x = −85.329" }
+      "desde": {
+        "valor": 9.35,
+        "unidad": "m",
+        "fuente": "insumos/medidas-pretratamiento.md y ESTRUCTURAS2.dxf (cotas DIMENSION) — Parshall: 2.80 m. insumos/medidas-pretratamiento.md (plano ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf): largo total del conjunto 12.15 m (cota 12.154 en ESTRUCTURAS2.dxf). DIFERENCIA POR REVISAR: las líneas del DXF medidas antes sumaban 12.413 m"
+      },
+      "hasta": {
+        "valor": 12.15,
+        "unidad": "m",
+        "fuente": "insumos/medidas-pretratamiento.md y ESTRUCTURAS2.dxf (cotas DIMENSION) — Parshall: 2.80 m. insumos/medidas-pretratamiento.md (plano ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf): largo total del conjunto 12.15 m (cota 12.154 en ESTRUCTURAS2.dxf). DIFERENCIA POR REVISAR: las líneas del DXF medidas antes sumaban 12.413 m"
+      }
     }
   ]
 }

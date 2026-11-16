@@ -16,5 +16,5 @@ export function alturaAgua(d: DatosDesarenador, caudalLs: number): number {
   const q = caudalLs / LITROS_POR_M3
   const caudalEnA = unidad * DOS_TERCIOS * a.valor
   const h = q < caudalEnA ? (a.valor * q) / caudalEnA : q / unidad + a.valor / 3
-  return Math.min(h, d.canal.alturaMuro.valor - d.tolva.altura.valor)
+  return Math.min(h, d.canal.alturaSalida.valor - d.tolva.altura.valor)
 }

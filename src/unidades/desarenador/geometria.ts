@@ -10,10 +10,11 @@ function piezasDeCanal(d: DatosDesarenador, s: DisposicionDesarenador, zc: numbe
   const e = d.canal.espesorMuro.valor
   const b = d.canal.ancho.valor
   const w = d.vertedero.ancho.valor
-  const h = d.canal.alturaMuro.valor
+  const h = d.canal.alturaSalida.valor
   const t = d.tolva.altura.valor
   const a = d.vertedero.alturaMinima.valor
   const muro = { opacidad: OPACIDAD_CANAL }
+  const fondo = { inclinacion: { pivote: [s.xVertedero, 0] as [number, number], angulo: s.inclinacionFondo } }
   const largoCanal = s.xVertedero - s.xCanal
   const largoPlaca = Math.hypot((b - w) / 2, t)
   const inclinacion = Math.atan2(t, (b - w) / 2)
@@ -24,9 +25,10 @@ function piezasDeCanal(d: DatosDesarenador, s: DisposicionDesarenador, zc: numbe
     pos: [s.xCanal + largoCanal / 2, t / 2, zc + (lado * (b + w)) / 4],
     tam: [largoCanal, e / 2, largoPlaca],
     giroX: -lado * inclinacion,
+    ...fondo,
   })
   return [
-    caja(`piso-transicion-${k}`, '--color-solado', [s.xInicio, s.xCanal], [0, t], [zc - b / 2, zc + b / 2]),
+    caja(`piso-transicion-${k}`, '--color-solado', [s.xInicio, s.xCanal], [0, t], [zc - b / 2, zc + b / 2], fondo),
     placa(-1),
     placa(1),
     caja(`cierre-tolva-${k}`, '--color-arena', [s.xVertedero - e / 2, s.xVertedero], [0, t], [zc - w / 2, zc + w / 2]),
@@ -41,7 +43,7 @@ export function construirPiezas(d: DatosDesarenador): Pieza[] {
   const s = disponer(d)
   const e = d.canal.espesorMuro.valor
   const ec = d.canal.espesorMuroCentral.valor
-  const h = d.canal.alturaMuro.valor
+  const h = d.canal.alturaSalida.valor
   const muro = { opacidad: OPACIDAD_CANAL }
   const zLateral = s.semiancho - e / 2
   const g = GROSOR_BARANDA_CANAL
@@ -62,10 +64,10 @@ export function construirPiezas(d: DatosDesarenador): Pieza[] {
   return piezas
 }
 
-/** Agua de cada canal: la lámina sobre el piso con la altura del vertedero Sutro, y la de la tolva (llena si hay caudal). */
+/** Agua de cada canal (le toca la mitad del caudal si son dos; el nivel sale de la fórmula del vertedero de la hoja): la lámina sobre el piso con la altura del vertedero Sutro, y la de la tolva (llena si hay caudal). */
 export function construirAguas(d: DatosDesarenador, caudalLs: number): Agua[] {
   const s = disponer(d)
-  const altura = alturaAgua(d, caudalLs)
+  const altura = alturaAgua(d, caudalLs / d.canal.numero.valor)
   if (altura <= 0) return []
   const t = d.tolva.altura.valor
   const largo = s.xVertedero - s.xInicio
@@ -73,6 +75,6 @@ export function construirAguas(d: DatosDesarenador, caudalLs: number): Agua[] {
   const anchoTolva = (d.canal.ancho.valor + d.vertedero.ancho.valor) / 2
   return s.zCanales.flatMap((zc, i): Agua[] => [
     { forma: 'caja', id: `agua-canal-${i + 1}`, centro: [s.xInicio + largo / 2, zc], largo, ancho: d.canal.ancho.valor, y0: t, nivel: altura },
-    { forma: 'caja', id: `agua-tolva-${i + 1}`, centro: [s.xCanal + largoCanal / 2, zc], largo: largoCanal, ancho: anchoTolva, y0: 0, nivel: t },
+    { forma: 'caja', id: `agua-tolva-${i + 1}`, centro: [s.xCanal + largoCanal / 2, zc], largo: largoCanal, ancho: anchoTolva, y0: 0, nivel: t, inclinacion: { pivote: [s.xVertedero, 0], angulo: s.inclinacionFondo } },
   ])
 }

@@ -28,9 +28,9 @@
       "demo": true
     },
     "largoSalida": {
-      "valor": 1.464,
+      "valor": 0.6,
       "unidad": "m",
-      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, vista en planta CAMARA DE REJAS - DESARENADOR - PARSHALL, capa concreto armado: derivado, 3.012 m (x = −97.742 a −94.730) menos recepción, transición y proyección de la reja",
+      "fuente": "insumos/medidas-pretratamiento.md (plano, planta: bandeja de escurrido 0.31 m + 0.29 m hasta el inicio de la transición); contrastado con ESTRUCTURAS2.dxf, cotas 0.309 m y 0.291 m",
       "demo": false
     }
   },
