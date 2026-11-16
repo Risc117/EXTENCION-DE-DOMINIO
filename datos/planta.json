@@ -292,6 +292,50 @@
       }
     },
     {
+      "id": "camara-reparto",
+      "nombre": "Cámara de reparto",
+      "x": {
+        "valor": -16.5,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"CAMARA DE REPARTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": 49.5,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"CAMARA DE REPARTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+      },
+      "giro": {
+        "valor": 0,
+        "unidad": "grados",
+        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "demo": true
+      },
+      "cotaFondo": {
+        "valor": 2983.3,
+        "unidad": "m",
+        "fuente": "derivado (T13): coronación − altura de ejemplo de datos/camaraReparto.json (1.2 m); la cámara no tiene medidas en el plano ni en la hoja",
+        "demo": true
+      },
+      "cotaCoronacion": {
+        "valor": 2984.5,
+        "unidad": "m",
+        "fuente": "derivado (T13): cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m)",
+        "demo": true
+      },
+      "cotaSuperficie": {
+        "valor": 2984.5,
+        "unidad": "m",
+        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)",
+        "demo": true
+      },
+      "radioExplanada": {
+        "valor": 3,
+        "unidad": "m",
+        "fuente": "derivado (T13): mitad del lado mayor de datos/camaraReparto.json + 2 m de margen",
+        "demo": true
+      }
+    },
+    {
       "id": "sedimentador-1",
       "nombre": "Sedimentador 1",
       "x": {
@@ -317,9 +361,9 @@
         "demo": true
       },
       "cotaCoronacion": {
-        "valor": 2977.9,
+        "valor": 2978.3043,
         "unidad": "m",
-        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja SEDIMENTADOR SECUNDARIO: altura H = 4.5 m + altura de la tolva HT = 1.96 m",
+        "fuente": "derivado (T13): coronación = cota de fondo (derivada del terreno, ver cotaFondo) + altura total del plano 6.8643 m (tolva 1.9643 de la hoja SEDIMENTADOR SECUNDARIO celda G41 + agua 4.50 + borde libre 0.40; insumos/NUEVO PDF/ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, corte A-A). POR REVISAR CON EL PERFIL",
         "demo": true
       },
       "cotaSuperficie": {
@@ -329,24 +373,10 @@
         "demo": true
       },
       "radioExplanada": {
-        "valor": 6,
+        "valor": 5,
         "unidad": "m",
-        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
+        "fuente": "derivado (T13): radio exterior del canal 2.535 m de datos/sedimentador.json + tubería de 1.5 m + margen",
         "demo": true
-      },
-      "marcador": {
-        "largo": {
-          "valor": 8,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "ancho": {
-          "valor": 8,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        }
       }
     },
     {
@@ -375,9 +405,9 @@
         "demo": true
       },
       "cotaCoronacion": {
-        "valor": 2977.2,
+        "valor": 2977.6043,
         "unidad": "m",
-        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja SEDIMENTADOR SECUNDARIO: altura H = 4.5 m + altura de la tolva HT = 1.96 m",
+        "fuente": "derivado (T13): coronación = cota de fondo (derivada del terreno, ver cotaFondo) + altura total del plano 6.8643 m (tolva 1.9643 de la hoja SEDIMENTADOR SECUNDARIO celda G41 + agua 4.50 + borde libre 0.40; insumos/NUEVO PDF/ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, corte A-A). POR REVISAR CON EL PERFIL",
         "demo": true
       },
       "cotaSuperficie": {
@@ -387,24 +417,10 @@
         "demo": true
       },
       "radioExplanada": {
-        "valor": 6,
+        "valor": 5,
         "unidad": "m",
-        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
+        "fuente": "derivado (T13): radio exterior del canal 2.535 m de datos/sedimentador.json + tubería de 1.5 m + margen",
         "demo": true
-      },
-      "marcador": {
-        "largo": {
-          "valor": 8,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "ancho": {
-          "valor": 8,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        }
       }
     },
     {

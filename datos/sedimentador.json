@@ -1,0 +1,225 @@
+{
+  "id": "sedimentador",
+  "nombre": "Sedimentador secundario",
+  "demo": true,
+  "tanque": {
+    "diametroInterior": {
+      "valor": 3.27,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, planta y corte A-A (Ø 3.27 m); coincide con CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda G20 (3.2682); DXF capa SEDIM-COTAS, DIMENSION 13.080 ÷ 4 (escala del dibujo)",
+      "demo": false
+    },
+    "espesorMuro": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, corte A-A (pared de 0.20 m)",
+      "demo": false
+    },
+    "alturaAgua": {
+      "valor": 4.5,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, corte A-A (H = 4.50 m); coincide con CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda C8; DXF capa SEDIM-COTAS, DIMENSION 18.000 ÷ 4",
+      "demo": false
+    },
+    "bordoLibre": {
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, corte A-A (BL = 0.40 m)",
+      "demo": false
+    }
+  },
+  "tolva": {
+    "diametroMenor": {
+      "valor": 1.0,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda C41 (ØT, diámetro menor de la tolva)",
+      "demo": false
+    },
+    "altura": {
+      "valor": 1.9643,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda G41 (HT = (Ø − ØT) · tan 60° / 2); el plano escribe 7.8570 en el corte A-A, que ÷ 4 (escala del dibujo, DXF capa SEDIM-COTAS) da 1.964 m",
+      "demo": false
+    },
+    "angulo": {
+      "valor": 60,
+      "unidad": "grados",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, corte A-A (tolva cónica de 60°); CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda C43 (α = π/3)",
+      "demo": false
+    },
+    "alturaLodo": {
+      "valor": 1.0,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de ejemplo del manto de lodos en la tolva (por confirmar)",
+      "demo": true
+    }
+  },
+  "canal": {
+    "ancho": {
+      "valor": 0.5,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, planta (canal de 4.67 m interior menos 3.67 m exterior del tanque, dividido entre 2); CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda C49 (B = 0.5)",
+      "demo": false
+    },
+    "profundidad": {
+      "valor": 0.8,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: profundidad de ejemplo del canal de recolección (por confirmar)",
+      "demo": true
+    },
+    "velocidad": {
+      "valor": 0.4,
+      "unidad": "m/s",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda C48 (VC = 0.4 m/s, velocidad en el canal)",
+      "demo": false
+    },
+    "laminaPlano": {
+      "valor": 0.3268,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, corte A-A (Y = 0.3268 m). POR CONFIRMAR: la hoja da 0.0327 m (celda G49), diez veces menos; parece una coma decimal mal puesta en el plano. No se dibuja con este valor.",
+      "demo": true
+    },
+    "ramales": {
+      "valor": 2,
+      "unidad": "u",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda E47 (QR = Qmh/2: el canal perimetral lleva el agua por dos ramales, uno a cada lado)",
+      "demo": false
+    }
+  },
+  "vertedero": {
+    "separacionMuescas": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, detalle 01 (separación de 0.20 m)",
+      "demo": false
+    },
+    "profundidadMuesca": {
+      "valor": 0.1,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, detalle 01 (profundidad de 0.10 m)",
+      "demo": false
+    },
+    "alturaPlaca": {
+      "valor": 0.35,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, detalle 01 (altura de la placa 0.35 m)",
+      "demo": false
+    },
+    "anguloMuesca": {
+      "valor": 90,
+      "unidad": "grados",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, detalle 01 (muescas en V de 90°, supuesto en el plano)",
+      "demo": false
+    },
+    "espesorPlaca": {
+      "valor": 0.02,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: espesor de ejemplo de la placa del vertedero (por confirmar)",
+      "demo": true
+    }
+  },
+  "camaraCentral": {
+    "diametro": {
+      "valor": 0.49,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, detalle 02 (Øc = 0.49 m); CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda G24 (0.4902); DXF capa SEDIM-COTAS, DIMENSION 4.902 ÷ 10 (escala del detalle)",
+      "demo": false
+    },
+    "altura": {
+      "valor": 1.5,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, detalle 02 (altura 1.50 m); DXF capa SEDIM-COTAS, DIMENSION 15.000 ÷ 10",
+      "demo": false
+    },
+    "diametroDeflector": {
+      "valor": 0.9,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: diámetro de ejemplo del deflector al pie de la cámara central (por confirmar)",
+      "demo": true
+    },
+    "espesorDeflector": {
+      "valor": 0.05,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: espesor de ejemplo del deflector (por confirmar)",
+      "demo": true
+    }
+  },
+  "tuberias": {
+    "diametroEntrada": {
+      "valor": 0.16,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, planta (PVC Ø 6\", DN 160, del filtro percolador); DXF capa SEDIM-COTAS, DIMENSION 1.6 ÷ 10",
+      "demo": false
+    },
+    "diametroSalida": {
+      "valor": 0.16,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, planta (salida PVC Ø 6\" a desinfección)",
+      "demo": false
+    },
+    "diametroPurga": {
+      "valor": 0.16,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, planta (purga de lodos PVC Ø 6\", hidráulica)",
+      "demo": false
+    }
+  },
+  "accesorios": {
+    "anchoPuente": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: ancho de ejemplo del puente barrendero (por confirmar)",
+      "demo": true
+    },
+    "altoPuente": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: alto de ejemplo del puente barrendero (por confirmar)",
+      "demo": true
+    },
+    "vueltasPorMinuto": {
+      "valor": 0.1,
+      "unidad": "rpm",
+      "fuente": "No está en las fuentes: velocidad de giro de ejemplo del puente barrendero (por confirmar)",
+      "demo": true
+    },
+    "anchoPasarela": {
+      "valor": 0.8,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: ancho de ejemplo de la pasarela de acceso (por confirmar)",
+      "demo": true
+    },
+    "alturaMampara": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: alto de ejemplo de la mampara de natas (por confirmar)",
+      "demo": true
+    },
+    "separacionMampara": {
+      "valor": 0.05,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: separación de ejemplo de la mampara de natas respecto del vertedero (por confirmar)",
+      "demo": true
+    },
+    "alturaEscalera": {
+      "valor": 1.0,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de ejemplo de la escalera marinera sobre la coronación (por confirmar)",
+      "demo": true
+    },
+    "anchoEscalera": {
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: ancho de ejemplo de la escalera marinera (por confirmar)",
+      "demo": true
+    }
+  },
+  "hidraulica": {
+    "volumenHoja": {
+      "valor": 36.9016,
+      "unidad": "m3",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda G30 (V = As · H, un sedimentador con todo el caudal)",
+      "demo": false
+    }
+  }
+}

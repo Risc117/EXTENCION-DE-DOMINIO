@@ -56,13 +56,13 @@
     {
       "id": "sedimentador-1",
       "tipo": "paso",
-      "retencion": { "valor": 1.5683, "unidad": "h", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda G35 (TR medio). La hoja calcula un solo sedimentador con todo el caudal y el plano tiene dos", "demo": true },
+      "retencion": { "valor": 3.1367, "unidad": "h", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda G30 (V = 36.9016 m3) dividido entre el caudal por unidad Qp/2 = 282.36 m3/d (la hoja calcula un solo sedimentador con todo el caudal: TR 1.5683 h, celda G35; el plano tiene dos y cada una recibe Q/2)", "demo": true },
       "destinos": [{ "id": "camara-contacto", "fraccion": 1 }]
     },
     {
       "id": "sedimentador-2",
       "tipo": "paso",
-      "retencion": { "valor": 1.5683, "unidad": "h", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda G35 (TR medio). La hoja calcula un solo sedimentador con todo el caudal y el plano tiene dos", "demo": true },
+      "retencion": { "valor": 3.1367, "unidad": "h", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'SEDIMENTADOR SECUNDARIO', celda G30 (V = 36.9016 m3) dividido entre el caudal por unidad Qp/2 = 282.36 m3/d (la hoja calcula un solo sedimentador con todo el caudal: TR 1.5683 h, celda G35; el plano tiene dos y cada una recibe Q/2)", "demo": true },
       "destinos": [{ "id": "camara-contacto", "fraccion": 1 }]
     },
     {

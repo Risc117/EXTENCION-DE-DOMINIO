@@ -1,5 +1,5 @@
 import { useMemo, type ReactNode } from 'react'
-import type { Plane } from 'three'
+import { DoubleSide, FrontSide, type Plane } from 'three'
 import { SEGMENTOS_CILINDRO } from '../../nucleo/constantes'
 import { OPACIDAD_AGUA_CANAL } from '../../nucleo/constantesCanales'
 import { leerColor } from '../../nucleo/colores'
@@ -48,8 +48,9 @@ function MallaPieza({ pieza, planos }: { pieza: Pieza; planos: Plane[] }) {
       {pieza.forma === 'caja' && <boxGeometry args={pieza.tam} />}
       {pieza.forma === 'cilindro' && <cylinderGeometry args={[pieza.radio, pieza.radio, pieza.alto, SEGMENTOS_CILINDRO]} />}
       {pieza.forma === 'anillo' && <GeometriaAnillo radioInterior={pieza.radioInterior} radioExterior={pieza.radioExterior} alto={pieza.alto} />}
+      {pieza.forma === 'cono' && <cylinderGeometry args={[pieza.radioSuperior, pieza.radioInferior, pieza.alto, SEGMENTOS_CILINDRO, 1, pieza.abierto === true]} />}
       {pieza.forma === 'prisma' && <GeometriaPrisma largo={pieza.largo} anchoSuperior={pieza.anchoSuperior} anchoInferior={pieza.anchoInferior} alto={pieza.alto} />}
-      <meshStandardMaterial color={color} transparent={opacidad !== undefined} opacity={opacidad ?? 1} depthWrite={opacidad === undefined} clippingPlanes={planos} />
+      <meshStandardMaterial color={color} transparent={opacidad !== undefined} opacity={opacidad ?? 1} depthWrite={opacidad === undefined} clippingPlanes={planos} side={pieza.forma === 'cono' && pieza.abierto ? DoubleSide : FrontSide} />
     </mesh>
     </Inclinada>
   )
@@ -62,6 +63,14 @@ function MallaAgua({ agua, planos }: { agua: Agua; planos: Plane[] }) {
     return (
       <mesh position={[0, agua.y0, 0]} scale={[1, agua.nivel, 1]}>
         <GeometriaCuna x0={agua.x0} x1={agua.x1} ancho0={agua.ancho0} ancho1={agua.ancho1} />
+        <meshStandardMaterial color={color} transparent opacity={OPACIDAD_AGUA_CANAL} depthWrite={false} clippingPlanes={planos} />
+      </mesh>
+    )
+  }
+  if (agua.forma === 'anillo') {
+    return (
+      <mesh position={[0, agua.y0, 0]} scale={[1, agua.nivel, 1]}>
+        <GeometriaAnillo radioInterior={agua.radioInterior} radioExterior={agua.radioExterior} alto={1} />
         <meshStandardMaterial color={color} transparent opacity={OPACIDAD_AGUA_CANAL} depthWrite={false} clippingPlanes={planos} />
       </mesh>
     )

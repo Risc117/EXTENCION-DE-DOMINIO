@@ -1,0 +1,37 @@
+{
+  "id": "camara-reparto",
+  "nombre": "Cámara de reparto",
+  "demo": true,
+  "caja": {
+    "largo": {
+      "valor": 2.0,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: medida de ejemplo de la cámara de reparto (el plano y la hoja no la dibujan ni la calculan; por confirmar)",
+      "demo": true
+    },
+    "ancho": {
+      "valor": 1.5,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: medida de ejemplo de la cámara de reparto (el plano y la hoja no la dibujan ni la calculan; por confirmar)",
+      "demo": true
+    },
+    "alto": {
+      "valor": 1.2,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: medida de ejemplo de la cámara de reparto (el plano y la hoja no la dibujan ni la calculan; por confirmar)",
+      "demo": true
+    },
+    "espesorMuro": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: medida de ejemplo de la cámara de reparto (el plano y la hoja no la dibujan ni la calculan; por confirmar)",
+      "demo": true
+    },
+    "nivelAgua": {
+      "valor": 0.8,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: medida de ejemplo de la cámara de reparto (el plano y la hoja no la dibujan ni la calculan; por confirmar)",
+      "demo": true
+    }
+  }
+}

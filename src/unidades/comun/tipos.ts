@@ -56,11 +56,22 @@ export interface PiezaPrisma extends Base {
   alto: number
 }
 
-export type Pieza = PiezaCaja | PiezaCilindro | PiezaAnillo | PiezaPrisma
+/** Tronco de cono (tolvas): `abierto` = solo la superficie, sin tapas, para ver el agua que hay adentro. */
+export interface PiezaCono extends Base {
+  forma: 'cono'
+  radioInferior: number
+  radioSuperior: number
+  alto: number
+  abierto?: boolean
+}
+
+export type Pieza = PiezaCaja | PiezaCilindro | PiezaAnillo | PiezaPrisma | PiezaCono
 
 /** Masa de agua que crece desde `y0` hasta `y0 + nivel`. */
 export type Agua =
   | { forma: 'caja'; id: string; centro: [number, number]; largo: number; ancho: number; y0: number; nivel: number; inclinacion?: Inclinacion }
   | { forma: 'cilindro'; id: string; centro: [number, number]; radio: number; y0: number; nivel: number }
+  /** Corona circular (canal perimetral): crece desde `y0` hasta `y0 + nivel`. */
+  | { forma: 'anillo'; id: string; radioInterior: number; radioExterior: number; y0: number; nivel: number }
   /** Planta de trapecio (canal que se angosta o ensancha), centrada en z = 0, entre x0 y x1. */
   | { forma: 'cuna'; id: string; x0: number; x1: number; ancho0: number; ancho1: number; y0: number; nivel: number }

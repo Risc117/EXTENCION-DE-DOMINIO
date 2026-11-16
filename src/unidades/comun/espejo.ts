@@ -9,7 +9,7 @@ export function espejarPiezas(piezas: Pieza[]): Pieza[] {
 }
 
 export function espejarAguas(aguas: Agua[]): Agua[] {
-  return aguas.map((a) => (a.forma === 'cuna' ? a : { ...a, centro: [a.centro[0], -a.centro[1]] as [number, number] }))
+  return aguas.map((a) => (a.forma === 'cuna' || a.forma === 'anillo' ? a : { ...a, centro: [a.centro[0], -a.centro[1]] as [number, number] }))
 }
 
 export function espejarCotas(cotas: CotaCalculada[]): CotaCalculada[] {

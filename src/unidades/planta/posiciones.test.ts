@@ -11,11 +11,11 @@ const malla = cuadricula(terreno)
 const terrenoEn = (u: { x: { valor: number }; y: { valor: number } }): number => alturaEn(malla, u.x.valor, u.y.valor) ?? NaN
 
 const MEDIDAS = ['rejas', 'desarenador', 'parshall', 'homogeneizador', 'camara-contacto']
-const DERIVADAS = ['sedimentador-1', 'sedimentador-2', 'lechos-secado']
+const DERIVADAS = ['lechos-secado']
 /** RAFA (T11): fondo derivado del terreno y la hoja; coronación = fondo + altura total del plano (7.25 m), 0.95 m sobre el terreno. */
-const DEL_PLANO = ['rafa', 'percolador']
+const DEL_PLANO = ['rafa', 'percolador', 'sedimentador-1', 'sedimentador-2']
 /** Estación de bombeo: cotas de ejemplo derivadas del terreno levantado y de la profundidad supuesta del cárcamo. */
-const DEL_TERRENO = ['bombeo']
+const DEL_TERRENO = ['bombeo', 'camara-reparto']
 const MARCA_MEDIDA = 'medido del dibujo del perfil, ±0.2 m aprox. por confirmar'
 
 describe('posiciones de datos/planta.json', () => {
@@ -91,6 +91,17 @@ describe('cotas de fondo y coronación', () => {
     expect(u.cotaCoronacion.fuente).toContain('derivado')
     expect(u.cotaCoronacion.fuente).toContain('POR REVISAR CON EL PERFIL')
     expect(u.cotaCoronacion.demo).toBe(true)
+  })
+
+  it('los sedimentadores tienen fondo derivado del terreno y coronación derivada del plano (de ejemplo)', () => {
+    for (const id of ['sedimentador-1', 'sedimentador-2']) {
+      const u = planta.unidades.find((x) => x.id === id)!
+      for (const v of [u.cotaFondo, u.cotaCoronacion]) {
+        expect(v.fuente, id).toContain('derivado')
+        expect(v.demo, id).toBe(true)
+      }
+      expect(u.cotaFondo.valor, id).toBeLessThan(terrenoEn(u))
+    }
   })
 
   it('el alto (coronación menos fondo) es positivo', () => {
