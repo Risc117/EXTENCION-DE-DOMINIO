@@ -1,4 +1,5 @@
 import { unidadBombeo } from './bombeo'
+import { unidadCamaraContacto, unidadCaseta } from './desinfeccion'
 import { unidadDesarenador } from './desarenador'
 import { unidadHomogeneizador } from './homogeneizador'
 import { crearMarcadores } from './marcador'
@@ -16,6 +17,6 @@ import { ubicar } from './ubicar'
  * Lista de unidades de la PTAR, ya puestas en su lugar según datos/planta.json.
  * Para agregar una unidad real, súmala a `reales` (y quítale el marcador en planta.json).
  */
-const reales = [unidadBombeo, unidadRejas, unidadDesarenador, unidadParshall, unidadHomogeneizador, unidadRafa, unidadPercolador, unidadReparto, unidadSedimentador1, unidadSedimentador2]
+const reales = [unidadBombeo, unidadRejas, unidadDesarenador, unidadParshall, unidadHomogeneizador, unidadRafa, unidadPercolador, unidadReparto, unidadSedimentador1, unidadSedimentador2, unidadCamaraContacto, unidadCaseta]
 
 export const unidades: Unidad[] = ubicar([...reales, ...crearMarcadores(planta)], planta)

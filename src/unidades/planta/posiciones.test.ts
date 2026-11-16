@@ -15,7 +15,7 @@ const DERIVADAS = ['lechos-secado']
 /** RAFA (T11): fondo derivado del terreno y la hoja; coronación = fondo + altura total del plano (7.25 m), 0.95 m sobre el terreno. */
 const DEL_PLANO = ['rafa', 'percolador', 'sedimentador-1', 'sedimentador-2']
 /** Estación de bombeo: cotas de ejemplo derivadas del terreno levantado y de la profundidad supuesta del cárcamo. */
-const DEL_TERRENO = ['bombeo', 'camara-reparto']
+const DEL_TERRENO = ['bombeo', 'camara-reparto', 'caseta-cloracion']
 const MARCA_MEDIDA = 'medido del dibujo del perfil, ±0.2 m aprox. por confirmar'
 
 describe('posiciones de datos/planta.json', () => {
@@ -24,7 +24,7 @@ describe('posiciones de datos/planta.json', () => {
       for (const v of [u.x, u.y]) {
         expect(v.fuente, u.id).toContain('.dxf')
         // Las unidades del pretratamiento y EB-1 vienen de PTAR-ESTRUCTURAS/PTAR-TEXTO; las demás (T9.6), del centro de su estructura (capa o bloque).
-        expect(v.fuente, u.id).toMatch(/PTAR-TEXTO|PTAR-ESTRUCTURAS|PTAR-VEREDAS|SEDIM-MURO|capa 0|bloque/)
+        expect(v.fuente, u.id).toMatch(/PTAR-TEXTO|PTAR-ESTRUCTURAS|PTAR-VEREDAS|PTAR-EDIFICACIONES|SEDIM-MURO|capa 0|bloque/)
       }
     }
   })

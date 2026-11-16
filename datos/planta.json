@@ -457,22 +457,53 @@
       "radioExplanada": {
         "valor": 7,
         "unidad": "m",
-        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
+        "fuente": "derivado: mitad del largo exterior de la cámara (4.4 m) más la tubería de entrada (1.5 m) y 3.3 m de margen; se mantiene en 7 m para no cruzar la explanada de la caseta de cloración",
+        "demo": true
+      }
+    },
+    {
+      "id": "caseta-cloracion",
+      "nombre": "Caseta de cloración",
+      "x": {
+        "valor": 31.5,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, centro del cuadrado de 3.0 × 3.0 m dentro del cerco de 6 × 6 m (capa PTAR-CERCO), junto al rótulo \"CASETA DE CLORACIÓN\" (capa PTAR-TEXTO, UTM 309368.4, 8791311.8); UTM 309371.5, 8791308.3; centro real de la estructura (no el rótulo); por confirmar que ese cuadrado es la caseta; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json",
         "demo": true
       },
-      "marcador": {
-        "largo": {
-          "valor": 10,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "ancho": {
-          "valor": 4,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        }
+      "y": {
+        "valor": 48.3,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, centro del cuadrado de 3.0 × 3.0 m dentro del cerco de 6 × 6 m (capa PTAR-CERCO), junto al rótulo \"CASETA DE CLORACIÓN\" (capa PTAR-TEXTO, UTM 309368.4, 8791311.8); UTM 309371.5, 8791308.3; centro real de la estructura (no el rótulo); por confirmar que ese cuadrado es la caseta; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json",
+        "demo": true
+      },
+      "giro": {
+        "valor": 0,
+        "unidad": "grados",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES: los lados del cuadrado van alineados con los ejes UTM"
+      },
+      "cotaFondo": {
+        "valor": 2977.1,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno levantado (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json) en el centro de la caseta, interpolada y redondeada a 0.1 m; la caseta se apoya sobre el suelo",
+        "demo": true
+      },
+      "cotaCoronacion": {
+        "valor": 2979.9,
+        "unidad": "m",
+        "fuente": "derivado: fondo más piso, muros y techo de ejemplo de datos/desinfeccion.json (0.15 + 2.5 + 0.15 = 2.8 m)",
+        "demo": true
+      },
+      "cotaSuperficie": {
+        "valor": 2977.1,
+        "unidad": "m",
+        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su fondo (se apoya sobre el suelo)",
+        "demo": true
+      },
+      "radioExplanada": {
+        "valor": 3.5,
+        "unidad": "m",
+        "fuente": "derivado: mitad del lado de la caseta (1.5 m) más 2 m de margen; no cruza la explanada de la cámara de contacto (7 m a 10.5 m de distancia)",
+        "demo": true
       }
     },
     {

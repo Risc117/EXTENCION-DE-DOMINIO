@@ -1,0 +1,229 @@
+{
+  "id": "desinfeccion",
+  "nombre": "Zona de desinfección",
+  "demo": true,
+  "canales": {
+    "cantidad": {
+      "valor": 4,
+      "unidad": "u",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-DESINFECCION_PLOT.pdf (planta: laberinto de 4 canales en serie); lectura en insumos/medidas-desinfeccion.md; hoja 'DESINFECCION' G29 (3.27 vueltas, diseño 4)"
+    },
+    "ancho": {
+      "valor": 0.6,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-DESINFECCION_PLOT.pdf (planta, ancho de cada canal); lectura en insumos/medidas-desinfeccion.md; insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESINFECCION', celda C6 (b)"
+    },
+    "largoInterior": {
+      "valor": 4.0,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-DESINFECCION_PLOT.pdf (planta, Lu); lectura en insumos/medidas-desinfeccion.md; insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESINFECCION', celda C8 (Lu); rectángulo interior de 4.0 × 2.85 m de insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf"
+    },
+    "largoRecorrido": {
+      "valor": 3.27,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-DESINFECCION_PLOT.pdf (Lc de cada canal = LT/4); lectura en insumos/medidas-desinfeccion.md; insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESINFECCION', celda G23 (LT = 13.072 m) dividido entre 4 canales; la hoja da Lc = 4 m (G30) y queda solo como valor hidráulico (decisión del usuario, 16 nov)"
+    }
+  },
+  "tabique": {
+    "espesor": {
+      "valor": 0.15,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-DESINFECCION_PLOT.pdf (planta, mamparas entre canales); lectura en insumos/medidas-desinfeccion.md"
+    },
+    "largo": {
+      "valor": 3.27,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-DESINFECCION_PLOT.pdf (los tabiques no llegan a la pared opuesta); lectura en insumos/medidas-desinfeccion.md; largo fijado por el usuario el 16 nov (3.27 m, deja un paso de 0.73 m)"
+    }
+  },
+  "muro": {
+    "espesor": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-DESINFECCION_PLOT.pdf (muros exteriores); lectura en insumos/medidas-desinfeccion.md"
+    }
+  },
+  "losa": {
+    "espesor": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "derivado: coronación menos fondo de datos/planta.json (2.10 m) menos profundidad de agua y borde libre (1.80 m); por confirmar con el corte B-B",
+      "demo": true
+    }
+  },
+  "agua": {
+    "profundidad": {
+      "valor": 1.5,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-DESINFECCION_PLOT.pdf (corte A-A, h); lectura en insumos/medidas-desinfeccion.md; insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESINFECCION', celda C7 (h)"
+    },
+    "bordeLibre": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-DESINFECCION_PLOT.pdf (corte A-A, BL); lectura en insumos/medidas-desinfeccion.md"
+    }
+  },
+  "totalesPlano": {
+    "ancho": {
+      "valor": 3.25,
+      "unidad": "m",
+      "fuente": "insumos/medidas-desinfeccion.md; rectángulo exterior de 4.4 × 3.25 m de insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS"
+    },
+    "largo": {
+      "valor": 4.4,
+      "unidad": "m",
+      "fuente": "insumos/medidas-desinfeccion.md; rectángulo exterior de 4.4 × 3.25 m de insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS"
+    }
+  },
+  "pantalla": {
+    "espesor": {
+      "valor": 0.05,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: el plano dibuja una pantalla (deflector) en el paso 1-2 sin medida; espesor de ejemplo",
+      "demo": true
+    },
+    "largo": {
+      "valor": 0.75,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: el plano dibuja una pantalla (deflector) en el paso 1-2 sin medida; largo de ejemplo",
+      "demo": true
+    }
+  },
+  "tuberias": {
+    "diametro": {
+      "valor": 0.16,
+      "unidad": "m",
+      "fuente": "insumos/medidas-desinfeccion.md: tuberías PVC Ø 6\" (DN 160) de entrada y salida; insumos/NUEVO PDF/ESTRUCTURAS2-DESINFECCION_PLOT.pdf"
+    },
+    "alturaEjeEntrada": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura del eje de la tubería de entrada sobre la losa de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    },
+    "alturaEjeSalida": {
+      "valor": 1.3,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura del eje de la tubería de salida sobre la losa de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    }
+  },
+  "hidraulica": {
+    "caudalDiseno": {
+      "valor": 6.536,
+      "unidad": "L/s",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESINFECCION', celda C2 (Q)"
+    },
+    "tiempoContacto": {
+      "valor": 30,
+      "unidad": "min",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESINFECCION', celda C5 (t)"
+    },
+    "volumenHoja": {
+      "valor": 11.7648,
+      "unidad": "m3",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESINFECCION', celda G18 (V = Q × t)"
+    }
+  },
+  "cloracion": {
+    "concentracion": {
+      "valor": 3500,
+      "unidad": "mg/L",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESINFECCION', celda C4 (C = 3500 ppm = 3500 mg/L); insumos/medidas-desinfeccion.md"
+    },
+    "dosisMaxima": {
+      "valor": 3,
+      "unidad": "mg/L",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESINFECCION', celda C3 (DM)"
+    },
+    "diametroLinea": {
+      "valor": 0.0127,
+      "unidad": "m",
+      "fuente": "insumos/medidas-desinfeccion.md: línea de cloro Ø 1/2\" (insumos/NUEVO PDF/ESTRUCTURAS2-DESINFECCION_PLOT.pdf, detalle 1)"
+    },
+    "diametroMezclador": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: diámetro del mezclador estático de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    },
+    "largoMezclador": {
+      "valor": 0.5,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: largo del mezclador estático de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    },
+    "largoValvula": {
+      "valor": 0.12,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: largo de la válvula de retención de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    },
+    "alturaPunto": {
+      "valor": 0.7,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de la línea de cloro sobre el eje de la tubería en el punto de aplicación de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    }
+  },
+  "caseta": {
+    "largo": {
+      "valor": 3.0,
+      "unidad": "m",
+      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, cuadrado de 3.0 × 3.0 m dentro del cerco de 6 × 6 m, junto al rótulo \"CASETA DE CLORACIÓN\"; por confirmar que ese cuadrado es la caseta",
+      "demo": true
+    },
+    "ancho": {
+      "valor": 3.0,
+      "unidad": "m",
+      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, cuadrado de 3.0 × 3.0 m dentro del cerco de 6 × 6 m, junto al rótulo \"CASETA DE CLORACIÓN\"; por confirmar que ese cuadrado es la caseta",
+      "demo": true
+    },
+    "alturaMuros": {
+      "valor": 2.5,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de los muros de la caseta de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    },
+    "espesor": {
+      "valor": 0.15,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: espesor de muros, piso y techo de la caseta de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    }
+  },
+  "tanque": {
+    "diametro": {
+      "valor": 0.8,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: diámetro del tanque de solución de cloro (esquemático en el plano) de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    },
+    "altura": {
+      "valor": 1.0,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura del tanque de solución de cloro (esquemático en el plano) de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    }
+  },
+  "bomba": {
+    "largo": {
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: largo de la bomba dosificadora de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    },
+    "alto": {
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: alto de la bomba dosificadora de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    },
+    "ancho": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: ancho de la bomba dosificadora de ejemplo (por confirmar con el plano de la caseta)",
+      "demo": true
+    }
+  }
+}
