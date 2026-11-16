@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import bombeoCrudo from '../../datos/bombeo.json'
 import desarenadorCrudo from '../../datos/desarenador.json'
 import parshallCrudo from '../../datos/parshall.json'
+import percoladorCrudo from '../../datos/percolador.json'
 import rafaCrudo from '../../datos/rafa.json'
 import rejasCrudo from '../../datos/rejas.json'
 import { esquemaBombeo } from './bombeo/esquema'
@@ -9,12 +10,14 @@ import { todasLasMedidas } from './comun/medidas'
 import { esquemaDesarenador } from './desarenador/esquema'
 import { esquemaParshall } from './parshall/esquema'
 import { planta } from './planta'
+import { alturaTotal as alturaPercolador } from './percolador/hidraulica'
+import { esquemaPercolador } from './percolador/esquema'
 import { esquemaRafa } from './rafa/esquema'
 import { alturaTotal } from './rafa/hidraulica'
 import { esquemaRejas } from './rejas/esquema'
 
-const ARCHIVOS = { bombeo: bombeoCrudo, rejas: rejasCrudo, desarenador: desarenadorCrudo, parshall: parshallCrudo, rafa: rafaCrudo }
-const esquemas = { bombeo: esquemaBombeo, rejas: esquemaRejas, desarenador: esquemaDesarenador, parshall: esquemaParshall, rafa: esquemaRafa }
+const ARCHIVOS = { bombeo: bombeoCrudo, rejas: rejasCrudo, desarenador: desarenadorCrudo, parshall: parshallCrudo, rafa: rafaCrudo, percolador: percoladorCrudo }
+const esquemas = { bombeo: esquemaBombeo, rejas: esquemaRejas, desarenador: esquemaDesarenador, parshall: esquemaParshall, rafa: esquemaRafa, percolador: esquemaPercolador }
 
 describe('datos de la estación de bombeo y del pretratamiento', () => {
   it('cada archivo cumple su esquema', () => {
@@ -60,5 +63,7 @@ describe('datos de la estación de bombeo y del pretratamiento', () => {
     expect(esquemaBombeo.parse(bombeoCrudo).carcamo.profundidad.valor).toBeCloseTo(alto('bombeo'), 6)
     // RAFA: se dibuja con el plano (7.25 m) y planta.json sube su coronación a fondo + 7.25; la cota queda POR REVISAR CON EL PERFIL.
     expect(alturaTotal(esquemaRafa.parse(rafaCrudo))).toBeCloseTo(alto('rafa'), 6)
+    // Percolador: se dibuja con el plano (4.05 m); su coronación en planta.json = fondo + 4.05, por revisar con el perfil (3.06 m).
+    expect(alturaPercolador(esquemaPercolador.parse(percoladorCrudo))).toBeCloseTo(alto('percolador'), 6)
   })
 })

@@ -1,0 +1,208 @@
+{
+  "id": "percolador",
+  "nombre": "Filtro percolador",
+  "demo": true,
+  "cuerpo": {
+    "diametroInterior": {
+      "valor": 18.5,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, corte A-A, cota superior; DXF ESTRUCTURAS2.dxf, capa FILTRO-COTAS, DIMENSION 18.500",
+      "demo": false
+    },
+    "espesorMuro": {
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, corte A-A (muro perimetral de 0.40 m); DXF capa FILTRO-COTAS, DIMENSION 0.400",
+      "demo": false
+    },
+    "espesorLosa": {
+      "valor": 0.5,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, corte A-A (losa de fondo de 0.50 m); DXF capa FILTRO-COTAS, la DIMENSION más cercana es 0.483",
+      "demo": false
+    },
+    "pendienteLosa": {
+      "valor": 0.0015,
+      "unidad": "adim",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, corte A-A (S = 1.5 por mil hacia el canal central)",
+      "demo": false
+    }
+  },
+  "camaraInferior": {
+    "altura": {
+      "valor": 1.05,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, corte A-A (cámara inferior de ventilación 1.05 m); DXF capa FILTRO-COTAS, DIMENSION 1.049",
+      "demo": false
+    },
+    "alturaViga": {
+      "valor": 0.72,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, corte A-A (vigas de soporte del lecho 0.72 m); DXF capa FILTRO-COTAS, DIMENSION 0.717",
+      "demo": false
+    },
+    "anchoViga": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: ancho de ejemplo de cada viga de soporte (por confirmar)",
+      "demo": true
+    },
+    "cantidadVigas": {
+      "valor": 7,
+      "unidad": "u",
+      "fuente": "No está en las fuentes: cantidad de ejemplo de vigas de soporte (por confirmar)",
+      "demo": true
+    },
+    "ladoVentana": {
+      "valor": 0.6,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, detalle de ventanas de ventilación 0.60 × 0.60 m en la pared perimetral; el DXF no trae una DIMENSION de 0.60 en esta zona",
+      "demo": false
+    },
+    "cantidadVentanas": {
+      "valor": 8,
+      "unidad": "u",
+      "fuente": "No está en las fuentes: cantidad de ejemplo de ventanas de ventilación (por confirmar)",
+      "demo": true
+    },
+    "alturaVentanaSobreLosa": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de ejemplo del borde inferior de las ventanas sobre la losa (por confirmar)",
+      "demo": true
+    }
+  },
+  "lecho": {
+    "altura": {
+      "valor": 2.5,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, corte A-A (lecho de roca de 2.50 m); coincide con CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'FILTRO PERCOLADOR', celda C48 (h); DXF capa FILTRO-COTAS, la DIMENSION más cercana es 2.539",
+      "demo": false
+    }
+  },
+  "distribuidor": {
+    "diametroColumna": {
+      "valor": 2.0,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, detalle 01 (columna central de distribución Ø 2.00 m); DXF capa FILTRO-COTAS, DIMENSION 2.000",
+      "demo": false
+    },
+    "cantidadBrazos": {
+      "valor": 4,
+      "unidad": "u",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, planta (4 brazos rociadores rotativos)",
+      "demo": false
+    },
+    "diametroBrazo": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, detalle 01 (tubería perforada DN 200)",
+      "demo": false
+    },
+    "alturaColumnaSobreLecho": {
+      "valor": 0.8,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de ejemplo de la columna con el motor sobre el lecho (por confirmar)",
+      "demo": true
+    },
+    "alturaBrazoSobreLecho": {
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de ejemplo de los brazos sobre el lecho (por confirmar)",
+      "demo": true
+    },
+    "vueltasPorMinuto": {
+      "valor": 1.0,
+      "unidad": "rpm",
+      "fuente": "No está en las fuentes: velocidad de giro de ejemplo a caudal promedio (la hoja y el plano no la traen) (por confirmar)",
+      "demo": true
+    }
+  },
+  "entrada": {
+    "diametro": {
+      "valor": 0.63,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, detalle 01 y 02 (tubería DN 630 HDPE PN10 desde el RAFA, tramo enterrado)",
+      "demo": false
+    },
+    "material": {
+      "valor": "HDPE PN10",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, detalle 01 y 02 (tubería DN 630 HDPE PN10 desde el RAFA)",
+      "demo": false
+    }
+  },
+  "canal": {
+    "ancho": {
+      "valor": 0.6,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: ancho de ejemplo del canal central de recolección (por confirmar)",
+      "demo": true
+    },
+    "alto": {
+      "valor": 0.15,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: alto de ejemplo del canal central de recolección (por confirmar)",
+      "demo": true
+    }
+  },
+  "salida": {
+    "ancho": {
+      "valor": 1.58,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, corte B-B (cámara de salida 1.58 m); DXF capa FILTRO-COTAS, DIMENSION 1.575",
+      "demo": false
+    },
+    "profundidad": {
+      "valor": 2.18,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, corte B-B (profundidad 2.18 m); DXF capa FILTRO-COTAS, DIMENSION 2.184",
+      "demo": false
+    },
+    "ladoCompuerta": {
+      "valor": 0.6,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, corte B-B (compuerta mural 0.60 × 0.60 m)",
+      "demo": false
+    },
+    "diametroTubo": {
+      "valor": 0.63,
+      "unidad": "m",
+      "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, corte B-B (tubería DN 630 HDPE de salida)",
+      "demo": false
+    },
+    "nivelMinimo": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: nivel de ejemplo del agua en la cámara de salida sin caudal (por confirmar)",
+      "demo": true
+    },
+    "nivelMaximo": {
+      "valor": 1.2,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: nivel de ejemplo del agua en la cámara de salida a Qmh (por confirmar)",
+      "demo": true
+    }
+  },
+  "agua": {
+    "laminaMaxima": {
+      "valor": 0.05,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: lámina de ejemplo sobre el lecho a Qmh (el lecho no trabaja inundado) (por confirmar)",
+      "demo": true
+    }
+  },
+  "hidraulica": {
+    "volumenHoja": {
+      "valor": 684.3,
+      "unidad": "m3",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'FILTRO PERCOLADOR', celda G40 (Vf, volumen del filtro percolador)",
+      "demo": false
+    },
+    "diametroHoja": {
+      "valor": 18.668,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'FILTRO PERCOLADOR', celda G48 (D, diámetro del filtro)",
+      "demo": false
+    }
+  }
+}

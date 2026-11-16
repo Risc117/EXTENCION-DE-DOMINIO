@@ -274,9 +274,10 @@
         "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa 0, borde inferior de la polilínea del filtro (perfil x ≈ 310357-310376.6, ancho que cuadra con el diámetro de 18.7 m de la hoja FILTRO PERCOLADOR); cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
       },
       "cotaCoronacion": {
-        "valor": 2983.8,
+        "valor": 2984.79,
         "unidad": "m",
-        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa 0, borde superior de la polilínea del filtro; cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+        "fuente": "derivado (T12, decisión del usuario): coronación = cota de fondo 2980.74 (medida del perfil, ±0.2 m, ver cotaFondo) + altura total del plano 4.05 m (losa 0.50 + cámara de ventilación 1.05 + lecho 2.50; insumos/NUEVO PDF/ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, corte A-A). El perfil daba 2983.8 (3.06 m): POR REVISAR CON EL PERFIL",
+        "demo": true
       },
       "cotaSuperficie": {
         "valor": 2980.74,
@@ -284,24 +285,10 @@
         "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su fondo (se apoya sobre el suelo)"
       },
       "radioExplanada": {
-        "valor": 11.8,
+        "valor": 13,
         "unidad": "m",
-        "fuente": "derivado: mitad del ancho 19.6 m medido en el perfil + 2 m de margen",
+        "fuente": "derivado (T12): radio exterior 9.65 m de datos/percolador.json + cámara de salida 1.58 m + tubería 1.5 m + margen",
         "demo": true
-      },
-      "marcador": {
-        "largo": {
-          "valor": 12,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "ancho": {
-          "valor": 12,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        }
       }
     },
     {

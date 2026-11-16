@@ -10,10 +10,10 @@ const bombeo = esquemaBombeo.parse(bombeoCrudo)
 const malla = cuadricula(terreno)
 const terrenoEn = (u: { x: { valor: number }; y: { valor: number } }): number => alturaEn(malla, u.x.valor, u.y.valor) ?? NaN
 
-const MEDIDAS = ['rejas', 'desarenador', 'parshall', 'homogeneizador', 'percolador', 'camara-contacto']
+const MEDIDAS = ['rejas', 'desarenador', 'parshall', 'homogeneizador', 'camara-contacto']
 const DERIVADAS = ['sedimentador-1', 'sedimentador-2', 'lechos-secado']
 /** RAFA (T11): fondo derivado del terreno y la hoja; coronación = fondo + altura total del plano (7.25 m), 0.95 m sobre el terreno. */
-const DEL_PLANO = ['rafa']
+const DEL_PLANO = ['rafa', 'percolador']
 /** Estación de bombeo: cotas de ejemplo derivadas del terreno levantado y de la profundidad supuesta del cárcamo. */
 const DEL_TERRENO = ['bombeo']
 const MARCA_MEDIDA = 'medido del dibujo del perfil, ±0.2 m aprox. por confirmar'
@@ -82,6 +82,15 @@ describe('cotas de fondo y coronación', () => {
     }
     expect(u.cotaFondo.valor).toBeLessThan(terrenoEn(u))
     expect(u.cotaCoronacion.valor - terrenoEn(u)).toBeCloseTo(0.95, 1)
+  })
+
+  it('el percolador tiene el fondo medido del perfil y la coronación derivada del plano (de ejemplo)', () => {
+    const u = planta.unidades.find((x) => x.id === 'percolador')!
+    expect(u.cotaFondo.fuente).toContain(MARCA_MEDIDA)
+    expect(u.cotaFondo.demo).not.toBe(true)
+    expect(u.cotaCoronacion.fuente).toContain('derivado')
+    expect(u.cotaCoronacion.fuente).toContain('POR REVISAR CON EL PERFIL')
+    expect(u.cotaCoronacion.demo).toBe(true)
   })
 
   it('el alto (coronación menos fondo) es positivo', () => {
