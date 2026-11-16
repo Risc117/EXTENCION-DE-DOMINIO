@@ -12,6 +12,7 @@ import { PanelCorte } from './ui/PanelCorte'
 import { PanelDemo } from './ui/PanelDemo'
 import { PanelGestos } from './ui/PanelGestos'
 import { PanelSimulacion } from './ui/PanelSimulacion'
+import { PanelTerreno } from './ui/PanelTerreno'
 import { PanelUnidades } from './ui/PanelUnidades'
 
 export function App() {
@@ -28,6 +29,7 @@ export function App() {
         <PanelCorte />
         <PanelAccesorios />
         <PanelAnotaciones />
+        <PanelTerreno />
         <PanelCalidad />
       </div>
       <PanelDemo />

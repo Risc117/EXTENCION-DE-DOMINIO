@@ -74,3 +74,4 @@ canvas { touch-action: none; }
 .panel-unidades button[aria-pressed='false'] { opacity: 0.75; }
 .panel-unidades button[aria-pressed='true'] { font-weight: 700; }
 .anotacion--marcador { border: 1px solid var(--color-etiqueta-linea); }
+.cota-terreno { margin: 0; font-size: 0.85rem; color: var(--color-texto); }

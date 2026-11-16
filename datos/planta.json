@@ -1,21 +1,19 @@
 {
-  "fuente": "Plano general de la PTAR (pendiente de leer, T9). Mientras tanto todo es de ejemplo.",
+  "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (posiciones de los rótulos de PTAR-TEXTO); las cotas de fondo y los tamaños de las cajas siguen de ejemplo hasta tener el perfil",
   "demo": true,
   "unidades": [
     {
       "id": "rejas",
       "nombre": "Cámara de rejas",
       "x": {
-        "valor": 0,
+        "valor": -30,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"PRETRATAMIENTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "y": {
-        "valor": 0,
+        "valor": -54.6,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"PRETRATAMIENTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "giro": {
         "valor": 0,
@@ -54,15 +52,15 @@
       "id": "desarenador",
       "nombre": "Desarenador",
       "x": {
-        "valor": 14,
+        "valor": -30,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"PRETRATAMIENTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json); separación en fila de ejemplo (8 m hacia el norte), el plano no separa estas unidades",
         "demo": true
       },
       "y": {
-        "valor": 0,
+        "valor": -46.6,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"PRETRATAMIENTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json); separación en fila de ejemplo (8 m hacia el norte), el plano no separa estas unidades",
         "demo": true
       },
       "giro": {
@@ -102,15 +100,15 @@
       "id": "parshall",
       "nombre": "Canal Parshall",
       "x": {
-        "valor": 28,
+        "valor": -30,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"PRETRATAMIENTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json); separación en fila de ejemplo (16 m hacia el norte), el plano no separa estas unidades",
         "demo": true
       },
       "y": {
-        "valor": 0,
+        "valor": -38.6,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"PRETRATAMIENTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json); separación en fila de ejemplo (16 m hacia el norte), el plano no separa estas unidades",
         "demo": true
       },
       "giro": {
@@ -150,16 +148,14 @@
       "id": "homogeneizador",
       "nombre": "Tanque homogeneizador",
       "x": {
-        "valor": 48,
+        "valor": -29.6,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"HOMOGENIZADOR\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "y": {
-        "valor": 0,
+        "valor": -28.4,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"HOMOGENIZADOR\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "giro": {
         "valor": 0,
@@ -178,16 +174,14 @@
       "id": "rafa",
       "nombre": "RAFA (UASB)",
       "x": {
-        "valor": 72,
+        "valor": -23.4,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"RAFA\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "y": {
-        "valor": 0,
+        "valor": -7.8,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"RAFA\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "giro": {
         "valor": 0,
@@ -226,16 +220,14 @@
       "id": "percolador",
       "nombre": "Filtro percolador",
       "x": {
-        "valor": 98,
+        "valor": -13.2,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"FILTRO PERCOLADOR\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "y": {
-        "valor": 0,
+        "valor": 15,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"FILTRO PERCOLADOR\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "giro": {
         "valor": 0,
@@ -274,16 +266,14 @@
       "id": "sedimentador-1",
       "nombre": "Sedimentador 1",
       "x": {
-        "valor": 98,
+        "valor": 19.3,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"SED. SECUNDARIO 1\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "y": {
-        "valor": -26,
+        "valor": 52.8,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"SED. SECUNDARIO 1\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "giro": {
         "valor": 0,
@@ -322,16 +312,14 @@
       "id": "sedimentador-2",
       "nombre": "Sedimentador 2",
       "x": {
-        "valor": 80,
+        "valor": 15.4,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"SED. SECUNDARIO 2\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "y": {
-        "valor": -26,
+        "valor": 34.6,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"SED. SECUNDARIO 2\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "giro": {
         "valor": 0,
@@ -370,16 +358,14 @@
       "id": "camara-contacto",
       "nombre": "Cámara de contacto",
       "x": {
-        "valor": 60,
+        "valor": 33.8,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"CAMARA DE CONTACTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "y": {
-        "valor": -26,
+        "valor": 33.4,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"CAMARA DE CONTACTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "giro": {
         "valor": 0,
@@ -418,16 +404,14 @@
       "id": "lechos-secado",
       "nombre": "Lechos de secado",
       "x": {
-        "valor": 36,
+        "valor": -3,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"LECHOS DE SECADO (AREA DE LODOS)\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "y": {
-        "valor": -26,
+        "valor": -14.8,
         "unidad": "m",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"LECHOS DE SECADO (AREA DE LODOS)\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
       },
       "giro": {
         "valor": 0,

@@ -96,3 +96,12 @@ export const TEXTO_UNIDADES = {
   titulo: 'Ir a',
   general: 'Vista general',
 }
+
+/** Terreno con curvas de nivel y cota bajo el mouse. */
+export const TEXTO_TERRENO = {
+  curvasMostrar: 'Mostrar curvas de nivel',
+  curvasOcultar: 'Ocultar curvas de nivel',
+  cota: 'Cota del terreno',
+  unidad: 'm s.n.m.',
+  muroEjemplo: 'altura del muro',
+}

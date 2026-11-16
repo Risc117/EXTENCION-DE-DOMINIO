@@ -13,6 +13,7 @@ import { unidades } from '../unidades/registro'
 import { cotaReferencia } from '../unidades/ubicar'
 import { ControlCamara } from './ControlCamara'
 import { encuadre } from './encuadre'
+import { EntornoTerreno } from './terreno'
 import { UnidadColocada } from './UnidadColocada'
 
 const referencia = cotaReferencia(unidades)
@@ -25,6 +26,7 @@ export function Escena() {
     <Canvas gl={{ localClippingEnabled: true }} camera={{ position: [ox + d, d * CAMARA_ALTURA_FACTOR, oz + d], fov: CAMARA_FOV, near: CAMARA_NEAR, far: escala * CAMARA_FAR_FACTOR }}>
       <ambientLight intensity={LUZ_AMBIENTE} />
       <directionalLight position={[ox + escala, escala * LUZ_ALTURA_FACTOR, oz + escala]} intensity={LUZ_DIRECCIONAL} />
+      <EntornoTerreno referencia={referencia} />
       {unidades.map((u) => (
         <UnidadColocada key={u.id} unidad={u} referencia={referencia} />
       ))}

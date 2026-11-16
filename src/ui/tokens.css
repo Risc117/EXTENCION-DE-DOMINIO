@@ -39,3 +39,9 @@
   --color-anotacion-fondo: rgba(15, 26, 36, 0.8);
   --color-anotacion-texto: #ffffff;
 }
+:root {
+  --color-terreno-bajo: #5f7a4a;
+  --color-terreno-alto: #b59a6a;
+  --color-curva-nivel: #1c2a1a;
+  --color-muro-contencion: #9aa3aa;
+}
