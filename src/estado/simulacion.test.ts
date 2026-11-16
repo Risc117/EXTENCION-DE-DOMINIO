@@ -36,3 +36,12 @@ describe('estado de la simulación', () => {
     expect(useSim.getState().modoSalida).toBe('gravedad')
   })
 })
+
+describe('escala del caudal (T9.5)', () => {
+  it('publicar guarda la escala y elegir otro día la borra hasta que se publique de nuevo', () => {
+    useSim.getState().publicar({ escalaCaudal: { factor: 0.5, caudalDiseno: 6.536, motivo: 'm' } })
+    expect(useSim.getState().escalaCaudal?.caudalDiseno).toBe(6.536)
+    useSim.getState().reiniciar()
+    expect(useSim.getState().escalaCaudal).toBeNull()
+  })
+})

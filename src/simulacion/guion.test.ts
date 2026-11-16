@@ -51,7 +51,7 @@ describe('valoresDemo', () => {
     expect(v.diametroInterior).toBeCloseTo(7.58, 6)
     expect(v.alturaUtil).toBe(4.9)
     expect(v.volumenUtil).toBeCloseTo(221.1, 1)
-    expect(v.volumenRequerido).toBeCloseTo(225.8, 0)
+    expect(v.volumenRequerido).toBeCloseTo(113.5, 0)
     expect(v.dia).toBe(1)
   })
 })

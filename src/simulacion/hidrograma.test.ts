@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import crudo from '../../datos/hidrograma.json'
-import { crearHidrograma, esquemaHidrograma } from './hidrograma'
+import escala from '../../datos/escalaCaudal.json'
+import { crearHidrograma, esquemaEscala, esquemaHidrograma } from './hidrograma'
 
 type Registro = { dias: { caudal_ls_por_hora: number[] }[]; fuente?: string }
 const copia = () => structuredClone(crudo) as unknown as Registro
@@ -40,5 +41,43 @@ describe('datos/hidrograma.json', () => {
     const negativo = copia()
     negativo.dias[0].caudal_ls_por_hora[3] = -1
     expect(esquemaHidrograma.safeParse(negativo).success).toBe(false)
+  })
+})
+
+describe('hidrograma escalado a un solo caudal (T9.5)', () => {
+  const h = crearHidrograma(crudo, escala)
+  const QP = escala.caudalPromedio.valor
+  const QMH = escala.caudalMaximoHorario.valor
+
+  it('el promedio de cada día escalado es Qp ±0.01 L/s', () => {
+    for (const d of h.dias) expect(Math.abs(h.promedio(d) - QP)).toBeLessThan(0.01)
+  })
+
+  it('el máximo escalado no supera Qmh', () => {
+    for (const d of h.dias) {
+      for (let hora = 0; hora < 24; hora++) expect(h.caudalEntrada(d, hora)).toBeLessThanOrEqual(QMH)
+    }
+  })
+
+  it('el factor de cada día sale de los datos: Qp / promedio de ese día', () => {
+    const base = crearHidrograma(crudo)
+    expect(h.factorEscala(1)).toBeCloseTo(QP / base.promedio(1), 10)
+    expect(h.factorEscala(1)).toBeCloseTo(0.5026, 3)
+    const otro = crearHidrograma(crudo, { ...escala, caudalPromedio: { ...escala.caudalPromedio, valor: 3 } })
+    expect(otro.factorEscala(1)).toBeCloseTo(3 / base.promedio(1), 10)
+  })
+
+  it('conserva la forma: la proporción entre horas no cambia', () => {
+    const base = crearHidrograma(crudo)
+    expect(h.caudalEntrada(1, 12) / h.caudalEntrada(1, 0)).toBeCloseTo(base.caudalEntrada(1, 12) / base.caudalEntrada(1, 0), 10)
+  })
+
+  it('sin escala el factor es 1 y expone el caudal de diseño', () => {
+    expect(crearHidrograma(crudo).factorEscala(1)).toBe(1)
+    expect(h.caudalDiseno).toBe(QP)
+  })
+
+  it('rechaza una escala sin fuente', () => {
+    expect(esquemaEscala.safeParse({ ...escala, caudalPromedio: { valor: 6, unidad: 'L/s', demo: false } }).success).toBe(false)
   })
 })

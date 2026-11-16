@@ -11,7 +11,11 @@ export function useSimulacion() {
     // Al elegir un día, se publica su promedio y su caudal de la hora actual.
     const publicarDia = () => {
       const s = useSim.getState()
-      s.publicar({ promedioDia: hidrograma.promedio(s.dia), caudalEntrada: hidrograma.caudalEntrada(s.dia, s.hora) })
+      const escalaCaudal =
+        hidrograma.caudalDiseno === null || hidrograma.motivoEscala === null
+          ? null
+          : { factor: hidrograma.factorEscala(s.dia), caudalDiseno: hidrograma.caudalDiseno, motivo: hidrograma.motivoEscala }
+      s.publicar({ promedioDia: hidrograma.promedio(s.dia), caudalEntrada: hidrograma.caudalEntrada(s.dia, s.hora), escalaCaudal })
     }
     publicarDia()
     let diaAnterior = useSim.getState().dia

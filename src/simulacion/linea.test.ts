@@ -3,6 +3,7 @@ import crudo from '../../datos/linea.json'
 import planta from '../../datos/planta.json'
 import hidro from '../../datos/hidrograma.json'
 import type { ParametrosTanque } from '../estado/simulacion'
+import escala from '../../datos/escalaCaudal.json'
 import { crearHidrograma } from './hidrograma'
 import { crearLinea } from './linea'
 import { esquemaLinea } from './lineaEsquema'
@@ -91,5 +92,25 @@ describe('línea encadenada', () => {
       if (r.salida > 5.001) primero = t
     }
     expect(primero).toBeGreaterThan(11 * 3600)
+  })
+
+  it('con el hidrograma escalado (≈ 6.5 L/s) el balance sigue cerrando: lo que entra en un día sale', () => {
+    const hid = crearHidrograma(hidro, escala)
+    const linea = crearLinea(crudo, { tanque, modo: 'constante' })
+    const promedio = hid.promedio(1)
+    expect(promedio).toBeCloseTo(6.536, 2)
+    // Se repite el día 1 varios días hasta llegar a estado estable.
+    let entrado = 0
+    let salido = 0
+    for (let dia = 0; dia < 4; dia++) {
+      for (let t = 0; t < 24 * 3600; t += DT) {
+        const r = linea.paso(hid.caudalEntrada(1, t / 3600), DT, promedio)
+        if (dia === 3) {
+          entrado += r.entrada * DT
+          salido += r.salida * DT
+        }
+      }
+    }
+    expect(Math.abs(entrado - salido) / entrado).toBeLessThan(0.01)
   })
 })

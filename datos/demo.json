@@ -32,7 +32,7 @@
     },
     {
       "titulo": "Verificación del volumen",
-      "texto": "Con los caudales del día {dia:0}, el volumen requerido es de unos {volumenRequerido:0} m³, frente a {volumenUtil:1} m³ de volumen útil. Queda muy justo y conviene verificarlo. Recuerda que esto es un esquema ilustrativo.",
+      "texto": "Con los caudales del día {dia:0}, el volumen requerido es de unos {volumenRequerido:0} m³, frente a {volumenUtil:1} m³ de volumen útil. Con el caudal escalado el tanque queda holgado; conviene revisarlo con el grupo o el profesor. Recuerda que esto es un esquema ilustrativo.",
       "duracionSegundos": 18,
       "vista": { "acimut": 0.785, "elevacion": 0.46, "distancia": 2.8 },
       "accion": { "salidaAjuste": null, "velocidad": 600 }

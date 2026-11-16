@@ -1,0 +1,5 @@
+{
+  "caudalPromedio": { "valor": 6.536, "unidad": "L/s", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hojas de rejas, desarenador, Parshall, RAFA, percolador, sedimentador, desinfección y lechos: Qp = 6.536 L/s (564.7 m³/d)", "demo": false },
+  "caudalMaximoHorario": { "valor": 13.072, "unidad": "L/s", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, mismas hojas: Qmh = 13.072 L/s", "demo": false },
+  "motivo": "El hidrograma de la hoja ECUALIZADOR promedia 13.005 L/s, el doble del Qp que usan las demás hojas. Por decisión del usuario (T9.5) se conserva la forma de cada día y se escala (Qp / promedio de ese día) para que su promedio sea Qp."
+}

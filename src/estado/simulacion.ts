@@ -13,6 +13,14 @@ export interface ParametrosTanque {
   diametroSalida: number
 }
 
+/** Cómo se escaló el hidrograma para que todo el sistema use un solo caudal (T9.5). */
+export interface EscalaCaudal {
+  factor: number
+  /** Caudal promedio de diseño (L/s). */
+  caudalDiseno: number
+  motivo: string
+}
+
 /** constante: salida fija (promedio del día o ajustada) · gravedad: depende del nivel. */
 export type ModoSalida = 'constante' | 'gravedad'
 
@@ -35,6 +43,8 @@ interface EstadoSim extends Medidas {
   elegirDia: (dia: number) => void
   /** Promedio de caudal de entrada del día elegido (L/s). */
   promedioDia: number
+  /** Escala aplicada al hidrograma del día elegido; null si no se escaló. */
+  escalaCaudal: EscalaCaudal | null
   corriendo: boolean
   alternarCorriendo: () => void
   velocidad: number
@@ -45,7 +55,7 @@ interface EstadoSim extends Medidas {
   salidaAjuste: number | null
   fijarSalidaAjuste: (v: number | null) => void
   /** La simulación publica sus resultados aquí. */
-  publicar: (m: Partial<Medidas> & { promedioDia?: number }) => void
+  publicar: (m: Partial<Medidas> & { promedioDia?: number; escalaCaudal?: EscalaCaudal | null }) => void
   reiniciar: () => void
 }
 
@@ -58,6 +68,7 @@ const inicio = {
   caudalSalida: 0,
   caudalRebose: 0,
   promedioDia: 0,
+  escalaCaudal: null as EscalaCaudal | null,
   salidaAjuste: null,
 }
 

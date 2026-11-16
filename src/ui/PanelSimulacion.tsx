@@ -66,6 +66,11 @@ export function PanelSimulacion() {
         <dt>{T.nivel}</dt><dd>{dosDecimales(s.nivel)} m</dd>
         <dt>{T.volumen}</dt><dd>{dosDecimales(s.volumen)} m³</dd>
       </dl>
+      {s.escalaCaudal && (
+        <p className="panel-simulacion__nota" title={s.escalaCaudal.motivo}>
+          {T.hidrogramaEscalado} ×{dosDecimales(s.escalaCaudal.factor)} {T.hidrogramaEscaladoPor} ({s.escalaCaudal.caudalDiseno} L/s)
+        </p>
+      )}
       {sobreAlturaUtil && <p className="panel-simulacion__aviso">{s.caudalRebose > 0 ? T.avisoRebose : T.avisoNivel}</p>}
     </details>
   )

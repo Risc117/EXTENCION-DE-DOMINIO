@@ -66,6 +66,8 @@ export const TEXTO_SIMULACION = {
   modoGravedad: 'Por gravedad',
   caudalSalidaAjuste: 'Caudal de salida (L/s)',
   caudalEntrada: 'Caudal de entrada',
+  hidrogramaEscalado: 'Hidrograma escalado',
+  hidrogramaEscaladoPor: 'para que el promedio del día sea el caudal de diseño de todo el sistema',
   caudalSalida: 'Caudal de salida',
   nivel: 'Nivel',
   volumen: 'Volumen',
