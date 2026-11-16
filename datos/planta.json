@@ -544,22 +544,8 @@
       "radioExplanada": {
         "valor": 10,
         "unidad": "m",
-        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
+        "fuente": "derivado: mitad de la diagonal del contorno exterior (15.4 × 11.4 m ≈ 9.6 m) más margen; del tamaño de ejemplo de la caja marcadora se pasó a la estructura real (T15)",
         "demo": true
-      },
-      "marcador": {
-        "largo": {
-          "valor": 16,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "ancho": {
-          "valor": 8,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        }
       }
     }
   ]

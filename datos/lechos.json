@@ -1,0 +1,242 @@
+{
+  "id": "lechos",
+  "nombre": "Lecho de secado de lodos",
+  "demo": true,
+  "lecho": {
+    "cantidad": {
+      "valor": 1,
+      "unidad": "u",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda C5 (N = 1 módulo) y plano de detalle con un solo lecho (insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf); POR CONFIRMAR CON EL USUARIO si son 1 o 2 lechos; se puede cambiar aquí sin tocar el código",
+      "demo": true
+    },
+    "separacion": {
+      "valor": 1.0,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: separación entre lechos (solo se usa si hay más de uno) de ejemplo (por confirmar)",
+      "demo": true
+    },
+    "anchoInterior": {
+      "valor": 11.0,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (vista plana, interior de 11.00 × 15.00 m); lectura en insumos/medidas-lechos.md; rectángulo de 15.0 × 11.0 m de insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf"
+    },
+    "largoInterior": {
+      "valor": 15.0,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (vista plana, interior de 11.00 × 15.00 m); lectura en insumos/medidas-lechos.md; insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda C12 (B = 15 m)"
+    }
+  },
+  "muro": {
+    "espesor": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (vista plana y corte A-A, muro perimetral); lectura en insumos/medidas-lechos.md"
+    },
+    "alturaSobreTerreno": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura del muro sobre el terreno de ejemplo (por confirmar)",
+      "demo": true
+    }
+  },
+  "totalesPlano": {
+    "ancho": {
+      "valor": 11.4,
+      "unidad": "m",
+      "fuente": "insumos/medidas-lechos.md: exterior 11.40 × 15.40 m; contorno exterior 15.4 × 11.4 m de insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf"
+    },
+    "largo": {
+      "valor": 15.4,
+      "unidad": "m",
+      "fuente": "insumos/medidas-lechos.md: exterior 11.40 × 15.40 m; contorno exterior 15.4 × 11.4 m de insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf"
+    }
+  },
+  "dren": {
+    "ancho": {
+      "valor": 0.8,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (vista plana, dren central de 0.80 m); lectura en insumos/medidas-lechos.md"
+    },
+    "desdeExterior": {
+      "valor": 5.3,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (corte A-A, 5.30 m a cada lado); lectura en insumos/medidas-lechos.md: se mide desde la cara exterior del muro hasta el borde del dren (0.20 + 5.10)"
+    },
+    "profundidad": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: profundidad del dren bajo el lecho de ejemplo (por confirmar)",
+      "demo": true
+    },
+    "espesorPared": {
+      "valor": 0.1,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: espesor de las paredes del dren y del piso de concreto de ejemplo (por confirmar)",
+      "demo": true
+    },
+    "separacionTapas": {
+      "valor": 0.5,
+      "unidad": "m",
+      "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (vista plana, tapas o ranuras cada ≈ 0.5 m); lectura en insumos/medidas-lechos.md; lectura aproximada",
+      "demo": true
+    },
+    "ranura": {
+      "valor": 0.05,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: ranura entre tapas de ejemplo (por confirmar)",
+      "demo": true
+    },
+    "espesorTapa": {
+      "valor": 0.05,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: espesor de las tapas de ejemplo (por confirmar)",
+      "demo": true
+    },
+    "diametroTuberia": {
+      "valor": 0.1016,
+      "unidad": "m",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda C39 (drenes perforados de 4 pulgadas de diámetro)"
+    }
+  },
+  "piso": {
+    "pendiente": {
+      "valor": 1.0,
+      "unidad": "%",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda C39 (S > 1 % en los drenes); insumos/medidas-lechos.md: el piso baja hacia el dren; la pendiente del piso no está en el plano",
+      "demo": true
+    }
+  },
+  "capas": {
+    "ladrillo": {
+      "espesor": {
+        "valor": 0.1,
+        "unidad": "m",
+        "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda E31 (capa de ladrillos); corte A-A del plano (insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf)"
+      },
+      "largo": {
+        "valor": 0.2,
+        "unidad": "m",
+        "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (corte A-A, ladrillo adoquín 10 × 20 × 10 cm); lectura en insumos/medidas-lechos.md"
+      },
+      "ancho": {
+        "valor": 0.1,
+        "unidad": "m",
+        "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (corte A-A, ladrillo adoquín 10 × 20 × 10 cm); lectura en insumos/medidas-lechos.md"
+      },
+      "alto": {
+        "valor": 0.1,
+        "unidad": "m",
+        "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (corte A-A, ladrillo adoquín 10 × 20 × 10 cm); lectura en insumos/medidas-lechos.md"
+      }
+    },
+    "arena": {
+      "espesor": {
+        "valor": 0.1,
+        "unidad": "m",
+        "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda E33 (capa de arena); corte A-A del plano (insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf)"
+      },
+      "granuloMin": {
+        "valor": 0.3,
+        "unidad": "mm",
+        "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (corte A-A, capa de arena); lectura en insumos/medidas-lechos.md"
+      },
+      "granuloMax": {
+        "valor": 1.3,
+        "unidad": "mm",
+        "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (corte A-A, capa de arena); lectura en insumos/medidas-lechos.md"
+      }
+    },
+    "gravaFina": {
+      "espesor": {
+        "valor": 0.05,
+        "unidad": "m",
+        "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda E35 (grava fina); corte A-A del plano (insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf)"
+      },
+      "granuloMin": {
+        "valor": 1.6,
+        "unidad": "mm",
+        "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (corte A-A, grava fina); lectura en insumos/medidas-lechos.md"
+      },
+      "granuloMax": {
+        "valor": 3.2,
+        "unidad": "mm",
+        "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (corte A-A, grava fina); lectura en insumos/medidas-lechos.md"
+      }
+    },
+    "gravaMedia": {
+      "espesor": {
+        "valor": 0.05,
+        "unidad": "m",
+        "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda E36 (grava media); corte A-A del plano (insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf)"
+      },
+      "granuloMin": {
+        "valor": 3.2,
+        "unidad": "mm",
+        "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (corte A-A, grava media); lectura en insumos/medidas-lechos.md"
+      },
+      "granuloMax": {
+        "valor": 6.4,
+        "unidad": "mm",
+        "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (corte A-A, grava media); lectura en insumos/medidas-lechos.md"
+      }
+    },
+    "gravaGruesa": {
+      "espesor": {
+        "valor": 0.1,
+        "unidad": "m",
+        "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda E37 (grava gruesa); corte A-A del plano (insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf)"
+      },
+      "granuloMin": {
+        "valor": 6.4,
+        "unidad": "mm",
+        "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (corte A-A, grava gruesa); lectura en insumos/medidas-lechos.md"
+      },
+      "granuloMax": {
+        "valor": 19.0,
+        "unidad": "mm",
+        "fuente": "insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf (corte A-A, grava gruesa); lectura en insumos/medidas-lechos.md"
+      }
+    }
+  },
+  "lodo": {
+    "alturaMaxima": {
+      "valor": 0.25,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura máxima del lodo sobre el lecho de ejemplo (por confirmar)",
+      "demo": true
+    },
+    "horasPorCiclo": {
+      "valor": 24,
+      "unidad": "h",
+      "fuente": "No está en las fuentes: horas de simulación que dura un ciclo en pantalla (el ciclo real de 42 días no cabe en el reloj de 24 h); de ejemplo hasta T19 y T20",
+      "demo": true
+    }
+  },
+  "hoja": {
+    "profundidad": {
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda C8 (h = 0.40 m, rango 0.20 - 0.40)"
+    },
+    "cicloDias": {
+      "valor": 42,
+      "unidad": "dias",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda C22 (periodo total de ciclo)"
+    },
+    "secadoSemanas": {
+      "valor": 4,
+      "unidad": "semanas",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda C9 (periodo de secado)"
+    },
+    "remocionSemanas": {
+      "valor": 2,
+      "unidad": "semanas",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda C10 (periodo de remoción)"
+    },
+    "areaHoja": {
+      "valor": 170.1676739355428,
+      "unidad": "m2",
+      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda H24 (área final; el plano da 165 m² y se dibuja con el plano)"
+    }
+  }
+}
