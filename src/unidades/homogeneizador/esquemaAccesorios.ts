@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { medida } from './medida'
+import { medida } from '../comun/medida'
 
 const posteEntero = medida.refine((m) => Number.isInteger(m.valor) && m.valor >= 4, 'Debe haber al menos 4 postes, en número entero')
 

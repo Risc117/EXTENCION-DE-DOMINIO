@@ -4,6 +4,9 @@ import tseslint from 'typescript-eslint'
 import reactHooks from 'eslint-plugin-react-hooks'
 import boundaries from 'eslint-plugin-boundaries'
 
+// Unidades de la PTAR: cada una vive en src/unidades/<unidad>/ y solo puede usar lo compartido de src/unidades/comun/ (y los datos de planta/).
+const unidadesPtar = ['homogeneizador', 'bombeo', 'rejas', 'desarenador', 'parshall', 'marcador']
+
 const capas = ['nucleo', 'simulacion', 'estado', 'entrada', 'escena', 'unidades', 'ui']
 
 // Qué capas puede importar cada capa. Todo lo demás está prohibido.
@@ -49,4 +52,20 @@ export default tseslint.config(
       ],
     },
   },
+  ...unidadesPtar.map((u) => ({
+    files: [`src/unidades/${u}/**/*.{ts,tsx}`],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: unidadesPtar.filter((o) => o !== u).flatMap((o) => [`../${o}`, `../${o}/**`, `**/unidades/${o}/**`]),
+              message: 'Una unidad no importa de otra: lo compartido va en src/unidades/comun/.',
+            },
+          ],
+        },
+      ],
+    },
+  })),
 )

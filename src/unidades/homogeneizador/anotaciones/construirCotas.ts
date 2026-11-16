@@ -9,8 +9,8 @@ import type { DatosHomogeneizador } from '../esquema'
 import type { DefCota } from '../esquemaAnotaciones'
 import { cotaTecho } from '../accesorios/cotas'
 import { leerMedida } from './medidaPorRuta'
-import { resolverTexto } from './texto'
-import type { CotaCalculada, Vec3 } from './tipos'
+import { resolverTexto } from '../../comun/texto'
+import type { CotaCalculada, Vec3 } from '../../comun/tiposAnotaciones'
 
 const aRadianes = (grados: number) => (grados * Math.PI) / 180
 const medio = (a: Vec3, b: Vec3, subida = 0): Vec3 => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2 + subida, (a[2] + b[2]) / 2]

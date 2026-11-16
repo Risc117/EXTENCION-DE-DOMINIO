@@ -1,25 +1,66 @@
 {
-  "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (posiciones de los rótulos de PTAR-TEXTO); cotas de fondo y coronación medidas del dibujo del perfil del mismo DXF (±0.2 m aprox., por confirmar) o derivadas del terreno y de la hoja de cálculo; los tamaños de las cajas siguen de ejemplo",
+  "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (posiciones de los rótulos de PTAR-TEXTO, del círculo del cárcamo EB-1 y de la fila del pretratamiento); cotas de fondo y coronación medidas del dibujo del perfil del mismo DXF (±0.2 m aprox., por confirmar) o derivadas del terreno y de la hoja de cálculo; los tamaños de las cajas siguen de ejemplo",
   "demo": true,
   "unidades": [
+    {
+      "id": "bombeo",
+      "nombre": "Estación de bombeo EB-1",
+      "x": {
+        "valor": -3,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS, centro del círculo doble (radios 1.6 y 1.25 m) junto al rótulo \"ESTACION DE BOMBEO EB-1\" (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": -69.5,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS, centro del círculo doble (radios 1.6 y 1.25 m) junto al rótulo \"ESTACION DE BOMBEO EB-1\" (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+      },
+      "giro": {
+        "valor": 133.97,
+        "unidad": "grados",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA: dirección de la tubería que sale del cárcamo hacia el pretratamiento; el eje de la caseta y de la impulsión apunta así"
+      },
+      "cotaFondo": {
+        "valor": 2982.65,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno en el punto (2985.65 m, datos/terreno.json) menos la profundidad de ejemplo del cárcamo (3 m, datos/bombeo.json)",
+        "demo": true
+      },
+      "cotaCoronacion": {
+        "valor": 2985.65,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno levantado (datos/terreno.json) en el centro del cárcamo EB-1",
+        "demo": true
+      },
+      "cotaSuperficie": {
+        "valor": 2985.65,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno levantado (datos/terreno.json) en el centro del cárcamo EB-1; la explanada queda a ese nivel"
+      },
+      "radioExplanada": {
+        "valor": 7,
+        "unidad": "m",
+        "fuente": "derivado: cárcamo, caseta y tramo de impulsión de ejemplo (datos/bombeo.json) más 1 m de margen",
+        "demo": true
+      }
+    },
     {
       "id": "rejas",
       "nombre": "Cámara de rejas",
       "x": {
-        "valor": -30,
+        "valor": -26.63,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"PRETRATAMIENTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "datos/pretratamiento.json: centro del tramo \"rejas\" de la fila continua (ESTRUCTURAS2.dxf, vista en planta) sobre el mapa general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS)"
       },
       "y": {
-        "valor": -54.6,
+        "valor": -49.47,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"PRETRATAMIENTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "datos/pretratamiento.json: centro del tramo \"rejas\" de la fila continua (ESTRUCTURAS2.dxf, vista en planta) sobre el mapa general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS)"
       },
       "giro": {
-        "valor": 0,
+        "valor": 95.7,
         "unidad": "grados",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "datos/pretratamiento.json: dirección del flujo de la fila del pretratamiento"
       },
       "cotaFondo": {
         "valor": 2991.82,
@@ -37,46 +78,29 @@
         "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)"
       },
       "radioExplanada": {
-        "valor": 5,
+        "valor": 3.5,
         "unidad": "m",
-        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
+        "fuente": "derivado: mitad del largo de la estructura (datos/pretratamiento.json) más 2 m de margen; las tres explanadas están a la misma cota y forman una sola plataforma",
         "demo": true
-      },
-      "marcador": {
-        "largo": {
-          "valor": 6,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "ancho": {
-          "valor": 2,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        }
       }
     },
     {
       "id": "desarenador",
       "nombre": "Desarenador",
       "x": {
-        "valor": -30,
+        "valor": -27.1,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"PRETRATAMIENTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json); separación en fila de ejemplo (8 m hacia el norte), el plano no separa estas unidades",
-        "demo": true
+        "fuente": "datos/pretratamiento.json: centro del tramo \"desarenador\" de la fila continua (ESTRUCTURAS2.dxf, vista en planta) sobre el mapa general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS)"
       },
       "y": {
-        "valor": -46.6,
+        "valor": -44.71,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"PRETRATAMIENTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json); separación en fila de ejemplo (8 m hacia el norte), el plano no separa estas unidades",
-        "demo": true
+        "fuente": "datos/pretratamiento.json: centro del tramo \"desarenador\" de la fila continua (ESTRUCTURAS2.dxf, vista en planta) sobre el mapa general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS)"
       },
       "giro": {
-        "valor": 0,
+        "valor": 95.7,
         "unidad": "grados",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "datos/pretratamiento.json: dirección del flujo de la fila del pretratamiento"
       },
       "cotaFondo": {
         "valor": 2991.47,
@@ -94,46 +118,29 @@
         "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)"
       },
       "radioExplanada": {
-        "valor": 7,
+        "valor": 6,
         "unidad": "m",
-        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
+        "fuente": "derivado: mitad del largo de la estructura (datos/pretratamiento.json) más 2 m de margen; las tres explanadas están a la misma cota y forman una sola plataforma",
         "demo": true
-      },
-      "marcador": {
-        "largo": {
-          "valor": 10,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "ancho": {
-          "valor": 3,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        }
       }
     },
     {
       "id": "parshall",
       "nombre": "Canal Parshall",
       "x": {
-        "valor": -30,
+        "valor": -27.57,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"PRETRATAMIENTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json); separación en fila de ejemplo (16 m hacia el norte), el plano no separa estas unidades",
-        "demo": true
+        "fuente": "datos/pretratamiento.json: centro del tramo \"parshall\" de la fila continua (ESTRUCTURAS2.dxf, vista en planta) sobre el mapa general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS)"
       },
       "y": {
-        "valor": -38.6,
+        "valor": -40.03,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"PRETRATAMIENTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json); separación en fila de ejemplo (16 m hacia el norte), el plano no separa estas unidades",
-        "demo": true
+        "fuente": "datos/pretratamiento.json: centro del tramo \"parshall\" de la fila continua (ESTRUCTURAS2.dxf, vista en planta) sobre el mapa general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS)"
       },
       "giro": {
-        "valor": 0,
+        "valor": 95.7,
         "unidad": "grados",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "datos/pretratamiento.json: dirección del flujo de la fila del pretratamiento"
       },
       "cotaFondo": {
         "valor": 2991.17,
@@ -151,24 +158,10 @@
         "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)"
       },
       "radioExplanada": {
-        "valor": 6,
+        "valor": 3.5,
         "unidad": "m",
-        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
+        "fuente": "derivado: mitad del largo de la estructura (datos/pretratamiento.json) más 2 m de margen; las tres explanadas están a la misma cota y forman una sola plataforma",
         "demo": true
-      },
-      "marcador": {
-        "largo": {
-          "valor": 8,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "ancho": {
-          "valor": 1.5,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        }
       }
     },
     {

@@ -4,12 +4,12 @@ import { leerColor } from '../../nucleo/colores'
 import { Accesorios } from './accesorios/Accesorios'
 import { Anotaciones } from './anotaciones/Anotaciones'
 import { Agua } from './Agua'
-import { GeometriaAnillo } from './Anillo'
+import { GeometriaAnillo } from '../comun/Anillo'
 import type { DatosHomogeneizador } from './esquema'
 import { construirPiezas, type TipoPieza } from './geometria'
 import { Particulas } from './Particulas'
 import { Remolino } from './Remolino'
-import { usePlanosCorte } from './usePlanosCorte'
+import { usePlanosCorte } from '../comun/usePlanosCorte'
 
 const COLOR: Record<TipoPieza, string> = {
   solado: '--color-solado',

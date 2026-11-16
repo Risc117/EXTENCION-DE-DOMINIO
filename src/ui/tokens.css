@@ -45,3 +45,11 @@
   --color-curva-nivel: #1c2a1a;
   --color-muro-contencion: #9aa3aa;
 }
+:root {
+  --color-reja: #c9d1d8;
+  --color-caseta: #a7826a;
+  --color-impulsion: #3b82c4;
+  --color-bomba-marcha: #3fa37a;
+  --color-bomba-parada: #8e9aa5;
+  --color-arena: #c9ad7a;
+}

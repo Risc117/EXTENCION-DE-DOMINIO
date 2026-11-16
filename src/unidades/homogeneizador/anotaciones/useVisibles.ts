@@ -4,7 +4,7 @@ import { useCorte } from '../../../estado/flujo'
 import { ContextoUbicacion } from '../../contextoUbicacion'
 import { aLocal } from '../../ubicacion'
 import { quedaCortado, tapaElTanque } from './visibilidad'
-import type { Vec3 } from './tipos'
+import type { Vec3 } from '../../comun/tiposAnotaciones'
 
 export interface Candidato {
   id: string

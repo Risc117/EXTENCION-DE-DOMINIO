@@ -2,8 +2,8 @@ import type { DatosHomogeneizador } from '../esquema'
 import type { DefEtiqueta } from '../esquemaAnotaciones'
 import { medidaPorRuta } from './medidaPorRuta'
 import { puntoObjetivo } from './puntos'
-import { resolverTexto } from './texto'
-import type { EtiquetaCalculada } from './tipos'
+import { resolverTexto } from '../../comun/texto'
+import type { EtiquetaCalculada } from '../../comun/tiposAnotaciones'
 
 /** Una etiqueta con su texto y sus puntos. La de "nivelAgua" usa el nivel actual de la simulación. */
 export function calcularEtiqueta(d: DatosHomogeneizador, def: DefEtiqueta, nivel: number): EtiquetaCalculada {

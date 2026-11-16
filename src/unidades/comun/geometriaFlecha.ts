@@ -1,5 +1,5 @@
 import { Quaternion, Vector3 } from 'three'
-import type { Vec3 } from './tipos'
+import type { Vec3 } from './tiposAnotaciones'
 
 const ARRIBA = new Vector3(0, 1, 0)
 

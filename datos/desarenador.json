@@ -1,0 +1,99 @@
+{
+  "id": "desarenador",
+  "nombre": "Desarenador",
+  "demo": true,
+  "canal": {
+    "numero": {
+      "valor": 2,
+      "unidad": "u",
+      "fuente": "insumos/medidas-pretratamiento.md (lectura de ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf, cortes C-C y D-D); confirmado con ESTRUCTURAS2.dxf, entidades DIMENSION de la vista en planta y cortes (capa concreto armado): dos canales de 0.32 m",
+      "demo": false
+    },
+    "ancho": {
+      "valor": 0.32,
+      "unidad": "m",
+      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, entidades DIMENSION de la vista en planta y cortes (capa concreto armado): 6 cotas de 0.32 m (x ≈ −93.4, −92.6, −92.1, −87.3, −86.8); insumos/medidas-pretratamiento.md (lectura de ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf, cortes C-C y D-D)",
+      "demo": false
+    },
+    "anchoHoja": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESARENADOR', celda J29 (B, ancho de diseño). Solo valor hidráulico: el 3D se dibuja con el plano (0.32 m)",
+      "demo": false
+    },
+    "espesorMuroCentral": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, entidades DIMENSION de la vista en planta y cortes (capa concreto armado): cota 'e = 0.20' y varias de 0.20; insumos/medidas-pretratamiento.md (lectura de ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf, cortes C-C y D-D)",
+      "demo": false
+    },
+    "largo": {
+      "valor": 5.17,
+      "unidad": "m",
+      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, entidades DIMENSION de la vista en planta y cortes (capa concreto armado): cota 5.17 m (largo del canal en planta, x ≈ −88.5); insumos/medidas-pretratamiento.md (lectura de ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf, cortes C-C y D-D). La hoja DESARENADOR J41 da 5.2 m (longitud real hidráulica)",
+      "demo": false
+    },
+    "alturaMuro": {
+      "valor": 1.17,
+      "unidad": "m",
+      "fuente": "derivado de datos/planta.json: cota de coronación (2992.64) − cota de fondo (2991.47), medida del perfil, ±0.2 m, por confirmar (el plano da 0.95 m en el corte C-C y 1.47 m en el D-D)",
+      "demo": false
+    },
+    "espesorMuro": {
+      "valor": 0.15,
+      "unidad": "m",
+      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, entidades DIMENSION de la vista en planta y cortes (capa concreto armado): 43 cotas de 0.15 m; insumos/medidas-pretratamiento.md (lectura de ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf, cortes C-C y D-D) (muros laterales de 0.15 m)",
+      "demo": false
+    },
+    "espesorLosa": {
+      "valor": 0.15,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: la hoja de cálculo no da el espesor de la losa; confirmar con el plano estructural",
+      "demo": true
+    }
+  },
+  "transicion": {
+    "largo": {
+      "valor": 1,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESARENADOR', celda J46 (longitud de la zona de transición)",
+      "demo": false
+    }
+  },
+  "salida": {
+    "largo": {
+      "valor": 0.238,
+      "unidad": "m",
+      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, vista en planta, capa Muro: derivado, de 6.558 m (x = −94.730 a −88.172) menos transición 1.0 m, canal 5.17 m y muro del vertedero 0.15 m",
+      "demo": false
+    }
+  },
+  "tolva": {
+    "altura": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESARENADOR', celda C31 (h tolva)",
+      "demo": false
+    }
+  },
+  "vertedero": {
+    "ancho": {
+      "valor": 0.1916,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESARENADOR', celda G17 (W, ancho del vertedero Sutro; medida de diseño 0.2 m en J17)",
+      "demo": false
+    },
+    "alturaMinima": {
+      "valor": 0.04,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESARENADOR', celda C18 (a)",
+      "demo": false
+    },
+    "coeficiente": {
+      "valor": 2.74,
+      "unidad": "adim",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'DESARENADOR', celda E20 (Q = 2.74 · a^0.5 · W · (H − a/3))",
+      "demo": false
+    }
+  }
+}

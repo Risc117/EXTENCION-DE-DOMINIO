@@ -1,7 +1,7 @@
 import { OPACIDAD_AGUA, SEGMENTOS_CILINDRO } from '../../nucleo/constantes'
 import { leerColor } from '../../nucleo/colores'
 import { useSim } from '../../estado/simulacion'
-import { usePlanosCorte } from './usePlanosCorte'
+import { usePlanosCorte } from '../comun/usePlanosCorte'
 
 /** Superficie y masa de agua: un cilindro que crece desde el fondo según el nivel de la simulación. */
 export function Agua({ radio }: { radio: number }) {

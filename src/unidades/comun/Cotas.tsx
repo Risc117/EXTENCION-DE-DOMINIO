@@ -1,9 +1,9 @@
 import { Html, Line } from '@react-three/drei'
 import { useMemo } from 'react'
-import { CAPA_TEXTO_ANOTACION, GROSOR_LINEA_ANOTACION, LARGO_FLECHA, ORDEN_ANOTACIONES } from '../../../nucleo/constantes'
-import { leerColor } from '../../../nucleo/colores'
+import { CAPA_TEXTO_ANOTACION, GROSOR_LINEA_ANOTACION, LARGO_FLECHA, ORDEN_ANOTACIONES } from '../../nucleo/constantes'
+import { leerColor } from '../../nucleo/colores'
 import { Flecha } from './Flecha'
-import type { CotaCalculada, Vec3 } from './tipos'
+import type { CotaCalculada, Vec3 } from './tiposAnotaciones'
 
 const resta = (p: Vec3, q: Vec3): Vec3 => [p[0] - q[0], p[1] - q[1], p[2] - q[2]]
 

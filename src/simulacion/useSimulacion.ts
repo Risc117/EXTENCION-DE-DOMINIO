@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
 import { TOPE_CUADRO_SEGUNDOS } from '../nucleo/constantes'
+import { useBombeo } from '../estado/bombeo'
 import { useSim } from '../estado/simulacion'
 import { avanzar } from './avanzar'
+import { avanzarCarcamo } from './carcamo'
 import { hidrograma } from './hidrogramaCargado'
 
 /** Arranca el reloj de la simulación. Se llama una vez, desde App. */
@@ -35,6 +37,8 @@ export function useSimulacion() {
       if (s.corriendo && s.tanque && dtReal > 0) {
         const medidas = avanzar(hidrograma, s.tanque, { dia: s.dia, modo: s.modoSalida, ajuste: s.salidaAjuste }, s, dtReal * s.velocidad)
         s.publicar(medidas)
+        const b = useBombeo.getState()
+        if (b.parametros) b.publicar(avanzarCarcamo(b, b.parametros, medidas.caudalEntrada, dtReal * s.velocidad))
       }
       cuadro = requestAnimationFrame(bucle)
     }

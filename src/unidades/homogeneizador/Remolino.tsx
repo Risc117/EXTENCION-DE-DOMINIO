@@ -5,8 +5,8 @@ import type { Group } from 'three'
 import { ESPIRAL, OPACIDAD_REMOLINO } from '../../nucleo/constantes'
 import { leerColor } from '../../nucleo/colores'
 import { useSim } from '../../estado/simulacion'
-import { puntosEspiral } from './corte'
-import { usePlanosCorte } from './usePlanosCorte'
+import { puntosEspiral } from '../comun/corte'
+import { usePlanosCorte } from '../comun/usePlanosCorte'
 
 interface Props {
   radioZona: number

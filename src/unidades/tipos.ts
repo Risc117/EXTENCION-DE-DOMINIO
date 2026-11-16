@@ -1,4 +1,5 @@
 import type { ComponentType } from 'react'
+import type { ParametrosBombeo } from '../estado/bombeo'
 import type { ParametrosFlujo } from '../estado/flujo'
 import type { ParametrosTanque } from '../estado/simulacion'
 
@@ -14,6 +15,8 @@ export interface UnidadBase {
   hidraulica?: ParametrosTanque
   /** Medidas que necesita el recorrido de las partículas, si la unidad muestra flujo. */
   flujo?: ParametrosFlujo
+  /** Medidas que necesita la simulación de las bombas, si la unidad es una estación de bombeo. */
+  bombeo?: ParametrosBombeo
   Componente: ComponentType
 }
 

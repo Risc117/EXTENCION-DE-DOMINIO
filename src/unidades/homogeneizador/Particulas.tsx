@@ -5,7 +5,7 @@ import { NUMERO_PARTICULAS, RADIO_PARTICULA } from '../../nucleo/constantes'
 import { leerColor } from '../../nucleo/colores'
 import { cantidadParticulas, useCalidad } from '../../estado/calidad'
 import { bufferParticulas } from '../../estado/flujo'
-import { usePlanosCorte } from './usePlanosCorte'
+import { usePlanosCorte } from '../comun/usePlanosCorte'
 
 const apoyo = new Object3D()
 

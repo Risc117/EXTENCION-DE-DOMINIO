@@ -2,7 +2,7 @@ import { ANGULO_ANCLA_VISIBLE, ANGULO_REBOSE, ESPESOR_ZONA_MEZCLA, PROLONGACION_
 import { cotaTecho } from '../accesorios/cotas'
 import type { DatosHomogeneizador } from '../esquema'
 import type { DefEtiqueta } from '../esquemaAnotaciones'
-import type { Vec3 } from './tipos'
+import type { Vec3 } from '../../comun/tiposAnotaciones'
 
 type Objetivo = DefEtiqueta['objetivo']
 

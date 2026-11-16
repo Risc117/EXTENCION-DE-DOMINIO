@@ -1,0 +1,143 @@
+{
+  "id": "bombeo",
+  "nombre": "Estación de bombeo EB-1",
+  "demo": true,
+  "carcamo": {
+    "diametroInterior": {
+      "valor": 3.2,
+      "unidad": "m",
+      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"Carcamo Ø3.20 m, 2 bombas (1+1R)\"",
+      "demo": false
+    },
+    "profundidad": {
+      "valor": 3,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: el plano no da la profundidad del cárcamo; se supone 3 m bajo el nivel del terreno. Confirmar",
+      "demo": true
+    },
+    "espesorMuro": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: el plano no da el espesor del muro del cárcamo; confirmar",
+      "demo": true
+    },
+    "espesorLosa": {
+      "valor": 0.25,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: el plano no da el espesor de la losa de fondo; confirmar",
+      "demo": true
+    }
+  },
+  "niveles": {
+    "parada": {
+      "valor": 0.6,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: nivel (sobre el fondo) en que paran las bombas; no está en los planos ni en la hoja. Confirmar",
+      "demo": true
+    },
+    "arranque": {
+      "valor": 1.6,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: nivel (sobre el fondo) en que arranca una bomba; no está en los planos ni en la hoja. Confirmar",
+      "demo": true
+    }
+  },
+  "bombas": {
+    "cantidad": {
+      "valor": 2,
+      "unidad": "u",
+      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"Carcamo Ø3.20 m, 2 bombas (1+1R)\" (una trabaja y otra queda de reserva)",
+      "demo": false
+    },
+    "caudal": {
+      "valor": 13.072,
+      "unidad": "L/s",
+      "fuente": "Valor de ejemplo: cada bomba entrega el caudal máximo horario (Qmh, hoja 1 CÁMARA REJAS Y BYPASS, celda C4); el caudal real de las bombas no está en las fuentes. Confirmar",
+      "demo": true
+    },
+    "diametro": {
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: tamaño dibujado de la bomba sumergible; confirmar con la ficha del fabricante",
+      "demo": true
+    },
+    "alto": {
+      "valor": 0.9,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: tamaño dibujado de la bomba sumergible; confirmar con la ficha del fabricante",
+      "demo": true
+    },
+    "separacion": {
+      "valor": 1.4,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: distancia entre los ejes de las dos bombas",
+      "demo": true
+    }
+  },
+  "impulsion": {
+    "diametro": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "insumos/planos/PLANO_GENERAL_PTAR-PICOY_PLOT.pdf y LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulos \"Ø200\" y \"LINEA DE IMPULSION\"",
+      "demo": false
+    },
+    "largoTramo": {
+      "valor": 3,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: solo se dibuja un tramo corto; la tubería hasta el pretratamiento se hace en T16",
+      "demo": true
+    }
+  },
+  "caseta": {
+    "largo": {
+      "valor": 2.5,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: caseta de válvulas; sus medidas no están en las fuentes revisadas. Confirmar",
+      "demo": true
+    },
+    "ancho": {
+      "valor": 2,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: caseta de válvulas; sus medidas no están en las fuentes revisadas. Confirmar",
+      "demo": true
+    },
+    "alto": {
+      "valor": 2.4,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: caseta de válvulas; sus medidas no están en las fuentes revisadas. Confirmar",
+      "demo": true
+    },
+    "espesorMuro": {
+      "valor": 0.15,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: caseta de válvulas; sus medidas no están en las fuentes revisadas. Confirmar",
+      "demo": true
+    },
+    "distancia": {
+      "valor": 0.5,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: separación entre el muro del cárcamo y la caseta",
+      "demo": true
+    }
+  },
+  "disposicion": {
+    "bajoTerrenoColector": {
+      "valor": 0.6,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: profundidad (m) bajo el borde del cárcamo a la que corre el colector de las bombas; sus medidas no están en las fuentes. Confirmar",
+      "demo": true
+    },
+    "sobreTerrenoImpulsion": {
+      "valor": 0.9,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: altura (m) sobre el borde del cárcamo a la que sale la tubería de impulsión; no está en las fuentes. Confirmar",
+      "demo": true
+    },
+    "desplazamientoBombas": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: distancia (m) de las bombas al eje del cárcamo, hacia la caseta; no está en las fuentes. Confirmar",
+      "demo": true
+    }
+  }
+}

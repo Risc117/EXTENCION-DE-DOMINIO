@@ -2,7 +2,7 @@ import { z } from 'zod'
 import { TOLERANCIA_MEDIDAS } from '../../nucleo/constantes'
 import { esquemaAccesorios, revisarAccesorios } from './esquemaAccesorios'
 import { esquemaAnotaciones, revisarAnotaciones } from './esquemaAnotaciones'
-import { medida } from './medida'
+import { medida } from '../comun/medida'
 
 const tubo = z.object({ diametro: medida, altura: medida })
 

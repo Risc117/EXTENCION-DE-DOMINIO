@@ -1,6 +1,6 @@
 import { MARGEN_OCLUSION } from '../../../nucleo/constantes'
-import { planoCorte } from '../corte'
-import type { Vec3 } from './tipos'
+import { planoCorte } from '../../comun/corte'
+import type { Vec3 } from '../../comun/tiposAnotaciones'
 
 /** true si el corte deja ese punto fuera (mismo plano que usa el recorte de las piezas). */
 export function quedaCortado(punto: Vec3, activo: boolean, posicion: number, radio: number): boolean {

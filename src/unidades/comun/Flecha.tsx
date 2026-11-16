@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
-import { RADIO_FLECHA, SEGMENTOS_FLECHA, ORDEN_ANOTACIONES } from '../../../nucleo/constantes'
+import { RADIO_FLECHA, SEGMENTOS_FLECHA, ORDEN_ANOTACIONES } from '../../nucleo/constantes'
 import { geometriaFlecha } from './geometriaFlecha'
-import type { Vec3 } from './tipos'
+import type { Vec3 } from './tiposAnotaciones'
 
 /** Punta de flecha (cono) con su punta en `punta`, mirando hacia `direccion`. Se ve siempre, incluso detrás de piezas. */
 export function Flecha({ punta, direccion, largo, color }: { punta: Vec3; direccion: Vec3; largo: number; color: string }) {

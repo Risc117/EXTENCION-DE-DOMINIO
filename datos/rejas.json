@@ -1,0 +1,151 @@
+{
+  "id": "rejas",
+  "nombre": "Cámara de rejas con by-pass",
+  "demo": true,
+  "canal": {
+    "ancho": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja '1 CÁMARA REJAS Y BYPASS', celda G6 (B, ancho del canal)",
+      "demo": false
+    },
+    "alturaMuro": {
+      "valor": 0.82,
+      "unidad": "m",
+      "fuente": "derivado de datos/planta.json: cota de coronación (2992.64) − cota de fondo (2991.82), medida del perfil, ±0.2 m, por confirmar",
+      "demo": false
+    },
+    "espesorMuro": {
+      "valor": 0.15,
+      "unidad": "m",
+      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, entidades DIMENSION de la vista en planta y cortes (capa concreto armado): 43 cotas de 0.15 m; insumos/medidas-pretratamiento.md (lectura de ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf, cortes C-C y D-D) (muros de 0.15 m)",
+      "demo": false
+    },
+    "espesorLosa": {
+      "valor": 0.15,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: la hoja de cálculo no da el espesor de la losa; confirmar con el plano estructural",
+      "demo": true
+    },
+    "largoSalida": {
+      "valor": 1.464,
+      "unidad": "m",
+      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, vista en planta CAMARA DE REJAS - DESARENADOR - PARSHALL, capa concreto armado: derivado, 3.012 m (x = −97.742 a −94.730) menos recepción, transición y proyección de la reja",
+      "demo": false
+    }
+  },
+  "recepcion": {
+    "largo": {
+      "valor": 0.45,
+      "unidad": "m",
+      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, vista en planta CAMARA DE REJAS - DESARENADOR - PARSHALL, capa concreto armado: caja de recepción de x = −97.742 a −97.292 (±0.05 m)",
+      "demo": false
+    },
+    "ancho": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, vista en planta CAMARA DE REJAS - DESARENADOR - PARSHALL, capa concreto armado: la caja tiene el mismo ancho interior que el canal (0.60 m por fuera menos dos muros de 0.15 m)",
+      "demo": false
+    }
+  },
+  "transicion": {
+    "largo": {
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja '1 CÁMARA REJAS Y BYPASS', celda J33 (zona de transición, medida de diseño)",
+      "demo": false
+    }
+  },
+  "reja": {
+    "espesorBarra": {
+      "valor": 0.00635,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja '1 CÁMARA REJAS Y BYPASS', celda C7 (e = 1/4 pulg) y F10 (0.00635 m)",
+      "demo": false
+    },
+    "profundidadBarra": {
+      "valor": 0.0381,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja '1 CÁMARA REJAS Y BYPASS', celda C9 (b = 1.5 pulg)",
+      "demo": false
+    },
+    "separacion": {
+      "valor": 0.0254,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja '1 CÁMARA REJAS Y BYPASS', celda C8 (a = 1 pulg)",
+      "demo": false
+    },
+    "angulo": {
+      "valor": 45,
+      "unidad": "grados",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja '1 CÁMARA REJAS Y BYPASS', celda C12 (θ)",
+      "demo": false
+    },
+    "altura": {
+      "valor": 0.698,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja '1 CÁMARA REJAS Y BYPASS', celda G29 (H, altura de la reja)",
+      "demo": false
+    },
+    "largo": {
+      "valor": 0.987,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja '1 CÁMARA REJAS Y BYPASS', celda G30 (L, longitud de la reja)",
+      "demo": false
+    },
+    "numeroBarras": {
+      "valor": 8.6488,
+      "unidad": "u",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja '1 CÁMARA REJAS Y BYPASS', celda G24 (N); se dibujan 8, las que caben enteras",
+      "demo": false
+    }
+  },
+  "hidraulica": {
+    "velocidadCanal": {
+      "valor": 0.56,
+      "unidad": "m/s",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja '1 CÁMARA REJAS Y BYPASS', celda G23 (Vc); con ella el tirante es Q / (Vc · B) y da 0.078 m a Qmh (celda G20)",
+      "demo": false
+    }
+  },
+  "bypass": {
+    "largoVertedero": {
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja '1 CÁMARA REJAS Y BYPASS', celda C38 (Lv)",
+      "demo": false
+    },
+    "anchoCanal": {
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, entidades DIMENSION de la vista en planta y cortes (capa concreto armado): cotas 'BL=0.40' y 0.40 (by-pass 0.40 m, junto al canal de rejas de 0.30 m); insumos/medidas-pretratamiento.md (lectura de ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf, cortes C-C y D-D)",
+      "demo": false
+    },
+    "alturaCresta": {
+      "valor": 0.1,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: altura de la cresta del vertedero sobre el fondo, apenas sobre el tirante máximo (0.078 m, celda G20); confirmar con el plano",
+      "demo": true
+    },
+    "lado": {
+      "valor": -1,
+      "unidad": "adim",
+      "fuente": "insumos/DFX/ESTRUCTURAS2.dxf, vista en planta CAMARA DE REJAS - DESARENADOR - PARSHALL, capa Muro: el rótulo \"BY PASS\" está a la izquierda del eje (hacia el oeste, mirando en el sentido del flujo)",
+      "demo": false
+    }
+  },
+  "bandeja": {
+    "largo": {
+      "valor": 0.31,
+      "unidad": "m",
+      "fuente": "insumos/medidas-pretratamiento.md (plano ESTRUCTURAS2-PRETRATAMIENTO_PLOT.pdf, planta: bandeja de escurrido de 0.31 m); contrastado con ESTRUCTURAS2.dxf, cota 0.309 m (capa concreto armado, x ≈ −95.9)",
+      "demo": false
+    },
+    "hundimiento": {
+      "valor": 0.03,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: cuánto (m) se hunde la bandeja bajo el borde del muro; no está en las fuentes. Confirmar",
+      "demo": true
+    }
+  }
+}

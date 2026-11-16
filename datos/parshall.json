@@ -1,0 +1,117 @@
+{
+  "id": "parshall",
+  "nombre": "Canal Parshall",
+  "demo": true,
+  "garganta": {
+    "ancho": {
+      "valor": 0.2286,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'CANAL PARSHAL', celda C8 (W, tamaño de canaleta: 9 pulgadas)",
+      "demo": false
+    },
+    "largo": {
+      "valor": 0.305,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'CANAL PARSHAL', celda F26 (T, largo de la garganta)",
+      "demo": false
+    },
+    "caida": {
+      "valor": 0.114,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'CANAL PARSHAL', celda I26 (N, desnivel del piso de la garganta respecto del piso de entrada)",
+      "demo": false
+    }
+  },
+  "convergente": {
+    "largoPared": {
+      "valor": 0.879,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'CANAL PARSHAL', celda A26 (A, largo de la pared de la sección convergente)",
+      "demo": false
+    },
+    "anchoEntrada": {
+      "valor": 0.575,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'CANAL PARSHAL', celda D26 (D, ancho de la entrada)",
+      "demo": false
+    },
+    "distanciaMedicion": {
+      "valor": 0.3913,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'CANAL PARSHAL', celda AD11 (2/3 · B, punto de medición del caudal, medido desde la garganta)",
+      "demo": false
+    },
+    "alturaMuro": {
+      "valor": 0.762,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'CANAL PARSHAL', celda E26 (E, profundidad de la canaleta)",
+      "demo": false
+    }
+  },
+  "divergente": {
+    "largo": {
+      "valor": 0.305,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'CANAL PARSHAL', celda G26 (M, largo de la sección divergente)",
+      "demo": false
+    },
+    "anchoSalida": {
+      "valor": 0.381,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'CANAL PARSHAL', celda C26 (C, ancho de la salida)",
+      "demo": false
+    },
+    "subida": {
+      "valor": 0.076,
+      "unidad": "m",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'CANAL PARSHAL', celda H26 (K, desnivel del piso de salida sobre el de la garganta)",
+      "demo": false
+    }
+  },
+  "estructura": {
+    "alturaMuro": {
+      "valor": 1.47,
+      "unidad": "m",
+      "fuente": "derivado de datos/planta.json: cota de coronación (2992.64) − cota de fondo (2991.17), medida del perfil, ±0.2 m, por confirmar",
+      "demo": false
+    },
+    "espesorMuro": {
+      "valor": 0.1,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: la hoja de cálculo no da espesores de muro; confirmar con el plano estructural",
+      "demo": true
+    },
+    "espesorLosa": {
+      "valor": 0.15,
+      "unidad": "m",
+      "fuente": "Valor de ejemplo: la hoja de cálculo no da el espesor de la losa; confirmar con el plano estructural",
+      "demo": true
+    },
+    "largoEntrada": {
+      "valor": 0.312,
+      "unidad": "m",
+      "fuente": "Por confirmar (el DXF solo dibuja un eje del Parshall; el plano PDF da 2.80 m en total y otras longitudes que la hoja). insumos/DFX/ESTRUCTURAS2.dxf, vista en planta CAMARA DE REJAS - DESARENADOR - PARSHALL, capa ACOTA: derivado del punto de medición de caudal (x = −87.389) menos 0.3913 m y el largo del tramo convergente, contra el inicio del Parshall (x = −88.172)",
+      "demo": true
+    },
+    "largoSalida": {
+      "valor": 1.059,
+      "unidad": "m",
+      "fuente": "Por confirmar (el DXF solo dibuja un eje del Parshall; el plano PDF da 2.80 m en total y otras longitudes que la hoja). insumos/DFX/ESTRUCTURAS2.dxf, vista en planta CAMARA DE REJAS - DESARENADOR - PARSHALL, capa Muro: derivado, de 2.843 m (x = −88.172 a −85.329) menos entrada, convergente, garganta y divergente",
+      "demo": true
+    }
+  },
+  "hidraulica": {
+    "coeficiente": {
+      "valor": 3.704,
+      "unidad": "adim",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'CANAL PARSHAL', celda C9 (K de Ho = K · Q^m, con Q en m³/s)",
+      "demo": false
+    },
+    "exponente": {
+      "valor": 0.646,
+      "unidad": "adim",
+      "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'CANAL PARSHAL', celda C10 (m de Ho = K · Q^m)",
+      "demo": false
+    }
+  }
+}
