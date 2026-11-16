@@ -168,14 +168,14 @@
       "id": "homogeneizador",
       "nombre": "Tanque homogeneizador",
       "x": {
-        "valor": -29.6,
+        "valor": -26.1,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"HOMOGENIZADOR\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-VEREDAS, centro del círculo de 4.3 m de radio (concéntrico con el de PTAR-OCULTO), UTM 309313.9, 8791238.5; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "y": {
-        "valor": -28.4,
+        "valor": -21.5,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"HOMOGENIZADOR\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-VEREDAS, centro del círculo de 4.3 m de radio (concéntrico con el de PTAR-OCULTO), UTM 309313.9, 8791238.5; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "giro": {
         "valor": 0,
@@ -209,37 +209,36 @@
       "id": "rafa",
       "nombre": "RAFA (UASB)",
       "x": {
-        "valor": -23.4,
+        "valor": -22.59,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"RAFA\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, bloque \"RAFA PLANTA\" (inserción con escala 7.27 y rotación 351.77°): centro del contorno exterior (rectángulo de 18.0 × 6.75 m, capa A-Nuevo), UTM 309317.41, 8791259.97; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "y": {
-        "valor": -7.8,
+        "valor": -0.03,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"RAFA\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, bloque \"RAFA PLANTA\" (inserción con escala 7.27 y rotación 351.77°): centro del contorno exterior (rectángulo de 18.0 × 6.75 m, capa A-Nuevo), UTM 309317.41, 8791259.97; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "giro": {
-        "valor": 0,
+        "valor": 81.77,
         "unidad": "grados",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "bloque \"RAFA PLANTA\" del DXF: rotación 351.77° + 90° (su lado largo es el eje y del bloque) = 81.77°; el efluente va hacia el percolador (decisión del usuario, 16 nov)"
       },
       "cotaFondo": {
-        "valor": 2978.4,
+        "valor": 2977.9,
         "unidad": "m",
         "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA: altura del digestor hd = 4.0 m + altura total del sedimentador Ht = 2.3 m (6.3 m)",
         "demo": true
       },
       "cotaCoronacion": {
-        "valor": 2985.65,
+        "valor": 2985.15,
         "unidad": "m",
-        "fuente": "derivado (T11, decisión del usuario): coronación = cota de fondo 2978.4 + altura total del plano 7.25 m (piso 0.60 + interior 6.65 = 0.15 + 0.30 + 0.40 + 1.80 + 4.00; insumos/NUEVO PDF/ESTRUCTURAS2-RAFA_PLOT.pdf, cortes A-A y B-B; DXF ESTRUCTURAS2.dxf, capa FILTRO-COTAS, 6.646 + 0.600). Queda 0.95 m sobre el terreno (2984.7); el fondo sigue siendo el derivado de arriba",
+        "fuente": "derivado (T11, decisión del usuario): coronación = cota de fondo 2977.9 + altura total del plano 7.25 m (piso 0.60 + interior 6.65 = 0.15 + 0.30 + 0.40 + 1.80 + 4.00; insumos/NUEVO PDF/ESTRUCTURAS2-RAFA_PLOT.pdf, cortes A-A y B-B; DXF ESTRUCTURAS2.dxf, capa FILTRO-COTAS, 6.646 + 0.600). Queda 0.95 m sobre el terreno (2984.2); el fondo sigue siendo el derivado de arriba",
         "demo": true
       },
       "cotaSuperficie": {
-        "valor": 2984.7,
+        "valor": 2984.2,
         "unidad": "m",
-        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)",
+        "fuente": "derivado (T9.6): cota del terreno en su posición, interpolada y redondeada a 0.1 m (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json); la estructura puede asomar sobre este nivel",
         "demo": true
       },
       "radioExplanada": {
@@ -253,20 +252,19 @@
       "id": "percolador",
       "nombre": "Filtro percolador",
       "x": {
-        "valor": -13.2,
+        "valor": -9.0,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"FILTRO PERCOLADOR\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, bloque \"FILTRO PERCOLADOR PLANTA\" (centro de sus círculos de 9.26 a 9.73 m de radio) y capa PTAR-VEREDAS (círculo de 12.72 m de radio), UTM 309331.0, 8791291.0; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "y": {
-        "valor": 15,
+        "valor": 31.0,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"FILTRO PERCOLADOR\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, bloque \"FILTRO PERCOLADOR PLANTA\" (centro de sus círculos de 9.26 a 9.73 m de radio) y capa PTAR-VEREDAS (círculo de 12.72 m de radio), UTM 309331.0, 8791291.0; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "giro": {
-        "valor": 0,
+        "valor": 66.95,
         "unidad": "grados",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "bloque \"FILTRO PERCOLADOR PLANTA\" del DXF: rotación 66.95° (la entrada queda del lado del RAFA y la salida hacia la cámara de reparto; coincide con el eje entre sus dos cámaras en el plano general)"
       },
       "cotaFondo": {
         "valor": 2980.74,
@@ -295,14 +293,14 @@
       "id": "camara-reparto",
       "nombre": "Cámara de reparto",
       "x": {
-        "valor": -16.5,
+        "valor": 4.0,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"CAMARA DE REPARTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS, centro del cuadrado de 2.4 × 2.4 m (UTM 309344.0, 8791309.5); centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "y": {
         "valor": 49.5,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"CAMARA DE REPARTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS, centro del cuadrado de 2.4 × 2.4 m (UTM 309344.0, 8791309.5); centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "giro": {
         "valor": 0,
@@ -311,21 +309,21 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2983.3,
+        "valor": 2978.0,
         "unidad": "m",
         "fuente": "derivado (T13): coronación − altura de ejemplo de datos/camaraReparto.json (1.2 m); la cámara no tiene medidas en el plano ni en la hoja",
         "demo": true
       },
       "cotaCoronacion": {
-        "valor": 2984.5,
+        "valor": 2979.2,
         "unidad": "m",
         "fuente": "derivado (T13): cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m)",
         "demo": true
       },
       "cotaSuperficie": {
-        "valor": 2984.5,
+        "valor": 2979.2,
         "unidad": "m",
-        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)",
+        "fuente": "derivado (T9.6): cota del terreno en su posición, interpolada y redondeada a 0.1 m (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json); la estructura puede asomar sobre este nivel",
         "demo": true
       },
       "radioExplanada": {
@@ -339,14 +337,14 @@
       "id": "sedimentador-1",
       "nombre": "Sedimentador 1",
       "x": {
-        "valor": 19.3,
+        "valor": 22.85,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"SED. SECUNDARIO 1\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa SEDIM-MURO, centro de los círculos de 2.43, 3.10 y 3.33 m de radio, UTM 309362.85, 8791308.31; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "y": {
-        "valor": 52.8,
+        "valor": 48.31,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"SED. SECUNDARIO 1\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa SEDIM-MURO, centro de los círculos de 2.43, 3.10 y 3.33 m de radio, UTM 309362.85, 8791308.31; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "giro": {
         "valor": 0,
@@ -355,21 +353,21 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2971.44,
+        "valor": 2971.04,
         "unidad": "m",
         "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja SEDIMENTADOR SECUNDARIO: altura H = 4.5 m + altura de la tolva HT = 1.96 m (6.46 m)",
         "demo": true
       },
       "cotaCoronacion": {
-        "valor": 2978.3043,
+        "valor": 2977.9043,
         "unidad": "m",
         "fuente": "derivado (T13): coronación = cota de fondo (derivada del terreno, ver cotaFondo) + altura total del plano 6.8643 m (tolva 1.9643 de la hoja SEDIMENTADOR SECUNDARIO celda G41 + agua 4.50 + borde libre 0.40; insumos/NUEVO PDF/ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, corte A-A). POR REVISAR CON EL PERFIL",
         "demo": true
       },
       "cotaSuperficie": {
-        "valor": 2977.9,
+        "valor": 2977.5,
         "unidad": "m",
-        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)",
+        "fuente": "derivado (T9.6): cota del terreno en su posición, interpolada y redondeada a 0.1 m (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json); la estructura puede asomar sobre este nivel",
         "demo": true
       },
       "radioExplanada": {
@@ -383,14 +381,14 @@
       "id": "sedimentador-2",
       "nombre": "Sedimentador 2",
       "x": {
-        "valor": 15.4,
+        "valor": 13.86,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"SED. SECUNDARIO 2\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa SEDIM-MURO, centro de los círculos de 2.43, 3.10 y 3.33 m de radio, UTM 309353.86, 8791299.62; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "y": {
-        "valor": 34.6,
+        "valor": 39.62,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"SED. SECUNDARIO 2\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa SEDIM-MURO, centro de los círculos de 2.43, 3.10 y 3.33 m de radio, UTM 309353.86, 8791299.62; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "giro": {
         "valor": 0,
@@ -399,21 +397,21 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2970.74,
+        "valor": 2970.94,
         "unidad": "m",
         "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja SEDIMENTADOR SECUNDARIO: altura H = 4.5 m + altura de la tolva HT = 1.96 m (6.46 m)",
         "demo": true
       },
       "cotaCoronacion": {
-        "valor": 2977.6043,
+        "valor": 2977.8043,
         "unidad": "m",
         "fuente": "derivado (T13): coronación = cota de fondo (derivada del terreno, ver cotaFondo) + altura total del plano 6.8643 m (tolva 1.9643 de la hoja SEDIMENTADOR SECUNDARIO celda G41 + agua 4.50 + borde libre 0.40; insumos/NUEVO PDF/ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, corte A-A). POR REVISAR CON EL PERFIL",
         "demo": true
       },
       "cotaSuperficie": {
-        "valor": 2977.2,
+        "valor": 2977.4,
         "unidad": "m",
-        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)",
+        "fuente": "derivado (T9.6): cota del terreno en su posición, interpolada y redondeada a 0.1 m (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json); la estructura puede asomar sobre este nivel",
         "demo": true
       },
       "radioExplanada": {
@@ -427,20 +425,19 @@
       "id": "camara-contacto",
       "nombre": "Cámara de contacto",
       "x": {
-        "valor": 33.8,
+        "valor": 38.27,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"CAMARA DE CONTACTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS, centro de los rectángulos de 4.4 × 3.25 m y 4.0 × 2.85 m girados 34.9°, UTM 309378.27, 8791300.22; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "y": {
-        "valor": 33.4,
+        "valor": 40.22,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"CAMARA DE CONTACTO\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS, centro de los rectángulos de 4.4 × 3.25 m y 4.0 × 2.85 m girados 34.9°, UTM 309378.27, 8791300.22; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "giro": {
-        "valor": 0,
+        "valor": 34.9,
         "unidad": "grados",
-        "fuente": "Posición de ejemplo siguiendo la línea de agua; reemplazar con el plano general (T9)",
-        "demo": true
+        "fuente": "capa PTAR-ESTRUCTURAS del DXF: dirección del lado largo de los rectángulos de la cámara, 34.9°"
       },
       "cotaFondo": {
         "valor": 2975.83,
@@ -482,14 +479,14 @@
       "id": "lechos-secado",
       "nombre": "Lechos de secado",
       "x": {
-        "valor": -3,
+        "valor": 5.5,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"LECHOS DE SECADO (AREA DE LODOS)\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa 0, centro del rectángulo de 15.0 × 11.0 m (contorno exterior 15.4 × 11.4 m), UTM 309345.5, 8791253.0; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "y": {
-        "valor": -14.8,
+        "valor": -7.0,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TEXTO, rótulo \"LECHOS DE SECADO (AREA DE LODOS)\" (punto del rótulo, junto a la estructura; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa 0, centro del rectángulo de 15.0 × 11.0 m (contorno exterior 15.4 × 11.4 m), UTM 309345.5, 8791253.0; centro real de la estructura (no el rótulo); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "giro": {
         "valor": 0,
@@ -498,21 +495,21 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2977.4,
+        "valor": 2976.3,
         "unidad": "m",
         "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja LECHO DE SECADO: profundidad del lecho h = 0.4 m (0.4 m)",
         "demo": true
       },
       "cotaCoronacion": {
-        "valor": 2977.8,
+        "valor": 2976.7,
         "unidad": "m",
         "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja LECHO DE SECADO: profundidad del lecho h = 0.4 m",
         "demo": true
       },
       "cotaSuperficie": {
-        "valor": 2977.8,
+        "valor": 2976.7,
         "unidad": "m",
-        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)",
+        "fuente": "derivado (T9.6): cota del terreno en su posición, interpolada y redondeada a 0.1 m (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json); la estructura puede asomar sobre este nivel",
         "demo": true
       },
       "radioExplanada": {

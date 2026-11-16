@@ -23,7 +23,8 @@ describe('posiciones de datos/planta.json', () => {
     for (const u of planta.unidades) {
       for (const v of [u.x, u.y]) {
         expect(v.fuente, u.id).toContain('.dxf')
-        expect(v.fuente, u.id).toMatch(/PTAR-TEXTO|PTAR-ESTRUCTURAS/)
+        // Las unidades del pretratamiento y EB-1 vienen de PTAR-ESTRUCTURAS/PTAR-TEXTO; las demás (T9.6), del centro de su estructura (capa o bloque).
+        expect(v.fuente, u.id).toMatch(/PTAR-TEXTO|PTAR-ESTRUCTURAS|PTAR-VEREDAS|SEDIM-MURO|capa 0|bloque/)
       }
     }
   })

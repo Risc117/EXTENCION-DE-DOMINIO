@@ -67,7 +67,7 @@ describe('alturas y cota en datos/planta.json', () => {
 
   it('la coronación de planta.json es el fondo más la altura total, como dato de ejemplo', () => {
     const u = planta.unidades.find((x) => x.id === 'rafa')!
-    expect(u.cotaFondo.valor).toBe(2978.4)
+    expect(u.cotaFondo.valor).toBe(2977.9)
     expect(u.cotaCoronacion.valor - u.cotaFondo.valor).toBeCloseTo(alturaTotal(datos), 6)
     expect(u.cotaCoronacion.demo).toBe(true)
   })

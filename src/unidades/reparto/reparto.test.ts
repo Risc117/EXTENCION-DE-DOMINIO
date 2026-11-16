@@ -25,10 +25,10 @@ describe('cámara de reparto', () => {
     expect(esquemaReparto.safeParse(neg).success).toBe(false)
   })
 
-  it('está en planta.json en el rótulo del mapa general, con fondo y coronación de ejemplo', () => {
+  it('está en planta.json en el centro de su cuadrado del mapa general, con fondo y coronación de ejemplo', () => {
     const u = planta.unidades.find((x) => x.id === 'camara-reparto')!
-    expect([u.x.valor, u.y.valor]).toEqual([-16.5, 49.5])
-    expect(u.x.fuente).toContain('CAMARA DE REPARTO')
+    expect([u.x.valor, u.y.valor]).toEqual([4, 49.5])
+    expect(u.x.fuente).toContain('centro del cuadrado')
     expect(u.cotaCoronacion.valor - u.cotaFondo.valor).toBeCloseTo(alturaTotal(datos), 6)
     expect(u.cotaFondo.demo).toBe(true)
   })
