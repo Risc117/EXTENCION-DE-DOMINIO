@@ -170,13 +170,13 @@
     "largo": {
       "valor": 3.0,
       "unidad": "m",
-      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, cuadrado de 3.0 × 3.0 m dentro del cerco de 6 × 6 m, junto al rótulo \"CASETA DE CLORACIÓN\"; por confirmar que ese cuadrado es la caseta",
+      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, cuadrado de 3.0 × 3.0 m dentro del cerco de 6 × 6 m, junto al rótulo \"CASETA DE CLORACIÓN\"; cuadrado confirmado por el usuario como la caseta (16 nov); la medida queda como dato de ejemplo",
       "demo": true
     },
     "ancho": {
       "valor": 3.0,
       "unidad": "m",
-      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, cuadrado de 3.0 × 3.0 m dentro del cerco de 6 × 6 m, junto al rótulo \"CASETA DE CLORACIÓN\"; por confirmar que ese cuadrado es la caseta",
+      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, cuadrado de 3.0 × 3.0 m dentro del cerco de 6 × 6 m, junto al rótulo \"CASETA DE CLORACIÓN\"; cuadrado confirmado por el usuario como la caseta (16 nov); la medida queda como dato de ejemplo",
       "demo": true
     },
     "alturaMuros": {

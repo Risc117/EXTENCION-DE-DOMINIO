@@ -174,7 +174,9 @@ describe('caseta de cloración', () => {
   it('está en planta.json en el cuadrado de 3 × 3 m del mapa, con cotas derivadas del terreno (de ejemplo)', () => {
     const u = planta.unidades.find((x) => x.id === 'caseta-cloracion')!
     expect([u.x.valor, u.y.valor]).toEqual([31.5, 48.3])
-    expect(u.x.demo).toBe(true)
+    expect(u.x.demo).not.toBe(true)
+    expect(u.x.fuente).toContain('confirmado por el usuario')
+    expect(datos.caseta.largo.demo).toBe(true)
     expect(u.cotaCoronacion.valor - u.cotaFondo.valor).toBeCloseTo(datos.caseta.alturaMuros.valor + 2 * datos.caseta.espesor.valor, 6)
   })
 

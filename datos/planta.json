@@ -467,14 +467,12 @@
       "x": {
         "valor": 31.5,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, centro del cuadrado de 3.0 × 3.0 m dentro del cerco de 6 × 6 m (capa PTAR-CERCO), junto al rótulo \"CASETA DE CLORACIÓN\" (capa PTAR-TEXTO, UTM 309368.4, 8791311.8); UTM 309371.5, 8791308.3; centro real de la estructura (no el rótulo); por confirmar que ese cuadrado es la caseta; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, centro del cuadrado de 3.0 × 3.0 m dentro del cerco de 6 × 6 m (capa PTAR-CERCO), junto al rótulo \"CASETA DE CLORACIÓN\" (capa PTAR-TEXTO, UTM 309368.4, 8791311.8); UTM 309371.5, 8791308.3; centro real de la estructura (no el rótulo); cuadrado confirmado por el usuario como la caseta de su plano general (16 nov); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "y": {
         "valor": 48.3,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, centro del cuadrado de 3.0 × 3.0 m dentro del cerco de 6 × 6 m (capa PTAR-CERCO), junto al rótulo \"CASETA DE CLORACIÓN\" (capa PTAR-TEXTO, UTM 309368.4, 8791311.8); UTM 309371.5, 8791308.3; centro real de la estructura (no el rótulo); por confirmar que ese cuadrado es la caseta; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json",
-        "demo": true
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, centro del cuadrado de 3.0 × 3.0 m dentro del cerco de 6 × 6 m (capa PTAR-CERCO), junto al rótulo \"CASETA DE CLORACIÓN\" (capa PTAR-TEXTO, UTM 309368.4, 8791311.8); UTM 309371.5, 8791308.3; centro real de la estructura (no el rótulo); cuadrado confirmado por el usuario como la caseta de su plano general (16 nov); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json"
       },
       "giro": {
         "valor": 0,
