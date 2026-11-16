@@ -9,7 +9,7 @@ export function crearMarcadores(planta: DatosPlanta): UnidadBase[] {
     if (!m) return []
     const largo = m.largo.valor
     const ancho = m.ancho.valor
-    const alto = m.alto.valor
+    const alto = p.cotaCoronacion.valor - p.cotaFondo.valor
     return [
       {
         id: p.id,

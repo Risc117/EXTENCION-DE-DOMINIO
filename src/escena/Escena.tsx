@@ -26,7 +26,7 @@ export function Escena() {
     <Canvas gl={{ localClippingEnabled: true }} camera={{ position: [ox + d, d * CAMARA_ALTURA_FACTOR, oz + d], fov: CAMARA_FOV, near: CAMARA_NEAR, far: escala * CAMARA_FAR_FACTOR }}>
       <ambientLight intensity={LUZ_AMBIENTE} />
       <directionalLight position={[ox + escala, escala * LUZ_ALTURA_FACTOR, oz + escala]} intensity={LUZ_DIRECCIONAL} />
-      <EntornoTerreno referencia={referencia} />
+      <EntornoTerreno referencia={referencia} unidades={unidades} />
       {unidades.map((u) => (
         <UnidadColocada key={u.id} unidad={u} referencia={referencia} />
       ))}

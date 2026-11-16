@@ -43,6 +43,6 @@ for (const u of planta.unidades as { id: string; x: unknown; y: unknown }[]) {
   u.x = medida(r.x - ORIGEN_UTM.este, extra === undefined ? fuente : fuenteFila, extra !== undefined)
   u.y = medida(r.y - ORIGEN_UTM.norte + (extra ?? 0), extra === undefined ? fuente : fuenteFila, extra !== undefined)
 }
-planta.fuente = `${PLANO} (posiciones de los rótulos de ${CAPA}); las cotas de fondo y los tamaños de las cajas siguen de ejemplo hasta tener el perfil`
+planta.fuente = `${PLANO} (posiciones de los rótulos de ${CAPA}); cotas de fondo y coronación medidas del dibujo del perfil del mismo DXF (±0.2 m aprox., por confirmar) o derivadas del terreno y de la hoja de cálculo; los tamaños de las cajas siguen de ejemplo`
 writeFileSync(SALIDA, JSON.stringify(planta, null, 2) + '\n')
 console.log(`${SALIDA}: ${planta.unidades.length} unidades ubicadas`)

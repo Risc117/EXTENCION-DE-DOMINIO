@@ -1,5 +1,5 @@
 {
-  "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (posiciones de los rótulos de PTAR-TEXTO); las cotas de fondo y los tamaños de las cajas siguen de ejemplo hasta tener el perfil",
+  "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (posiciones de los rótulos de PTAR-TEXTO); cotas de fondo y coronación medidas del dibujo del perfil del mismo DXF (±0.2 m aprox., por confirmar) o derivadas del terreno y de la hoja de cálculo; los tamaños de las cajas siguen de ejemplo",
   "demo": true,
   "unidades": [
     {
@@ -22,9 +22,24 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2992,
+        "valor": 2991.82,
         "unidad": "m",
-        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa concreto armado, piso interior del canal de rejas (perfil x ≈ 310297.5-310301.5); cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+      },
+      "cotaCoronacion": {
+        "valor": 2992.64,
+        "unidad": "m",
+        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa concreto armado, borde superior de los muros del canal; cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+      },
+      "cotaSuperficie": {
+        "valor": 2992.64,
+        "unidad": "m",
+        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)"
+      },
+      "radioExplanada": {
+        "valor": 5,
+        "unidad": "m",
+        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
         "demo": true
       },
       "marcador": {
@@ -36,12 +51,6 @@
         },
         "ancho": {
           "valor": 2,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "alto": {
-          "valor": 1.5,
           "unidad": "m",
           "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
           "demo": true
@@ -70,9 +79,24 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2991.8,
+        "valor": 2991.47,
         "unidad": "m",
-        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa concreto armado, piso interior en el extremo bajo del desarenador (perfil x ≈ 310301.4-310305.5); cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+      },
+      "cotaCoronacion": {
+        "valor": 2992.64,
+        "unidad": "m",
+        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa concreto armado, borde superior de los muros; cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+      },
+      "cotaSuperficie": {
+        "valor": 2992.64,
+        "unidad": "m",
+        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)"
+      },
+      "radioExplanada": {
+        "valor": 7,
+        "unidad": "m",
+        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
         "demo": true
       },
       "marcador": {
@@ -84,12 +108,6 @@
         },
         "ancho": {
           "valor": 3,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "alto": {
-          "valor": 2,
           "unidad": "m",
           "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
           "demo": true
@@ -118,9 +136,24 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2991.6,
+        "valor": 2991.17,
         "unidad": "m",
-        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa concreto armado, piso interior de la canaleta Parshall (perfil x ≈ 310305.5-310309.5); cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+      },
+      "cotaCoronacion": {
+        "valor": 2992.64,
+        "unidad": "m",
+        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa concreto armado, borde superior de los muros; cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+      },
+      "cotaSuperficie": {
+        "valor": 2992.64,
+        "unidad": "m",
+        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)"
+      },
+      "radioExplanada": {
+        "valor": 6,
+        "unidad": "m",
+        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
         "demo": true
       },
       "marcador": {
@@ -132,12 +165,6 @@
         },
         "ancho": {
           "valor": 1.5,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "alto": {
-          "valor": 1,
           "unidad": "m",
           "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
           "demo": true
@@ -164,9 +191,24 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2988,
+        "valor": 2985.25,
         "unidad": "m",
-        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa HOMOG-MURO, piso interior del tanque (la losa de fondo queda debajo, hasta 2984.96, e = 0.30 del plano); coincide con N.A. dibujado 2990.15 = fondo + 4.90 (perfil x ≈ 310323.8-310332.4); cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+      },
+      "cotaCoronacion": {
+        "valor": 2990.65,
+        "unidad": "m",
+        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa HOMOG-MURO, borde superior del muro (fondo + 5.40 m de alturaTotal); cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+      },
+      "cotaSuperficie": {
+        "valor": 2990.65,
+        "unidad": "m",
+        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)"
+      },
+      "radioExplanada": {
+        "valor": 6,
+        "unidad": "m",
+        "fuente": "derivado: mitad del diámetro exterior 7.98 m de datos/homogeneizador.json + 2 m de margen",
         "demo": true
       }
     },
@@ -190,9 +232,27 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2987,
+        "valor": 2978.4,
         "unidad": "m",
-        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA: altura del digestor hd = 4.0 m + altura total del sedimentador Ht = 2.3 m (6.3 m)",
+        "demo": true
+      },
+      "cotaCoronacion": {
+        "valor": 2984.7,
+        "unidad": "m",
+        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA: altura del digestor hd = 4.0 m + altura total del sedimentador Ht = 2.3 m",
+        "demo": true
+      },
+      "cotaSuperficie": {
+        "valor": 2984.7,
+        "unidad": "m",
+        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)",
+        "demo": true
+      },
+      "radioExplanada": {
+        "valor": 8,
+        "unidad": "m",
+        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
         "demo": true
       },
       "marcador": {
@@ -204,12 +264,6 @@
         },
         "ancho": {
           "valor": 8,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "alto": {
-          "valor": 5,
           "unidad": "m",
           "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
           "demo": true
@@ -236,9 +290,24 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2985.5,
+        "valor": 2980.74,
         "unidad": "m",
-        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa 0, borde inferior de la polilínea del filtro (perfil x ≈ 310357-310376.6, ancho que cuadra con el diámetro de 18.7 m de la hoja FILTRO PERCOLADOR); cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+      },
+      "cotaCoronacion": {
+        "valor": 2983.8,
+        "unidad": "m",
+        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa 0, borde superior de la polilínea del filtro; cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+      },
+      "cotaSuperficie": {
+        "valor": 2980.74,
+        "unidad": "m",
+        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su fondo (se apoya sobre el suelo)"
+      },
+      "radioExplanada": {
+        "valor": 11.8,
+        "unidad": "m",
+        "fuente": "derivado: mitad del ancho 19.6 m medido en el perfil + 2 m de margen",
         "demo": true
       },
       "marcador": {
@@ -250,12 +319,6 @@
         },
         "ancho": {
           "valor": 12,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "alto": {
-          "valor": 4,
           "unidad": "m",
           "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
           "demo": true
@@ -282,9 +345,27 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2984.5,
+        "valor": 2971.44,
         "unidad": "m",
-        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja SEDIMENTADOR SECUNDARIO: altura H = 4.5 m + altura de la tolva HT = 1.96 m (6.46 m)",
+        "demo": true
+      },
+      "cotaCoronacion": {
+        "valor": 2977.9,
+        "unidad": "m",
+        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja SEDIMENTADOR SECUNDARIO: altura H = 4.5 m + altura de la tolva HT = 1.96 m",
+        "demo": true
+      },
+      "cotaSuperficie": {
+        "valor": 2977.9,
+        "unidad": "m",
+        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)",
+        "demo": true
+      },
+      "radioExplanada": {
+        "valor": 6,
+        "unidad": "m",
+        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
         "demo": true
       },
       "marcador": {
@@ -296,12 +377,6 @@
         },
         "ancho": {
           "valor": 8,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "alto": {
-          "valor": 3,
           "unidad": "m",
           "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
           "demo": true
@@ -328,9 +403,27 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2984.5,
+        "valor": 2970.74,
         "unidad": "m",
-        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja SEDIMENTADOR SECUNDARIO: altura H = 4.5 m + altura de la tolva HT = 1.96 m (6.46 m)",
+        "demo": true
+      },
+      "cotaCoronacion": {
+        "valor": 2977.2,
+        "unidad": "m",
+        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja SEDIMENTADOR SECUNDARIO: altura H = 4.5 m + altura de la tolva HT = 1.96 m",
+        "demo": true
+      },
+      "cotaSuperficie": {
+        "valor": 2977.2,
+        "unidad": "m",
+        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)",
+        "demo": true
+      },
+      "radioExplanada": {
+        "valor": 6,
+        "unidad": "m",
+        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
         "demo": true
       },
       "marcador": {
@@ -342,12 +435,6 @@
         },
         "ancho": {
           "valor": 8,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "alto": {
-          "valor": 3,
           "unidad": "m",
           "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
           "demo": true
@@ -374,9 +461,24 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2983.5,
+        "valor": 2975.83,
         "unidad": "m",
-        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa DESINF-MURO, borde inferior de los muros (perfil x ≈ 310446.4-310449.7); cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+      },
+      "cotaCoronacion": {
+        "valor": 2977.93,
+        "unidad": "m",
+        "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa DESINF-MURO, borde superior de los muros; cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
+      },
+      "cotaSuperficie": {
+        "valor": 2975.83,
+        "unidad": "m",
+        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su fondo (se apoya sobre el suelo)"
+      },
+      "radioExplanada": {
+        "valor": 7,
+        "unidad": "m",
+        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
         "demo": true
       },
       "marcador": {
@@ -388,12 +490,6 @@
         },
         "ancho": {
           "valor": 4,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "alto": {
-          "valor": 2.5,
           "unidad": "m",
           "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
           "demo": true
@@ -420,9 +516,27 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2983,
+        "valor": 2977.4,
         "unidad": "m",
-        "fuente": "Cota de ejemplo, baja unos metros por gravedad; reemplazar con el plano general (T9)",
+        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja LECHO DE SECADO: profundidad del lecho h = 0.4 m (0.4 m)",
+        "demo": true
+      },
+      "cotaCoronacion": {
+        "valor": 2977.8,
+        "unidad": "m",
+        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja LECHO DE SECADO: profundidad del lecho h = 0.4 m",
+        "demo": true
+      },
+      "cotaSuperficie": {
+        "valor": 2977.8,
+        "unidad": "m",
+        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)",
+        "demo": true
+      },
+      "radioExplanada": {
+        "valor": 10,
+        "unidad": "m",
+        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
         "demo": true
       },
       "marcador": {
@@ -434,12 +548,6 @@
         },
         "ancho": {
           "valor": 8,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "alto": {
-          "valor": 0.8,
           "unidad": "m",
           "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
           "demo": true

@@ -1,26 +1,42 @@
-import { useEffect, useMemo } from 'react'
-import { BufferAttribute, BufferGeometry } from 'three'
+import { useFrame } from '@react-three/fiber'
+import { useEffect, useMemo, useRef } from 'react'
+import { BufferAttribute, BufferGeometry, type LineSegments } from 'three'
 import { leerColor } from '../../nucleo/colores'
-import { CALIDAD_CURVAS, ELEVACION_CURVAS } from '../../nucleo/constantes'
-import { terreno } from '../../nucleo/terreno'
-import { useCalidad } from '../../estado/calidad'
+import { CURVAS_DETALLE, CURVAS_PRINCIPALES, ELEVACION_CURVAS, terreno } from '../../nucleo/terreno'
+import { useEstado } from '../../estado/almacen'
 import { useTerreno } from '../../estado/terreno'
+import type { Unidad } from '../../unidades/tipos'
+import { hayDetalleCurvas, radioCamara } from './detalleCurvas'
 import { segmentosCurvas } from './geometriaCurvas'
+import { terrenoModificado } from './superficie'
 
-/** Curvas de nivel dibujadas sobre el terreno (interruptor en el panel de terreno). */
-export function CurvasNivel({ referencia }: { referencia: number }) {
+function crearGeometria(tipos: readonly string[], referencia: number): BufferGeometry {
+  const g = new BufferGeometry()
+  g.setAttribute('position', new BufferAttribute(segmentosCurvas(terreno.curvas, tipos, referencia, ELEVACION_CURVAS, terrenoModificado), 3))
+  return g
+}
+
+/** Curvas de nivel sobre el terreno: las de 5 m siempre, las de 1 m solo con la cámara cerca (interruptor en el panel de terreno). */
+export function CurvasNivel({ referencia, unidades }: { referencia: number; unidades: Unidad[] }) {
   const visibles = useTerreno((s) => s.curvasVisibles)
-  const calidad = useCalidad((s) => s.calidad)
   const color = useMemo(() => leerColor('--color-curva-nivel'), [])
-  const geometria = useMemo(() => {
-    const g = new BufferGeometry()
-    g.setAttribute('position', new BufferAttribute(segmentosCurvas(terreno.curvas, CALIDAD_CURVAS[calidad], referencia, ELEVACION_CURVAS), 3))
-    return g
-  }, [calidad, referencia])
-  useEffect(() => () => geometria.dispose(), [geometria])
+  const principales = useMemo(() => crearGeometria(CURVAS_PRINCIPALES, referencia), [referencia])
+  const detalle = useMemo(() => crearGeometria(CURVAS_DETALLE, referencia), [referencia])
+  const lineas = useRef<LineSegments>(null)
+  useEffect(() => () => principales.dispose(), [principales])
+  useEffect(() => () => detalle.dispose(), [detalle])
+  useFrame(() => {
+    const { camara, foco } = useEstado.getState()
+    if (lineas.current) lineas.current.visible = useTerreno.getState().curvasVisibles && hayDetalleCurvas(radioCamara(unidades, foco, camara.distancia))
+  })
   return (
-    <lineSegments geometry={geometria} visible={visibles}>
-      <lineBasicMaterial color={color} />
-    </lineSegments>
+    <>
+      <lineSegments geometry={principales} visible={visibles}>
+        <lineBasicMaterial color={color} />
+      </lineSegments>
+      <lineSegments ref={lineas} geometry={detalle} visible={false}>
+        <lineBasicMaterial color={color} />
+      </lineSegments>
+    </>
   )
 }

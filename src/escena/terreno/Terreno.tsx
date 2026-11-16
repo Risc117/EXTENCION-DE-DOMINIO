@@ -1,18 +1,18 @@
 import { useEffect, useMemo } from 'react'
 import { BufferAttribute, BufferGeometry, Color, DoubleSide } from 'three'
 import { leerColor } from '../../nucleo/colores'
-import { CALIDAD_TERRENO_SALTO, OPACIDAD_TERRENO_CORTE } from '../../nucleo/constantes'
-import { cuadricula, terreno } from '../../nucleo/terreno'
+import { CALIDAD_TERRENO_SALTO, OPACIDAD_TERRENO_CORTE, terreno } from '../../nucleo/terreno'
 import { useCalidad } from '../../estado/calidad'
 import { useCorte } from '../../estado/flujo'
 import { fraccionAltura, geometriaTerreno } from './geometriaTerreno'
+import { superficieTerreno } from './superficie'
 
 /** Malla del terreno coloreada por altura. Con el corte activo se vuelve translúcida para ver lo enterrado. */
 export function Terreno({ referencia }: { referencia: number }) {
   const calidad = useCalidad((s) => s.calidad)
   const corteActivo = useCorte((s) => s.activo)
   const geometria = useMemo(() => {
-    const d = geometriaTerreno(cuadricula(terreno, CALIDAD_TERRENO_SALTO[calidad]), referencia)
+    const d = geometriaTerreno(superficieTerreno(CALIDAD_TERRENO_SALTO[calidad]), referencia)
     const [bajo, alto] = [new Color(leerColor('--color-terreno-bajo')), new Color(leerColor('--color-terreno-alto'))]
     const minimo = terreno.cotaBase.valor
     const maximo = d.cotas.reduce((m, c) => Math.max(m, c), minimo)

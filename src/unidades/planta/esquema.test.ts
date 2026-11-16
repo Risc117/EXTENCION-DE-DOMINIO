@@ -46,10 +46,16 @@ describe('datos/planta.json', () => {
     expect(esquemaPlanta.safeParse(c).success).toBe(false)
   })
 
+  it('rechaza una coronación que no queda sobre el fondo', () => {
+    const d = copia()
+    d.unidades[0].cotaCoronacion = { ...(d.unidades[0].cotaFondo as object), valor: 1 }
+    expect(esquemaPlanta.safeParse(d).success).toBe(false)
+  })
+
   it('detecta si una unidad usa datos de ejemplo', () => {
     const d = esquemaPlanta.parse(crudo)
     expect(unidadPlantaEsDemo(d.unidades[0])).toBe(true)
-    const real = { ...d.unidades[0], x: { ...d.unidades[0].x, demo: false }, y: { ...d.unidades[0].y, demo: false }, giro: { ...d.unidades[0].giro, demo: false }, cotaFondo: { ...d.unidades[0].cotaFondo, demo: false }, marcador: undefined }
+    const real = { ...d.unidades[0], x: { ...d.unidades[0].x, demo: false }, y: { ...d.unidades[0].y, demo: false }, giro: { ...d.unidades[0].giro, demo: false }, cotaFondo: { ...d.unidades[0].cotaFondo, demo: false }, cotaCoronacion: { ...d.unidades[0].cotaCoronacion, demo: false }, cotaSuperficie: { ...d.unidades[0].cotaSuperficie, demo: false }, radioExplanada: { ...d.unidades[0].radioExplanada, demo: false }, marcador: undefined }
     expect(unidadPlantaEsDemo(real)).toBe(false)
   })
 })

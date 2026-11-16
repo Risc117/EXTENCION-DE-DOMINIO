@@ -43,6 +43,10 @@ describe('segmentosCurvas', () => {
     expect(s[1]).toBeCloseTo(10.2)
     expect(s[5]).toBe(-0)
   })
+  it('omite los tramos que están del todo en terreno modificado y deja los que tocan terreno natural', () => {
+    const sinPrimero = segmentosCurvas(curvas, ['mayor'], 2990, 0, ([x, y]) => x === 0 && y === 0 || x === 10 && y === 0)
+    expect(sinPrimero).toHaveLength(1 * 6)
+  })
   it('con todos los tipos suma todos los tramos', () => {
     expect(segmentosCurvas(curvas, ['mayor', 'menor'], 2990, 0)).toHaveLength(3 * 6)
   })

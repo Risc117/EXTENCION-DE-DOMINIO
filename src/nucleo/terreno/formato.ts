@@ -1,4 +1,5 @@
-import { DECIMALES_COTA_TERRENO, TEXTO_DATO_EJEMPLO } from '../constantes'
+import { TEXTO_DATO_EJEMPLO } from '../constantes'
+import { DECIMALES_COTA_TERRENO } from './constantes'
 import { TEXTO_TERRENO as T } from '../textos'
 import { terrenoEsDemo, type DatosTerreno } from './esquema'
 
