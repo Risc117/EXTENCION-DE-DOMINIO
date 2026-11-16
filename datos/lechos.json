@@ -6,8 +6,7 @@
     "cantidad": {
       "valor": 1,
       "unidad": "u",
-      "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'LECHO DE SECADO', celda C5 (N = 1 módulo) y plano de detalle con un solo lecho (insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf); POR CONFIRMAR CON EL USUARIO si son 1 o 2 lechos; se puede cambiar aquí sin tocar el código",
-      "demo": true
+      "fuente": "Confirmado por el usuario (16 nov): 1 lecho con dren central, según el plano de detalle (insumos/NUEVO PDF/ESTRUCTURAS2-LODOS_PLOT.pdf), el plano general y la hoja 'LECHO DE SECADO', celda C5 (N = 1); se puede cambiar aquí sin tocar el código"
     },
     "separacion": {
       "valor": 1.0,

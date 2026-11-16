@@ -32,7 +32,7 @@ export function construirCotas(d: DatosLechos): CotaCalculada[] {
 
 const granulo = (c: { granuloMin: { valor: number }; granuloMax: { valor: number } }) => `${c.granuloMin.valor} – ${c.granuloMax.valor} mm`
 
-/** Etiquetas de las partes y las capas, el lodo (de ejemplo), el ciclo de la hoja, las dos áreas y la cantidad de lechos (por confirmar). */
+/** Etiquetas de las partes y las capas, el lodo (de ejemplo), el ciclo de la hoja, las dos áreas y la cantidad de lechos. */
 export function construirEtiquetas(d: DatosLechos, nivelLodo: number): EtiquetaCalculada[] {
   const s = disponer(d)
   const F = DESFASES_ET_LECHOS
@@ -60,6 +60,6 @@ export function construirEtiquetas(d: DatosLechos, nivelLodo: number): EtiquetaC
     etiquetaDe('et-lodo', resolverTexto('Lodo = {valor} m', nivelLodo, false), true, [cx + (s.xDren + s.mitadX) / 2, s.yCapas + nivelLodo, 0], F.lodo),
     etiquetaDe('et-ciclo', `Ciclo de ${d.hoja.cicloDias.valor} días: ${d.hoja.secadoSemanas.valor} semanas de secado + ${d.hoja.remocionSemanas.valor} de remoción (en pantalla: ${horas} h simuladas)`, true, [cx, s.yMuro, 0], F.ciclo),
     etiquetaDe('et-area', `Área por lecho: plano ${metros(areaPlano(d))} m² · hoja ${metros(d.hoja.areaHoja.valor)} m²`, false, [cx, s.yMuro, 0], F.area),
-    etiquetaDe('et-cantidad', `Lechos: ${s.n} (por confirmar con el usuario)`, ejemplo(d.lecho.cantidad), [cx, s.yMuro, 0], F.cantidad),
+    etiquetaDe('et-cantidad', `Lechos: ${s.n}`, ejemplo(d.lecho.cantidad), [cx, s.yMuro, 0], F.cantidad),
   ]
 }

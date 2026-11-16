@@ -25,11 +25,12 @@ describe('datos/lechos.json', () => {
     for (const m of medidas) expect(m.fuente.length).toBeGreaterThan(5)
   })
 
-  it('el plano y la hoja no son de ejemplo; lo que no está en las fuentes sí, y la cantidad de lechos va por confirmar', () => {
-    for (const m of [datos.lecho.anchoInterior, datos.lecho.largoInterior, datos.muro.espesor, datos.dren.ancho, datos.dren.diametroTuberia, datos.capas.arena.espesor, datos.capas.ladrillo.espesor, datos.hoja.cicloDias]) expect(m.demo, m.fuente).not.toBe(true)
-    for (const m of [datos.muro.alturaSobreTerreno, datos.dren.profundidad, datos.dren.espesorPared, datos.piso.pendiente, datos.lodo.alturaMaxima, datos.lecho.cantidad]) expect(m.demo).toBe(true)
+  it('el plano y la hoja no son de ejemplo; lo que no está en las fuentes sí, y la cantidad de lechos está confirmada', () => {
+    for (const m of [datos.lecho.anchoInterior, datos.lecho.largoInterior, datos.muro.espesor, datos.dren.ancho, datos.dren.diametroTuberia, datos.capas.arena.espesor, datos.capas.ladrillo.espesor, datos.hoja.cicloDias, datos.lecho.cantidad]) expect(m.demo, m.fuente).not.toBe(true)
+    for (const m of [datos.muro.alturaSobreTerreno, datos.dren.profundidad, datos.dren.espesorPared, datos.piso.pendiente, datos.lodo.alturaMaxima]) expect(m.demo).toBe(true)
     expect(datos.lecho.cantidad.valor).toBe(1)
-    expect(datos.lecho.cantidad.fuente).toContain('POR CONFIRMAR CON EL USUARIO')
+    expect(datos.lecho.cantidad.fuente).toContain('Confirmado por el usuario')
+    expect(datos.lecho.cantidad.fuente).not.toContain('POR CONFIRMAR')
   })
 
   it('11.00 + 2 × 0.20 = 11.40, 15.00 + 2 × 0.20 = 15.40 y 5.30 desde el exterior = 0.20 + 5.10', () => {
@@ -169,11 +170,11 @@ describe('anotaciones', () => {
     expect(c).toContain('Profundidad h = 0.40 m')
   })
 
-  it('las etiquetas dicen el ladrillo, la cantidad por confirmar y las dos áreas; lo estimado lleva "(ej.)"', () => {
+  it('las etiquetas dicen el ladrillo, la cantidad de lechos y las dos áreas; lo estimado lleva "(ej.)"', () => {
     const t = construirEtiquetas(datos, 3).map((e) => e.texto)
     expect(t.some((x) => x.includes('10 × 20 × 10 cm') && !x.includes('(ej.)'))).toBe(true)
     expect(t.some((x) => x.includes('165.00') && x.includes('170.17'))).toBe(true)
-    expect(t.some((x) => x.includes('Lechos: 1') && x.includes('(ej.)'))).toBe(true)
+    expect(t.some((x) => x === 'Lechos: 1')).toBe(true)
     expect(t.some((x) => x.includes('Tapas') && x.includes('(ej.)'))).toBe(true)
     expect(t.some((x) => x.includes('Muros de concreto') && !x.includes('(ej.)'))).toBe(true)
     expect(t.some((x) => x.includes('Lodo') && x.includes('(ej.)'))).toBe(true)
