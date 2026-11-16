@@ -1,0 +1,82 @@
+{
+  "id": "rafa",
+  "nombre": "RAFA (reactor anaerobio de flujo ascendente)",
+  "demo": true,
+  "cuerpo": {
+    "anchoExterior": { "valor": 5.7, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A y planta (5.70 m); DXF ESTRUCTURAS2.dxf, capa FILTRO-COTAS, DIMENSION 5.697", "demo": false },
+    "largoExterior": { "valor": 15.2, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte B-B y planta (0.86 + 2.20 + 2.20 + 4.68 + 2.20 + 2.20 + 0.86); DXF capa FILTRO-COTAS, DIMENSION 15.200", "demo": false },
+    "espesorMuro": { "valor": 0.6, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A (muros de 0.60 m); DXF capa FILTRO-COTAS, DIMENSION 0.600", "demo": false },
+    "espesorPiso": { "valor": 0.6, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A y B-B (piso de 0.60 m); DXF capa FILTRO-COTAS, DIMENSION 0.600", "demo": false },
+    "alturaDigestor": { "valor": 4, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A y B-B (digestor 4.00 m); DXF capa FILTRO-COTAS, DIMENSION 4.000; coincide con CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'RAFA', celda C71", "demo": false },
+    "alturaSedimentacion": { "valor": 1.8, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A (zona de sedimentación 1.80 m); DXF capa FILTRO-COTAS, DIMENSION 1.800", "demo": false },
+    "alturaLaminaAgua": { "valor": 0.4, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A, tren de niveles arriba (0.15, 0.30 y 0.40); DXF capa FILTRO-COTAS: 0.150, 0.300 y 0.390. El plano marca 'por confirmar' qué es cada nivel: se toma 0.40 como lámina de agua sobre las canaletas", "demo": true },
+    "alturaCanaleta": { "valor": 0.3, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A, tren de niveles (0.30); DXF capa FILTRO-COTAS, DIMENSION 0.300. Qué nivel es cada uno está 'por confirmar'", "demo": true },
+    "bordoLibre": { "valor": 0.15, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A, tren de niveles (0.15); DXF capa FILTRO-COTAS, DIMENSION 0.150. Qué nivel es cada uno está 'por confirmar'", "demo": true }
+  },
+  "losa": {
+    "espesor": { "valor": 0.15, "unidad": "m", "fuente": "No está en el plano ni en la hoja: se toma igual al nivel de 0.15 m del tren de niveles superior", "demo": true },
+    "anchoTapa": { "valor": 1.5, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A (tapa de 1.50 m, por confirmar); DXF capa FILTRO-COTAS, DIMENSION 1.500", "demo": true },
+    "cantidadTapas": { "valor": 4, "unidad": "u", "fuente": "No está en las fuentes: cuatro tapas de ejemplo sobre los 8 módulos", "demo": true },
+    "alturaBaranda": { "valor": 1, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A: baranda de seguridad sin altura escrita (por confirmar)", "demo": true }
+  },
+  "sedimentacion": {
+    "espesorDeflector": { "valor": 0.3, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A (e = 0.30); DXF capa FILTRO-COTAS, DIMENSION 0.300", "demo": false },
+    "alturaDeflector": { "valor": 0.88, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A (0.88 m); DXF capa FILTRO-COTAS, DIMENSION 0.883", "demo": false },
+    "separacionPie": { "valor": 2.56, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte A-A (2.56 hasta el pie del deflector); DXF capa FILTRO-COTAS, DIMENSION 2.561", "demo": false },
+    "alturaRecta": { "valor": 0.2, "unidad": "m", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'RAFA', celda C43 (altura recta de la campana)", "demo": false },
+    "aberturaPaso": { "valor": 0.3, "unidad": "m", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'RAFA', celda C16 (abertura de paso al digestor)", "demo": false },
+    "modulos": {
+      "cantidad": { "valor": 8, "unidad": "u", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, planta (4 módulos a cada lado del colector)", "demo": false },
+      "largo": { "valor": 2.2, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, planta (2.20 m por módulo); DXF capa FILTRO-COTAS, 4 DIMENSION de 2.200", "demo": false },
+      "separacionEje": { "valor": 2.1, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, planta (2.10 m a cada lado del eje); DXF capa FILTRO-COTAS, DIMENSION 2.100", "demo": false },
+      "canaletasPorModulo": { "valor": 3, "unidad": "u", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, planta (3 canaletas por módulo)", "demo": false }
+    }
+  },
+  "distribucion": {
+    "anchoColector": { "valor": 4.68, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, planta (franja central de 4.68 m); DXF capa FILTRO-COTAS, DIMENSION 4.683", "demo": false },
+    "ramalesColector": { "valor": 22, "unidad": "u", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, planta (22 ramales de alimentación)", "demo": false },
+    "colector": {
+      "alturaSobrePiso": { "valor": 0.3, "unidad": "m", "fuente": "No está en las fuentes: altura de ejemplo del colector circular sobre el piso (el plano no la acota)", "demo": true },
+      "holguraPared": { "valor": 0.1, "unidad": "m", "fuente": "No está en las fuentes: holgura de ejemplo entre el colector y la pared", "demo": true },
+      "espesorAnillo": { "valor": 0.1, "unidad": "m", "fuente": "No está en las fuentes: espesor de ejemplo del anillo del colector", "demo": true },
+      "altoAnillo": { "valor": 0.1, "unidad": "m", "fuente": "No está en las fuentes: alto de ejemplo del anillo del colector", "demo": true }
+    },
+    "tubosFondo": {
+      "cantidad": { "valor": 6, "unidad": "u", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte B-B (6 ramales de fondo)", "demo": false },
+      "separacion": { "valor": 2, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte B-B (cada 2.00 m); DXF capa FILTRO-COTAS, 6 DIMENSION de 2.000", "demo": false },
+      "diametro": { "valor": 0.1, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte B-B (PVC-SAP Ø 100 mm)", "demo": false },
+      "alturaSobrePiso": { "valor": 0.1, "unidad": "m", "fuente": "No está en las fuentes: altura de ejemplo del eje de los tubos de fondo sobre el piso", "demo": true }
+    },
+    "caja": {
+      "ancho": { "valor": 1.9, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, planta (caja de distribución, ancho 1.90 m); DXF capa FILTRO-COTAS, DIMENSION 1.895 y 1.898", "demo": false },
+      "alto": { "valor": 1.11, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, planta (altura 1.11 m); DXF capa FILTRO-COTAS, DIMENSION 1.105", "demo": false },
+      "anchoUtil": { "valor": 1.82, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 01 y 02 (1.82 m útil); DXF capa FILTRO-COTAS, DIMENSION 1.817", "demo": false },
+      "espesorMuro": { "valor": 0.2, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 01 y 02 (muros de 0.20 m); DXF capa FILTRO-COTAS, DIMENSION 0.200", "demo": false },
+      "diametroAfluente": { "valor": 0.254, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 01 y 02 (HDPE DN 10\" = 0.254 m)", "demo": false },
+      "diametroSalida": { "valor": 0.05, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 01 y 02 (PVC-SAP Ø 50 mm)", "demo": false }
+    }
+  },
+  "efluente": {
+    "anchoCamara": { "valor": 1.8, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, planta (cámara de efluente de 1.80 m); DXF capa FILTRO-COTAS, DIMENSION 1.800", "demo": false },
+    "salidas": { "valor": 4, "unidad": "u", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, planta (4 salidas con rejilla)", "demo": false },
+    "recoleccionSuperior": { "valor": 0.79, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte B-B (zona de recolección, por confirmar); DXF capa FILTRO-COTAS, DIMENSION 0.794", "demo": true },
+    "recoleccionInferior": { "valor": 1.81, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, corte B-B (zona de recolección, por confirmar); DXF capa FILTRO-COTAS, DIMENSION 1.810", "demo": true },
+    "espesorRejilla": { "valor": 0.05, "unidad": "m", "fuente": "No está en las fuentes: rejilla de ejemplo", "demo": true }
+  },
+  "lodos": {
+    "alturasToma": [
+      { "valor": 0.3, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 03; DXF capa 0, DIMENSION 0.300", "demo": false },
+      { "valor": 0.8, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 03; DXF capa 0, DIMENSION 0.800", "demo": false },
+      { "valor": 1.3, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 03; DXF capa 0, DIMENSION 1.300", "demo": false },
+      { "valor": 1.8, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 03; DXF capa 0, DIMENSION 1.800", "demo": false }
+    ],
+    "margenCajaMuestreo": { "valor": 0.2, "unidad": "m", "fuente": "No está en las fuentes: margen de ejemplo de la caja de muestreo sobre la toma más alta", "demo": true },
+    "diametroToma": { "valor": 0.05, "unidad": "m", "fuente": "No está en las fuentes: tubo de toma de ejemplo", "demo": true },
+    "ladoCajaMuestreo": { "valor": 0.6, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 03: caja de muestreo de lodos sin medida escrita", "demo": true },
+    "ladoCajaDescarga": { "valor": 0.8, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 03: caja de descarga de lodo sin medida escrita", "demo": true }
+  },
+  "hidraulica": {
+    "volumenHoja": { "valor": 259.2, "unidad": "m3", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'RAFA', celda G70 (volumen del digestor 3.6 × 18 × 4 m)", "demo": false },
+    "retencionHoja": { "valor": 11.0159, "unidad": "h", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja 'RAFA', celda G71 (TR, igual a datos/linea.json)", "demo": false }
+  }
+}

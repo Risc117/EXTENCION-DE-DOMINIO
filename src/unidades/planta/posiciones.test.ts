@@ -11,7 +11,9 @@ const malla = cuadricula(terreno)
 const terrenoEn = (u: { x: { valor: number }; y: { valor: number } }): number => alturaEn(malla, u.x.valor, u.y.valor) ?? NaN
 
 const MEDIDAS = ['rejas', 'desarenador', 'parshall', 'homogeneizador', 'percolador', 'camara-contacto']
-const DERIVADAS = ['rafa', 'sedimentador-1', 'sedimentador-2', 'lechos-secado']
+const DERIVADAS = ['sedimentador-1', 'sedimentador-2', 'lechos-secado']
+/** RAFA (T11): fondo derivado del terreno y la hoja; coronación = fondo + altura total del plano (7.25 m), 0.95 m sobre el terreno. */
+const DEL_PLANO = ['rafa']
 /** Estación de bombeo: cotas de ejemplo derivadas del terreno levantado y de la profundidad supuesta del cárcamo. */
 const DEL_TERRENO = ['bombeo']
 const MARCA_MEDIDA = 'medido del dibujo del perfil, ±0.2 m aprox. por confirmar'
@@ -31,7 +33,7 @@ describe('posiciones de datos/planta.json', () => {
   })
 
   it('cada unidad está clasificada como medida del perfil o derivada, sin dejar ninguna', () => {
-    expect([...MEDIDAS, ...DERIVADAS, ...DEL_TERRENO].sort()).toEqual(planta.unidades.map((u) => u.id).sort())
+    expect([...MEDIDAS, ...DERIVADAS, ...DEL_PLANO, ...DEL_TERRENO].sort()).toEqual(planta.unidades.map((u) => u.id).sort())
   })
 })
 
@@ -70,6 +72,16 @@ describe('cotas de fondo y coronación', () => {
       const u = planta.unidades.find((x) => x.id === id)!
       expect(u.cotaFondo.valor, id).toBeLessThan(terrenoEn(u))
     }
+  })
+
+  it('el RAFA tiene fondo y coronación derivados y de ejemplo; su fondo queda bajo el terreno y su coronación sobre él', () => {
+    const u = planta.unidades.find((x) => x.id === 'rafa')!
+    for (const v of [u.cotaFondo, u.cotaCoronacion]) {
+      expect(v.fuente).toContain('derivado')
+      expect(v.demo).toBe(true)
+    }
+    expect(u.cotaFondo.valor).toBeLessThan(terrenoEn(u))
+    expect(u.cotaCoronacion.valor - terrenoEn(u)).toBeCloseTo(0.95, 1)
   })
 
   it('el alto (coronación menos fondo) es positivo', () => {

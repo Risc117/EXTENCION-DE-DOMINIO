@@ -231,9 +231,9 @@
         "demo": true
       },
       "cotaCoronacion": {
-        "valor": 2984.7,
+        "valor": 2985.65,
         "unidad": "m",
-        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA: altura del digestor hd = 4.0 m + altura total del sedimentador Ht = 2.3 m",
+        "fuente": "derivado (T11, decisión del usuario): coronación = cota de fondo 2978.4 + altura total del plano 7.25 m (piso 0.60 + interior 6.65 = 0.15 + 0.30 + 0.40 + 1.80 + 4.00; insumos/NUEVO PDF/ESTRUCTURAS2-RAFA_PLOT.pdf, cortes A-A y B-B; DXF ESTRUCTURAS2.dxf, capa FILTRO-COTAS, 6.646 + 0.600). Queda 0.95 m sobre el terreno (2984.7); el fondo sigue siendo el derivado de arriba",
         "demo": true
       },
       "cotaSuperficie": {
@@ -243,24 +243,10 @@
         "demo": true
       },
       "radioExplanada": {
-        "valor": 8,
+        "valor": 10,
         "unidad": "m",
-        "fuente": "derivado: mitad del lado mayor de la caja de ejemplo + 2 m de margen",
+        "fuente": "derivado (T11): mitad del largo exterior 7.60 m de datos/rafa.json + cámara de efluente 1.80 m + 0.60 m de margen",
         "demo": true
-      },
-      "marcador": {
-        "largo": {
-          "valor": 12,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        },
-        "ancho": {
-          "valor": 8,
-          "unidad": "m",
-          "fuente": "Tamaño de ejemplo de la caja marcadora; se reemplaza al hacer la estructura (T10 a T15)",
-          "demo": true
-        }
       }
     },
     {

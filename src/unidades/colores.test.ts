@@ -2,7 +2,7 @@ import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 
-const UNIDADES = ['bombeo', 'rejas', 'desarenador', 'parshall', 'comun']
+const UNIDADES = ['bombeo', 'rejas', 'desarenador', 'parshall', 'rafa', 'comun']
 
 function archivos(dir: string): string[] {
   return readdirSync(dir, { withFileTypes: true }).flatMap((f) => (f.isDirectory() ? archivos(join(dir, f.name)) : /\.(ts|tsx)$/.test(f.name) && !f.name.includes('.test.') ? [join(dir, f.name)] : []))

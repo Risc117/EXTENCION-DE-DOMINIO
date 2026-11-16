@@ -2,16 +2,19 @@ import { describe, expect, it } from 'vitest'
 import bombeoCrudo from '../../datos/bombeo.json'
 import desarenadorCrudo from '../../datos/desarenador.json'
 import parshallCrudo from '../../datos/parshall.json'
+import rafaCrudo from '../../datos/rafa.json'
 import rejasCrudo from '../../datos/rejas.json'
 import { esquemaBombeo } from './bombeo/esquema'
 import { todasLasMedidas } from './comun/medidas'
 import { esquemaDesarenador } from './desarenador/esquema'
 import { esquemaParshall } from './parshall/esquema'
 import { planta } from './planta'
+import { esquemaRafa } from './rafa/esquema'
+import { alturaTotal } from './rafa/hidraulica'
 import { esquemaRejas } from './rejas/esquema'
 
-const ARCHIVOS = { bombeo: bombeoCrudo, rejas: rejasCrudo, desarenador: desarenadorCrudo, parshall: parshallCrudo }
-const esquemas = { bombeo: esquemaBombeo, rejas: esquemaRejas, desarenador: esquemaDesarenador, parshall: esquemaParshall }
+const ARCHIVOS = { bombeo: bombeoCrudo, rejas: rejasCrudo, desarenador: desarenadorCrudo, parshall: parshallCrudo, rafa: rafaCrudo }
+const esquemas = { bombeo: esquemaBombeo, rejas: esquemaRejas, desarenador: esquemaDesarenador, parshall: esquemaParshall, rafa: esquemaRafa }
 
 describe('datos de la estación de bombeo y del pretratamiento', () => {
   it('cada archivo cumple su esquema', () => {
@@ -55,5 +58,7 @@ describe('datos de la estación de bombeo y del pretratamiento', () => {
     expect(alto('desarenador')).toBeCloseTo(1.17, 6)
     expect(esquemaParshall.parse(parshallCrudo).estructura.alturaMuro.valor).toBeCloseTo(alto('parshall'), 6)
     expect(esquemaBombeo.parse(bombeoCrudo).carcamo.profundidad.valor).toBeCloseTo(alto('bombeo'), 6)
+    // RAFA: se dibuja con el plano (7.25 m) y planta.json sube su coronación a fondo + 7.25; la cota queda POR REVISAR CON EL PERFIL.
+    expect(alturaTotal(esquemaRafa.parse(rafaCrudo))).toBeCloseTo(alto('rafa'), 6)
   })
 })
