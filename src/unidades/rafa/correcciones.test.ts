@@ -58,14 +58,14 @@ describe('T11.1 · medidas del colector, tubos y caja de muestreo salen del JSON
 describe('T11.2 · "(ej.)" en las etiquetas de piezas con medidas de ejemplo', () => {
   const marcas = (x: typeof datos) => Object.fromEntries(construirEtiquetas(x, 6.1, 11, 10.7).map((e) => [e.id, e.texto.includes('(ej.)')]))
 
-  it('la cámara de efluente, las tomas y las cajas de lodo llevan "(ej.)" porque sus medidas son de ejemplo', () => {
+  it('el colector, la cámara de efluente, las tomas y las cajas de lodo llevan "(ej.)" porque sus medidas son de ejemplo', () => {
     const m = marcas(datos)
-    for (const id of ['et-efluente', 'et-tomas', 'et-muestreo', 'et-descarga', 'et-nivel']) expect(m[id], id).toBe(true)
+    for (const id of ['et-colector', 'et-efluente', 'et-tomas', 'et-muestreo', 'et-descarga', 'et-nivel']) expect(m[id], id).toBe(true)
   })
 
   it('las piezas con medidas del plano no llevan la marca', () => {
     const m = marcas(datos)
-    for (const id of ['et-caja-distribucion', 'et-colector', 'et-sedimentacion', 'et-digestor', 'et-gases']) expect(m[id], id).toBe(false)
+    for (const id of ['et-caja-distribucion', 'et-sedimentacion', 'et-digestor', 'et-gases']) expect(m[id], id).toBe(false)
   })
 
   it('la marca desaparece si las medidas dejan de ser de ejemplo (la prueba falla si se quita la lógica)', () => {

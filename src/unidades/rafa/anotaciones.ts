@@ -42,7 +42,7 @@ export function construirEtiquetas(d: DatosRafa, nivel: number, trHoja: number, 
   const nivelTexto = resolverTexto('Nivel de agua = {valor} m', nivel, true)
   return [
     etiquetaDe('et-caja-distribucion', 'Caja de distribución', false, [-s.semiLargo + caja.ancho.valor / 2, s.yLosa + caja.alto.valor, 0], F.cajaDistribucion),
-    dentro(etiquetaDe('et-colector', `Colector de distribución (${d.distribucion.ramalesColector.valor} ramales)`, false, [0, s.yPiso + d.distribucion.colector.alturaSobrePiso.valor, 0], F.colector)),
+    dentro(etiquetaDe('et-colector', `Colector de distribución (${d.distribucion.ramalesColector.valor} ramales)`, hayEjemplo(Object.values(d.distribucion.colector)), [0, s.yPiso + d.distribucion.colector.alturaSobrePiso.valor, 0], F.colector)),
     dentro(etiquetaDe('et-sedimentacion', 'Zona de sedimentación: campanas y deflectores', false, [x0, yBase + ALTURA_PUNTA_ZONA_RAFA, s.zFilas[0]], F.sedimentacion)),
     dentro(etiquetaDe('et-digestor', 'Digestor (manto de lodos)', false, [x, s.yPiso + ALTURA_PUNTA_DIGESTOR_RAFA, 0], F.digestor)),
     dentro(etiquetaDe('et-gases', 'Zona de gases', false, [0, yBase + ALTURA_PUNTA_ZONA_RAFA, 0], F.gases)),
