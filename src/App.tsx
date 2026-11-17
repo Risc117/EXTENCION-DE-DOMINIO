@@ -6,6 +6,7 @@ import { Bienvenida } from './ui/Bienvenida'
 import { DiagramaLinea } from './ui/DiagramaLinea'
 import { Leyenda } from './ui/Leyenda'
 import { PanelAjusteGestos } from './ui/PanelAjusteGestos'
+import { PanelCalidadAgua } from './ui/PanelCalidadAgua'
 import { PanelDemo } from './ui/PanelDemo'
 import { PanelGestos } from './ui/PanelGestos'
 import { PanelHerramientas } from './ui/PanelHerramientas'
@@ -30,6 +31,7 @@ export function App() {
       <PanelSimulacion />
       <TarjetaUnidad />
       <DiagramaLinea />
+      <PanelCalidadAgua />
       <Leyenda />
       <Bienvenida />
     </>

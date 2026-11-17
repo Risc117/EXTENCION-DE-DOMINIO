@@ -149,3 +149,24 @@ export const TEXTO_TARJETA = {
   diagrama: 'Línea de agua (caudales en vivo)',
   salida: 'Salida de agua tratada',
 }
+
+/** Panel de calidad del agua (T19). */
+export const TEXTO_CALIDAD_AGUA = {
+  titulo: 'Calidad del agua por etapa',
+  valoresDiseno: 'Valores de diseño de la memoria de cálculo (no de laboratorio). † = porcentaje estimado.',
+  marcaEjemplo: 'Lo marcado con † es',
+  limite: 'límite de descarga',
+  aguaCruda: 'Agua cruda',
+  salidaFinal: 'Salida final',
+  cumple: 'Cumple',
+  noCumple: 'No cumple',
+  sinDato: '—',
+  balance: 'Balance de masas por unidad (tabla)',
+  unidad: 'Unidad',
+  caudalEntra: 'Q entra (L/s)',
+  caudalSale: 'Q sale (L/s)',
+  entraSale: 'entra → sale',
+  cargaDbo: 'Carga DBO que sale (kg/d)',
+  parametros: { dbo: 'DBO₅ (mg/L)', dqo: 'DQO (mg/L)', sst: 'SST (mg/L)', cf: 'Coliformes (NMP/100 mL)' },
+  unidades: { dbo: 'mg/L', dqo: 'mg/L', sst: 'mg/L', cf: 'NMP/100 mL' },
+}

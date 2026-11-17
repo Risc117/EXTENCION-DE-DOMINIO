@@ -3,6 +3,7 @@ import { INTERVALO_PUBLICACION_LINEA_MS } from '../nucleo/constantesVista'
 import { useLineaViva, type NodoLineaViva } from '../estado/lineaViva'
 import { useSim } from '../estado/simulacion'
 import { avanzarLinea } from './avanzarLinea'
+import { publicarCalidad } from './calidadEnVivo'
 import { disponerLinea } from './disposicion'
 import { hidrograma } from './hidrogramaCargado'
 import { crearLinea, type Linea } from './linea'
@@ -35,6 +36,7 @@ export function crearLineaEnVivo(): (ahoraMs: number, estado: ReturnType<typeof 
       linea = crearLinea(lineaCruda, { tanque: s.tanque, modo: () => useSim.getState().modoSalida, ajuste: () => useSim.getState().salidaAjuste })
       reinicios = s.reinicios
       useLineaViva.getState().publicarEstructura(estructuraLinea())
+      publicarCalidad()
     }
     if (s.reinicios !== reinicios) {
       linea.reiniciar()

@@ -1,0 +1,135 @@
+{
+  "id": "calidad",
+  "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx (hojas RAFA y FILTRO PERCOLADOR) e insumos/CALCULO/BALANCE DE MASAS SANTA LEONOR.xlsx (hojas EPOCA DE ESTIAJE y RESUMEN GENERAL). Todo son valores de diseño (sin laboratorio). Decisión del usuario (17 nov): para la cadena de remoción se usa CALCULOS (RAFA y percolador); los porcentajes que CALCULOS no trae (sólidos y coliformes) se toman del BALANCE y quedan como Dato de ejemplo.",
+  "demo": true,
+  "metodo": "Las concentraciones salen de multiplicar cada etapa por (1 − eficiencia). RAFA: DBO y DQO de CALCULOS (hoja RAFA, E_DBO = 1 − 0.7·TR^−0.5 y E_DQO = 1 − 0.68·TR^−0.35 con TR = 11.0159 h). Percolador: DBO hasta 15 mg/L (hoja FILTRO PERCOLADOR, eficiencia 87.69 % desde 121.88 mg/L). Lo que CALCULOS no calcula (SST y coliformes en el RAFA; DQO y coliformes en el percolador; SST en el sedimentador secundario; coliformes en la cámara de contacto) se toma de los porcentajes del BALANCE: Tanque Imhoff 90/85/90/90 (RAFA, solo SST y coliformes), filtro biológico 90/70/90/90 (percolador: DQO y coliformes; sus 90 % de SST se asignan al sedimentador secundario, que es donde se sedimentan los sólidos del filtro; el percolador queda en 0 % de SST) y cámara de cloro 99 % de coliformes. Pretratamiento, bombeo, homogeneizador y reparto: 0 % (el balance no resta nada antes del tratamiento primario).",
+  "afluente": {
+    "dbo": { "valor": 577.91, "unidad": "mg/L", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA, celda C8 (igual a BALANCE DE MASAS, hoja EPOCA DE ESTIAJE, G36): 50 g/hab·d × 6527 hab ÷ 6.536 L/s. Valor de diseño por habitante (RNE OS.090), no de laboratorio.", "demo": false },
+    "dqo": { "valor": 1155.81, "unidad": "mg/L", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA, celda C7 (igual a BALANCE DE MASAS, EPOCA DE ESTIAJE, G37). Valor de diseño por habitante (RNE OS.090), no de laboratorio.", "demo": false },
+    "sst": { "valor": 1040.23, "unidad": "mg/L", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja EPOCA DE ESTIAJE, celda G38: 90 g/hab·d × 6527 hab ÷ 6.536 L/s. Valor de diseño por habitante (RNE OS.090), no de laboratorio.", "demo": false },
+    "cf": { "valor": 23116273.4, "unidad": "NMP/100 mL", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja EPOCA DE ESTIAJE, celda G39. Valor de diseño por habitante (RNE OS.090), no de laboratorio.", "demo": false }
+  },
+  "etapas": [
+    {
+      "id": "bombeo",
+      "remocion": {
+        "dbo": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "dqo": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "sst": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "cf": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true }
+      }
+    },
+    {
+      "id": "rejas",
+      "remocion": {
+        "dbo": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "dqo": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "sst": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "cf": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true }
+      }
+    },
+    {
+      "id": "desarenador",
+      "remocion": {
+        "dbo": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "dqo": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "sst": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "cf": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true }
+      }
+    },
+    {
+      "id": "parshall",
+      "remocion": {
+        "dbo": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "dqo": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "sst": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "cf": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true }
+      }
+    },
+    {
+      "id": "homogeneizador",
+      "remocion": {
+        "dbo": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "dqo": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "sst": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true },
+        "cf": { "valor": 0, "unidad": "fraccion", "fuente": "El balance de masas no resta nada antes del tratamiento primario; tratado como 0 %. POR CONFIRMAR.", "demo": true }
+      }
+    },
+    {
+      "id": "rafa",
+      "remocion": {
+        "dbo": { "valor": 0.7890945446151022, "unidad": "fraccion", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA, celda G88 (E_DBO = 1 − 0.7·TR^−0.5, TR = 11.0159 h)", "demo": false },
+        "dqo": { "valor": 0.7063691014018962, "unidad": "fraccion", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA, celda G89 (E_DQO = 1 − 0.68·TR^−0.35, TR = 11.0159 h)", "demo": false },
+        "sst": { "valor": 0.9, "unidad": "fraccion", "fuente": "No está en CALCULOS: tomada del BALANCE DE MASAS, hoja EPOCA DE ESTIAJE, celda M58 (Tanque Imhoff, 90 %), aplicada al RAFA. Dato de ejemplo.", "demo": true },
+        "cf": { "valor": 0.9, "unidad": "fraccion", "fuente": "No está en CALCULOS: tomada del BALANCE DE MASAS, hoja EPOCA DE ESTIAJE, celda M59 (Tanque Imhoff, 90 %), aplicada al RAFA. Dato de ejemplo.", "demo": true }
+      }
+    },
+    {
+      "id": "percolador",
+      "remocion": {
+        "dbo": { "valor": 0.8769325403401514, "unidad": "fraccion", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja FILTRO PERCOLADOR, celda G30: (121.88 − 15) ÷ 121.88, para llegar a la DBO efluente deseada de 15 mg/L", "demo": false },
+        "dqo": { "valor": 0.7, "unidad": "fraccion", "fuente": "No está en CALCULOS: tomada del BALANCE DE MASAS, hoja EPOCA DE ESTIAJE, celda M77 (filtro biológico, 70 %), aplicada al percolador. Dato de ejemplo.", "demo": true },
+        "sst": { "valor": 0, "unidad": "fraccion", "fuente": "Estimación: los 90 % de SST del filtro biológico del BALANCE se asignan al sedimentador secundario (ahí sedimentan los sólidos del filtro); el percolador queda en 0 %. Dato de ejemplo.", "demo": true },
+        "cf": { "valor": 0.9, "unidad": "fraccion", "fuente": "No está en CALCULOS: tomada del BALANCE DE MASAS, hoja EPOCA DE ESTIAJE, celda M79 (filtro biológico, 90 %), aplicada al percolador. Dato de ejemplo.", "demo": true }
+      }
+    },
+    {
+      "id": "camara-reparto",
+      "remocion": {
+        "dbo": { "valor": 0, "unidad": "fraccion", "fuente": "Solo reparte el caudal; sin remoción en las hojas. POR CONFIRMAR.", "demo": true },
+        "dqo": { "valor": 0, "unidad": "fraccion", "fuente": "Solo reparte el caudal; sin remoción en las hojas. POR CONFIRMAR.", "demo": true },
+        "sst": { "valor": 0, "unidad": "fraccion", "fuente": "Solo reparte el caudal; sin remoción en las hojas. POR CONFIRMAR.", "demo": true },
+        "cf": { "valor": 0, "unidad": "fraccion", "fuente": "Solo reparte el caudal; sin remoción en las hojas. POR CONFIRMAR.", "demo": true }
+      }
+    },
+    {
+      "id": "sedimentador-1",
+      "remocion": {
+        "dbo": { "valor": 0, "unidad": "fraccion", "fuente": "Las hojas no dan remoción del sedimentador secundario para DBO; 0 %. POR CONFIRMAR.", "demo": true },
+        "dqo": { "valor": 0, "unidad": "fraccion", "fuente": "Las hojas no dan remoción del sedimentador secundario para DQO; 0 %. POR CONFIRMAR.", "demo": true },
+        "sst": { "valor": 0.9, "unidad": "fraccion", "fuente": "No está en CALCULOS: los 90 % de SST del filtro biológico del BALANCE DE MASAS (hoja EPOCA DE ESTIAJE, celda M78) asignados al sedimentador secundario. Dato de ejemplo.", "demo": true },
+        "cf": { "valor": 0, "unidad": "fraccion", "fuente": "Las hojas no dan remoción de coliformes del sedimentador secundario; 0 %. POR CONFIRMAR.", "demo": true }
+      }
+    },
+    {
+      "id": "sedimentador-2",
+      "remocion": {
+        "dbo": { "valor": 0, "unidad": "fraccion", "fuente": "Las hojas no dan remoción del sedimentador secundario para DBO; 0 %. POR CONFIRMAR.", "demo": true },
+        "dqo": { "valor": 0, "unidad": "fraccion", "fuente": "Las hojas no dan remoción del sedimentador secundario para DQO; 0 %. POR CONFIRMAR.", "demo": true },
+        "sst": { "valor": 0.9, "unidad": "fraccion", "fuente": "No está en CALCULOS: los 90 % de SST del filtro biológico del BALANCE DE MASAS (hoja EPOCA DE ESTIAJE, celda M78) asignados al sedimentador secundario. Dato de ejemplo.", "demo": true },
+        "cf": { "valor": 0, "unidad": "fraccion", "fuente": "Las hojas no dan remoción de coliformes del sedimentador secundario; 0 %. POR CONFIRMAR.", "demo": true }
+      }
+    },
+    {
+      "id": "camara-contacto",
+      "remocion": {
+        "dbo": { "valor": 0, "unidad": "fraccion", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja EPOCA DE ESTIAJE, celda M96 (cámara de contacto de cloro)", "demo": false },
+        "dqo": { "valor": 0, "unidad": "fraccion", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja EPOCA DE ESTIAJE, celda M97 (cámara de contacto de cloro)", "demo": false },
+        "sst": { "valor": 0, "unidad": "fraccion", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja EPOCA DE ESTIAJE, celda M98 (cámara de contacto de cloro)", "demo": false },
+        "cf": { "valor": 0.99, "unidad": "fraccion", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja EPOCA DE ESTIAJE, celda M99 (cámara de contacto de cloro, 99 %)", "demo": false }
+      }
+    },
+    {
+      "id": "salida",
+      "remocion": {
+        "dbo": { "valor": 0, "unidad": "fraccion", "fuente": "Punto de descarga: no trata.", "demo": false },
+        "dqo": { "valor": 0, "unidad": "fraccion", "fuente": "Punto de descarga: no trata.", "demo": false },
+        "sst": { "valor": 0, "unidad": "fraccion", "fuente": "Punto de descarga: no trata.", "demo": false },
+        "cf": { "valor": 0, "unidad": "fraccion", "fuente": "Punto de descarga: no trata.", "demo": false }
+      }
+    }
+  ],
+  "limites": {
+    "descarga": {
+      "dbo": { "valor": 100, "unidad": "mg/L", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja RESUMEN GENERAL, celda C4 (LMP)", "demo": false },
+      "dqo": { "valor": 200, "unidad": "mg/L", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja RESUMEN GENERAL, celda C5 (LMP)", "demo": false },
+      "sst": { "valor": 150, "unidad": "mg/L", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja RESUMEN GENERAL, celda C6 (LMP)", "demo": false },
+      "cf": { "valor": 10000, "unidad": "NMP/100 mL", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja RESUMEN GENERAL, celda C7 (LMP)", "demo": false }
+    },
+    "eca": {
+      "dbo": { "valor": 15, "unidad": "mg/L", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja RESUMEN GENERAL, celda B4 (ECA categoría 3, del cuerpo receptor; referencia, no se aplica a la descarga)", "demo": false },
+      "dqo": { "valor": 40, "unidad": "mg/L", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja RESUMEN GENERAL, celda B5 (ECA categoría 3, del cuerpo receptor; referencia)", "demo": false },
+      "cf": { "valor": 1000, "unidad": "NMP/100 mL", "fuente": "BALANCE DE MASAS SANTA LEONOR.xlsx, hoja RESUMEN GENERAL, celda B7 (ECA categoría 3, del cuerpo receptor; referencia)", "demo": false }
+    }
+  }
+}
