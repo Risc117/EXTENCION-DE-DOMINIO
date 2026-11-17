@@ -744,8 +744,18 @@
       },
       "trazado": [
         {
+          "x": -17.99,
+          "y": -0.7
+        },
+        {
+          "x": -19.27,
+          "y": 5.16,
+          "cota": 2983.4
+        },
+        {
           "x": -20.0,
-          "y": 8.5
+          "y": 8.5,
+          "cota": 2983.4
         },
         {
           "x": -19.45,
@@ -757,11 +767,11 @@
           "y": 13.8
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; POR CONFIRMAR: el DXF (plano general) saca el efluente del extremo norte del RAFA, a (−20.0, 8.5); el plano de detalle pone la cámara de efluente en el lado este, centrada sobre A-A (T16.4.4). No se movió el tramo: arranca a ≈ 1 m del extremo norte del RAFA y a ≈ 9 m de la cámara nueva",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; POR CONFIRMAR: el primer tramo (de la cara este de la cámara de efluente del RAFA, centrada sobre A-A, hasta (−20.0, 8.5), unos 9.4 m) lo prolongué yo (T16.4.5): el DXF (plano general) arrancaba el efluente en (−20.0, 8.5), cerca del extremo norte, y el plano de detalle pone la cámara en el lado este; desde ahí sigue el trazado del DXF",
       "cotaSalida": {
-        "valor": 2983.4,
+        "valor": 2984.36,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: eje de las salidas de la cámara de efluente del RAFA (fondo 2977.9 + muros 7.25 − 0.79 de recolección superior de datos/rafa.json = 2984.36); alturas de ejemplo de la cámara: POR CONFIRMAR",
         "demo": true
       },
       "cotaLlegada": {

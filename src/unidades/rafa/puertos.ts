@@ -6,3 +6,8 @@ import type { DatosRafa } from './esquema'
 export function puertoAfluente(d: DatosRafa): [number, number] {
   return [0, -(disponer(d).semiAncho + d.distribucion.caja.ancho.valor + PROLONGACION_TUBO)]
 }
+
+/** Cara este de la cámara de efluente, sobre A-A: punto [x, z] (m, locales) por donde sale el efluente. */
+export function puertoEfluente(d: DatosRafa): [number, number] {
+  return [0, disponer(d).semiAncho + d.efluente.anchoCamara.valor]
+}

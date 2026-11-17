@@ -6,7 +6,7 @@ import { construirEtiquetas } from './anotaciones'
 import { disponer } from './disposicion'
 import { esquemaRafa } from './esquema'
 import { construirPiezas } from './geometria'
-import { puertoAfluente } from './puertos'
+import { puertoAfluente, puertoEfluente } from './puertos'
 
 const datos = esquemaRafa.parse(crudo)
 const s = disponer(datos)
@@ -100,5 +100,24 @@ describe('T16.4.4 · RAFA según el plano de detalle: el eje A-A cruza por la mi
     expect(e('et-efluente').punta[2]).toBeGreaterThan(s.semiAncho)
     expect(Math.abs(e('et-efluente').punta[0])).toBeLessThan(1e-9)
     for (const id of ['et-tomas', 'et-muestreo', 'et-descarga']) expect(e(id).punta[2], id).toBeGreaterThan(0)
+  })
+
+  it('T16.4.5: T09 arranca en la cámara de efluente nueva (cara este, sobre A-A) a menos de 10 cm y a la cota de sus salidas', () => {
+    const t = tramo('T09')
+    const ini = t.trazado[0]
+    const p = aPlano(puertoEfluente(datos))
+    expect(puertoEfluente(datos)[0]).toBeCloseTo(0, 9)
+    expect(puertoEfluente(datos)[1]).toBeCloseTo(s.semiAncho + datos.efluente.anchoCamara.valor, 9)
+    expect(Math.hypot(ini.x - p.x, ini.y - p.y)).toBeLessThan(0.1)
+    expect(t.cotaSalida.valor).toBeCloseTo(u.cotaFondo.valor + s.yMuros - datos.efluente.recoleccionSuperior.valor, 2)
+  })
+
+  it('T16.4.5: el tramo nuevo de T09 (de la cámara al punto donde el DXF lo arrancaba) queda marcado POR CONFIRMAR y el resto sigue el DXF', () => {
+    const t = tramo('T09')
+    expect(t.fuenteTrazado).toContain('POR CONFIRMAR')
+    expect(t.fuenteTrazado).toContain('cámara de efluente')
+    expect(t.fuenteTrazado).toContain('prolongué yo')
+    expect(t.trazado.some((q) => Math.hypot(q.x + 20, q.y - 8.5) < 0.01)).toBe(true)
+    expect(t.trazado[t.trazado.length - 1]).toEqual({ x: -18, y: 13.8 })
   })
 })
