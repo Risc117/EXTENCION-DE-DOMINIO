@@ -159,3 +159,10 @@ canvas { touch-action: none; }
 .panel-hora__nota { opacity: 0.75; font-size: 0.75rem; }
 .panel-hora button { padding: 6px 12px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }
 .panel-hora button[aria-pressed='false'] { opacity: 0.8; }
+.indicador-viento { position: fixed; top: 12px; right: 340px; display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.85rem; }
+.indicador-viento small { opacity: 0.7; }
+.indicador-viento__rosa { fill: none; stroke: var(--color-rejilla); stroke-width: 2; }
+.indicador-viento__norte { fill: var(--color-texto); font-size: 9px; }
+.indicador-viento__flecha { stroke: var(--color-texto); stroke-width: 2; }
+.indicador-viento__punta { fill: var(--color-texto); }
+@media (max-width: 700px) { .indicador-viento { right: auto; left: 12px; top: 48px; } }

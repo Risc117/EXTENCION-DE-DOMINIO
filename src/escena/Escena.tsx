@@ -7,7 +7,7 @@ import {
   DISTANCIA_CAMARA,
 } from '../nucleo/constantes'
 import { useCalidad } from '../estado/calidad'
-import { Luminarias } from '../unidades/ambiente'
+import { Luminarias, Manga, PublicarViento } from '../unidades/ambiente'
 import { Biogas } from '../unidades/biogas'
 import { Conexiones, FlujoTuberias } from '../unidades/conexiones'
 import { Entorno } from '../unidades/entorno'
@@ -40,6 +40,8 @@ export function Escena() {
       <Entorno referencia={referencia} />
       <Biogas referencia={referencia} />
       <Luminarias referencia={referencia} />
+      <Manga referencia={referencia} />
+      <PublicarViento />
       <ControlCamara unidades={unidades} />
     </Canvas>
   )

@@ -1,3 +1,5 @@
 export { Luminarias } from './Luminarias'
 export { ambiente } from './datos'
 export { solActual, horaActual } from './sol'
+export { Manga } from './Manga'
+export { PublicarViento } from './PublicarViento'

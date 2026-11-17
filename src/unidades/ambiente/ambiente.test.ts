@@ -28,6 +28,23 @@ describe('datos/ambiente.json', () => {
     expect(datos.giroNorte.fuente).toContain('POR CONFIRMAR')
     expect(datos.ubicacion.latitud.demo).not.toBe(true)
   })
+  it('el viento y la manga son Dato de ejemplo, por confirmar, y la manga queda fuera del radio de seguridad del quemador (5 m)', () => {
+    for (const m of [datos.viento.direccion, datos.viento.velocidad, datos.viento.rafaga.amplitud, datos.viento.rafaga.periodo, datos.manga.alturaPoste, datos.manga.largo, datos.manga.radio]) expect(m.demo).toBe(true)
+    expect(datos.viento.direccion.fuente).toContain('POR CONFIRMAR')
+    expect(datos.manga.fuentePosicion).toContain('POR CONFIRMAR')
+    expect(Math.hypot(datos.manga.posicion.x - 1.45, datos.manga.posicion.y + 23.86)).toBeGreaterThan(5)
+  })
+  it('rechaza un viento malo: dirección fuera de 0 a 360, velocidad cero y ráfaga mayor que 1', () => {
+    const d = clon()
+    d.viento.direccion.valor = 400
+    expect(esquemaAmbiente.safeParse(d).success).toBe(false)
+    const v = clon()
+    v.viento.velocidad.valor = 0
+    expect(esquemaAmbiente.safeParse(v).success).toBe(false)
+    const r = clon()
+    r.viento.rafaga.amplitud.valor = 2
+    expect(esquemaAmbiente.safeParse(r).success).toBe(false)
+  })
   it('rechaza datos malos: sin fuente, latitud fuera de rango, mes 13 y poste sin altura', () => {
     const sin = clon()
     sin.ubicacion.latitud.fuente = ''

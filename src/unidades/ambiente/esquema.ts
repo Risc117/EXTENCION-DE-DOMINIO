@@ -3,6 +3,7 @@ import { positivo } from '../comun/medidas'
 
 const fuente = z.string().min(1)
 const angulo = (min: number, max: number) => z.object({ valor: z.number().min(min).max(max), unidad: z.literal('grados'), fuente, demo: z.boolean().optional() })
+const fraccion = z.object({ valor: z.number().min(0).max(1), unidad: z.literal('fraccion'), fuente, demo: z.boolean().optional() })
 const punto = z.object({ x: z.number().finite(), y: z.number().finite() })
 
 export const esquemaAmbiente = z.object({
@@ -13,6 +14,9 @@ export const esquemaAmbiente = z.object({
   fecha: z.object({ mes: z.number().int().min(1).max(12), dia: z.number().int().min(1).max(31), fuente, demo: z.boolean() }),
   /** Giro (°) del norte respecto del eje −z de la escena; positivo hacia el este. */
   giroNorte: angulo(-180, 180),
+  /** Viento: de dónde sopla (° desde el norte, horario), velocidad media y ráfaga. */
+  viento: z.object({ direccion: angulo(0, 360), velocidad: positivo('m/s'), rafaga: z.object({ amplitud: fraccion, periodo: positivo('s') }) }),
+  manga: z.object({ posicion: punto, fuentePosicion: fuente, alturaPoste: positivo('m'), largo: positivo('m'), radio: positivo('m') }),
   luminarias: z.object({
     puntos: z.array(punto).min(1),
     fuentePuntos: fuente,

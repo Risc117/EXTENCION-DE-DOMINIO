@@ -3,8 +3,18 @@
   "fuente": "Ubicación derivada de datos/terreno.json (origen UTM zona 18 sur); luminarias de insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (capa PTAR-LUMINARIA); lo demás, de ejemplo.",
   "demo": true,
   "ubicacion": {
-    "latitud": { "valor": -10.9295, "unidad": "grados", "fuente": "Conversión UTM → geográficas (WGS84) del origen de datos/terreno.json: zona 18 sur, este 309340, norte 8791260 (Picoy, Santa Leonor, Huaura)", "demo": false },
-    "longitud": { "valor": -76.7446, "unidad": "grados", "fuente": "Conversión UTM → geográficas (WGS84) del origen de datos/terreno.json: zona 18 sur, este 309340, norte 8791260", "demo": false }
+    "latitud": {
+      "valor": -10.9295,
+      "unidad": "grados",
+      "fuente": "Conversión UTM → geográficas (WGS84) del origen de datos/terreno.json: zona 18 sur, este 309340, norte 8791260 (Picoy, Santa Leonor, Huaura)",
+      "demo": false
+    },
+    "longitud": {
+      "valor": -76.7446,
+      "unidad": "grados",
+      "fuente": "Conversión UTM → geográficas (WGS84) del origen de datos/terreno.json: zona 18 sur, este 309340, norte 8791260",
+      "demo": false
+    }
   },
   "fecha": {
     "mes": 11,
@@ -20,17 +30,106 @@
   },
   "luminarias": {
     "puntos": [
-      { "x": -6.27, "y": -75.29 },
-      { "x": -9.82, "y": -61.59 },
-      { "x": -11.1, "y": -44.48 },
-      { "x": -11.27, "y": -26.56 },
-      { "x": -9.17, "y": -10.12 },
-      { "x": -0.22, "y": 3.22 },
-      { "x": 11.01, "y": 17.63 }
+      {
+        "x": -6.27,
+        "y": -75.29
+      },
+      {
+        "x": -9.82,
+        "y": -61.59
+      },
+      {
+        "x": -11.1,
+        "y": -44.48
+      },
+      {
+        "x": -11.27,
+        "y": -26.56
+      },
+      {
+        "x": -9.17,
+        "y": -10.12
+      },
+      {
+        "x": -0.22,
+        "y": 3.22
+      },
+      {
+        "x": 11.01,
+        "y": 17.63
+      }
     ],
     "fuentePuntos": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-LUMINARIA: círculos de 0.30 m con cruz, a lo largo de la vía interna (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)",
-    "alturaPoste": { "valor": 5, "unidad": "m", "fuente": "No está en las fuentes: altura de ejemplo de un poste de alumbrado de planta (4 a 6 m típicos).", "demo": true },
-    "radioPoste": { "valor": 0.08, "unidad": "m", "fuente": "No está en las fuentes: radio de ejemplo del poste (el plano dibuja un círculo de 0.30 m que es la base).", "demo": true },
-    "radioLuz": { "valor": 7, "unidad": "m", "fuente": "No está en las fuentes: radio de ejemplo del círculo de luz en el suelo.", "demo": true }
+    "alturaPoste": {
+      "valor": 5,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de ejemplo de un poste de alumbrado de planta (4 a 6 m típicos).",
+      "demo": true
+    },
+    "radioPoste": {
+      "valor": 0.08,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: radio de ejemplo del poste (el plano dibuja un círculo de 0.30 m que es la base).",
+      "demo": true
+    },
+    "radioLuz": {
+      "valor": 7,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: radio de ejemplo del círculo de luz en el suelo.",
+      "demo": true
+    }
+  },
+  "viento": {
+    "direccion": {
+      "valor": 200,
+      "unidad": "grados",
+      "fuente": "No está en las fuentes: dirección de donde sopla el viento (desde el norte, horario): del sur-suroeste, una brisa típica de la costa central del Perú de ejemplo. POR CONFIRMAR con datos reales del viento del sitio (estación de Huaura o medición en obra).",
+      "demo": true
+    },
+    "velocidad": {
+      "valor": 3,
+      "unidad": "m/s",
+      "fuente": "No está en las fuentes: velocidad media del viento (brisa suave) de ejemplo. POR CONFIRMAR con datos reales del viento del sitio (estación de Huaura o medición en obra).",
+      "demo": true
+    },
+    "rafaga": {
+      "amplitud": {
+        "valor": 0.4,
+        "unidad": "fraccion",
+        "fuente": "No está en las fuentes: amplitud de la ráfaga (fracción de la media) de ejemplo. POR CONFIRMAR con datos reales del viento del sitio (estación de Huaura o medición en obra).",
+        "demo": true
+      },
+      "periodo": {
+        "valor": 7,
+        "unidad": "s",
+        "fuente": "No está en las fuentes: período de la ráfaga de ejemplo. POR CONFIRMAR con datos reales del viento del sitio (estación de Huaura o medición en obra).",
+        "demo": true
+      }
+    }
+  },
+  "manga": {
+    "posicion": {
+      "x": 8,
+      "y": -20
+    },
+    "fuentePosicion": "No está en las fuentes: el plano no trae manga de viento; de ejemplo junto al quemador, a 7.6 m de él (fuera de su radio de seguridad de 5 m) para que se vea el viento sobre la llama. POR CONFIRMAR.",
+    "alturaPoste": {
+      "valor": 6,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de ejemplo del poste de la manga (5 a 7 m típicos).",
+      "demo": true
+    },
+    "largo": {
+      "valor": 2,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: largo de ejemplo de la manga (1.5 a 3 m típicos).",
+      "demo": true
+    },
+    "radio": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: radio de ejemplo de la boca de la manga.",
+      "demo": true
+    }
   }
 }

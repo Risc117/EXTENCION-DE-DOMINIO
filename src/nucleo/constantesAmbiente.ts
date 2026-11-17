@@ -27,3 +27,5 @@ export const FACTOR_LEJOS_SOMBRAS = 3
 export const SEGMENTOS_CIRCULO_LUZ = 24
 export const MINUTOS_POR_HORA = 60
 export const CIFRAS_RELOJ = 2
+/** Manga de viento: lados del cono. */
+export const SEGMENTOS_MANGA = 12

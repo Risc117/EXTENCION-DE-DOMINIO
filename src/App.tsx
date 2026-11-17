@@ -4,6 +4,7 @@ import { useGuion, useParticulas, useSimulacion } from './simulacion'
 import { AvisoDemo } from './ui/AvisoDemo'
 import { Bienvenida } from './ui/Bienvenida'
 import { DiagramaLinea } from './ui/DiagramaLinea'
+import { IndicadorViento } from './ui/IndicadorViento'
 import { Leyenda } from './ui/Leyenda'
 import { PanelAjusteGestos } from './ui/PanelAjusteGestos'
 import { PanelCalidadAgua } from './ui/PanelCalidadAgua'
@@ -31,6 +32,7 @@ export function App() {
       <PanelGestos />
       <PanelAjusteGestos />
       <PanelSimulacion />
+      <IndicadorViento />
       <TarjetaUnidad />
       <div className="paneles-centro">
         <PanelPerfil />

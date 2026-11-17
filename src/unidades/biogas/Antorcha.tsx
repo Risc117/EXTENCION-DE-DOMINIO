@@ -4,12 +4,15 @@ import { useMemo, useRef } from 'react'
 import type { Group } from 'three'
 import { leerColor } from '../../nucleo/colores'
 import { ALTO_LLAMA_INTERIOR, ELEVACION_RADIO_BIOGAS, ENTERRADO_RECINTO, ESCALA_MINIMA_LLAMA, GROSOR_RADIO_SEGURIDAD, OPACIDAD_LLAMA, PARPADEO_LLAMA, RADIO_LLAMA, RADIO_LLAMA_INTERIOR, SEGMENTOS_BIOGAS, SEGMENTOS_CIRCULO_BIOGAS } from '../../nucleo/constantesBiogas'
+import { inclinacionLlama } from '../../nucleo/viento'
 import { useLodosBiogas } from '../../estado/lodosBiogas'
+import { useViento } from '../../estado/viento'
 import { Losa } from '../comun/Losa'
 import { alturaTerreno } from '../comun/terrenoPlanta'
 import type { Vec3 } from '../comun/tiposAnotaciones'
 import { biogas } from './datos'
 import { escalaLlama } from './geometria'
+import { inclinarLlama } from './vientoLlama'
 
 /** Antorcha de biogás: chimenea, recinto, radio de seguridad y llama que crece con el biogás que produce el RAFA (la llama es ilustrativa). */
 export function Antorcha({ referencia }: { referencia: number }) {
@@ -35,6 +38,8 @@ export function Antorcha({ referencia }: { referencia: number }) {
     const parpadeo = 1 + PARPADEO_LLAMA.amplitudes.reduce((s, amp, i) => s + amp * Math.sin(t * PARPADEO_LLAMA.frecuencias[i]), 0)
     g.visible = escala > 0
     g.scale.set(1, Math.max(escala * parpadeo, ESCALA_MINIMA_LLAMA), 1)
+    const viento = useViento.getState()
+    inclinarLlama(g, viento.haciaX, viento.haciaZ, inclinacionLlama(viento.velocidad))
   })
   const alto = a.alturaChimenea.valor
   const altoLlama = a.llama.alturaMaxima.valor
