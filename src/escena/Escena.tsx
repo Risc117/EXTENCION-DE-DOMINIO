@@ -16,6 +16,7 @@ import { Vida } from '../unidades/vida'
 import { unidades } from '../unidades/registro'
 import { cotaReferencia } from '../unidades/ubicar'
 import { ControlCamara } from './ControlCamara'
+import { EtiquetasPlanta } from './EtiquetasPlanta'
 import { Luces } from './Luces'
 import { Sombras } from './Sombras'
 import { encuadre } from './encuadre'
@@ -47,6 +48,7 @@ export function Escena() {
       <Vida referencia={referencia} />
       <Pluma referencia={referencia} />
       <Personal referencia={referencia} />
+      <EtiquetasPlanta referencia={referencia} />
       <ControlCamara unidades={unidades} />
     </Canvas>
   )

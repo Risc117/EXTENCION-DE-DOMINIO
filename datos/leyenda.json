@@ -1,0 +1,145 @@
+{
+  "id": "leyenda",
+  "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf). Los nombres vienen de esa leyenda; los colores son una decisión de diseño del visor (el plano no define colores para el 3D).",
+  "demo": false,
+  "grupos": [
+    {
+      "id": "agua",
+      "titulo": "Tuberías y flujos",
+      "entradas": [
+        {
+          "id": "residual",
+          "nombre": "Agua residual",
+          "token": "--color-tub-residual",
+          "forma": "linea",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): celeste = agua residual"
+        },
+        {
+          "id": "impulsion",
+          "nombre": "Impulsión (bombeo)",
+          "token": "--color-tub-impulsion",
+          "forma": "linea",
+          "fuente": "Color que usa el visor (src/ui/tokens.css); el plano no define colores para el 3D"
+        },
+        {
+          "id": "efluente",
+          "nombre": "Efluente tratado",
+          "token": "--color-tub-efluente",
+          "forma": "linea",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): rojo = efluente tratado"
+        },
+        {
+          "id": "lodos",
+          "nombre": "Lodos",
+          "token": "--color-tub-lodos",
+          "forma": "linea",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): naranja = lodos"
+        },
+        {
+          "id": "biogas",
+          "nombre": "Biogás",
+          "token": "--color-tub-biogas",
+          "forma": "linea",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): línea amarilla de biogás del RAFA al quemador"
+        },
+        {
+          "id": "cloro",
+          "nombre": "Cloro (dosificación)",
+          "token": "--color-tub-cloro",
+          "forma": "linea",
+          "fuente": "Color que usa el visor (src/ui/tokens.css); el plano no define colores para el 3D"
+        }
+      ]
+    },
+    {
+      "id": "estructuras",
+      "titulo": "Estructuras y entorno",
+      "entradas": [
+        {
+          "id": "unidad",
+          "nombre": "Unidad de tratamiento",
+          "token": "--color-muro",
+          "forma": "cuadro",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): unidad de tratamiento"
+        },
+        {
+          "id": "edificacion",
+          "nombre": "Edificación",
+          "token": "--color-edificio",
+          "forma": "cuadro",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): edificación"
+        },
+        {
+          "id": "via",
+          "nombre": "Vía interna y de acceso",
+          "token": "--color-via",
+          "forma": "linea",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): vía interna"
+        },
+        {
+          "id": "cerco",
+          "nombre": "Cerco perimétrico",
+          "token": "--color-cerco",
+          "forma": "linea",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): cerco perimétrico"
+        },
+        {
+          "id": "porton",
+          "nombre": "Portón",
+          "token": "--color-porton",
+          "forma": "linea",
+          "fuente": "plan.md, sección 10 (cerco y portón de 4.5 m del plano); color del visor"
+        },
+        {
+          "id": "barrera",
+          "nombre": "Barrera de la garita",
+          "token": "--color-barrera",
+          "forma": "linea",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): señalización y barrera"
+        },
+        {
+          "id": "arbol",
+          "nombre": "Árbol",
+          "token": "--color-arbol-copa",
+          "forma": "circulo",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): árbol"
+        },
+        {
+          "id": "franja",
+          "nombre": "Franja verde (pasto)",
+          "token": "--color-pasto",
+          "forma": "cuadro",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): franja verde"
+        },
+        {
+          "id": "rio",
+          "nombre": "Río Picoy",
+          "token": "--color-rio",
+          "forma": "linea",
+          "fuente": "Nombre \"río Picoy\" de plan.md, sección \"Cristhian entregó una versión nueva\" (insumos/DFX/RIO PICOY Y CAMINO.dxf); color del visor"
+        },
+        {
+          "id": "camino",
+          "nombre": "Camino",
+          "token": "--color-camino",
+          "forma": "linea",
+          "fuente": "insumos/DFX/RIO PICOY Y CAMINO.dxf"
+        },
+        {
+          "id": "radio",
+          "nombre": "Radio de seguridad",
+          "token": "--color-radio-seguridad",
+          "forma": "circulo",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): círculos magenta = radios de seguridad"
+        },
+        {
+          "id": "luminaria",
+          "nombre": "Luminaria",
+          "token": "--color-lampara",
+          "forma": "circulo",
+          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): luminarias"
+        }
+      ]
+    }
+  ]
+}

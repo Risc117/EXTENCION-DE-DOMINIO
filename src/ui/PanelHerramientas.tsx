@@ -6,6 +6,7 @@ import { PanelCalidad } from './PanelCalidad'
 import { PanelConexiones } from './PanelConexiones'
 import { PanelCorte } from './PanelCorte'
 import { PanelEntorno } from './PanelEntorno'
+import { PanelLeyenda } from './PanelLeyenda'
 import { PanelPersonal } from './PanelPersonal'
 import { PanelVida } from './PanelVida'
 import { PanelTerreno } from './PanelTerreno'
@@ -44,6 +45,9 @@ export function PanelHerramientas() {
       </Grupo>
       <Grupo titulo={T.grupoCalidad}>
         <PanelCalidad />
+      </Grupo>
+      <Grupo titulo={T.grupoLeyenda}>
+        <PanelLeyenda />
       </Grupo>
     </details>
   )

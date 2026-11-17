@@ -183,3 +183,9 @@ canvas { touch-action: none; }
 .mezcla-rio th, .mezcla-rio td { padding: 2px 6px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
 .mezcla-rio__si { color: var(--color-calidad-ok); }
 .mezcla-rio__no { color: var(--color-calidad-mal); font-weight: 600; }
+.leyenda-colores h3 { margin: 6px 0 2px; font-size: 0.85rem; }
+.leyenda-colores ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; font-size: 0.8rem; }
+.leyenda-colores li { display: flex; align-items: center; gap: 8px; }
+.leyenda-colores__muestra { flex: none; display: inline-block; width: 22px; height: 10px; border-radius: 2px; }
+.leyenda-colores__muestra--linea { height: 4px; }
+.leyenda-colores__muestra--circulo { width: 12px; height: 12px; border-radius: 50%; margin: 0 5px; }
