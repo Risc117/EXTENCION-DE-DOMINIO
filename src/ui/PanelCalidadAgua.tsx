@@ -3,6 +3,7 @@ import { TEXTO_CALIDAD_AGUA as T } from '../nucleo/textos'
 import { useEstado } from '../estado/almacen'
 import { PARAMETROS, useCalidadAgua } from '../estado/calidadAgua'
 import { useLineaViva } from '../estado/lineaViva'
+import { PanelMezclaRio } from './PanelMezclaRio'
 import { barrasParametro, filasBalance, formatoConcentracion } from './vistaCalidad'
 
 /** Panel de calidad del agua: barras por etapa con el límite de descarga y la tabla de balance de masas por unidad. */
@@ -77,6 +78,7 @@ export function PanelCalidadAgua() {
           </table>
         </div>
       </details>
+      <PanelMezclaRio />
       <p className="calidad-agua__nota">{metodo}</p>
     </details>
   )

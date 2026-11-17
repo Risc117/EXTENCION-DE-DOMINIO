@@ -4,6 +4,7 @@ import { useCalidadAgua, PARAMETROS, type Concentracion, type EtapaCalidad } fro
 import { balanceCalidad } from './calidadAgua'
 import { esquemaCalidad } from './calidadEsquema'
 import { esquemaLinea } from './lineaEsquema'
+import { publicarMezclaRio } from './mezclaRio'
 
 /** Calcula la calidad de cada unidad (valores de diseño de datos/calidad.json) y la publica para la interfaz. Se llama una vez al arrancar la simulación. */
 export function publicarCalidad(): void {
@@ -15,4 +16,5 @@ export function publicarCalidad(): void {
   })
   const valores = (o: Record<string, { valor: number }>): Partial<Concentracion> => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, v.valor]))
   useCalidadAgua.getState().publicar(etapas, { descarga: valores(datos.limites.descarga) as Concentracion, eca: valores(datos.limites.eca) }, datos.metodo)
+  publicarMezclaRio(etapas[etapas.length - 1].salida)
 }

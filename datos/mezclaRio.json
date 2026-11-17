@@ -1,0 +1,186 @@
+{
+  "id": "mezcla-rio",
+  "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+  "demo": false,
+  "rio": "Río Checras",
+  "descarga": {
+    "dbo": {
+      "valor": 5.78,
+      "unidad": "mg/L",
+      "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+      "demo": false
+    },
+    "dqo": {
+      "valor": 52.01,
+      "unidad": "mg/L",
+      "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+      "demo": false
+    },
+    "sst": {
+      "valor": 10.4,
+      "unidad": "mg/L",
+      "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+      "demo": false
+    },
+    "cf": {
+      "valor": 2311.63,
+      "unidad": "NMP/100 mL",
+      "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+      "demo": false
+    },
+    "od": {
+      "valor": 4,
+      "unidad": "mg/L",
+      "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+      "demo": false
+    }
+  },
+  "escenarios": [
+    {
+      "id": "estiaje",
+      "nombre": "Estiaje",
+      "caudalRio": {
+        "valor": 1698.8,
+        "unidad": "L/s",
+        "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+        "demo": false
+      },
+      "mezcla": {
+        "dbo": {
+          "valor": 1,
+          "unidad": "mg/L",
+          "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+          "demo": false
+        },
+        "dqo": {
+          "valor": 6,
+          "unidad": "mg/L",
+          "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+          "demo": false
+        },
+        "sst": {
+          "valor": 37,
+          "unidad": "mg/L",
+          "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+          "demo": false
+        },
+        "cf": {
+          "valor": 23,
+          "unidad": "NMP/100 mL",
+          "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+          "demo": false
+        },
+        "od": {
+          "valor": 8.5,
+          "unidad": "mg/L",
+          "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+          "demo": false
+        }
+      }
+    },
+    {
+      "id": "lluvia",
+      "nombre": "Lluvia",
+      "caudalRio": {
+        "valor": 19043.04,
+        "unidad": "L/s",
+        "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+        "demo": false
+      },
+      "mezcla": {
+        "dbo": {
+          "valor": 3,
+          "unidad": "mg/L",
+          "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+          "demo": false
+        },
+        "dqo": {
+          "valor": 6,
+          "unidad": "mg/L",
+          "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+          "demo": false
+        },
+        "sst": {
+          "valor": 399,
+          "unidad": "mg/L",
+          "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+          "demo": false
+        },
+        "cf": {
+          "valor": 25000,
+          "unidad": "NMP/100 mL",
+          "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+          "demo": false
+        },
+        "od": {
+          "valor": 10.25,
+          "unidad": "mg/L",
+          "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md)",
+          "demo": false
+        }
+      }
+    }
+  ],
+  "limites": {
+    "eca": {
+      "dbo": {
+        "valor": 15,
+        "unidad": "mg/L",
+        "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md), ECA categoría 3 (cuerpo receptor)",
+        "demo": false,
+        "tipo": "maximo"
+      },
+      "dqo": {
+        "valor": 40,
+        "unidad": "mg/L",
+        "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md), ECA categoría 3 (cuerpo receptor)",
+        "demo": false,
+        "tipo": "maximo"
+      },
+      "cf": {
+        "valor": 1000,
+        "unidad": "NMP/100 mL",
+        "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md), ECA categoría 3 (cuerpo receptor)",
+        "demo": false,
+        "tipo": "maximo"
+      },
+      "od": {
+        "valor": 5,
+        "unidad": "mg/L",
+        "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md), ECA categoría 3 (cuerpo receptor)",
+        "demo": false,
+        "tipo": "minimo"
+      }
+    },
+    "lmp": {
+      "dbo": {
+        "valor": 100,
+        "unidad": "mg/L",
+        "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md), LMP",
+        "demo": false,
+        "tipo": "maximo"
+      },
+      "dqo": {
+        "valor": 200,
+        "unidad": "mg/L",
+        "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md), LMP",
+        "demo": false,
+        "tipo": "maximo"
+      },
+      "sst": {
+        "valor": 150,
+        "unidad": "mg/L",
+        "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md), LMP",
+        "demo": false,
+        "tipo": "maximo"
+      },
+      "cf": {
+        "valor": 10000,
+        "unidad": "NMP/100 mL",
+        "fuente": "memoria descriptiva, sección 18 (balance de masas: descarga y río Checras; extraído en insumos/resumen-memoria.md), LMP",
+        "demo": false,
+        "tipo": "maximo"
+      }
+    }
+  }
+}
