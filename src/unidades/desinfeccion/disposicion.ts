@@ -1,7 +1,7 @@
 import type { DatosDesinfeccion } from './esquema'
 import { anchoInterior, largoTotal, paso } from './hidraulica'
 
-/** Medidas clave de la cámara de contacto. Origen: centro; x a lo largo de los canales (este +), z a lo ancho (sur +, canal 1 al sur); y = 0 en el fondo de la losa. */
+/** Medidas clave de la cámara de contacto. Origen: centro; x a lo largo de los canales (este +), z a lo ancho (sur +, canal 1 al norte, como en el mapa general); y = 0 en el fondo de la losa. */
 export interface DisposicionContacto {
   /** Mitad del largo y del ancho exteriores, y del interior. */
   mitadLargo: number
@@ -31,9 +31,10 @@ export function disponer(d: DatosDesinfeccion): DisposicionContacto {
   const yLosa = d.losa.espesor.valor
   const largoTabique = d.tabique.largo.valor
   const hueco = paso(d)
-  // Canal 1 al sur (z positivo); cada canal siguiente va una vuelta (b + t) más al norte.
-  const zCanal = (n: number): number => mitadAnchoInterior - b / 2 - (n - 1) * (b + t)
-  const zTabique = (k: number): number => mitadAnchoInterior - b - t / 2 - (k - 1) * (b + t)
+  // Canal 1 al norte (z negativo): en el mapa general el afluente entra por el oeste en la esquina norte y la salida sale por el oeste en la esquina sur.
+  // Cada canal siguiente va una vuelta (b + t) más al sur.
+  const zCanal = (n: number): number => -(mitadAnchoInterior - b / 2 - (n - 1) * (b + t))
+  const zTabique = (k: number): number => -(mitadAnchoInterior - b - t / 2 - (k - 1) * (b + t))
   const alOeste = (k: number): boolean => k % 2 === 1
   return {
     mitadLargo: largoTotal(d) / 2,

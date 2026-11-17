@@ -1,0 +1,1716 @@
+{
+  "id": "conexiones",
+  "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (capas PTAR-TUBERIA, PTAR-TUB-EFLUENTE, PTAR-TUB-LODOS y PTAR-BUZONES; x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json) y diámetros confirmados por el usuario el 16 nov",
+  "demo": true,
+  "buzon": {
+    "diametroExterior": {
+      "valor": 1.2,
+      "unidad": "m",
+      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES: círculo exterior de radio 0.6 m"
+    },
+    "diametroInterior": {
+      "valor": 0.8,
+      "unidad": "m",
+      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES: círculo interior de radio 0.4 m"
+    },
+    "profundidad": {
+      "valor": 1.5,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: profundidad de ejemplo del buzón bajo la tapa (la cobertura de 0.80 m más 0.70 m)",
+      "demo": true
+    },
+    "sobresale": {
+      "valor": 0.05,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de ejemplo de la tapa sobre el terreno",
+      "demo": true
+    }
+  },
+  "cobertura": {
+    "valor": 0.8,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: cobertura de ejemplo sobre las tuberías; con ella se derivan las cotas (la tabla del perfil no está en el DXF)",
+    "demo": true
+  },
+  "puntos": [
+    {
+      "id": "entrada-agua",
+      "nombre": "Entrada de agua residual",
+      "tipo": "externo",
+      "x": {
+        "valor": 2.15,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA, primer vértice de la línea que llega a EB-1 (entrada de agua residual a la planta)"
+      },
+      "y": {
+        "valor": -74.75,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA, primer vértice de la línea que llega a EB-1 (entrada de agua residual a la planta)"
+      }
+    },
+    {
+      "id": "BZ-1",
+      "nombre": "Buzón BZ-1",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2985.65,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": -5.1,
+        "unidad": "m",
+        "fuente": "No está en el DXF: el mapa no trae el rótulo BZ-1; se pone de ejemplo a 3 m de EB-1 sobre la impulsión, por confirmar",
+        "demo": true
+      },
+      "y": {
+        "valor": -67.36,
+        "unidad": "m",
+        "fuente": "No está en el DXF: el mapa no trae el rótulo BZ-1; se pone de ejemplo a 3 m de EB-1 sobre la impulsión, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "BZ-2",
+      "nombre": "Buzón BZ-2",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2990.88,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": -21.5,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": -57.0,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "BZ-3",
+      "nombre": "Buzón BZ-3",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2990.96,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": -27.6,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": -32.5,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "BZ-4",
+      "nombre": "Buzón BZ-4",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2989.89,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": -26.5,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": -14.6,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "BZ-5",
+      "nombre": "Buzón BZ-5",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2982.7,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": -18.0,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": 13.8,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "BZ-6",
+      "nombre": "Buzón BZ-6",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2979.59,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": -1.6,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": 49.4,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "BZ-7",
+      "nombre": "Buzón BZ-7",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2978.76,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": 9.5,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": 49.5,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "BZ-8",
+      "nombre": "Buzón BZ-8",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2977.48,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": 19.1,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": 44.7,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "BZ-9",
+      "nombre": "Buzón BZ-9",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2975.86,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": 32.4,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": 33.2,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "BZ-10",
+      "nombre": "Buzón BZ-10",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2975.72,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": 29.1,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": 24.3,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "BZ-R",
+      "nombre": "Buzón BZ-R (lodos del RAFA)",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2984.2,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": -14.7,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": -1.2,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "BZ-L1",
+      "nombre": "Buzón BZ-L1 (lodos)",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2976.45,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": 18.5,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": 27.0,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "BZ-L2",
+      "nombre": "Buzón BZ-L2 (lodos)",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2976.11,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": 15.0,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": 10.0,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "BZ-L3",
+      "nombre": "Buzón BZ-L3 (lodos)",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2976.58,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
+        "demo": true
+      },
+      "x": {
+        "valor": 13.3,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      },
+      "y": {
+        "valor": 2.0,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
+      }
+    },
+    {
+      "id": "descarga-rio",
+      "nombre": "Descarga de agua tratada al río",
+      "tipo": "externo",
+      "x": {
+        "valor": 29.1,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE, extremo de la línea de salida (junto al rótulo \"SALIDA DE AGUA TRATADA\", a 2.6 m); punto indicado por el usuario el 16 nov; el rótulo 0+265 no está en el DXF"
+      },
+      "y": {
+        "valor": 6.4,
+        "unidad": "m",
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE, extremo de la línea de salida (junto al rótulo \"SALIDA DE AGUA TRATADA\", a 2.6 m); punto indicado por el usuario el 16 nov; el rótulo 0+265 no está en el DXF"
+      }
+    },
+    {
+      "id": "punto-cloro",
+      "nombre": "Punto de aplicación del cloro",
+      "tipo": "puerto",
+      "x": {
+        "valor": 35.27,
+        "unidad": "m",
+        "fuente": "derivado: punto de aplicación del cloro sobre el tubo de entrada de la cámara de contacto (datos/desinfeccion.json y giro de planta.json)"
+      },
+      "y": {
+        "valor": 39.5,
+        "unidad": "m",
+        "fuente": "derivado: punto de aplicación del cloro sobre el tubo de entrada de la cámara de contacto (datos/desinfeccion.json y giro de planta.json)"
+      }
+    }
+  ],
+  "tramos": [
+    {
+      "id": "T01",
+      "linea": "agua-residual",
+      "desde": "entrada-agua",
+      "hasta": "bombeo",
+      "diametro": {
+        "valor": 0.2,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: diámetro de ejemplo; por confirmar con el usuario",
+        "demo": true
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": 2.15,
+          "y": -74.75
+        },
+        {
+          "x": -3.05,
+          "y": -69.55
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2984.84,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2984.85,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T02",
+      "linea": "impulsion",
+      "desde": "bombeo",
+      "hasta": "BZ-1",
+      "diametro": {
+        "valor": 0.2,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): Ø 200 de la impulsión"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": -3.05,
+          "y": -69.55
+        },
+        {
+          "x": -5.1,
+          "y": -67.36
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste (impulsión)), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2984.85,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2984.85,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T03",
+      "linea": "impulsion",
+      "desde": "BZ-1",
+      "hasta": "BZ-2",
+      "diametro": {
+        "valor": 0.2,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): Ø 200 de la impulsión"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": -5.1,
+          "y": -67.36
+        },
+        {
+          "x": -10.05,
+          "y": -62.05,
+          "cota": 2985.08
+        },
+        {
+          "x": -21.5,
+          "y": -57.0
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste (impulsión)), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2984.85,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2990.08,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T04",
+      "linea": "impulsion",
+      "desde": "BZ-2",
+      "hasta": "rejas",
+      "diametro": {
+        "valor": 0.2,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): Ø 200 de la impulsión"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": -21.5,
+          "y": -57.0
+        },
+        {
+          "x": -26.1,
+          "y": -54.55,
+          "cota": 2991.8
+        },
+        {
+          "x": -26.5,
+          "y": -51.05
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste (impulsión)), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2990.08,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2991.84,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T05",
+      "linea": "agua-residual",
+      "desde": "parshall",
+      "hasta": "BZ-3",
+      "diametro": {
+        "valor": 0.2,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: diámetro de ejemplo; por confirmar con el usuario",
+        "demo": true
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": -27.65,
+          "y": -38.6
+        },
+        {
+          "x": -27.6,
+          "y": -32.5
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2991.83,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2990.16,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T06",
+      "linea": "agua-residual",
+      "desde": "BZ-3",
+      "hasta": "homogeneizador",
+      "diametro": {
+        "valor": 0.2,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: diámetro de ejemplo; por confirmar con el usuario",
+        "demo": true
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": -27.6,
+          "y": -32.5
+        },
+        {
+          "x": -27.6,
+          "y": -26.3
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2990.16,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2989.85,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T07",
+      "linea": "agua-residual",
+      "desde": "homogeneizador",
+      "hasta": "BZ-4",
+      "diametro": {
+        "valor": 0.2,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: diámetro de ejemplo; por confirmar con el usuario",
+        "demo": true
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": -27.1,
+          "y": -16.65
+        },
+        {
+          "x": -26.5,
+          "y": -14.6
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; el DXF sale del homogeneizador 1 m fuera de su círculo; sin ajuste",
+      "cotaSalida": {
+        "valor": 2989.81,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2989.09,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T08",
+      "linea": "agua-residual",
+      "desde": "BZ-4",
+      "hasta": "rafa",
+      "diametro": {
+        "valor": 0.2,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: diámetro de ejemplo; por confirmar con el usuario",
+        "demo": true
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": -26.5,
+          "y": -14.6
+        },
+        {
+          "x": -26.55,
+          "y": -13.7,
+          "cota": 2987.56
+        },
+        {
+          "x": -29.9,
+          "y": -9.0,
+          "cota": 2983.92
+        },
+        {
+          "x": -29.7,
+          "y": 0.5
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2989.09,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2983.4,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T09",
+      "linea": "agua-residual",
+      "desde": "rafa",
+      "hasta": "BZ-5",
+      "diametro": {
+        "valor": 0.63,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): DN 630 HDPE PN10 del RAFA al percolador"
+      },
+      "material": {
+        "valor": "HDPE PN10",
+        "fuente": "Confirmado por el usuario (16 nov): DN 630 HDPE PN10 del RAFA al percolador"
+      },
+      "trazado": [
+        {
+          "x": -20.0,
+          "y": 8.5
+        },
+        {
+          "x": -19.45,
+          "y": 12.2,
+          "cota": 2982.99
+        },
+        {
+          "x": -18.0,
+          "y": 13.8
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2983.4,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2981.9,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T10",
+      "linea": "agua-residual",
+      "desde": "BZ-5",
+      "hasta": "percolador",
+      "diametro": {
+        "valor": 0.63,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): DN 630 HDPE PN10 del RAFA al percolador"
+      },
+      "material": {
+        "valor": "HDPE PN10",
+        "fuente": "Confirmado por el usuario (16 nov): DN 630 HDPE PN10 del RAFA al percolador"
+      },
+      "trazado": [
+        {
+          "x": -18.0,
+          "y": 13.8
+        },
+        {
+          "x": -15.7,
+          "y": 14.85,
+          "cota": 2980.11
+        },
+        {
+          "x": -9.25,
+          "y": 30.85
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2981.9,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2979.94,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T11",
+      "linea": "agua-residual",
+      "desde": "percolador",
+      "hasta": "BZ-6",
+      "diametro": {
+        "valor": 0.2,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: diámetro de ejemplo; por confirmar con el usuario",
+        "demo": true
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": -4.1,
+          "y": 43.1
+        },
+        {
+          "x": -2.6,
+          "y": 46.9,
+          "cota": 2979.34
+        },
+        {
+          "x": -1.6,
+          "y": 49.4
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2979.91,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2978.79,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T12",
+      "linea": "agua-residual",
+      "desde": "BZ-6",
+      "hasta": "camara-reparto",
+      "diametro": {
+        "valor": 0.2,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: diámetro de ejemplo; por confirmar con el usuario",
+        "demo": true
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": -1.6,
+          "y": 49.4
+        },
+        {
+          "x": 0.1,
+          "y": 49.5,
+          "cota": 2978.5
+        },
+        {
+          "x": 2.5,
+          "y": 49.6
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2978.79,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2978.4,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T13",
+      "linea": "agua-residual",
+      "desde": "camara-reparto",
+      "hasta": "BZ-7",
+      "diametro": {
+        "valor": 0.16,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "trazado": [
+        {
+          "x": 5.2,
+          "y": 49.5
+        },
+        {
+          "x": 9.5,
+          "y": 49.5
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2978.4,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2977.96,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T14",
+      "linea": "agua-residual",
+      "desde": "BZ-7",
+      "hasta": "sedimentador-1",
+      "diametro": {
+        "valor": 0.16,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "trazado": [
+        {
+          "x": 9.5,
+          "y": 49.5
+        },
+        {
+          "x": 19.95,
+          "y": 51.3
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2977.96,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2976.7,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T15",
+      "linea": "agua-residual",
+      "desde": "BZ-7",
+      "hasta": "sedimentador-2",
+      "diametro": {
+        "valor": 0.16,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "trazado": [
+        {
+          "x": 9.5,
+          "y": 49.5
+        },
+        {
+          "x": 10.8,
+          "y": 42.8
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2977.96,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2976.62,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T16",
+      "linea": "efluente",
+      "desde": "sedimentador-1",
+      "hasta": "BZ-8",
+      "diametro": {
+        "valor": 0.16,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "trazado": [
+        {
+          "x": 20.95,
+          "y": 46.45
+        },
+        {
+          "x": 19.1,
+          "y": 44.7
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE (rojo), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2976.7,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2976.68,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T17",
+      "linea": "efluente",
+      "desde": "sedimentador-2",
+      "hasta": "BZ-8",
+      "diametro": {
+        "valor": 0.16,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "trazado": [
+        {
+          "x": 15.75,
+          "y": 41.45
+        },
+        {
+          "x": 19.1,
+          "y": 44.7
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE (rojo), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2976.6,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2976.68,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T18",
+      "linea": "efluente",
+      "desde": "BZ-8",
+      "hasta": "camara-contacto",
+      "diametro": {
+        "valor": 0.16,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "trazado": [
+        {
+          "x": 19.1,
+          "y": 44.7
+        },
+        {
+          "x": 23.95,
+          "y": 39.7,
+          "cota": 2976.41
+        },
+        {
+          "x": 34.0,
+          "y": 38.7,
+          "cota": 2975.03
+        },
+        {
+          "x": 34.59,
+          "y": 39.03
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE (rojo), eje de las dos líneas paralelas de la tubería; el último punto se llevó al extremo del tubo de entrada de la cámara de contacto (0.7 m más allá del extremo del DXF)",
+      "cotaSalida": {
+        "valor": 2976.68,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2976.43,
+        "unidad": "m",
+        "fuente": "derivado: eje del tubo de entrada de la cámara de contacto (fondo 2975.83 + losa 0.30 + 0.30 de datos/desinfeccion.json)",
+        "demo": true
+      }
+    },
+    {
+      "id": "T19",
+      "linea": "efluente",
+      "desde": "camara-contacto",
+      "hasta": "BZ-9",
+      "diametro": {
+        "valor": 0.16,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "Confirmado por el usuario (16 nov): PVC 6\" (DN 160) en sedimentadores y cámara de contacto"
+      },
+      "trazado": [
+        {
+          "x": 35.88,
+          "y": 37.18
+        },
+        {
+          "x": 35.25,
+          "y": 36.85,
+          "cota": 2975.03
+        },
+        {
+          "x": 34.7,
+          "y": 36.15,
+          "cota": 2975.03
+        },
+        {
+          "x": 33.45,
+          "y": 34.55,
+          "cota": 2975.04
+        },
+        {
+          "x": 32.4,
+          "y": 33.2
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE (rojo), eje de las dos líneas paralelas de la tubería; el primer punto se llevó al extremo del tubo de salida de la cámara de contacto (0.7 m antes del extremo del DXF)",
+      "cotaSalida": {
+        "valor": 2977.43,
+        "unidad": "m",
+        "fuente": "derivado: eje del tubo de salida de la cámara de contacto (fondo 2975.83 + losa 0.30 + 1.30 de datos/desinfeccion.json)",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2975.06,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T20",
+      "linea": "efluente",
+      "desde": "BZ-9",
+      "hasta": "BZ-10",
+      "diametro": {
+        "valor": 0.16,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: se supone el mismo diámetro; por confirmar con el usuario",
+        "demo": true
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": 32.4,
+          "y": 33.2
+        },
+        {
+          "x": 31.95,
+          "y": 31.75,
+          "cota": 2975.08
+        },
+        {
+          "x": 30.3,
+          "y": 27.65,
+          "cota": 2975.06
+        },
+        {
+          "x": 29.1,
+          "y": 24.3
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE (rojo), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2975.06,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2974.92,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T21",
+      "linea": "efluente",
+      "desde": "BZ-10",
+      "hasta": "descarga-rio",
+      "diametro": {
+        "valor": 0.16,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: se supone el mismo diámetro; por confirmar con el usuario",
+        "demo": true
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": 29.1,
+          "y": 24.3
+        },
+        {
+          "x": 29.3,
+          "y": 21.5,
+          "cota": 2974.82
+        },
+        {
+          "x": 29.1,
+          "y": 13.1,
+          "cota": 2974.53
+        },
+        {
+          "x": 29.1,
+          "y": 7.5,
+          "cota": 2974.35
+        },
+        {
+          "x": 29.1,
+          "y": 6.4
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE (rojo), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2974.92,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2974.31,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T22",
+      "linea": "lodos",
+      "desde": "rafa",
+      "hasta": "BZ-R",
+      "diametro": {
+        "valor": 0.15,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): Ø 150 en lodos"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": -17.3,
+          "y": -0.85
+        },
+        {
+          "x": -14.7,
+          "y": -1.2
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2983.4,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2983.4,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T23",
+      "linea": "lodos",
+      "desde": "BZ-R",
+      "hasta": "lechos-secado",
+      "diametro": {
+        "valor": 0.15,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): Ø 150 en lodos"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": -14.7,
+          "y": -1.2
+        },
+        {
+          "x": -12.5,
+          "y": -1.3,
+          "cota": 2983.12
+        },
+        {
+          "x": -9.5,
+          "y": -1.4,
+          "cota": 2980.84
+        },
+        {
+          "x": -6.0,
+          "y": -1.5,
+          "cota": 2976.23
+        },
+        {
+          "x": -3.4,
+          "y": -1.6,
+          "cota": 2975.94
+        },
+        {
+          "x": -2.2,
+          "y": -1.65
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería; el último punto se cortó en el muro oeste del lecho de secado (el DXF entra 1.4 m más)",
+      "cotaSalida": {
+        "valor": 2983.4,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2975.92,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T24",
+      "linea": "lodos",
+      "desde": "sedimentador-1",
+      "hasta": "BZ-L1",
+      "diametro": {
+        "valor": 0.15,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): Ø 150 en lodos"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": 22.9,
+          "y": 46.6
+        },
+        {
+          "x": 23.5,
+          "y": 46.1,
+          "cota": 2976.69
+        },
+        {
+          "x": 24.9,
+          "y": 45.0,
+          "cota": 2976.69
+        },
+        {
+          "x": 26.0,
+          "y": 42.7,
+          "cota": 2976.63
+        },
+        {
+          "x": 26.3,
+          "y": 39.0,
+          "cota": 2976.09
+        },
+        {
+          "x": 25.0,
+          "y": 34.8,
+          "cota": 2975.76
+        },
+        {
+          "x": 21.5,
+          "y": 30.3,
+          "cota": 2975.73
+        },
+        {
+          "x": 19.1,
+          "y": 27.5,
+          "cota": 2975.65
+        },
+        {
+          "x": 18.5,
+          "y": 27.0
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2976.7,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2975.65,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T25",
+      "linea": "lodos",
+      "desde": "sedimentador-2",
+      "hasta": "BZ-L1",
+      "diametro": {
+        "valor": 0.15,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): Ø 150 en lodos"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": 14.0,
+          "y": 37.8
+        },
+        {
+          "x": 14.4,
+          "y": 36.6,
+          "cota": 2976.6
+        },
+        {
+          "x": 15.3,
+          "y": 33.6,
+          "cota": 2976.56
+        },
+        {
+          "x": 16.4,
+          "y": 30.7,
+          "cota": 2976.29
+        },
+        {
+          "x": 17.7,
+          "y": 28.6,
+          "cota": 2975.93
+        },
+        {
+          "x": 18.4,
+          "y": 27.3,
+          "cota": 2975.7
+        },
+        {
+          "x": 18.5,
+          "y": 27.0
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2976.6,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2975.65,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T26",
+      "linea": "lodos",
+      "desde": "BZ-L1",
+      "hasta": "BZ-L2",
+      "diametro": {
+        "valor": 0.15,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): Ø 150 en lodos"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": 18.5,
+          "y": 27.0
+        },
+        {
+          "x": 17.9,
+          "y": 23.8,
+          "cota": 2975.53
+        },
+        {
+          "x": 16.4,
+          "y": 16.3,
+          "cota": 2975.38
+        },
+        {
+          "x": 15.0,
+          "y": 10.0
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2975.65,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2975.31,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T27",
+      "linea": "lodos",
+      "desde": "BZ-L2",
+      "hasta": "BZ-L3",
+      "diametro": {
+        "valor": 0.15,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): Ø 150 en lodos"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": 15.0,
+          "y": 10.0
+        },
+        {
+          "x": 14.0,
+          "y": 5.0,
+          "cota": 2975.52
+        },
+        {
+          "x": 13.3,
+          "y": 2.0
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería",
+      "cotaSalida": {
+        "valor": 2975.31,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2975.78,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T28",
+      "linea": "lodos",
+      "desde": "BZ-L3",
+      "hasta": "lechos-secado",
+      "diametro": {
+        "valor": 0.15,
+        "unidad": "m",
+        "fuente": "Confirmado por el usuario (16 nov): Ø 150 en lodos"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": 13.3,
+          "y": 2.0
+        },
+        {
+          "x": 12.5,
+          "y": -0.4,
+          "cota": 2975.89
+        },
+        {
+          "x": 12.1,
+          "y": -1.3
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería; el último punto se cortó en el muro norte del lecho de secado (el DXF entra 0.5 m más)",
+      "cotaSalida": {
+        "valor": 2975.78,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2975.89,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "demo": true
+      }
+    },
+    {
+      "id": "T29",
+      "linea": "cloro",
+      "desde": "caseta-cloracion",
+      "hasta": "punto-cloro",
+      "diametro": {
+        "valor": 0.0127,
+        "unidad": "m",
+        "fuente": "insumos/medidas-desinfeccion.md: línea de cloro Ø 1/2\" (plano de detalle de la desinfección, ESTRUCTURAS2-DESINFECCION_PLOT.pdf)"
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": 31.5,
+          "y": 46.0
+        },
+        {
+          "x": 32.2,
+          "y": 45.0,
+          "cota": 2975.73
+        },
+        {
+          "x": 33.1,
+          "y": 43.3,
+          "cota": 2975.33
+        },
+        {
+          "x": 33.25,
+          "y": 41.05,
+          "cota": 2975.07
+        },
+        {
+          "x": 35.27,
+          "y": 39.5
+        }
+      ],
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (línea de cloro), eje de las dos líneas paralelas de la tubería; prolongación propia: del extremo del tubo de la caseta (muro sur + 0.80 m) a lo largo del DXF y de ahí al punto de aplicación de la cámara de contacto (2.5 m más allá del extremo del DXF); no está dibujada en el mapa",
+      "cotaSalida": {
+        "valor": 2977.45,
+        "unidad": "m",
+        "fuente": "derivado: eje de la línea de cloro de la caseta (fondo 2977.1 + piso 0.15 + media altura de la bomba 0.20, datos/desinfeccion.json)",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2977.21,
+        "unidad": "m",
+        "fuente": "derivado: tope de la línea vertical de cloro sobre la tubería de entrada (2976.43 + radio + 0.70, datos/desinfeccion.json)",
+        "demo": true
+      }
+    }
+  ]
+}

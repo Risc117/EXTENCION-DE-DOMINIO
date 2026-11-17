@@ -44,7 +44,7 @@ export function construirEtiquetasCaseta(d: DatosDesinfeccion, caudalLs: number)
     etiquetaDe('et-caseta', 'Caseta de cloración (hipoclorito, no cloro gas)', hayEjemplo([d.caseta.largo, d.caseta.alturaMuros]), [0, y, 0], F.caseta),
     etiquetaDe('et-tanque', `Hipoclorito: tanque de solución ${c.concentracion.valor} mg/L`, hayEjemplo([d.tanque.diametro, d.tanque.altura]), [tanque.x, e + d.tanque.altura.valor, tanque.z], F.tanque),
     etiquetaDe('et-bomba', 'Bomba dosificadora', hayEjemplo([d.bomba.largo, d.bomba.alto, d.bomba.ancho]), [bomba.x, e + d.bomba.alto.valor, bomba.z], F.bomba),
-    etiquetaDe('et-linea', `Línea de cloro Ø ${pulgadas(c.diametroLinea.valor)}" al punto de aplicación`, false, [d.caseta.largo.valor / 2, e + d.bomba.alto.valor / 2, bomba.z], F.linea),
+    etiquetaDe('et-linea', `Línea de cloro Ø ${pulgadas(c.diametroLinea.valor)}" al punto de aplicación`, false, [bomba.x, e + d.bomba.alto.valor / 2, d.caseta.ancho.valor / 2], F.linea),
     etiquetaDe('et-dosis', resolverTexto('Dosis de solución q = {valor} mL/s', caudalSolucion(d, caudalLs), false), false, [0, y, 0], F.dosis),
   ]
 }

@@ -101,6 +101,16 @@ describe('cámara de contacto: geometría', () => {
     expect(l.tam[0]).toBeCloseTo(5.4, 9)
   })
 
+  it('como en el mapa general: la entrada va en la esquina norte del lado oeste y la salida en la esquina sur', () => {
+    const entrada = por('tubo-entrada')
+    const salida = por('tubo-salida')
+    expect(entrada.pos[2]).toBeCloseTo(disponer(datos).zCanal(1), 9)
+    expect(entrada.pos[2]).toBeLessThan(0)
+    expect(entrada.pos[0]).toBeLessThan(0)
+    expect(salida.pos[2]).toBeGreaterThan(0)
+    expect(salida.pos[0]).toBeLessThan(0)
+  })
+
   it('la pantalla es un accesorio con interruptor', () => {
     expect(por('pantalla').accesorio).toBe(true)
   })

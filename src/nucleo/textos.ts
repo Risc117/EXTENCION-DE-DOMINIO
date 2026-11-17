@@ -86,6 +86,12 @@ export const TEXTO_ACCESORIOS = {
   ocultar: 'Ocultar accesorios',
 }
 
+/** Tuberías de conexión entre las estructuras. */
+export const TEXTO_CONEXIONES = {
+  mostrar: 'Mostrar tuberías',
+  ocultar: 'Ocultar tuberías',
+}
+
 /** Cotas y etiquetas con flechas (los textos de cada una vienen de datos/homogeneizador.json). */
 export const TEXTO_ANOTACIONES = {
   cotas: 'Cotas',

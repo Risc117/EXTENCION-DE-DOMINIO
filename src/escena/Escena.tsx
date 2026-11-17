@@ -9,6 +9,7 @@ import {
   LUZ_AMBIENTE,
   LUZ_DIRECCIONAL,
 } from '../nucleo/constantes'
+import { Conexiones } from '../unidades/conexiones'
 import { unidades } from '../unidades/registro'
 import { cotaReferencia } from '../unidades/ubicar'
 import { ControlCamara } from './ControlCamara'
@@ -30,6 +31,7 @@ export function Escena() {
       {unidades.map((u) => (
         <UnidadColocada key={u.id} unidad={u} referencia={referencia} />
       ))}
+      <Conexiones referencia={referencia} />
       <ControlCamara unidades={unidades} />
     </Canvas>
   )

@@ -6,6 +6,7 @@ import { Bienvenida } from './ui/Bienvenida'
 import { Leyenda } from './ui/Leyenda'
 import { PanelAccesorios } from './ui/PanelAccesorios'
 import { PanelAnotaciones } from './ui/PanelAnotaciones'
+import { PanelConexiones } from './ui/PanelConexiones'
 import { PanelAjusteGestos } from './ui/PanelAjusteGestos'
 import { PanelCalidad } from './ui/PanelCalidad'
 import { PanelCorte } from './ui/PanelCorte'
@@ -29,6 +30,7 @@ export function App() {
         <PanelCorte />
         <PanelAccesorios />
         <PanelAnotaciones />
+        <PanelConexiones />
         <PanelTerreno />
         <PanelCalidad />
       </div>
