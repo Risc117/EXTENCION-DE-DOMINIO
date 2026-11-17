@@ -5,16 +5,22 @@ import type { Pieza } from '../comun/tipos'
 import { disponer } from './disposicion'
 import type { DatosRafa } from './esquema'
 import { xTomas } from './internos'
+import { xCajaDistribucion } from './puertos'
 
-/** Lo de afuera: caja de distribución (oeste, sobre la losa), cámara de efluente con rejilla (este), caja de muestreo y de descarga de lodo. */
+/**
+ * Lo de afuera: caja de distribución (a la mitad del lado oeste, sobre la losa), cámara de efluente con rejilla (extremo norte, +x),
+ * y las cajas de muestreo y de descarga de lodo (lado este, +z). El oeste y el este son los del mapa general (T16.4).
+ */
 export function construirExterior(d: DatosRafa): Pieza[] {
   const s = disponer(d)
   const c = d.distribucion.caja
   const L = s.semiLargo
+  const xc = xCajaDistribucion(d)
+  const zc = -s.semiAncho + c.ancho.valor / 2
   const piezas: Pieza[] = [
-    caja('caja-distribucion', '--color-caseta', [-L, -L + c.ancho.valor], [s.yLosa, s.yLosa + c.alto.valor], [-c.ancho.valor / 2, c.ancho.valor / 2]),
-    { id: 'tubo-afluente', forma: 'cilindro', color: '--color-ingreso', pos: [-L - PROLONGACION_TUBO / 2, s.yLosa + c.alto.valor / 2, 0], radio: c.diametroAfluente.valor / 2, alto: PROLONGACION_TUBO, eje: 'x' },
-    { id: 'tubo-bajada', forma: 'cilindro', color: '--color-ingreso', pos: [-L + c.ancho.valor / 2, (s.yPiso + s.yLosa) / 2, 0], radio: c.diametroSalida.valor / 2, alto: s.yLosa - s.yPiso, eje: 'y', accesorio: true },
+    caja('caja-distribucion', '--color-caseta', [xc - c.ancho.valor / 2, xc + c.ancho.valor / 2], [s.yLosa, s.yLosa + c.alto.valor], [-s.semiAncho, -s.semiAncho + c.ancho.valor]),
+    { id: 'tubo-afluente', forma: 'cilindro', color: '--color-ingreso', pos: [xc, s.yLosa + c.alto.valor / 2, -s.semiAncho - PROLONGACION_TUBO / 2], radio: c.diametroAfluente.valor / 2, alto: PROLONGACION_TUBO, eje: 'z' },
+    { id: 'tubo-bajada', forma: 'cilindro', color: '--color-ingreso', pos: [xc, (s.yPiso + s.yLosa) / 2, zc], radio: c.diametroSalida.valor / 2, alto: s.yLosa - s.yPiso, eje: 'y', accesorio: true },
   ]
   const ef = d.efluente
   const yCamara = s.yMuros - ef.recoleccionInferior.valor
@@ -34,8 +40,8 @@ export function construirExterior(d: DatosRafa): Pieza[] {
   const x = xTomas(d)
   const zDescarga = s.semiAncho + SEPARACION_CAJAS_RAFA
   piezas.push(
-    caja('caja-muestreo', '--color-caseta', [x - lm / 2, x + lm / 2], [s.yPiso, s.yPiso + altoMuestreo], [-(zCajas + lm), -zCajas]),
-    caja('caja-descarga', '--color-caseta', [-x - ld / 2, -x + ld / 2], [s.yPiso, s.yPiso + ld], [-(zDescarga + ld), -zDescarga]),
+    caja('caja-muestreo', '--color-caseta', [x - lm / 2, x + lm / 2], [s.yPiso, s.yPiso + altoMuestreo], [zCajas, zCajas + lm]),
+    caja('caja-descarga', '--color-caseta', [-x - ld / 2, -x + ld / 2], [s.yPiso, s.yPiso + ld], [zDescarga, zDescarga + ld]),
   )
   return piezas
 }

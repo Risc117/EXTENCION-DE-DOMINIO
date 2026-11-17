@@ -5,6 +5,7 @@ import { ARRIBA, cotaEntre, etiquetaDe } from '../comun/anotar'
 import { resolverTexto } from '../comun/texto'
 import type { CotaCalculada, EtiquetaCalculada, Vec3 } from '../comun/tiposAnotaciones'
 import { disponer } from './disposicion'
+import { xCajaDistribucion } from './puertos'
 import type { DatosRafa } from './esquema'
 import { xTomas } from './internos'
 
@@ -38,16 +39,16 @@ export function construirEtiquetas(d: DatosRafa, nivel: number, trHoja: number, 
   const F = DESFASES_ET_RAFA
   const caja = d.distribucion.caja
   const ef = d.efluente
-  const zFuera = -(s.semiAncho + SEPARACION_PUNTA_CAJAS_RAFA)
+  const zFuera = s.semiAncho + SEPARACION_PUNTA_CAJAS_RAFA
   const nivelTexto = resolverTexto('Nivel de agua = {valor} m', nivel, true)
   return [
-    etiquetaDe('et-caja-distribucion', 'Caja de distribución', false, [-s.semiLargo + caja.ancho.valor / 2, s.yLosa + caja.alto.valor, 0], F.cajaDistribucion),
+    etiquetaDe('et-caja-distribucion', 'Caja de distribución', false, [xCajaDistribucion(d), s.yLosa + caja.alto.valor, -s.semiAncho + caja.ancho.valor / 2], F.cajaDistribucion),
     dentro(etiquetaDe('et-colector', `Colector de distribución (${d.distribucion.ramalesColector.valor} ramales)`, hayEjemplo(Object.values(d.distribucion.colector)), [0, s.yPiso + d.distribucion.colector.alturaSobrePiso.valor, 0], F.colector)),
     dentro(etiquetaDe('et-sedimentacion', 'Zona de sedimentación: campanas y deflectores', false, [x0, yBase + ALTURA_PUNTA_ZONA_RAFA, s.zFilas[0]], F.sedimentacion)),
     dentro(etiquetaDe('et-digestor', 'Digestor (manto de lodos)', false, [x, s.yPiso + ALTURA_PUNTA_DIGESTOR_RAFA, 0], F.digestor)),
     dentro(etiquetaDe('et-gases', 'Zona de gases', false, [0, yBase + ALTURA_PUNTA_ZONA_RAFA, 0], F.gases)),
     etiquetaDe('et-efluente', 'Cámara de efluente con rejilla', hayEjemplo([ef.espesorRejilla, ef.recoleccionSuperior, ef.recoleccionInferior]), [s.semiLargo + ef.anchoCamara.valor, s.yMuros - ef.recoleccionSuperior.valor, 0], F.efluente),
-    etiquetaDe('et-tomas', 'Tomas de muestra de lodo', ejemplo(d.lodos.diametroToma), [x, s.yPiso + d.lodos.alturasToma[0].valor, -s.semiAncho], F.tomas),
+    etiquetaDe('et-tomas', 'Tomas de muestra de lodo', ejemplo(d.lodos.diametroToma), [x, s.yPiso + d.lodos.alturasToma[0].valor, s.semiAncho], F.tomas),
     etiquetaDe('et-muestreo', 'Caja de muestreo', ejemplo(d.lodos.ladoCajaMuestreo), [x, s.yPiso + ALTURA_PUNTA_MUESTREO_RAFA, zFuera], F.muestreo),
     etiquetaDe('et-descarga', 'Caja de descarga de lodo', ejemplo(d.lodos.ladoCajaDescarga), [-x, s.yPiso + ALTURA_PUNTA_DESCARGA_RAFA, zFuera], F.descarga),
     { ...dentro(etiquetaDe('et-nivel', nivelTexto, false, [s.semiLargoInterior - MARGEN_PUNTA_NIVEL_RAFA, s.yPiso + nivel, 0], F.nivel)) },

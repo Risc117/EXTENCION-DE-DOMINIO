@@ -36,7 +36,7 @@ export const esquemaRafa = z
       ramalesColector: cuenta,
       colector: z.object({ alturaSobrePiso: metros, holguraPared: metros, espesorAnillo: metros, altoAnillo: metros }),
       tubosFondo: z.object({ cantidad: cuenta, separacion: metros, diametro: metros, alturaSobrePiso: metros }),
-      caja: z.object({ ancho: metros, alto: metros, anchoUtil: metros, espesorMuro: metros, diametroAfluente: metros, diametroSalida: metros }),
+      caja: z.object({ ancho: metros, alto: metros, anchoUtil: metros, espesorMuro: metros, diametroAfluente: metros, diametroSalida: metros, desplazamientoSur: metros }),
     }),
     efluente: z.object({ anchoCamara: metros, salidas: cuenta, recoleccionSuperior: metros, recoleccionInferior: metros, espesorRejilla: metros }),
     lodos: z.object({ alturasToma: z.array(metros).min(1), diametroToma: metros, margenCajaMuestreo: metros, ladoCajaMuestreo: metros, ladoCajaDescarga: metros }),

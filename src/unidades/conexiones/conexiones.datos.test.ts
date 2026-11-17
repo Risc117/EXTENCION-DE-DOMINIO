@@ -161,8 +161,9 @@ describe('T16.2 · extremos sueltos', () => {
     for (const id of sueltos) expect(datos.tramos.filter((t) => t.desde === id || t.hasta === id).length, id).toBe(1)
   })
 
-  it('el tubo que llega al RAFA se detiene en el DXF a unos 4.3 m de su muro oeste: queda anotado como por confirmar', () => {
-    expect(tramo('T08').fuenteTrazado).toContain('POR CONFIRMAR')
-    expect(tramo('T08').fuenteTrazado).toContain('RAFA')
+  it('el tubo que llega al RAFA (T08) ya llega a su caja de distribución: el último tramo es mío y queda anotado', () => {
+    expect(tramo('T08').fuenteTrazado).toContain('prolongué yo')
+    expect(tramo('T08').fuenteTrazado).toContain('caja de distribución')
+    expect(tramo('T08').cotaLlegada.fuente).toContain('POR CONFIRMAR')
   })
 })

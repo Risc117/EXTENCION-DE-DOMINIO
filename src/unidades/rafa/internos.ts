@@ -52,7 +52,7 @@ export function construirInternos(d: DatosRafa): Pieza[] {
   }
   const largoToma = s.semiAncho - s.semiAnchoInterior + SEPARACION_TOMAS_RAFA
   for (const [i, h] of d.lodos.alturasToma.entries()) {
-    piezas.push({ id: `toma-lodo-${i + 1}`, forma: 'cilindro', color: '--color-valvula', pos: [xTomas(d), s.yPiso + h.valor, -(s.semiAnchoInterior + largoToma / 2)], radio: d.lodos.diametroToma.valor / 2, alto: largoToma, eje: 'z', accesorio: true })
+    piezas.push({ id: `toma-lodo-${i + 1}`, forma: 'cilindro', color: '--color-valvula', pos: [xTomas(d), s.yPiso + h.valor, s.semiAnchoInterior + largoToma / 2], radio: d.lodos.diametroToma.valor / 2, alto: largoToma, eje: 'z', accesorio: true })
   }
   return piezas
 }
