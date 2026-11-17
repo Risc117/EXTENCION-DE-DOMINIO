@@ -349,14 +349,14 @@
       "nombre": "Descarga de agua tratada al río",
       "tipo": "externo",
       "x": {
-        "valor": 29.1,
+        "valor": 33.68,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE, extremo de la línea de salida (junto al rótulo \"SALIDA DE AGUA TRATADA\", a 2.6 m); punto indicado por el usuario el 16 nov; el rótulo 0+265 no está en el DXF"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE, extremo de la línea de salida (junto al rótulo \"SALIDA DE AGUA TRATADA\", a 2.6 m); punto indicado por el usuario el 16 nov; el rótulo 0+265 no está en el DXF; PROLONGADO hasta la orilla más cercana del río Picoy (33.68, 4.85) por indicación del usuario (17 nov), POR CONFIRMAR: el DXF corta la tubería en (29.1, 6.4)"
       },
       "y": {
-        "valor": 6.4,
+        "valor": 4.85,
         "unidad": "m",
-        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE, extremo de la línea de salida (junto al rótulo \"SALIDA DE AGUA TRATADA\", a 2.6 m); punto indicado por el usuario el 16 nov; el rótulo 0+265 no está en el DXF"
+        "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE, extremo de la línea de salida (junto al rótulo \"SALIDA DE AGUA TRATADA\", a 2.6 m); punto indicado por el usuario el 16 nov; el rótulo 0+265 no está en el DXF; PROLONGADO hasta la orilla más cercana del río Picoy (33.68, 4.85) por indicación del usuario (17 nov), POR CONFIRMAR: el DXF corta la tubería en (29.1, 6.4)"
       }
     },
     {
@@ -1330,10 +1330,15 @@
         },
         {
           "x": 29.1,
-          "y": 6.4
+          "y": 6.4,
+          "cota": 2974.31
+        },
+        {
+          "x": 33.68,
+          "y": 4.85
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE (rojo), eje de las dos líneas paralelas de la tubería",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE (rojo), eje de las dos líneas paralelas de la tubería; el DXF corta la tubería en (29.1, 6.4), a 4.8 m del río: el tramo final hasta la orilla más cercana del río Picoy ((33.68, 4.85), de insumos/DFX/RIO PICOY Y CAMINO.dxf) es una prolongación en línea recta pedida por el usuario (17 nov). POR CONFIRMAR",
       "cotaSalida": {
         "valor": 2974.92,
         "unidad": "m",
@@ -1341,7 +1346,7 @@
         "demo": true
       },
       "cotaLlegada": {
-        "valor": 2974.31,
+        "valor": 2974.2,
         "unidad": "m",
         "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
