@@ -11,6 +11,9 @@ const via = z.object({ id: z.string().min(1), nombre: z.string().min(1), eje: z.
 const superficie = z.object({ id: z.string().min(1), nombre: z.string().min(1), poligono, fuentePoligono: fuente, espesor: metros })
 const circulo = z.object({ id: z.string().min(1), nombre: z.string().min(1), centro: punto, radio: metros })
 const rotonda = circulo.extend({ espesor: metros })
+const polilinea = z.array(punto).min(2)
+/** Franja entre dos orillas (río o camino): varias líneas de la orilla A y una de la B, tal como están en el DXF. */
+const franja = z.object({ id: z.string().min(1), nombre: z.string().min(1), fuente, margenesA: z.array(polilinea).min(1), margenB: polilinea })
 const porton = z.object({ id: z.string().min(1), nombre: z.string().min(1), desde: punto, hasta: punto, ancho: metros, altura: metros })
 
 export const esquemaEntorno = z
@@ -23,6 +26,9 @@ export const esquemaEntorno = z
     barrera: z.object({ nombre: z.string().min(1), desde: punto, hasta: punto, fuente, altura: metros }),
     radiosSeguridad: z.array(circulo),
     vias: z.array(via).min(1),
+    /** Río Picoy; `sentido` dice hacia dónde corre (de ejemplo mientras no haya flechas en las fuentes). */
+    rio: franja.extend({ sentido: z.object({ valor: z.enum(['primero-al-ultimo', 'ultimo-al-primero']), fuente, demo: z.boolean().optional() }) }),
+    camino: franja,
     rotondas: z.array(rotonda),
     superficies: z.array(superficie),
     cerco: z.object({ trazos: z.array(z.array(punto).min(2)).min(1), fuenteTrazos: fuente, altura: metros, portones: z.array(porton) }),

@@ -2,9 +2,10 @@ import { Line } from '@react-three/drei'
 import { useMemo } from 'react'
 import { BufferGeometry, DoubleSide, Float32BufferAttribute } from 'three'
 import { leerColor } from '../../nucleo/colores'
-import { ENTERRADO_BASE, PASO_ENTORNO, SEGMENTOS_CIRCULO } from '../../nucleo/constantesEntorno'
+import { ANCHO_MAXIMO_FRANJA, ELEVACION_VIA, ENTERRADO_BASE, LARGO_PATRON_RIO, PASO_ENTORNO, SEGMENTOS_CIRCULO } from '../../nucleo/constantesEntorno'
 import { alturaTerreno } from '../comun/terrenoPlanta'
 import { entorno } from './datos'
+import { cintaEntreMargenes } from './franjas'
 import { cintaVia, circuloSobreTerreno, cotasBase, type MallaPlana } from './geometria'
 import { Losa } from './Losa'
 
@@ -16,9 +17,10 @@ const aGeometria = (m: MallaPlana): BufferGeometry => {
   return g
 }
 
-/** Vías (cintas sobre el terreno), rotonda, estacionamiento, patio de maniobras y radio de seguridad del grupo electrógeno. */
+/** Vías (cintas sobre el terreno), camino de acceso, rotonda, estacionamiento, patio de maniobras y radio de seguridad del grupo electrógeno. */
 export function Suelos({ referencia }: { referencia: number }) {
-  const [via, pavimento, seguridad] = useMemo(() => ['--color-via', '--color-pavimento', '--color-radio-seguridad'].map(leerColor), [])
+  const [via, pavimento, seguridad, caminoColor] = useMemo(() => ['--color-via', '--color-pavimento', '--color-radio-seguridad', '--color-camino'].map(leerColor), [])
+  const camino = useMemo(() => aGeometria(cintaEntreMargenes(entorno.camino.margenesA, entorno.camino.margenB, PASO_ENTORNO, alturaTerreno, referencia, ELEVACION_VIA, LARGO_PATRON_RIO, ANCHO_MAXIMO_FRANJA)), [referencia])
   const cintas = useMemo(() => entorno.vias.map((v) => ({ id: v.id, geometria: aGeometria(cintaVia(v.eje, v.ancho.valor, alturaTerreno, referencia, PASO_ENTORNO)) })), [referencia])
   const losas = useMemo(() => {
     const losa = (id: string, poligono: { x: number; y: number }[], espesor: number) => {
@@ -41,6 +43,9 @@ export function Suelos({ referencia }: { referencia: number }) {
           <meshStandardMaterial color={via} side={DoubleSide} polygonOffset polygonOffsetFactor={-2} />
         </mesh>
       ))}
+      <mesh geometry={camino}>
+        <meshStandardMaterial color={caminoColor} side={DoubleSide} polygonOffset polygonOffsetFactor={-2} />
+      </mesh>
       {losas.map((l) => (
         <Losa key={l.id} poligono={l.poligono} base={l.base} alto={l.alto} color={pavimento} />
       ))}

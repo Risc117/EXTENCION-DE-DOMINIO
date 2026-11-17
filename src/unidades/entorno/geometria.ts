@@ -18,7 +18,7 @@ export function cotasBase(poligono: PuntoPlano[], terrenoEn: TerrenoEn): { base:
 }
 
 /** Puntos del eje cada `paso` metros (y en cada vértice), con la dirección de la línea en cada uno. */
-function estaciones(eje: PuntoPlano[], paso: number): { p: PuntoPlano; t: PuntoPlano }[] {
+export function estaciones(eje: PuntoPlano[], paso: number): { p: PuntoPlano; t: PuntoPlano }[] {
   const salida: { p: PuntoPlano; t: PuntoPlano }[] = []
   for (let i = 1; i < eje.length; i++) {
     const [a, b] = [eje[i - 1], eje[i]]

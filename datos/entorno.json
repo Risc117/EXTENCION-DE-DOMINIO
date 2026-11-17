@@ -1,6 +1,6 @@
 {
   "id": "entorno",
-  "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (capas PTAR-EDIFICACIONES, GEN-*, ALM-*, PTAR-EJE, PTAR-VIAS, PTAR-CERCO, PTAR-ARBOLES, PTAR-SENAL); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json. Las alturas no están en el plano general: son de ejemplo.",
+  "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (capas PTAR-EDIFICACIONES, GEN-*, ALM-*, PTAR-EJE, PTAR-VIAS, PTAR-CERCO, PTAR-ARBOLES, PTAR-SENAL); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json. Río y camino: insumos/DFX/RIO PICOY Y CAMINO.dxf. Las alturas y espesores no están en los planos: son valores típicos de ejemplo.",
   "demo": true,
   "edificios": [
     {
@@ -26,9 +26,9 @@
       ],
       "fuentePoligono": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, polilínea cerrada junto al rótulo GARITA (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)",
       "altura": {
-        "valor": 2.6,
+        "valor": 2.8,
         "unidad": "m",
-        "fuente": "No está en las fuentes: altura de ejemplo (el plano general es en planta)",
+        "fuente": "No está en las fuentes: valor típico de ejemplo. Caseta de control de planta baja: altura libre ≈ 2.4 m (el Reglamento Nacional de Edificaciones, norma A.010, pide mínimo 2.30 m) más losa de techo.",
         "demo": true
       }
     },
@@ -55,9 +55,9 @@
       ],
       "fuentePoligono": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, rectángulo con las divisiones de OFICINA y SS.HH. (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)",
       "altura": {
-        "valor": 3,
+        "valor": 3.2,
         "unidad": "m",
-        "fuente": "No está en las fuentes: altura de ejemplo (el plano general es en planta)",
+        "fuente": "No está en las fuentes: valor típico de ejemplo. Edificio de un piso de oficinas y baños: altura libre ≈ 2.6 m más losa y alero.",
         "demo": true
       }
     },
@@ -84,9 +84,9 @@
       ],
       "fuentePoligono": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, rectángulo junto al rótulo LABORATORIO (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)",
       "altura": {
-        "valor": 3,
+        "valor": 3.2,
         "unidad": "m",
-        "fuente": "No está en las fuentes: altura de ejemplo (el plano general es en planta)",
+        "fuente": "No está en las fuentes: valor típico de ejemplo. Edificio de un piso, mismo criterio que la oficina.",
         "demo": true
       }
     },
@@ -113,9 +113,9 @@
       ],
       "fuentePoligono": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-EDIFICACIONES, rectángulo junto al rótulo ALMACEN-TALLER (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)",
       "altura": {
-        "valor": 3.5,
+        "valor": 4.5,
         "unidad": "m",
-        "fuente": "No está en las fuentes: altura de ejemplo (el plano general es en planta)",
+        "fuente": "No está en las fuentes: valor típico de ejemplo. Almacén-taller ligero: naves pequeñas de 4 a 6 m a la cumbrera.",
         "demo": true
       }
     },
@@ -146,9 +146,9 @@
       ],
       "fuentePoligono": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa GEN-MURO, casco convexo de las polilíneas del recinto (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)",
       "altura": {
-        "valor": 2.5,
+        "valor": 2.6,
         "unidad": "m",
-        "fuente": "No está en las fuentes: altura de ejemplo (el plano general es en planta)",
+        "fuente": "No está en las fuentes: valor típico de ejemplo. Recinto o caseta de un grupo electrógeno: ≈ 2.6 m (la altura de un contenedor de 40 pies).",
         "demo": true
       }
     },
@@ -179,9 +179,9 @@
       ],
       "fuentePoligono": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa ALM-MURO, casco convexo de las polilíneas del recinto (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)",
       "altura": {
-        "valor": 2.8,
+        "valor": 3,
         "unidad": "m",
-        "fuente": "No está en las fuentes: altura de ejemplo (el plano general es en planta)",
+        "fuente": "No está en las fuentes: valor típico de ejemplo. Almacén pequeño de un piso para equipos de emergencia.",
         "demo": true
       }
     }
@@ -200,7 +200,7 @@
     "altura": {
       "valor": 1,
       "unidad": "m",
-      "fuente": "No está en las fuentes: altura de la pluma de ejemplo (el plano general es en planta)",
+      "fuente": "No está en las fuentes: valor típico de ejemplo. Pluma de barrera vehicular: 0.9 a 1.1 m sobre el piso.",
       "demo": true
     }
   },
@@ -471,9 +471,9 @@
         "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-VIAS: arco de radio 5.00 m centrado en el final del eje de la vía"
       },
       "espesor": {
-        "valor": 0.05,
+        "valor": 0.15,
         "unidad": "m",
-        "fuente": "No está en las fuentes: espesor del pavimento de ejemplo (el plano general es en planta)",
+        "fuente": "No está en las fuentes: valor típico de ejemplo. Losa de concreto de la rotonda: 0.15 a 0.20 m.",
         "demo": true
       }
     }
@@ -502,9 +502,9 @@
       ],
       "fuentePoligono": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-VIAS, polilínea cerrada con las líneas de los puestos (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)",
       "espesor": {
-        "valor": 0.05,
+        "valor": 0.15,
         "unidad": "m",
-        "fuente": "No está en las fuentes: espesor del pavimento de ejemplo (el plano general es en planta)",
+        "fuente": "No está en las fuentes: valor típico de ejemplo. Losa de concreto de patio y estacionamiento con tránsito de camiones: 0.15 a 0.20 m.",
         "demo": true
       }
     },
@@ -543,9 +543,9 @@
       ],
       "fuentePoligono": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-VIAS, polilínea cerrada de 7 vértices junto al rótulo PATIO DE MANIOBRAS (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)",
       "espesor": {
-        "valor": 0.05,
+        "valor": 0.15,
         "unidad": "m",
-        "fuente": "No está en las fuentes: espesor del pavimento de ejemplo (el plano general es en planta)",
+        "fuente": "No está en las fuentes: valor típico de ejemplo. Losa de concreto de patio y estacionamiento con tránsito de camiones: 0.15 a 0.20 m.",
         "demo": true
       }
     }
@@ -621,7 +621,7 @@
     "altura": {
       "valor": 2.4,
       "unidad": "m",
-      "fuente": "No está en las fuentes: altura del cerco de ejemplo (el plano general es en planta)",
+      "fuente": "No está en las fuentes: valor típico de ejemplo. Cerco perimétrico de plantas de tratamiento: 2.0 a 2.5 m.",
       "demo": true
     },
     "portones": [
@@ -642,9 +642,9 @@
           "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-CERCO: hojas del portón dibujadas cerradas entre y = −82.8 y −78.3 (4.5 m), igual que el rótulo PORTON 4.5 m"
         },
         "altura": {
-          "valor": 2,
+          "valor": 2.2,
           "unidad": "m",
-          "fuente": "No está en las fuentes: altura del portón de ejemplo (el plano general es en planta)",
+          "fuente": "No está en las fuentes: valor típico de ejemplo. Portón vehicular de dos hojas: 2.0 a 2.4 m.",
           "demo": true
         }
       }
@@ -663,15 +663,15 @@
       "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ARBOLES: círculo interior de radio 0.15 m"
     },
     "alturaTronco": {
-      "valor": 2,
+      "valor": 1.8,
       "unidad": "m",
-      "fuente": "No está en las fuentes: altura del tronco de ejemplo (el plano general es en planta)",
+      "fuente": "No está en las fuentes: valor típico de ejemplo. Altura del tronco hasta el inicio de la copa en árboles de cerco vivo: 1.5 a 2 m.",
       "demo": true
     },
     "alturaTotal": {
-      "valor": 4.5,
+      "valor": 5,
       "unidad": "m",
-      "fuente": "No está en las fuentes: altura total del árbol de ejemplo (el plano general es en planta)",
+      "fuente": "No está en las fuentes: valor típico de ejemplo. Árbol pequeño de cerco vivo con copa de 2 m de diámetro: 4 a 6 m.",
       "demo": true
     },
     "posiciones": [
@@ -958,6 +958,363 @@
       {
         "x": -18,
         "y": -115.03
+      }
+    ]
+  },
+  "rio": {
+    "id": "rio-picoy",
+    "nombre": "Río Picoy",
+    "fuente": "insumos/DFX/RIO PICOY Y CAMINO.dxf, capa 0: las dos polilíneas largas y sinuosas (23 y 24 vértices, color cian) a ≈ 10 m una de otra, que son las dos orillas del río (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json). El archivo no trae textos ni flechas.",
+    "margenesA": [
+      [
+        {
+          "x": 171.56,
+          "y": 180.09
+        },
+        {
+          "x": 171.56,
+          "y": 146.78
+        },
+        {
+          "x": 173.85,
+          "y": 124.96
+        },
+        {
+          "x": 168.93,
+          "y": 96.32
+        },
+        {
+          "x": 157.06,
+          "y": 73.66
+        },
+        {
+          "x": 141.27,
+          "y": 55.9
+        },
+        {
+          "x": 109.03,
+          "y": 40
+        },
+        {
+          "x": 85.49,
+          "y": 33.59
+        },
+        {
+          "x": 62.15,
+          "y": 27.06
+        },
+        {
+          "x": 42.43,
+          "y": 18.32
+        },
+        {
+          "x": 37.18,
+          "y": 15.18
+        },
+        {
+          "x": 26.36,
+          "y": -16.79
+        },
+        {
+          "x": 16.11,
+          "y": -44.44
+        },
+        {
+          "x": 12.73,
+          "y": -61.64
+        },
+        {
+          "x": 27.61,
+          "y": -110.42
+        },
+        {
+          "x": 41.41,
+          "y": -131.8
+        },
+        {
+          "x": 46.59,
+          "y": -159.53
+        },
+        {
+          "x": 47.92,
+          "y": -184.83
+        },
+        {
+          "x": 43.68,
+          "y": -219.04
+        },
+        {
+          "x": 53.37,
+          "y": -251.18
+        },
+        {
+          "x": 56.9,
+          "y": -293.27
+        },
+        {
+          "x": 64.28,
+          "y": -336.31
+        },
+        {
+          "x": 86.68,
+          "y": -374.58
+        }
+      ]
+    ],
+    "margenB": [
+      {
+        "x": 181.56,
+        "y": 180.09
+      },
+      {
+        "x": 181.56,
+        "y": 147.31
+      },
+      {
+        "x": 183.98,
+        "y": 124.29
+      },
+      {
+        "x": 176.28,
+        "y": 92.28
+      },
+      {
+        "x": 163.74,
+        "y": 69.4
+      },
+      {
+        "x": 139.22,
+        "y": 40.48
+      },
+      {
+        "x": 108.58,
+        "y": 23.39
+      },
+      {
+        "x": 87.71,
+        "y": 20.37
+      },
+      {
+        "x": 63.21,
+        "y": 16.48
+      },
+      {
+        "x": 55.55,
+        "y": 13.71
+      },
+      {
+        "x": 43.77,
+        "y": 0.14
+      },
+      {
+        "x": 35.99,
+        "y": -19.79
+      },
+      {
+        "x": 23.72,
+        "y": -46.37
+      },
+      {
+        "x": 22.83,
+        "y": -60.46
+      },
+      {
+        "x": 36.77,
+        "y": -106.17
+      },
+      {
+        "x": 50.87,
+        "y": -128.03
+      },
+      {
+        "x": 56.54,
+        "y": -158.34
+      },
+      {
+        "x": 57.96,
+        "y": -185.19
+      },
+      {
+        "x": 53.86,
+        "y": -218.17
+      },
+      {
+        "x": 63.25,
+        "y": -249.3
+      },
+      {
+        "x": 66.83,
+        "y": -292
+      },
+      {
+        "x": 73.83,
+        "y": -332.83
+      },
+      {
+        "x": 96.12,
+        "y": -370.92
+      },
+      {
+        "x": 108.23,
+        "y": -391.59
+      }
+    ],
+    "sentido": {
+      "valor": "primero-al-ultimo",
+      "fuente": "No está en las fuentes: el DXF no trae flechas de corriente (están en el PDF del plano general). Se tomó de norte a sur (el orden de los vértices) porque el terreno es más bajo al sur (2974.4 m a y = −293 contra 2975.8 m a y = 180). Por confirmar.",
+      "demo": true
+    }
+  },
+  "camino": {
+    "id": "camino-acceso",
+    "nombre": "Camino de acceso",
+    "fuente": "insumos/DFX/RIO PICOY Y CAMINO.dxf, capa 0: las tres polilíneas amarillas largas son los bordes del camino que llega al portón desde el noreste y sigue al sur; las dos piezas cortas de 2 a 3 m con el borde oeste cierran hacia la entrada. Se distingue del río por el color y porque sus extremos cortos caen en el portón (x = 1.7, y = −78.3 y −82.5) (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json).",
+    "margenesA": [
+      [
+        {
+          "x": 162.08,
+          "y": 39.68
+        },
+        {
+          "x": 108.75,
+          "y": 14.28
+        },
+        {
+          "x": 49.19,
+          "y": -10.08
+        },
+        {
+          "x": 28.63,
+          "y": -44.96
+        },
+        {
+          "x": 23,
+          "y": -66.92
+        },
+        {
+          "x": 4.1,
+          "y": -75.49
+        }
+      ],
+      [
+        {
+          "x": 4.1,
+          "y": -75.49
+        },
+        {
+          "x": 3.99,
+          "y": -78.3
+        }
+      ],
+      [
+        {
+          "x": 3.83,
+          "y": -82.45
+        },
+        {
+          "x": 3.24,
+          "y": -97.61
+        }
+      ],
+      [
+        {
+          "x": 3.24,
+          "y": -97.61
+        },
+        {
+          "x": 4.78,
+          "y": -111.21
+        },
+        {
+          "x": 24.78,
+          "y": -135.59
+        },
+        {
+          "x": 24.78,
+          "y": -170.62
+        },
+        {
+          "x": 24.78,
+          "y": -229.87
+        },
+        {
+          "x": 35,
+          "y": -249.37
+        },
+        {
+          "x": 35,
+          "y": -296.44
+        },
+        {
+          "x": 56.41,
+          "y": -367.33
+        },
+        {
+          "x": 58.78,
+          "y": -374.58
+        }
+      ]
+    ],
+    "margenB": [
+      {
+        "x": 165.3,
+        "y": 32.91
+      },
+      {
+        "x": 111.79,
+        "y": 7.41
+      },
+      {
+        "x": 54.37,
+        "y": -16.07
+      },
+      {
+        "x": 35.72,
+        "y": -47.71
+      },
+      {
+        "x": 31.06,
+        "y": -69.59
+      },
+      {
+        "x": 10.08,
+        "y": -78.28
+      },
+      {
+        "x": 9.35,
+        "y": -96.87
+      },
+      {
+        "x": 13.19,
+        "y": -112.52
+      },
+      {
+        "x": 32.28,
+        "y": -133.18
+      },
+      {
+        "x": 32.28,
+        "y": -170.62
+      },
+      {
+        "x": 32.28,
+        "y": -228.02
+      },
+      {
+        "x": 42.5,
+        "y": -247.52
+      },
+      {
+        "x": 42.5,
+        "y": -295.33
+      },
+      {
+        "x": 63.57,
+        "y": -365.09
+      },
+      {
+        "x": 66.67,
+        "y": -374.58
       }
     ]
   }
