@@ -1,0 +1,42 @@
+{
+  "id": "creditos",
+  "fuente": "Páginas de cada modelo en Poly Pizza, vistas el 2026-11-17",
+  "modelos": [
+    {
+      "archivo": "public/modelos/ave.glb",
+      "nombre": "Bird",
+      "autor": "Quaternius",
+      "licencia": "CC0 1.0 (Public Domain)",
+      "url": "https://poly.pizza/m/gYYC0gYMnw",
+      "obtenido": "2026-11-17",
+      "fuente": "Poly Pizza (https://poly.pizza); la página del modelo indica \"Public Domain (CC0)\""
+    },
+    {
+      "archivo": "public/modelos/paloma.glb",
+      "nombre": "Pigeon",
+      "autor": "Quaternius",
+      "licencia": "CC0 1.0 (Public Domain)",
+      "url": "https://poly.pizza/m/9NGlBTpDEr",
+      "obtenido": "2026-11-17",
+      "fuente": "Poly Pizza (https://poly.pizza); la página del modelo indica \"Public Domain (CC0)\""
+    },
+    {
+      "archivo": "public/modelos/perro.glb",
+      "nombre": "Dog",
+      "autor": "Quaternius",
+      "licencia": "CC0 1.0 (Public Domain)",
+      "url": "https://poly.pizza/m/2kUk0QqpCg",
+      "obtenido": "2026-11-17",
+      "fuente": "Poly Pizza (https://poly.pizza); la página del modelo indica \"Public Domain (CC0)\""
+    },
+    {
+      "archivo": "public/modelos/mosca.glb",
+      "nombre": "Fly",
+      "autor": "Kohyzazi",
+      "licencia": "CC0 1.0 (Public Domain)",
+      "url": "https://poly.pizza/m/kCLW4c0kGx",
+      "obtenido": "2026-11-17",
+      "fuente": "Poly Pizza (https://poly.pizza); la página del modelo indica \"Public Domain (CC0)\""
+    }
+  ]
+}

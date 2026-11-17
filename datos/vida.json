@@ -1,0 +1,234 @@
+{
+  "id": "vida",
+  "fuente": "Franja verde de insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (capa PTAR-FRANJA-VERDE, x e y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json); posición del lecho de secado de datos/planta.json; todo lo demás (animales, cantidades, tamaños, velocidades) es de ejemplo.",
+  "demo": true,
+  "pasto": {
+    "franja": {
+      "puntos": [
+        {
+          "x": -1.3,
+          "y": -76.75
+        },
+        {
+          "x": -1.3,
+          "y": -71.9
+        },
+        {
+          "x": 7.32,
+          "y": -42.77
+        },
+        {
+          "x": 23.04,
+          "y": -2.69
+        },
+        {
+          "x": 23.04,
+          "y": 17.25
+        },
+        {
+          "x": 47.9,
+          "y": 30.83
+        },
+        {
+          "x": 37.53,
+          "y": 53.93
+        },
+        {
+          "x": -19.87,
+          "y": 53.93
+        },
+        {
+          "x": -33.36,
+          "y": -12.56
+        },
+        {
+          "x": -33.7,
+          "y": -70.7
+        },
+        {
+          "x": -15.71,
+          "y": -116.79
+        },
+        {
+          "x": -1.3,
+          "y": -116.79
+        },
+        {
+          "x": -1.3,
+          "y": -83.72
+        }
+      ],
+      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-FRANJA-VERDE: polilínea de 13 puntos junto al cerco, en UTM menos el origen (309340, 8791260, zona 18 sur) de datos/terreno.json; el dibujo trae otras copias en otras coordenadas"
+    },
+    "ancho": {
+      "valor": 2.5,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: ancho de la franja de pasto hacia el cerco de ejemplo.",
+      "demo": true
+    },
+    "altura": {
+      "valor": 0.35,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de una hoja de pasto de ejemplo.",
+      "demo": true
+    },
+    "semilla": {
+      "valor": 7,
+      "fuente": "Semilla fija del reparto (para que el pasto sea siempre el mismo)"
+    }
+  },
+  "cantidades": {
+    "pasto": {
+      "alta": 6000,
+      "baja": 1500,
+      "fuente": "No está en las fuentes: cantidad de hojas de pasto por calidad, de ejemplo (presupuesto de cuadros por segundo).",
+      "demo": true
+    },
+    "perros": {
+      "alta": 1,
+      "baja": 1,
+      "fuente": "No está en las fuentes: cantidad de perros por calidad, de ejemplo.",
+      "demo": true
+    },
+    "palomas": {
+      "alta": 3,
+      "baja": 1,
+      "fuente": "No está en las fuentes: cantidad de palomas por calidad, de ejemplo.",
+      "demo": true
+    },
+    "aves": {
+      "alta": 4,
+      "baja": 2,
+      "fuente": "No está en las fuentes: cantidad de aves en vuelo por calidad, de ejemplo.",
+      "demo": true
+    },
+    "moscas": {
+      "alta": 16,
+      "baja": 6,
+      "fuente": "No está en las fuentes: cantidad de moscas por calidad, de ejemplo.",
+      "demo": true
+    }
+  },
+  "perro": {
+    "modelo": "perro.glb",
+    "animacion": "Walk",
+    "tamano": {
+      "valor": 0.9,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: largo del perro (máxima dimensión del modelo) de ejemplo.",
+      "demo": true
+    },
+    "velocidad": {
+      "valor": 1.2,
+      "unidad": "m/s",
+      "fuente": "No está en las fuentes: velocidad del perro de ejemplo.",
+      "demo": true
+    },
+    "ruta": "franja"
+  },
+  "paloma": {
+    "modelo": "paloma.glb",
+    "animacion": "Walk",
+    "tamano": {
+      "valor": 0.3,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: largo de la paloma de ejemplo.",
+      "demo": true
+    },
+    "velocidad": {
+      "valor": 0.4,
+      "unidad": "m/s",
+      "fuente": "No está en las fuentes: velocidad de la paloma de ejemplo.",
+      "demo": true
+    },
+    "radio": {
+      "valor": 10,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: radio del paseo de las palomas alrededor del lecho de secado de ejemplo.",
+      "demo": true
+    },
+    "lecho": "lechos-secado"
+  },
+  "ave": {
+    "modelo": "ave.glb",
+    "tamano": {
+      "valor": 1,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: envergadura del ave (agrandada para verse de lejos) de ejemplo.",
+      "demo": true
+    },
+    "velocidad": {
+      "valor": 5,
+      "unidad": "m/s",
+      "fuente": "No está en las fuentes: velocidad de vuelo de ejemplo.",
+      "demo": true
+    },
+    "radio": {
+      "valor": 25,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: radio del círculo de vuelo de ejemplo.",
+      "demo": true
+    },
+    "altura": {
+      "valor": 18,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de vuelo sobre el suelo de ejemplo.",
+      "demo": true
+    },
+    "centro": {
+      "x": 0,
+      "y": -45,
+      "fuente": "No está en las fuentes: centro del vuelo de ejemplo, sobre la vía interna de la planta.",
+      "demo": true
+    }
+  },
+  "garza": {
+    "modelo": "ave.glb",
+    "tamano": {
+      "valor": 0.9,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de la garza (modelo Bird; no hay garza CC0) de ejemplo.",
+      "demo": true
+    },
+    "posicion": {
+      "x": 27.4,
+      "y": -16.8,
+      "fuente": "No está en las fuentes: a 1 m de la margen A del río (punto 12 de datos/entorno.json, rio.margenesA[0]) de ejemplo.",
+      "demo": true
+    },
+    "rumbo": {
+      "valor": 90,
+      "unidad": "grados",
+      "fuente": "No está en las fuentes: rumbo de la garza de ejemplo (90° = mirando al norte, en el plano).",
+      "demo": true
+    }
+  },
+  "mosca": {
+    "modelo": "mosca.glb",
+    "tamano": {
+      "valor": 0.15,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: tamaño de la mosca (agrandada para que se vea) de ejemplo.",
+      "demo": true
+    },
+    "radio": {
+      "valor": 4,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: radio de vuelo de las moscas sobre el lecho de secado de ejemplo.",
+      "demo": true
+    },
+    "altura": {
+      "valor": 1,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de vuelo de las moscas de ejemplo.",
+      "demo": true
+    },
+    "velocidad": {
+      "valor": 1.5,
+      "unidad": "m/s",
+      "fuente": "No está en las fuentes: velocidad de las moscas de ejemplo.",
+      "demo": true
+    },
+    "lecho": "lechos-secado"
+  }
+}

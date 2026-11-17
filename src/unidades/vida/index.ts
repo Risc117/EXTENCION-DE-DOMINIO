@@ -1,0 +1,1 @@
+export { Vida } from './Vida'
