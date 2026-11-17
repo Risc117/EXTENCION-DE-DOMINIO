@@ -44,6 +44,7 @@ export async function iniciarMano(): Promise<() => void> {
     }
     if (r.giro.acimut !== 0 || r.giro.elevacion !== 0) s.girar(r.giro.acimut, r.giro.elevacion)
     if (r.zoom !== 1) s.hacerZoom(r.zoom)
+    if (r.orden) s.irAVecina(r.orden)
     if (s.pausado !== r.pausa) s.fijarPausa(r.pausa)
   }
   marco = requestAnimationFrame(cuadro)

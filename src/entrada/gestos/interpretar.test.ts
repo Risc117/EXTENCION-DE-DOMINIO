@@ -18,7 +18,7 @@ const QUIETO = { acimut: 0, elevacion: 0 }
 
 describe('interpretar un cuadro', () => {
   it('sin mano no hay intenciones ni memoria', () => {
-    expect(interpretar(null, null)).toEqual({ memoria: null, giro: QUIETO, zoom: 1, pausa: false, detectada: false })
+    expect(interpretar(null, null)).toEqual({ memoria: null, giro: QUIETO, zoom: 1, pausa: false, detectada: false, orden: null })
   })
 
   it('el primer cuadro no gira (no hay referencia)', () => {

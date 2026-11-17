@@ -9,6 +9,7 @@ import {
   ZOOM_MAXIMO,
   ZOOM_MINIMO,
 } from '../nucleo/constantes'
+import { estructuraVecina } from '../nucleo/estructuras'
 import { guardarPanelAbierto, leerPanelAbierto } from './preferenciaPanel'
 
 /** apagado: sin gestos · iniciando: pidiendo cámara · activo: leyendo la mano · denegado: sin permiso · error: otro fallo. */
@@ -42,6 +43,8 @@ interface Estado {
   foco: string | null
   /** Intención: llevar la cámara a una unidad (o a la vista general con null). */
   irA: (id: string | null) => void
+  /** Va a la estructura siguiente (1) o anterior (−1) en el orden de la planta; con 'general', a la vista general. */
+  irAVecina: (orden: 'siguiente' | 'anterior' | 'general') => void
   pausado: boolean
   /** Intenciones: las emiten el mouse y la mano. */
   girar: (dAcimut: number, dElevacion: number) => void
@@ -76,6 +79,11 @@ export const useEstado = create<Estado>((set) => ({
   camara: camaraInicial(),
   foco: null,
   irA: (id) => set((s) => ({ foco: id, camara: { ...s.camara, distancia: DISTANCIA_INICIAL } })),
+  irAVecina: (orden) =>
+    set((s) => {
+      const foco = orden === 'general' ? null : estructuraVecina(s.unidadesEnfocables.map((u) => u.id), s.foco, orden === 'siguiente' ? 1 : -1)
+      return { foco, camara: { ...s.camara, distancia: DISTANCIA_INICIAL } }
+    }),
   pausado: false,
   girar: (dAcimut, dElevacion) =>
     set((s) => ({

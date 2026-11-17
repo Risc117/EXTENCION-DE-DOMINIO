@@ -11,7 +11,7 @@ export const TEXTO_INICIO = {
   controles: 'Cómo moverte',
   mouse: 'Mouse o dedo: arrastra para girar la planta; con la rueda, acercas y alejas.',
   gestos:
-    'Gestos con la cámara (opcional): mueve la palma abierta para girar, separa el pulgar y el índice para acercar y júntalos para alejar, y cierra el puño para pausar. Sin cámara, todo se maneja con el mouse.',
+    'Gestos con la cámara (opcional): mueve la palma abierta para girar, separa el pulgar y el índice para acercar y júntalos para alejar, y cierra el puño para pausar. Para ir de una estructura a otra mantén un instante: el índice solo (siguiente), índice y medio (anterior) o índice, medio y anular (vista general). Sin cámara, todo se maneja con el mouse.',
   verPlanta: 'Ver la planta',
   verDemo: 'Ver la demo guiada',
   fuente: 'Datos de la memoria descriptiva del proyecto.',

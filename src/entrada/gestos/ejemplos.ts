@@ -23,3 +23,15 @@ export function manoPuno(): Punto[] {
   for (const media of [6, 10, 14, 18]) p[media] = { x: p[media - 1].x, y: 0.6 }
   return p
 }
+
+/** Mano con solo algunos dedos extendidos (índice, medio, anular, meñique); los demás quedan cerrados como en el puño. */
+export function manoConDedos(extendidos: [boolean, boolean, boolean, boolean]): Punto[] {
+  const p = manoPuno()
+  const abierta = manoAbierta()
+  extendidos.forEach((e, k) => {
+    if (!e) return
+    const base = 5 + 4 * k
+    for (const i of [base + 1, base + 2, base + 3]) p[i] = abierta[i]
+  })
+  return p
+}
