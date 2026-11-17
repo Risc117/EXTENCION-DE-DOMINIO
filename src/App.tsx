@@ -12,6 +12,7 @@ import { PanelDemo } from './ui/PanelDemo'
 import { PanelGestos } from './ui/PanelGestos'
 import { PanelHerramientas } from './ui/PanelHerramientas'
 import { PanelLodosBiogas } from './ui/PanelLodosBiogas'
+import { PanelHora } from './ui/PanelHora'
 import { PanelPerfil } from './ui/PanelPerfil'
 import { PanelSimulacion } from './ui/PanelSimulacion'
 import { TarjetaUnidad } from './ui/TarjetaUnidad'
@@ -32,6 +33,9 @@ export function App() {
       <PanelGestos />
       <PanelAjusteGestos />
       <PanelSimulacion />
+      <div className="barra-hora">
+        <PanelHora />
+      </div>
       <IndicadorViento />
       <TarjetaUnidad />
       <div className="paneles-centro">

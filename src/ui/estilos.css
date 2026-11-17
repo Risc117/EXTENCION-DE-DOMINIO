@@ -75,7 +75,7 @@ canvas { touch-action: none; }
 .anotacion--marcador { border: 1px solid var(--color-etiqueta-linea); }
 .cota-terreno { margin: 0; font-size: 0.85rem; color: var(--color-texto); }
 /* Cajón de herramientas: un cajón plegable con grupos plegables; las cajas internas no repiten el fondo. */
-.cajon { padding: 8px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.9rem; max-height: calc(100vh - 140px); overflow-y: auto; }
+.cajon { padding: 8px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.9rem; max-height: calc(100vh - 340px); min-height: 120px; overflow-y: auto; }
 .cajon > summary { cursor: pointer; font-weight: 700; }
 .cajon[open] > summary { margin-bottom: 6px; }
 .cajon__grupo { margin-top: 4px; border-top: 1px solid rgba(255, 255, 255, 0.12); padding-top: 4px; }
@@ -122,9 +122,10 @@ canvas { touch-action: none; }
 .lodos-biogas dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
 .lodos-biogas__nota { margin: 6px 0 0; opacity: 0.75; font-size: 0.75rem; }
 @media (max-width: 700px) { .lodos-biogas { display: none; } }
-.paneles-derecha { position: fixed; right: 12px; bottom: 64px; width: 360px; max-height: calc(100vh - 140px); display: flex; flex-direction: column; gap: 8px; overflow: auto; }
+.paneles-derecha { position: fixed; right: 12px; bottom: 64px; width: 360px; max-height: calc(100vh - 460px); min-height: 80px; display: flex; flex-direction: column; gap: 8px; overflow: auto; }
+.paneles-derecha > * { flex-shrink: 0; }
 @media (max-width: 700px) { .paneles-derecha { display: none; } }
-.paneles-centro { position: fixed; bottom: 44px; left: 50%; transform: translateX(-50%); width: min(760px, calc(100vw - 600px)); display: flex; flex-direction: column; gap: 8px; max-height: 60vh; overflow: auto; }
+.paneles-centro { position: fixed; bottom: 44px; left: 50%; transform: translateX(-50%); width: min(760px, calc(100vw - 600px)); display: flex; flex-direction: column; gap: 8px; max-height: 40vh; overflow: auto; }
 .paneles-centro .diagrama-linea { position: static; transform: none; max-width: none; }
 .perfil-hidraulico { padding: 6px 10px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.8rem; }
 .perfil-hidraulico > summary { cursor: pointer; font-weight: 600; }
@@ -159,10 +160,13 @@ canvas { touch-action: none; }
 .panel-hora__nota { opacity: 0.75; font-size: 0.75rem; }
 .panel-hora button { padding: 6px 12px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }
 .panel-hora button[aria-pressed='false'] { opacity: 0.8; }
-.indicador-viento { position: fixed; top: 12px; right: 340px; display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.85rem; }
+.indicador-viento { position: fixed; top: 12px; right: 340px; z-index: 1; display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.85rem; }
 .indicador-viento small { opacity: 0.7; }
 .indicador-viento__rosa { fill: none; stroke: var(--color-rejilla); stroke-width: 2; }
 .indicador-viento__norte { fill: var(--color-texto); font-size: 9px; }
 .indicador-viento__flecha { stroke: var(--color-texto); stroke-width: 2; }
 .indicador-viento__punta { fill: var(--color-texto); }
 @media (max-width: 700px) { .indicador-viento { right: auto; left: 12px; top: 48px; } }
+.barra-hora { position: fixed; top: 12px; left: 180px; width: 250px; padding: 4px 10px; border-radius: 6px; background: var(--color-panel-fondo); }
+@media (max-width: 700px) { .barra-hora { top: auto; bottom: 150px; left: 12px; } }
+.ajuste-gestos:not(.ajuste-gestos--plegado) { z-index: 2; }

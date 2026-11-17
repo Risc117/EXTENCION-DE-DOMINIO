@@ -81,9 +81,9 @@
   },
   "viento": {
     "direccion": {
-      "valor": 200,
+      "valor": 0,
       "unidad": "grados",
-      "fuente": "No está en las fuentes: dirección de donde sopla el viento (desde el norte, horario): del sur-suroeste, una brisa típica de la costa central del Perú de ejemplo. POR CONFIRMAR con datos reales del viento del sitio (estación de Huaura o medición en obra).",
+      "fuente": "No está en las fuentes: dirección de donde sopla el viento (desde el norte, horario): 0° = viento del norte que sopla hacia el sur, elegida por el usuario para la demostración. POR CONFIRMAR con datos reales del viento del sitio (estación de Huaura o medición en obra).",
       "demo": true
     },
     "velocidad": {
