@@ -1,5 +1,6 @@
 import { DESFASES_ET_REPARTO } from '../../nucleo/constantesSedimentador'
 import { ARRIBA, cotaEntre, etiquetaDe } from '../comun/anotar'
+import { hayEjemplo } from '../comun/medidas'
 import { resolverTexto } from '../comun/texto'
 import type { CotaCalculada, EtiquetaCalculada } from '../comun/tiposAnotaciones'
 import type { DatosReparto } from './esquema'
@@ -23,7 +24,7 @@ export function construirCotas(d: DatosReparto): CotaCalculada[] {
 
 /** Etiquetas: el nombre y el caudal que manda a cada sedimentador (`fraccion` del caudal total; 0.5 = Q/2). */
 export function construirEtiquetas(d: DatosReparto, caudalLs: number, fraccion: number): EtiquetaCalculada[] {
-  const demo = d.caja.largo.demo === true
+  const demo = hayEjemplo([d.caja.largo, d.caja.ancho, d.caja.alto])
   const F = DESFASES_ET_REPARTO
   const punta: [number, number, number] = [0, d.caja.alto.valor, 0]
   return [

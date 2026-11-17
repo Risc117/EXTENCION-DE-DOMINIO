@@ -4,21 +4,21 @@
   "demo": true,
   "caja": {
     "largo": {
-      "valor": 2.0,
+      "valor": 2.4,
       "unidad": "m",
-      "fuente": "No está en las fuentes: medida de ejemplo de la cámara de reparto (el plano y la hoja no la dibujan ni la calculan; por confirmar)",
-      "demo": true
+      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS: cuadrado de 2.4 × 2.4 m de la cámara de reparto (centro en datos/planta.json, UTM 309344.0, 8791309.5); el plano y la hoja no la calculan",
+      "demo": false
     },
     "ancho": {
-      "valor": 1.5,
+      "valor": 2.4,
       "unidad": "m",
-      "fuente": "No está en las fuentes: medida de ejemplo de la cámara de reparto (el plano y la hoja no la dibujan ni la calculan; por confirmar)",
-      "demo": true
+      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-ESTRUCTURAS: cuadrado de 2.4 × 2.4 m de la cámara de reparto (centro en datos/planta.json, UTM 309344.0, 8791309.5); el plano y la hoja no la calculan",
+      "demo": false
     },
     "alto": {
       "valor": 1.2,
       "unidad": "m",
-      "fuente": "No está en las fuentes: medida de ejemplo de la cámara de reparto (el plano y la hoja no la dibujan ni la calculan; por confirmar)",
+      "fuente": "derivado: el perfil del DXF no dibuja la cámara de reparto; altura de ejemplo (coronación de datos/planta.json menos su fondo derivado); por confirmar",
       "demo": true
     },
     "espesorMuro": {

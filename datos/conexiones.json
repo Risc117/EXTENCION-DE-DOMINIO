@@ -881,11 +881,11 @@
           "cota": 2978.5
         },
         {
-          "x": 2.5,
-          "y": 49.6
+          "x": 2.8,
+          "y": 49.61
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; el último punto se llevó a la pared oeste de la cámara de reparto (2.8 m; el DXF se detiene 0.3 m antes, sobre la misma línea)",
       "cotaSalida": {
         "valor": 2978.79,
         "unidad": "m",
