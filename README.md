@@ -1,53 +1,42 @@
-# Visor 3D del tanque homogeneizador (PTAR)
+# Visor 3D de la PTAR de Picoy
 
-Una web que muestra en 3D el tanque homogeneizador de una planta de tratamiento de aguas residuales: el agua entra, se mezcla y sale, con el nivel y los caudales de un día simulado. Se maneja con el mouse o con gestos de la mano (webcam). Todo corre en el navegador, sin servidor. Es un **esquema ilustrativo**.
+Una web que muestra en 3D la planta de tratamiento de aguas residuales (PTAR) de Picoy, Santa Leonor (Lima): el agua recorre el tren de tratamiento, con día y noche, viento, vida y personal, paneles de calidad, lodos y biogás, y un perfil hidráulico. Se maneja con mouse o con gestos de la mano (webcam), y tiene modo VR con el celular y AR en Android. Todo corre en el navegador, sin servidor. Es un **esquema ilustrativo**.
 
 ## Cómo correrlo
 
-Necesitas [Node.js](https://nodejs.org) instalado.
+Necesitas [Node.js](https://nodejs.org) en una versión reciente (se probó con Node 24).
 
 ```
 npm install        # una sola vez
 npm run dev        # abre el visor en http://localhost:5173
-npm run build      # crea la carpeta dist/ para publicar
 npm test           # pruebas
 npm run lint       # revisión de estilo y de la arquitectura
 npm run typecheck  # revisión de tipos
+npm run build      # crea dist/ para publicar (ver GUIA_PUBLICAR.md)
 ```
 
-Para publicarlo, sigue [GUIA_PUBLICAR.md](GUIA_PUBLICAR.md).
+## Dónde leer más
 
-## De dónde salen los datos
+- **CLAUDE.md**: reglas del proyecto y contexto para quien continúe (también lo lee Claude Code).
+- **plan.md**: hoja de ruta, decisiones y datos que faltan.
+- **tickets/**: un archivo por trabajo hecho, con sus criterios y lo que quedó por confirmar.
+- **datos/**: todas las medidas, caudales y textos, cada uno con su `fuente`; lo estimado lleva `demo: true` y la web lo avisa como "Dato de ejemplo".
 
-Ninguna medida está escrita en el código: todo viene de `datos/` y cada valor lleva su `fuente`. Lo que es un estimado lleva `demo: true` y la pantalla lo avisa como "Dato de ejemplo".
+## Ojo
 
-| Archivo | Qué contiene | Fuente |
-| --- | --- | --- |
-| `datos/homogeneizador.json` | Medidas del tanque circular, entrada, salida, rebose y agitador | Plano `HOMOGENIZADOR_enterrado_v1` (algunas medidas están estimadas y marcadas `demo: true`) |
-| `datos/hidrograma.json` | Caudal de entrada por hora, 24 h, 5 días | Hoja ECUALIZADOR de `CALCULOS PRIMARIO SECUNDARIO LEONOR.xlsx` |
-| `datos/demo.json` | Guion de la demo guiada (textos, duraciones, vistas y acciones) | Redactado para esta web; se edita sin tocar código |
-
-Para cambiar una medida, edita el JSON y recarga: el tanque se redibuja solo. Los textos de la demo pueden usar marcadores como `{diametroInterior:2}`, que se llenan con los datos.
-
-## Cómo se maneja
-
-- **Mouse o dedo**: arrastrar gira el tanque, la rueda acerca y aleja.
-- **Gestos (opcional)**: botón "Activar gestos". Palma abierta para girar, pinza (separar pulgar e índice acerca, juntarlos aleja), puño para pausar. Pide permiso de cámara; si no hay cámara, todo funciona con el mouse.
-- **Demo guiada**: botón "Iniciar demo" recorre sola la historia del homogeneizador, con anterior, siguiente y salir.
-- **Corte**: "Ver corte" y un deslizador para mirar el interior.
-- **Calidad**: baja (150 partículas) o alta (400). En celular arranca en baja.
+La carpeta `insumos/` (planos, DXF, memoria y Excel) **no está en el repositorio**: pídela a quien hizo el proyecto. Sin ella la web funciona igual, porque los datos ya están pasados a `datos/`.
 
 ## Cómo está organizado
 
 ```
-src/nucleo       constantes, textos y colores
-src/simulacion   balance de caudales, partículas y demo (sin dibujar nada)
+src/nucleo       constantes, textos y matemática pura
+src/simulacion   caudales, calidad, lodos y biogás, demo (sin dibujar nada)
 src/estado       estado compartido (zustand)
-src/entrada      mouse y gestos: emiten intenciones
+src/entrada      mouse, gestos, giroscopio (VR) y sesión de AR: emiten intenciones
 src/escena       cámara y escena 3D
-src/unidades     cada unidad de la PTAR (hoy: homogeneizador)
+src/unidades     cada unidad de la PTAR, el entorno, la vida y el personal
 src/ui           paneles y pantallas
-datos/           todas las medidas, caudales y el guion de la demo
+datos/           medidas, caudales, textos y créditos de los modelos
 ```
 
 `npm run lint` impide que `simulacion` y `entrada` importen de `escena` o `ui`: todo pasa por `estado`.
