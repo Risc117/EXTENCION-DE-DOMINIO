@@ -1,7 +1,7 @@
 /* Abajo a la derecha, junto al engranaje: arriba se encimaban con la hora y con el botón del recorrido (T35). */
 .botones-inmersivos { position: fixed; bottom: 12px; right: 60px; display: flex; gap: 8px; }
 .botones-inmersivos button, .vr__salir { padding: 8px 14px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }
-@media (max-width: 700px) { .botones-inmersivos { top: 12px; bottom: auto; right: 12px; } }
+@media (max-width: 700px) { .botones-inmersivos { bottom: 140px; right: 12px; } }
 .vr { position: fixed; inset: 0; z-index: 20; touch-action: none; user-select: none; }
 .vr__mitad { position: absolute; top: 0; bottom: 0; width: 50%; overflow: hidden; transform: translateZ(0); display: flex; align-items: center; justify-content: center; pointer-events: none; }
 .vr__mitad:nth-of-type(1) { left: 0; }

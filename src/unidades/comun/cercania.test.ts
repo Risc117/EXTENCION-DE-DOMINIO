@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { DISTANCIA_ANOTACIONES, DISTANCIA_ETIQUETA_TUBERIA, HISTERESIS_ANOTACIONES } from '../../nucleo/constantesVista'
-import { anotacionesVisibles, estaCerca, etiquetasCercanas } from './cercania'
+import { anotacionesVisibles, esLaEnfocada, estaCerca, etiquetasCercanas } from './cercania'
 
 describe('estaCerca (cotas y etiquetas solo al acercarse a una estructura)', () => {
   it('se enciende cuando la cámara está a menos de DISTANCIA_ANOTACIONES veces el tamaño de la unidad', () => {
@@ -24,6 +24,19 @@ describe('estaCerca (cotas y etiquetas solo al acercarse a una estructura)', () 
     expect(estaCerca(borde + 0.1, tamano, true)).toBe(true)
     expect(estaCerca(borde * HISTERESIS_ANOTACIONES + 0.1, tamano, true)).toBe(false)
     expect(HISTERESIS_ANOTACIONES).toBeGreaterThan(1)
+  })
+})
+
+describe('esLaEnfocada (con una estructura elegida, solo ella muestra sus anotaciones)', () => {
+  it('sin estructura elegida, todas pueden mostrarlas (decide la distancia)', () => {
+    expect(esLaEnfocada(null, 'rafa')).toBe(true)
+  })
+  it('con una elegida, solo ella', () => {
+    expect(esLaEnfocada('rafa', 'rafa')).toBe(true)
+    expect(esLaEnfocada('homogeneizador', 'rafa')).toBe(false)
+  })
+  it('lo que no tiene id no se filtra', () => {
+    expect(esLaEnfocada('rafa', undefined)).toBe(true)
   })
 })
 

@@ -57,6 +57,8 @@ export const TEXTO_SIMULACION = {
   hidrogramaEscaladoPor: 'para que el promedio del día sea el caudal de diseño de todo el sistema',
   caudalSalida: 'Caudal de salida',
   nivel: 'Nivel',
+  alturaUtil: 'útil',
+  alturaTotal: 'total',
   volumen: 'Volumen',
   avisoNivel: 'El nivel supera la altura útil',
   avisoRebose: 'El tanque está rebosando',

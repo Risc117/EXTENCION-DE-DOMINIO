@@ -1,6 +1,7 @@
 import { CD_SALIDA, CD_SALIDA_ES_EJEMPLO, SALIDA_AJUSTE_RANGO, TEXTO_DATO_EJEMPLO, UMBRAL_PANTALLA_CHICA, VELOCIDADES_SIMULACION } from '../nucleo/constantes'
 import { TEXTO_SIMULACION as T } from '../nucleo/textos'
 import { useSim, type ModoSalida } from '../estado/simulacion'
+import { medidorNivel } from './vistaNivel'
 
 const dosDecimales = (n: number) => n.toFixed(2)
 
@@ -14,6 +15,7 @@ export function PanelSimulacion() {
   const s = useSim()
   const sobreAlturaUtil = s.tanque !== null && s.nivel > s.tanque.alturaUtil
   const salidaFija = s.salidaAjuste ?? s.promedioDia
+  const medidor = s.tanque ? medidorNivel(s.nivel, s.tanque.alturaUtil, s.tanque.alturaTotal) : null
 
   return (
     <details className="panel-simulacion" open={window.innerWidth >= UMBRAL_PANTALLA_CHICA}>
@@ -58,6 +60,18 @@ export function PanelSimulacion() {
         </label>
       ) : (
         CD_SALIDA_ES_EJEMPLO && <p className="panel-simulacion__nota">{T.cdEjemplo} ({CD_SALIDA}) · {TEXTO_DATO_EJEMPLO}</p>
+      )}
+      {medidor && s.tanque && (
+        <div className="medidor-nivel">
+          <div className={medidor.sobreUtil ? 'medidor-nivel__pista medidor-nivel__pista--sobre' : 'medidor-nivel__pista'} role="meter" aria-label={T.nivel} aria-valuemin={0} aria-valuemax={s.tanque.alturaTotal} aria-valuenow={Number(dosDecimales(s.nivel))}>
+            <span className="medidor-nivel__agua" style={{ width: `${medidor.lleno}%` }} />
+            <span className="medidor-nivel__marca" style={{ left: `${medidor.marcaUtil}%` }} />
+          </div>
+          <div className="medidor-nivel__pie">
+            <span>{T.nivel}: {dosDecimales(s.nivel)} m</span>
+            <span>{T.alturaUtil} {dosDecimales(s.tanque.alturaUtil)} m · {T.alturaTotal} {dosDecimales(s.tanque.alturaTotal)} m</span>
+          </div>
+        </div>
       )}
       <dl>
         <dt>{T.hora}</dt><dd>{formatoHora(s.hora)}</dd>

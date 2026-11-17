@@ -31,11 +31,14 @@ export const largoFlecha = (distanciaMundo: number): number => Math.min(FLECHA_P
 /** Largo (m) de la flecha de la etiqueta número `indice` (en el orden en que se dibujan): sube por escalones y vuelve a empezar, para que las vecinas no queden a la misma altura. */
 export const largoEscalonado = (largo: number, indice: number): number => largo * (1 + (indice % ESCALONES_ETIQUETAS) * FRACCION_ESCALON_ETIQUETAS)
 
-/** Las etiquetas que salen en un nivel, con su texto sobre la punta a la altura que da el largo de la flecha (escalonado entre vecinas). */
+/**
+ * Las etiquetas que salen en un nivel. Los textos se ponen en filas: todas se miden desde la punta más alta (no desde la de cada una,
+ * que haría coincidir una fila baja de una estructura alta con una fila alta de una estructura baja) y cada una sube su escalón.
+ */
 export function etiquetasDelNivel(items: ItemEtiqueta[], nivel: NivelEtiquetas, distanciaMundo: number): EtiquetaCalculada[] {
   if (nivel === 'cerca') return []
   const largo = largoFlecha(distanciaMundo)
-  return items
-    .filter((i) => i.tipo === 'unidad' || nivel === 'medio')
-    .map((i, n) => ({ id: i.id, texto: i.texto, origen: [i.punta[0], i.punta[1] + largoEscalonado(largo, n), i.punta[2]] as Vec3, punta: i.punta, interior: false, prioridad: false }))
+  const visibles = items.filter((i) => i.tipo === 'unidad' || nivel === 'medio')
+  const base = Math.max(...visibles.map((i) => i.punta[1]))
+  return visibles.map((i, n) => ({ id: i.id, texto: i.texto, origen: [i.punta[0], base + largoEscalonado(largo, n), i.punta[2]] as Vec3, punta: i.punta, interior: false, prioridad: false }))
 }

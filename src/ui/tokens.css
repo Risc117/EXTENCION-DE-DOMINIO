@@ -95,3 +95,17 @@
   --color-rio-espuma: #a8d8ea;
   --color-camino: #7a6a58;
 }
+/* Acabado de la interfaz (T35): vidrio de los paneles, bordes, sombras, botones y la letra de rótulo (tipo DIN, la de los planos). */
+:root {
+  --color-panel-vidrio: rgba(13, 24, 34, 0.93);
+  --color-panel-borde: rgba(190, 214, 235, 0.16);
+  --color-panel-linea: rgba(190, 214, 235, 0.1);
+  --color-sombra: rgba(3, 9, 15, 0.45);
+  --color-texto-suave: #a9bac8;
+  --color-boton-suave: rgba(94, 160, 215, 0.14);
+  --color-boton-suave-borde: rgba(94, 160, 215, 0.34);
+  --color-boton-encima: #4f97d8;
+  --color-foco: #ffd24a;
+  --color-plano-linea: rgba(120, 170, 215, 0.07);
+  --fuente-rotulo: 'Bahnschrift', 'DIN Alternate', 'Roboto Condensed', 'Arial Narrow', system-ui, sans-serif;
+}

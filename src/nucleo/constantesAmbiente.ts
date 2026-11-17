@@ -31,3 +31,5 @@ export const CIFRAS_RELOJ = 2
 export const SEGMENTOS_MANGA = 12
 /** Hora (0 a 24) en la que arranca el reloj al abrir, al reiniciar y al elegir un día: de mañana, para que el visor abra de día (T35). No es un dato de la planta. */
 export const HORA_INICIAL_SIMULACION = 8
+/** Franja de día y noche bajo el deslizador de la hora (T35): en cuántos tramos se reparte el día. */
+export const TRAMOS_FRANJA_DIA = 48

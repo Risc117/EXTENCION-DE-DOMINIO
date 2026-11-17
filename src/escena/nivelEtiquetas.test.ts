@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { ESCALONES_ETIQUETAS } from '../nucleo/constantesEtiquetas'
 import { DISTANCIA_INICIAL } from '../nucleo/constantesCamara'
 import { etiquetasDelNivel, largoEscalonado, largoFlecha, nivelEtiquetas, type ItemEtiqueta } from './nivelEtiquetas'
 
@@ -44,7 +45,7 @@ describe('qué etiquetas salen en cada nivel', () => {
   it('cerca: ninguna (cada unidad dibuja las suyas)', () => {
     expect(etiquetasDelNivel(items, 'cerca', 100)).toEqual([])
   })
-  it('el texto va sobre la punta, a la altura que da el largo de la flecha', () => {
+  it('el texto va sobre la punta; la primera, a la altura que da el largo de la flecha sobre la punta más alta', () => {
     const [e] = etiquetasDelNivel(items, 'lejos', 100)
     expect(e.punta).toEqual([10, 4, -5])
     expect(e.origen[0]).toBe(10)
@@ -52,10 +53,15 @@ describe('qué etiquetas salen en cada nivel', () => {
     expect(e.origen[1]).toBeCloseTo(4 + largoFlecha(100), 9)
     expect(e.texto).toBe('RAFA')
   })
+  it('las filas se miden desde la punta más alta: una estructura baja no baja su texto', () => {
+    const [, bombeo] = etiquetasDelNivel(items, 'lejos', 100)
+    expect(bombeo.origen[1]).toBeCloseTo(4 + largoEscalonado(largoFlecha(100), 1), 9)
+    expect(etiquetasDelNivel([], 'lejos', 100)).toEqual([])
+  })
 })
 
 describe('etiquetas escalonadas', () => {
-  const fila: ItemEtiqueta[] = Array.from({ length: 7 }, (_, n) => ({ id: `u${n}`, texto: `U${n}`, tipo: 'unidad', punta: [n, 0, 0] }))
+  const fila: ItemEtiqueta[] = Array.from({ length: ESCALONES_ETIQUETAS + 2 }, (_, n) => ({ id: `u${n}`, texto: `U${n}`, tipo: 'unidad', punta: [n, 0, 0] }))
   it('la primera queda a la altura del largo de la flecha y las vecinas, cada una más arriba', () => {
     const alturas = etiquetasDelNivel(fila, 'lejos', 100).map((e) => e.origen[1])
     expect(alturas[0]).toBeCloseTo(largoFlecha(100), 9)
@@ -63,8 +69,8 @@ describe('etiquetas escalonadas', () => {
   })
   it('después del último escalón vuelve a empezar', () => {
     const alturas = etiquetasDelNivel(fila, 'lejos', 100).map((e) => e.origen[1])
-    expect(alturas[5]).toBeCloseTo(alturas[0], 9)
-    expect(largoEscalonado(10, 6)).toBeCloseTo(largoEscalonado(10, 1), 9)
+    expect(alturas[ESCALONES_ETIQUETAS]).toBeCloseTo(alturas[0], 9)
+    expect(largoEscalonado(10, ESCALONES_ETIQUETAS + 1)).toBeCloseTo(largoEscalonado(10, 1), 9)
   })
   it('ninguna vecina inmediata queda a la misma altura', () => {
     const alturas = etiquetasDelNivel(fila, 'lejos', 100).map((e) => e.origen[1])

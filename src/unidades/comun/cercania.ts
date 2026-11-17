@@ -6,6 +6,9 @@ export function estaCerca(distancia: number, tamano: number, yaCerca: boolean): 
   return distancia <= tamano * DISTANCIA_ANOTACIONES * (yaCerca ? HISTERESIS_ANOTACIONES : 1)
 }
 
+/** Con una estructura elegida en "Ir a", solo ella muestra sus cotas y etiquetas (las vecinas las guardan para no encimarse); sin ninguna elegida, o sin id, decide la distancia. */
+export const esLaEnfocada = (foco: string | null, id: string | undefined): boolean => foco === null || id === undefined || foco === id
+
 export interface BotonesAnotaciones {
   cotas: boolean
   etiquetas: boolean
