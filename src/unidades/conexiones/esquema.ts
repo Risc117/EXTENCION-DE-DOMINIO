@@ -31,6 +31,8 @@ const tramo = z.object({
   fuenteTrazado: z.string().min(1),
   cotaSalida: metros,
   cotaLlegada: metros,
+  /** true si el perfil muestra el tubo sobre un relleno: puede quedar más alto que el terreno levantado (T16.4.6). */
+  sobreRelleno: z.boolean().optional(),
 })
 
 export const esquemaConexiones = z

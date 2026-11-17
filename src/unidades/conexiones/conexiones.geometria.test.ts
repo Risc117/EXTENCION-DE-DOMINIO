@@ -33,7 +33,8 @@ describe('ninguna tubería atraviesa una estructura ni flota sobre el terreno', 
       const total = longitudTramo(t)
       for (const m of muestras(t)) {
         const sobre = m.cota - alturaTerreno(m.x, m.y)
-        expect(sobre, `${t.id} a ${m.distancia.toFixed(1)} m`).toBeLessThanOrEqual(1.7)
+        // Un tubo que el perfil muestra sobre un relleno (sobreRelleno) puede quedar más alto sobre el terreno levantado.
+        expect(sobre, `${t.id} a ${m.distancia.toFixed(1)} m`).toBeLessThanOrEqual(t.sobreRelleno ? 4.5 : 1.7)
         const lejosDeLosExtremos = m.distancia > 6 && total - m.distancia > 6
         if (lejosDeLosExtremos) expect(sobre, `${t.id} flota a ${m.distancia.toFixed(1)} m`).toBeLessThanOrEqual(0.05)
       }
@@ -46,6 +47,16 @@ describe('ninguna tubería atraviesa una estructura ni flota sobre el terreno', 
       expect(p[0].cota).toBeCloseTo(t.cotaSalida.valor, 6)
       expect(p[p.length - 1].cota).toBeCloseTo(t.cotaLlegada.valor, 6)
     }
+  })
+})
+
+describe('tubos sobre relleno (T16.4.6)', () => {
+  it('solo los tramos que el perfil muestra sobre un relleno pasan de 1.7 m sobre el terreno, y están marcados', () => {
+    for (const t of datos.tramos) {
+      const mayor = Math.max(...perfilTramo(t, 0.5).map((m) => m.cota - alturaTerreno(m.x, m.y)))
+      if (mayor > 1.7) expect(t.sobreRelleno, t.id).toBe(true)
+    }
+    expect(datos.tramos.filter((t) => t.sobreRelleno).map((t) => t.id)).toEqual(['T06'])
   })
 })
 

@@ -21,7 +21,7 @@ export function puntoObjetivo(d: DatosHomogeneizador, objetivo: Objetivo, nivel:
 
   switch (objetivo) {
     case 'ingreso':
-      return { punto: alrededor(radioExt + d.ingreso.distanciaRiser.valor * FRACCION_VALVULA_INGRESO, d.ingreso.altura.valor, direccionPuerto(d.ingreso.angulo.valor)), interior: false }
+      return { punto: alrededor(radioExt + PROLONGACION_TUBO * FRACCION_VALVULA_INGRESO, d.ingreso.altura.valor, direccionPuerto(d.ingreso.angulo.valor)), interior: false }
     case 'salida':
       return { punto: alrededor(afuera, d.salida.altura.valor, direccionPuerto(d.salida.angulo.valor)), interior: false }
     case 'rebose':

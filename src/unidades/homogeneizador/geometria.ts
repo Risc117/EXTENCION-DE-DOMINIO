@@ -66,14 +66,16 @@ export function construirPiezas(d: DatosHomogeneizador): Pieza[] {
       rotacion: [0, -fi, Math.PI / 2],
     }
   }
-  // Entrada: cruza el muro hasta el tubo vertical (el codo del perfil se simplifica a una esquina) que sube desde su pie hasta el eje.
+  // Entrada: llega alta y cruza el muro directo, hasta 1.5 m afuera (sin tubo vertical exterior); el único tramo vertical es el codo que baja hacia adentro.
   const p = puertos(d)
   const ing = d.ingreso
-  piezas.push(tuboMuro('ingreso', 'ingreso', p.ingreso.direccion, ing.diametro.valor, ing.altura.valor, ing.distanciaRiser.valor))
-  const topeRiser = ing.altura.valor + ing.diametro.valor / 2
+  piezas.push(tuboMuro('ingreso', 'ingreso', p.ingreso.direccion, ing.diametro.valor, ing.altura.valor))
+  const topeCodo = ing.altura.valor + ing.diametro.valor / 2
+  const largoCodo = ing.caidaInterior.valor + ing.diametro.valor / 2
+  const rCodo = radioInt - PROLONGACION_INTERIOR_TUBO
   piezas.push({
-    id: 'ingreso-subida', tipo: 'ingreso', forma: 'cilindro', radio: ing.diametro.valor / 2, largo: topeRiser - ing.alturaPie.valor,
-    posicion: [p.ingreso.pie[0], (ing.alturaPie.valor + topeRiser) / 2, p.ingreso.pie[1]], rotacion: SIN_GIRO,
+    id: 'ingreso-codo', tipo: 'ingreso', forma: 'cilindro', radio: ing.diametro.valor / 2, largo: largoCodo,
+    posicion: [rCodo * Math.cos(p.ingreso.direccion), topeCodo - largoCodo / 2, rCodo * Math.sin(p.ingreso.direccion)], rotacion: SIN_GIRO,
   })
   piezas.push(tuboMuro('salida', 'salida', p.salida.direccion, d.salida.diametro.valor, d.salida.altura.valor))
 

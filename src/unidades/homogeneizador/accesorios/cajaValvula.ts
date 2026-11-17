@@ -1,4 +1,4 @@
-import { FACTOR_CUERPO_VALVULA, FRACCION_VALVULA_INGRESO } from '../../../nucleo/constantes'
+import { FACTOR_CUERPO_VALVULA, FRACCION_VALVULA_INGRESO, PROLONGACION_TUBO } from '../../../nucleo/constantes'
 import type { DatosHomogeneizador } from '../esquema'
 import { direccionPuerto } from '../puertos'
 import { cilindroVertical, SIN_GIRO } from './cotas'
@@ -13,8 +13,8 @@ export function construirCajasValvula(d: DatosHomogeneizador): PiezaAccesorio[] 
   // El suelo real (el del terreno levantado): no la losa de techo, el tanque sale del suelo.
   const terreno = d.accesorios.terreno.nivelSuelo.valor
   const radioExt = d.tanque.diametroExterior.valor / 2
-  /** La entrada sale del muro solo hasta su tubo vertical: su válvula va sobre ese tramo. La salida usa la distancia del JSON. */
-  const distancia = { ingreso: Math.min(c.distanciaAlMuro.valor, d.ingreso.distanciaRiser.valor * FRACCION_VALVULA_INGRESO), salida: c.distanciaAlMuro.valor }
+  /** La válvula de la entrada va a la mitad del tubo que sale del muro. La salida usa la distancia del JSON. */
+  const distancia = { ingreso: Math.min(c.distanciaAlMuro.valor, PROLONGACION_TUBO * FRACCION_VALVULA_INGRESO), salida: c.distanciaAlMuro.valor }
   const piezas: PiezaAccesorio[] = []
   for (const [nombre, angulo, altura] of [['ingreso', d.ingreso.angulo.valor, d.ingreso.altura.valor], ['salida', d.salida.angulo.valor, d.salida.altura.valor]] as const) {
     const fi = direccionPuerto(angulo)

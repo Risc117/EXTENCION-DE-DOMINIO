@@ -571,15 +571,15 @@
       ],
       "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
       "cotaSalida": {
-        "valor": 2991.83,
+        "valor": 2991.17,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: fondo del Parshall (cotaFondo 2991.17 de datos/planta.json, medido del perfil): el tubo sale a esa altura; la cota del tubo no está en el perfil: POR CONFIRMAR",
         "demo": true
       },
       "cotaLlegada": {
-        "valor": 2989.82,
+        "valor": 2990.7,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: BZ-3: sobre la línea recta entre la salida del Parshall (2991.17) y el eje de la entrada del homogeneizador (2990.26), a la misma distancia que el buzón (6.1 de 11.9 m): 2990.70; derivado y de ejemplo, el perfil no da la cota del buzón: POR CONFIRMAR",
         "demo": true
       }
     },
@@ -605,26 +605,22 @@
           "y": -32.5
         },
         {
-          "x": -27.59,
-          "y": -31.88,
-          "cota": 2989.21
-        },
-        {
-          "x": -27.47,
-          "y": -25.88
+          "x": -27.74,
+          "y": -26.74
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; el último punto se llevó al pie del tubo vertical de entrada del homogeneizador (0.44 m más allá del extremo del DXF)",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; llega alto y con pendiente continua desde BZ-3 directo al muro, sin tramo vertical exterior (T16.4.6): el último punto se llevó al extremo del tubo de entrada del homogeneizador (0.4 m más allá del extremo del DXF); el perfil muestra la tubería sobre un relleno (el suelo del perfil baja de 2990.91 a 2988.82 hacia el muro, 1.4 m bajo el eje del tubo): POR CONFIRMAR las cotas intermedias",
       "cotaSalida": {
-        "valor": 2989.82,
+        "valor": 2990.7,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: BZ-3: sobre la línea recta entre la salida del Parshall (2991.17) y el eje de la entrada del homogeneizador (2990.26), a la misma distancia que el buzón (6.1 de 11.9 m): 2990.70; derivado y de ejemplo, el perfil no da la cota del buzón: POR CONFIRMAR",
         "demo": true
       },
+      "sobreRelleno": true,
       "cotaLlegada": {
-        "valor": 2986.5,
+        "valor": 2990.26,
         "unidad": "m",
-        "fuente": "derivado: pie del tubo vertical de entrada del homogeneizador (fondo 2985.25 + alturaPie 1.25 de datos/homogeneizador.json; derivado y de ejemplo, el perfil no da la cota del tubo enterrado: POR CONFIRMAR)",
+        "fuente": "derivado: eje del tubo de entrada del homogeneizador según el perfil (capa HOMOG-TUBERIA, 2990.26 = fondo 2985.25 + 5.01 de datos/homogeneizador.json); el perfil muestra el tubo sobre un relleno: la cota del tubo entre el buzón y el muro no está en el perfil: POR CONFIRMAR",
         "demo": true
       }
     },

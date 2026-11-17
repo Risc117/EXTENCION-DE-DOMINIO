@@ -22,7 +22,7 @@ describe('datos/homogeneizador.json (tanque circular)', () => {
   it('las medidas estimadas llevan demo: true y las del plano no', () => {
     const d = esquemaHomogeneizador.parse(crudo)
     expect(d.demo).toBe(true)
-    expect(d.ingreso.alturaPie.demo).toBe(true)
+    expect(d.ingreso.angulo.demo).toBe(true)
     expect(d.ingreso.altura.demo).toBe(false)
     expect(d.salida.altura.demo).toBe(false)
     expect(d.agitador.diametroZonaMezcla.demo).toBe(true)

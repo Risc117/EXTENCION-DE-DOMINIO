@@ -38,26 +38,35 @@ describe('T16.3 · puertos del homogeneizador (perfil real)', () => {
     expect(datos.salida.alturaEntradaRafa.fuente).toContain('POR CONFIRMAR')
   })
 
-  it('la cota de arranque del tubo vertical es derivada y de ejemplo, y queda por confirmar', () => {
-    expect(datos.ingreso.alturaPie.demo).toBe(true)
-    expect(datos.ingreso.alturaPie.fuente).toContain('derivado')
-    expect(datos.ingreso.alturaPie.fuente).toContain('POR CONFIRMAR')
+  it('T16.4.6 · no hay tubo vertical por fuera del muro: la entrada cruza el muro hasta 1.5 m y el único tramo vertical es el codo que baja hacia adentro', () => {
+    expect(piezas.some((q) => q.id === 'ingreso-subida')).toBe(false)
+    const h = pieza('ingreso')
+    const codo = pieza('ingreso-codo')
+    if (h.forma !== 'cilindro' || codo.forma !== 'cilindro') throw new Error('deben ser cilindros')
+    const p = puertos(datos)
+    const fi = -(datos.ingreso.angulo.valor * Math.PI) / 180
+    const radioInt = datos.tanque.diametroInterior.valor / 2
+    const radioExt = datos.tanque.diametroExterior.valor / 2
+    // El tubo horizontal termina a 1.5 m de la cara exterior, en el puerto.
+    expect(h.posicion[0] * Math.cos(fi) + h.posicion[2] * Math.sin(fi) + h.largo / 2).toBeCloseTo(radioExt + 1.5, 6)
+    expect(Math.hypot(...p.ingreso.fin)).toBeCloseTo(radioExt + 1.5, 6)
+    // El codo está dentro del tanque, arranca en el eje del tubo y baja `caidaInterior`.
+    expect(Math.hypot(codo.posicion[0], codo.posicion[2])).toBeLessThan(radioInt)
+    expect(codo.posicion[1] + codo.largo / 2).toBeCloseTo(datos.ingreso.altura.valor + datos.ingreso.diametro.valor / 2, 6)
+    expect(codo.largo).toBeCloseTo(datos.ingreso.caidaInterior.valor + datos.ingreso.diametro.valor / 2, 6)
+    // Ninguna otra pieza vertical de la entrada queda fuera del muro.
+    for (const q of piezas.filter((x) => x.tipo === 'ingreso' && x.forma === 'cilindro' && x.rotacion[2] === 0)) {
+      expect(Math.hypot(q.posicion[0], q.posicion[2]), q.id).toBeLessThan(radioInt)
+    }
   })
 
-  it('el tubo de entrada cruza el muro y llega al tubo vertical, que sube de su pie hasta el eje del tubo, sin huecos', () => {
-    const h = pieza('ingreso')
-    const v = pieza('ingreso-subida')
-    if (h.forma !== 'cilindro' || v.forma !== 'cilindro') throw new Error('deben ser cilindros')
-    const p = puertos(datos)
-    // El tubo horizontal termina en el eje del vertical.
-    const fi = -(datos.ingreso.angulo.valor * Math.PI) / 180
-    const radioExt = datos.tanque.diametroExterior.valor / 2
-    const extremo = h.posicion[0] * Math.cos(fi) + h.posicion[2] * Math.sin(fi) + h.largo / 2
-    expect(extremo).toBeCloseTo(radioExt + datos.ingreso.distanciaRiser.valor, 6)
-    expect(v.posicion[0]).toBeCloseTo(p.ingreso.pie[0], 6)
-    expect(v.posicion[2]).toBeCloseTo(p.ingreso.pie[1], 6)
-    expect(v.posicion[1] - v.largo / 2).toBeCloseTo(datos.ingreso.alturaPie.valor, 6)
-    expect(v.posicion[1] + v.largo / 2).toBeCloseTo(datos.ingreso.altura.valor + datos.ingreso.diametro.valor / 2, 6)
+  it('el codo baja desde el eje (2990.26) hasta 2989.40, la cota del perfil donde el dibujo lo interrumpe (0.86 m); su lugar (adentro) es indicación del usuario y el DXF lo dibuja afuera: queda por confirmar', () => {
+    expect(datos.ingreso.caidaInterior.valor).toBeCloseTo(2990.26 - 2989.4, 6)
+    const codo = pieza('ingreso-codo')
+    if (codo.forma !== 'cilindro') throw new Error('debe ser un cilindro')
+    expect(2985.25 + codo.posicion[1] - codo.largo / 2).toBeCloseTo(2989.4, 6)
+    expect(datos.ingreso.caidaInterior.fuente).toContain('POR CONFIRMAR')
+    expect(datos.ingreso.caidaInterior.fuente).toContain('HOMOG-TUBERIA')
   })
 
   it('la salida sale por el muro y su tubo termina a 1.5 m de la cara exterior', () => {
@@ -69,17 +78,33 @@ describe('T16.3 · puertos del homogeneizador (perfil real)', () => {
     expect(s.posicion[0] * Math.cos(fi) + s.posicion[2] * Math.sin(fi) + s.largo / 2).toBeCloseTo(Math.hypot(...p.salida.fin), 6)
   })
 
-  it('el último punto de T06 cae a menos de 10 cm del pie del tubo vertical y el primero de T07, del extremo del tubo de salida', () => {
+  it('el último punto de T06 cae a menos de 10 cm del extremo del tubo de entrada y el primero de T07, del extremo del tubo de salida', () => {
     const p = puertos(datos)
     const fin = tramo('T06').trazado[tramo('T06').trazado.length - 1]
-    expect(distancia(fin, aPlano(p.ingreso.pie))).toBeLessThan(0.1)
+    expect(distancia(fin, aPlano(p.ingreso.fin))).toBeLessThan(0.1)
     expect(distancia(tramo('T07').trazado[0], aPlano(p.salida.fin))).toBeLessThan(0.1)
   })
 
-  it('las cotas de esos extremos salen del perfil: T06 llega al pie del tubo vertical y T07 sale a la altura del eje de salida', () => {
+  it('las cotas salen del perfil: T06 llega a la altura del eje de entrada (2990.26) y T07 sale a la del eje de salida (2986.675)', () => {
     const fondo = 2985.25
-    expect(tramo('T06').cotaLlegada.valor).toBeCloseTo(fondo + datos.ingreso.alturaPie.valor, 2)
+    expect(tramo('T06').cotaLlegada.valor).toBeCloseTo(fondo + datos.ingreso.altura.valor, 2)
     expect(tramo('T07').cotaSalida.valor).toBeCloseTo(fondo + datos.salida.altura.valor, 2)
+  })
+
+  it('T06 no tiene ningún tramo vertical: llega con pendiente continua desde el buzón anterior (BZ-3), sin vértices intermedios, y está marcado sobre relleno por confirmar', () => {
+    const t = tramo('T06')
+    expect(t.trazado).toHaveLength(2)
+    expect(t.desde).toBe('BZ-3')
+    const largo = distancia(t.trazado[0], t.trazado[1])
+    expect(largo).toBeGreaterThan(3)
+    const pendiente = Math.abs(t.cotaLlegada.valor - t.cotaSalida.valor) / largo
+    expect(pendiente).toBeLessThan(0.15)
+    // Baja hacia el tanque: la pendiente va del buzón (más alto) al muro.
+    expect(t.cotaSalida.valor).toBeGreaterThan(t.cotaLlegada.valor)
+    expect(t.cotaSalida.valor).toBeCloseTo(tramo('T05').cotaLlegada.valor, 6)
+    expect(t.sobreRelleno).toBe(true)
+    expect(t.fuenteTrazado).toContain('relleno')
+    expect(t.fuenteTrazado).toContain('POR CONFIRMAR')
   })
 
   it('las cajas de válvula y las flechas de las etiquetas siguen a los puertos', () => {
@@ -92,9 +117,9 @@ describe('T16.3 · puertos del homogeneizador (perfil real)', () => {
     expect(punto[1]).toBeCloseTo(datos.salida.altura.valor, 6)
   })
 
-  it('la válvula de la entrada cae sobre su tubo horizontal (no más lejos que el tubo vertical), sin caja ni varilla (va por el aire), y la flecha apunta a ella', () => {
+  it('la válvula de la entrada cae sobre su tubo horizontal (dentro de los 1.5 m que salen del muro), sin caja ni varilla (va por el aire), y la flecha apunta a ella', () => {
     const radioExt = datos.tanque.diametroExterior.valor / 2
-    const alcance = radioExt + datos.ingreso.distanciaRiser.valor
+    const alcance = radioExt + 1.5
     const piezasAcc = construirCajasValvula(datos)
     expect(piezasAcc.some((c) => c.id === 'caja-valvula-ingreso' || c.id === 'varilla-ingreso')).toBe(false)
     for (const id of ['valvula-ingreso']) {

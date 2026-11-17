@@ -8,8 +8,8 @@ import { positivo } from '../comun/medidas'
 const tubo = z.object({ diametro: medida, altura: medida })
 /** Dirección (grados antihorarios desde el este, vista en planta) en que el tubo sale del muro. */
 const angulo = positivo('grados')
-/** Entrada: sube por un tubo vertical a `distanciaRiser` del muro, desde `alturaPie` hasta su eje (T16.3). */
-const ingreso = tubo.extend({ angulo, distanciaRiser: medida, alturaPie: medida })
+/** Entrada: llega alta, con pendiente suave, directo al muro; el único tramo vertical es el codo que baja `caidaInterior` hacia adentro (T16.4.6). */
+const ingreso = tubo.extend({ angulo, caidaInterior: medida })
 /** Salida: `alturaEntradaRafa` es la altura del eje del tubo donde llega a la caja de distribución del RAFA. */
 const salida = tubo.extend({ angulo, alturaEntradaRafa: medida })
 
@@ -53,7 +53,7 @@ export const esquemaHomogeneizador = z.object({
   accesorios: esquemaAccesorios,
   anotaciones: esquemaAnotaciones,
 })
-  .refine((d) => d.ingreso.alturaPie.valor < d.ingreso.altura.valor, 'El pie del tubo vertical debe quedar más bajo que el eje del tubo de entrada')
+  .refine((d) => d.ingreso.caidaInterior.valor < d.ingreso.altura.valor, 'El codo de la entrada debe quedar sobre el fondo')
   .superRefine((d, ctx) => {
     const problema = revisarAccesorios(d)
     if (problema) ctx.addIssue({ code: 'custom', message: problema, path: ['accesorios'] })
