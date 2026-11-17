@@ -4,3 +4,5 @@ dist
 .env.*
 *.log
 ptar-homogeneizador.zip
+insumos/
+.claude/settings.local.json
