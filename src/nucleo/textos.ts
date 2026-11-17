@@ -134,3 +134,18 @@ export const TEXTO_TERRENO = {
   unidad: 'm s.n.m.',
   muroEjemplo: 'altura del muro',
 }
+
+/** Tarjeta de una estructura y diagrama de bloques de la línea de agua (T18). */
+export const TEXTO_TARJETA = {
+  entra: 'Caudal que entra',
+  sale: 'Caudal que sale',
+  retencion: 'Tiempo de retención',
+  nivel: 'Nivel de agua',
+  nivelNoSimula: 'no se simula',
+  sinRetencion: 'no aplica',
+  sinDato: '—',
+  sinCaudal: 'Sin caudal de agua en la línea: esta estructura no está en el recorrido del agua (los lodos van en otro ticket).',
+  cerrar: 'Cerrar tarjeta',
+  diagrama: 'Línea de agua (caudales en vivo)',
+  salida: 'Salida de agua tratada',
+}

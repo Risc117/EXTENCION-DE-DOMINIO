@@ -24,12 +24,17 @@ export interface ResultadoLinea {
 export interface OpcionesLinea {
   /** Medidas del homogeneizador (salen de datos/homogeneizador.json). */
   tanque: ParametrosTanque
-  modo: ModoSalida
+  /** Modo de salida del homogeneizador; puede ser una función para seguir los cambios de la interfaz. */
+  modo: ModoSalida | (() => ModoSalida)
+  /** Caudal de salida elegido a mano (L/s), o null para usar el promedio del día. */
+  ajuste?: () => number | null
 }
 
 export interface Linea {
   /** Avanza `dt` segundos con el caudal `entrada` (L/s); `promedioDia` solo lo usa el homogeneizador en modo constante. */
   paso: (entrada: number, dt: number, promedioDia: number) => ResultadoLinea
+  /** Vuelve todo al arranque: tanque vacío y sin caudales en tránsito. */
+  reiniciar: () => void
 }
 
 interface Unidad {
@@ -50,7 +55,7 @@ function crearUnidad(n: DatosNodo, o: OpcionesLinea, estado: EstadoTanque): Unid
       id: n.id,
       destinos: n.destinos,
       transferir: (q, dt, promedio) => {
-        const deseado = caudalSalida(o.modo, estado.volumen / o.tanque.area, promedio, null, o.tanque)
+        const deseado = caudalSalida(typeof o.modo === 'function' ? o.modo() : o.modo, estado.volumen / o.tanque.area, promedio, o.ajuste?.() ?? null, o.tanque)
         const r = pasoBalance(estado.volumen, q, deseado, dt, o.tanque)
         estado.volumen = r.volumen
         estado.rebose = r.caudalRebose
@@ -66,7 +71,8 @@ function crearUnidad(n: DatosNodo, o: OpcionesLinea, estado: EstadoTanque): Unid
 export function crearLinea(crudo: unknown, opciones: OpcionesLinea): Linea {
   const datos = esquemaLinea.parse(crudo)
   const estado: EstadoTanque = { volumen: 0, rebose: 0 }
-  const unidades = datos.nodos.map((n) => crearUnidad(n, opciones, estado))
+  const construir = () => datos.nodos.map((n) => crearUnidad(n, opciones, estado))
+  let unidades = construir()
   const ultima = datos.nodos[datos.nodos.length - 1].id
   return {
     paso(entradaPlanta, dt, promedioDia) {
@@ -85,6 +91,11 @@ export function crearLinea(crudo: unknown, opciones: OpcionesLinea): Linea {
         nivel: estado.volumen / opciones.tanque.area,
         rebose: estado.rebose,
       }
+    },
+    reiniciar() {
+      estado.volumen = 0
+      estado.rebose = 0
+      unidades = construir()
     },
   }
 }

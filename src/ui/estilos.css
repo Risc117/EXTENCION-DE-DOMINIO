@@ -83,3 +83,17 @@ canvas { touch-action: none; }
 .cajon__grupo[open] > summary { margin-bottom: 4px; }
 .cajon .panel-corte, .cajon .panel-calidad { padding: 4px 0; background: transparent; }
 .cajon .panel-unidades { padding: 0; background: transparent; max-height: 30vh; }
+.tarjeta-unidad { position: fixed; top: 56px; right: 12px; width: 260px; padding: 10px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.9rem; }
+.tarjeta-unidad header { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.tarjeta-unidad h2 { margin: 0; font-size: 1rem; }
+.tarjeta-unidad button { padding: 2px 8px; border: 0; border-radius: 6px; font: inherit; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }
+.tarjeta-unidad dl { display: grid; grid-template-columns: auto auto; gap: 4px 12px; margin: 8px 0 0; }
+.tarjeta-unidad dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.tarjeta-unidad p { margin: 8px 0 0; }
+.diagrama-linea { position: fixed; bottom: 44px; left: 50%; transform: translateX(-50%); max-width: calc(100vw - 340px); padding: 6px 10px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.8rem; overflow-x: auto; }
+.diagrama-linea > summary { cursor: pointer; font-weight: 600; }
+.diagrama-linea__rejilla { display: grid; grid-auto-columns: minmax(78px, auto); gap: 6px 14px; margin-top: 6px; }
+.diagrama-linea__caja { display: flex; flex-direction: column; align-items: center; padding: 4px 6px; border: 0; border-radius: 6px; font: inherit; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); position: relative; }
+.diagrama-linea__caja small { font-variant-numeric: tabular-nums; opacity: 0.85; }
+.diagrama-linea__caja[aria-pressed='true'] { outline: 2px solid var(--color-etiqueta-linea); font-weight: 700; }
+@media (max-width: 700px) { .tarjeta-unidad { top: auto; bottom: 44px; right: 12px; left: 12px; width: auto; } .diagrama-linea { display: none; } }

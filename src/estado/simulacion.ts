@@ -57,6 +57,8 @@ interface EstadoSim extends Medidas {
   /** La simulación publica sus resultados aquí. */
   publicar: (m: Partial<Medidas> & { promedioDia?: number; escalaCaudal?: EscalaCaudal | null }) => void
   reiniciar: () => void
+  /** Cuántas veces se volvió al arranque (al elegir un día o reiniciar): la línea de agua también se reinicia. */
+  reinicios: number
 }
 
 const inicio = {
@@ -78,7 +80,8 @@ export const useSim = create<EstadoSim>((set) => ({
   fijarTanque: (tanque) => set({ tanque }),
   diasDisponibles: [],
   fijarDias: (diasDisponibles) => set({ diasDisponibles }),
-  elegirDia: (dia) => set({ ...inicio, dia }),
+  elegirDia: (dia) => set((s) => ({ ...inicio, dia, reinicios: s.reinicios + 1 })),
+  reinicios: 0,
   corriendo: true,
   alternarCorriendo: () => set((s) => ({ corriendo: !s.corriendo })),
   velocidad: VELOCIDAD_INICIAL,
@@ -87,5 +90,5 @@ export const useSim = create<EstadoSim>((set) => ({
   fijarModoSalida: (modoSalida) => set({ modoSalida }),
   fijarSalidaAjuste: (salidaAjuste) => set({ salidaAjuste }),
   publicar: (m) => set(m),
-  reiniciar: () => set({ ...inicio, corriendo: true, velocidad: VELOCIDAD_INICIAL, modoSalida: 'constante' }),
+  reiniciar: () => set((s) => ({ ...inicio, corriendo: true, velocidad: VELOCIDAD_INICIAL, modoSalida: 'constante', reinicios: s.reinicios + 1 })),
 }))

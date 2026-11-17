@@ -5,6 +5,7 @@ import { useSim } from '../estado/simulacion'
 import { avanzar } from './avanzar'
 import { avanzarCarcamo } from './carcamo'
 import { hidrograma } from './hidrogramaCargado'
+import { crearLineaEnVivo } from './lineaEnVivo'
 
 /** Arranca el reloj de la simulación. Se llama una vez, desde App. */
 export function useSimulacion() {
@@ -28,6 +29,7 @@ export function useSimulacion() {
       }
     })
 
+    const lineaEnVivo = crearLineaEnVivo()
     let cuadro = 0
     let ultimo = performance.now()
     const bucle = (ahora: number) => {
@@ -37,6 +39,7 @@ export function useSimulacion() {
       if (s.corriendo && s.tanque && dtReal > 0) {
         const medidas = avanzar(hidrograma, s.tanque, { dia: s.dia, modo: s.modoSalida, ajuste: s.salidaAjuste }, s, dtReal * s.velocidad)
         s.publicar(medidas)
+        lineaEnVivo(ahora, s, dtReal * s.velocidad)
         const b = useBombeo.getState()
         if (b.parametros) b.publicar(avanzarCarcamo(b, b.parametros, medidas.caudalEntrada, dtReal * s.velocidad))
       }

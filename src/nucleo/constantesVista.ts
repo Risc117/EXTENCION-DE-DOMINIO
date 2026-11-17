@@ -8,3 +8,6 @@ export const HISTERESIS_ANOTACIONES = 1.15
 export const DISTANCIA_ETIQUETA_TUBERIA = 30
 /** Tamaño (m) que se supone a una unidad que no dice el suyo. */
 export const TAMANO_UNIDAD_SUPUESTO = 10
+
+/** Cada cuántos milisegundos se publican a la interfaz los caudales de cada unidad de la línea de agua (T18). */
+export const INTERVALO_PUBLICACION_LINEA_MS = 200
