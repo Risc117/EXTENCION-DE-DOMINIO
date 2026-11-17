@@ -1,0 +1,38 @@
+{
+  "id": "perfil",
+  "fuente": "Recorrido de la línea de agua del plano general PTAR-PICOY (plan.md, sección 10) y de datos/linea.json: entrada → EB-1 → impulsión → pretratamiento → homogeneizador → RAFA → percolador → cámara de reparto → un sedimentador secundario → cámara de contacto → descarga al río. Las cotas salen de datos/conexiones.json y datos/planta.json (de ejemplo mientras la tabla del perfil del plano esté vacía).",
+  "demo": true,
+  "cadena": [
+    { "tipo": "tramo", "id": "T01" },
+    { "tipo": "hueco", "unidades": ["bombeo"] },
+    { "tipo": "tramo", "id": "T02" },
+    { "tipo": "tramo", "id": "T03" },
+    { "tipo": "tramo", "id": "T04" },
+    { "tipo": "hueco", "unidades": ["rejas", "desarenador", "parshall"] },
+    { "tipo": "tramo", "id": "T05" },
+    { "tipo": "tramo", "id": "T06" },
+    { "tipo": "hueco", "unidades": ["homogeneizador"] },
+    { "tipo": "tramo", "id": "T07" },
+    { "tipo": "tramo", "id": "T08" },
+    { "tipo": "hueco", "unidades": ["rafa"] },
+    { "tipo": "tramo", "id": "T09" },
+    { "tipo": "tramo", "id": "T10" },
+    { "tipo": "hueco", "unidades": ["percolador"] },
+    { "tipo": "tramo", "id": "T11" },
+    { "tipo": "tramo", "id": "T12" },
+    { "tipo": "hueco", "unidades": ["camara-reparto"] },
+    { "tipo": "tramo", "id": "T13" },
+    { "tipo": "tramo", "id": "T14" },
+    { "tipo": "hueco", "unidades": ["sedimentador-1"] },
+    { "tipo": "tramo", "id": "T16" },
+    { "tipo": "tramo", "id": "T18" },
+    { "tipo": "hueco", "unidades": ["camara-contacto"] },
+    { "tipo": "tramo", "id": "T19" },
+    { "tipo": "tramo", "id": "T20" },
+    { "tipo": "tramo", "id": "T21" }
+  ],
+  "gemelos": {
+    "tramos": ["T15", "T17"],
+    "fuente": "Segundo sedimentador secundario (idéntico al primero): sus tramos de entrada y salida repiten el perfil del primero y no se dibujan aparte."
+  }
+}

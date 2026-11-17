@@ -11,6 +11,7 @@ import { PanelDemo } from './ui/PanelDemo'
 import { PanelGestos } from './ui/PanelGestos'
 import { PanelHerramientas } from './ui/PanelHerramientas'
 import { PanelLodosBiogas } from './ui/PanelLodosBiogas'
+import { PanelPerfil } from './ui/PanelPerfil'
 import { PanelSimulacion } from './ui/PanelSimulacion'
 import { TarjetaUnidad } from './ui/TarjetaUnidad'
 
@@ -31,7 +32,10 @@ export function App() {
       <PanelAjusteGestos />
       <PanelSimulacion />
       <TarjetaUnidad />
-      <DiagramaLinea />
+      <div className="paneles-centro">
+        <PanelPerfil />
+        <DiagramaLinea />
+      </div>
       <div className="paneles-derecha">
         <PanelCalidadAgua />
         <PanelLodosBiogas />

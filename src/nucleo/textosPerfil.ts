@@ -1,0 +1,22 @@
+/** Perfil hidráulico (T21). */
+export const TEXTO_PERFIL = {
+  titulo: 'Perfil hidráulico (corte longitudinal)',
+  notaEjemplo: (marca: string) => `Las cotas de tuberías y buzones son de ejemplo (${marca}); la tabla del perfil del plano está vacía.`,
+  ejeX: 'Progresiva: metros recorridos desde la entrada de agua residual',
+  ejeY: 'Cota (m s.n.m.)',
+  terreno: 'Terreno (línea discontinua)',
+  tubo: 'Tuberías, cota de fondo (línea continua)',
+  paso: 'Paso por una unidad (línea de puntos)',
+  unidad: 'Unidad, de fondo a coronación (barra)',
+  agua: 'Nivel de agua en vivo (barra azul)',
+  buzon: 'Buzón (raya vertical)',
+  tabla: 'Tabla del perfil',
+  progresiva: 'Progresiva (m)',
+  elemento: 'Elemento',
+  cotas: 'Cotas',
+  separador: ' · ',
+  rangoUnidad: (fondo: string, corona: string) => `${fondo} a ${corona} m`,
+  cotasBuzon: (tapa: string, fondo: string) => `tapa ${tapa} m, fondo ${fondo} m`,
+  tooltipBuzon: (id: string, cotas: string, marca: string | null) => `${id}: ${cotas}${marca ? ` · ${marca}` : ''}`,
+  tooltipUnidad: (nombre: string, rango: string, marca: string | null) => `${nombre}: ${rango}${marca ? ` · ${marca}` : ''}`,
+}

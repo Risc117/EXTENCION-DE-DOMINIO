@@ -6,7 +6,9 @@ import { App } from './App'
 import { useEstado } from './estado/almacen'
 import { useBombeo } from './estado/bombeo'
 import { useFlujo } from './estado/flujo'
+import { usePerfil } from './estado/perfil'
 import { useSim } from './estado/simulacion'
+import { perfilPlanta } from './unidades/conexiones'
 import { unidades } from './unidades/registro'
 
 useEstado.getState().fijarDatosDemo(unidades.some((u) => u.demo))
@@ -17,6 +19,8 @@ const bombeo = unidades.find((u) => u.bombeo)?.bombeo
 if (bombeo) useBombeo.getState().fijarParametros(bombeo)
 const flujo = unidades.find((u) => u.flujo)?.flujo
 if (flujo) useFlujo.getState().fijarFlujo(flujo)
+
+usePerfil.getState().publicar(perfilPlanta())
 
 createRoot(document.getElementById('raiz')!).render(
   <StrictMode>
