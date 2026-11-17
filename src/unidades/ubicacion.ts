@@ -9,7 +9,7 @@ export interface UbicacionEscena {
 export const SIN_UBICACION: UbicacionEscena = { posicion: [0, 0, 0], giro: 0 }
 
 /** Gira un vector alrededor de Y como lo hace three.js (rotation.y = giro). */
-function girar([x, y, z]: Vec3, giro: number): Vec3 {
+export function girar([x, y, z]: Vec3, giro: number): Vec3 {
   const c = Math.cos(giro)
   const s = Math.sin(giro)
   return [x * c + z * s, y, -x * s + z * c]

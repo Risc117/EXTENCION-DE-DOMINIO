@@ -11,7 +11,7 @@ import { opacidadPieza } from './opacidad'
 import { Particulas } from './Particulas'
 import { Remolino } from './Remolino'
 import { useOpacidadCorte } from '../comun/useOpacidadCorte'
-import { usePlanosCorteTanque } from './corte'
+import { usePlanosCorte } from '../comun/usePlanosCorte'
 
 const COLOR: Record<TipoPieza, string> = {
   solado: '--color-solado',
@@ -29,7 +29,7 @@ const COLOR: Record<TipoPieza, string> = {
 export function Homogeneizador({ datos }: { datos: DatosHomogeneizador }) {
   const piezas = useMemo(() => construirPiezas(datos), [datos])
   const radio = datos.tanque.diametroInterior.valor / 2
-  const planos = usePlanosCorteTanque(radio)
+  const planos = usePlanosCorte(radio)
   const opacidadMuros = useOpacidadCorte()
   return (
     <group>

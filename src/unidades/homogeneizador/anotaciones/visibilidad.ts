@@ -1,10 +1,11 @@
 import { MARGEN_OCLUSION } from '../../../nucleo/constantes'
-import { planoCorte } from '../../comun/corte'
+import { planoCorteLocal } from '../../comun/corte'
+import type { UbicacionEscena } from '../../ubicacion'
 import type { Vec3 } from '../../comun/tiposAnotaciones'
 
-/** true si el corte deja ese punto fuera (mismo plano que usa el recorte de las piezas). */
-export function quedaCortado(punto: Vec3, activo: boolean, posicion: number, radio: number): boolean {
-  const p = planoCorte(activo, posicion, radio)
+/** true si el corte deja ese punto (en el eje de la unidad) fuera: es el mismo plano común que usa el recorte de las piezas. */
+export function quedaCortado(punto: Vec3, activo: boolean, posicion: number, radio: number, ubicacion: UbicacionEscena): boolean {
+  const p = planoCorteLocal(activo, posicion, radio, ubicacion)
   if (!p) return false
   return p.normal[0] * punto[0] + p.normal[1] * punto[1] + p.normal[2] * punto[2] + p.constante < 0
 }

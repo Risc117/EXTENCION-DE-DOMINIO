@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest'
+import { GIRO_CORTE_COMUN } from '../../comun/corte'
 import { filtrarPorCalidad, quedaCortado, tapaElTanque } from './visibilidad'
+
+/** Una unidad con el giro común del corte: su eje propio coincide con el del plano (los números de abajo son los de siempre). */
+const UBICACION = { posicion: [0, 0, 0] as [number, number, number], giro: GIRO_CORTE_COMUN }
 
 const R = 3.99
 const Y_MIN = 0
@@ -7,12 +11,12 @@ const Y_MAX = 5.55
 
 describe('quedaCortado', () => {
   it('sin corte nada queda cortado', () => {
-    expect(quedaCortado([0, 1, 3], false, 0, 3.79)).toBe(false)
+    expect(quedaCortado([0, 1, 3], false, 0, 3.79, UBICACION)).toBe(false)
   })
   it('con corte se oculta lo que está del lado +z del plano', () => {
-    expect(quedaCortado([0, 1, 1], true, 0, 3.79)).toBe(true)
-    expect(quedaCortado([0, 1, -1], true, 0, 3.79)).toBe(false)
-    expect(quedaCortado([0, 1, 1], true, 0.5, 3.79)).toBe(false)
+    expect(quedaCortado([0, 1, 1], true, 0, 3.79, UBICACION)).toBe(true)
+    expect(quedaCortado([0, 1, -1], true, 0, 3.79, UBICACION)).toBe(false)
+    expect(quedaCortado([0, 1, 1], true, 0.5, 3.79, UBICACION)).toBe(false)
   })
 })
 

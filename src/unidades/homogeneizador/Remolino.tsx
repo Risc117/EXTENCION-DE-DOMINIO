@@ -6,7 +6,7 @@ import { ESPIRAL, OPACIDAD_REMOLINO } from '../../nucleo/constantes'
 import { leerColor } from '../../nucleo/colores'
 import { useSim } from '../../estado/simulacion'
 import { puntosEspiral } from '../comun/corte'
-import { usePlanosCorteTanque } from './corte'
+import { usePlanosCorte } from '../comun/usePlanosCorte'
 
 interface Props {
   radioZona: number
@@ -19,7 +19,7 @@ export function Remolino({ radioZona, altura, radioTanque }: Props) {
   const grupo = useRef<Group>(null)
   const nivel = useSim((s) => s.nivel)
   const puntos = useMemo(() => puntosEspiral(radioZona), [radioZona])
-  const planos = usePlanosCorteTanque(radioTanque)
+  const planos = usePlanosCorte(radioTanque)
 
   useFrame((_, dt) => {
     if (grupo.current && useSim.getState().corriendo) grupo.current.rotation.y += ESPIRAL.giro * dt

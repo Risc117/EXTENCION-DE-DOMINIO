@@ -1,6 +1,7 @@
 import { ESPIRAL } from '../../nucleo/constantes'
 import { OPACIDAD_CANAL } from '../../nucleo/constantesCanales'
-import { planoAMundo, type UbicacionEscena } from '../ubicacion'
+import { planta } from '../planta'
+import { girar, planoAMundo, type PlanoLocal, type UbicacionEscena } from '../ubicacion'
 
 export interface PlanoCorte {
   normal: [number, number, number]
@@ -17,13 +18,24 @@ export function planoCorte(activo: boolean, posicion: number, radio: number): Pl
 }
 
 /**
- * Plano del corte en el mundo (el que pide three.js). Por defecto es el eje local de la unidad (gira con ella);
- * `giroCorte` (rad) lo arma como si la unidad tuviera ese giro, para que quite la misma mitad del mundo que otra unidad.
+ * Giro (rad) con el que TODAS las unidades arman su plano de corte: el del RAFA (datos/planta.json). Así todas quitan la misma mitad del mundo
+ * (la este) y dejan la misma cara cortada, sin depender del giro de cada una (T16.4.3).
  */
-export function planoCorteMundo(activo: boolean, posicion: number, radio: number, ubicacion: UbicacionEscena, giroCorte?: number) {
+export const GIRO_CORTE_COMUN = (planta.unidades.find((u) => u.id === 'rafa')!.giro.valor * Math.PI) / 180
+
+/** Plano del corte en el mundo (el que pide three.js): el mismo para todas las unidades, pasando por el centro de la unidad que lo pide. */
+export function planoCorteMundo(activo: boolean, posicion: number, radio: number, ubicacion: UbicacionEscena): PlanoLocal | null {
   const local = planoCorte(activo, posicion, radio)
   if (!local) return null
-  return planoAMundo(local, giroCorte === undefined ? ubicacion : { ...ubicacion, giro: giroCorte })
+  return planoAMundo(local, { ...ubicacion, giro: GIRO_CORTE_COMUN })
+}
+
+/** El mismo plano, expresado en el eje propio de la unidad (para decidir qué etiquetas quedan cortadas). */
+export function planoCorteLocal(activo: boolean, posicion: number, radio: number, ubicacion: UbicacionEscena): PlanoLocal | null {
+  const mundo = planoCorteMundo(activo, posicion, radio, ubicacion)
+  if (!mundo) return null
+  const [px, py, pz] = ubicacion.posicion
+  return { normal: girar(mundo.normal, -ubicacion.giro), constante: mundo.constante + mundo.normal[0] * px + mundo.normal[1] * py + mundo.normal[2] * pz }
 }
 
 /** Opacidad de los muros y techos con el corte: opacos sin "Ver corte" (undefined) y translúcidos con él. Es el criterio de todas las unidades. */

@@ -35,7 +35,7 @@ export function useVisibles(candidatos: Candidato[], limites: LimitesTanque, act
     const corte = useCorte.getState()
     const cam = aLocal([camara.position.x, camara.position.y, camara.position.z], ubicacion)
     const ids = candidatos
-      .filter((c) => !quedaCortado(c.anclaje, corte.activo, corte.posicion, limites.radioInterior))
+      .filter((c) => !quedaCortado(c.anclaje, corte.activo, corte.posicion, limites.radioInterior, ubicacion))
       .filter((c) => !c.tapable || !tapaElTanque(cam, c.anclaje, limites.radioExterior, limites.yMin, limites.yMax))
       .map((c) => c.id)
     const nueva = ids.join('|')
