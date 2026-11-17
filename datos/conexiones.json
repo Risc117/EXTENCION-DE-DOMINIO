@@ -740,34 +740,34 @@
       },
       "trazado": [
         {
-          "x": -17.99,
-          "y": -0.7
-        },
-        {
-          "x": -19.27,
-          "y": 5.16,
-          "cota": 2983.4
+          "x": -21.5,
+          "y": 7.49
         },
         {
           "x": -20.0,
           "y": 8.5,
-          "cota": 2983.4
+          "cota": 2984.83
         },
         {
           "x": -19.45,
           "y": 12.2,
-          "cota": 2982.99
+          "cota": 2983.18
+        },
+        {
+          "x": -19.15,
+          "y": 12.53,
+          "cota": 2982.85
         },
         {
           "x": -18.0,
           "y": 13.8
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; POR CONFIRMAR: el primer tramo (de la cara este de la cámara de efluente del RAFA, centrada sobre A-A, hasta (−20.0, 8.5), unos 9.4 m) lo prolongué yo (T16.4.5): el DXF (plano general) arrancaba el efluente en (−20.0, 8.5), cerca del extremo norte, y el plano de detalle pone la cámara en el lado este; desde ahí sigue el trazado del DXF",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; arranca en el centro del muro del extremo corto norte del RAFA (el más cercano a BZ-5), a 1.8 m del arranque del DXF; ese primer tramo (de (−21.50, 7.49) a (−20.0, 8.5)) lo prolongué yo; desde ahí sigue el trazado del DXF (capa PTAR-TUBERIA, plano general). POR CONFIRMAR: el plano general saca el efluente del extremo corto, y las líneas del DXF terminan a 1.1 m del muro y 1.4 m al este del eje (no en el centro); el plano de detalle del RAFA pone la cámara de efluente en el lado largo este, centrada sobre A-A (T16.4.4); se sigue el plano general por indicación del usuario (T16.4.7)",
       "cotaSalida": {
-        "valor": 2984.36,
+        "valor": 2985.45,
         "unidad": "m",
-        "fuente": "derivado: eje de las salidas de la cámara de efluente del RAFA (fondo 2977.9 + muros 7.25 − 0.79 de recolección superior de datos/rafa.json = 2984.36); alturas de ejemplo de la cámara: POR CONFIRMAR",
+        "fuente": "derivado: altura del efluente del perfil: la etiqueta \"Efluente\" del RAFA (capa RAFA-TEXTO, insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf) está en la cota 2985.45; el perfil no dibuja el tubo y, en las otras flechas del perfil, la etiqueta queda 0.2 a 0.4 m sobre el eje del tubo: POR CONFIRMAR",
         "demo": true
       },
       "cotaLlegada": {

@@ -7,7 +7,10 @@ export function puertoAfluente(d: DatosRafa): [number, number] {
   return [0, -(disponer(d).semiAncho + d.distribucion.caja.ancho.valor + PROLONGACION_TUBO)]
 }
 
-/** Cara este de la cámara de efluente, sobre A-A: punto [x, z] (m, locales) por donde sale el efluente. */
-export function puertoEfluente(d: DatosRafa): [number, number] {
-  return [0, disponer(d).semiAncho + d.efluente.anchoCamara.valor]
+/**
+ * Centro del muro del extremo corto norte (el más cercano a BZ-5): punto [x, z] (m, locales) por donde el plano general (DXF) saca el efluente.
+ * El plano de detalle lo pone en la cámara del lado largo este: la diferencia queda POR CONFIRMAR (T16.4.7).
+ */
+export function puertoEfluenteExtremo(d: DatosRafa): [number, number] {
+  return [disponer(d).semiLargo, 0]
 }

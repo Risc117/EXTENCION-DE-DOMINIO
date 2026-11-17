@@ -6,7 +6,7 @@ import { construirEtiquetas } from './anotaciones'
 import { disponer } from './disposicion'
 import { esquemaRafa } from './esquema'
 import { construirPiezas } from './geometria'
-import { puertoAfluente, puertoEfluente } from './puertos'
+import { puertoAfluente, puertoEfluenteExtremo } from './puertos'
 
 const datos = esquemaRafa.parse(crudo)
 const s = disponer(datos)
@@ -102,22 +102,33 @@ describe('T16.4.4 · RAFA según el plano de detalle: el eje A-A cruza por la mi
     for (const id of ['et-tomas', 'et-muestreo', 'et-descarga']) expect(e(id).punta[2], id).toBeGreaterThan(0)
   })
 
-  it('T16.4.5: T09 arranca en la cámara de efluente nueva (cara este, sobre A-A) a menos de 10 cm y a la cota de sus salidas', () => {
+  it('T16.4.7: T09 arranca en el centro del muro del extremo corto norte (el más cercano a BZ-5), a menos de 10 cm, y a la altura del efluente del perfil (2985.45)', () => {
     const t = tramo('T09')
     const ini = t.trazado[0]
-    const p = aPlano(puertoEfluente(datos))
-    expect(puertoEfluente(datos)[0]).toBeCloseTo(0, 9)
-    expect(puertoEfluente(datos)[1]).toBeCloseTo(s.semiAncho + datos.efluente.anchoCamara.valor, 9)
+    const [x, z] = puertoEfluenteExtremo(datos)
+    expect(x).toBeCloseTo(s.semiLargo, 9)
+    expect(z).toBeCloseTo(0, 9)
+    const p = aPlano([x, z])
     expect(Math.hypot(ini.x - p.x, ini.y - p.y)).toBeLessThan(0.1)
-    expect(t.cotaSalida.valor).toBeCloseTo(u.cotaFondo.valor + s.yMuros - datos.efluente.recoleccionSuperior.valor, 2)
+    expect(t.cotaSalida.valor).toBeCloseTo(2985.45, 2)
   })
 
-  it('T16.4.5: el tramo nuevo de T09 (de la cámara al punto donde el DXF lo arrancaba) queda marcado POR CONFIRMAR y el resto sigue el DXF', () => {
+  it('T16.4.7: el extremo corto del RAFA es el más cercano a BZ-5, y T09 sigue el plano general desde ahí hasta BZ-5', () => {
     const t = tramo('T09')
-    expect(t.fuenteTrazado).toContain('POR CONFIRMAR')
-    expect(t.fuenteTrazado).toContain('cámara de efluente')
-    expect(t.fuenteTrazado).toContain('prolongué yo')
+    const bz5 = conexionesCrudas.puntos.find((q) => q.id === 'BZ-5')!
+    const p = aPlano(puertoEfluenteExtremo(datos))
+    const sur = aPlano([-s.semiLargo, 0])
+    expect(Math.hypot(p.x - bz5.x.valor, p.y - bz5.y.valor)).toBeLessThan(Math.hypot(sur.x - bz5.x.valor, sur.y - bz5.y.valor))
     expect(t.trazado.some((q) => Math.hypot(q.x + 20, q.y - 8.5) < 0.01)).toBe(true)
     expect(t.trazado[t.trazado.length - 1]).toEqual({ x: -18, y: 13.8 })
+  })
+
+  it('T16.4.7: la contradicción entre el plano de detalle (efluente en el lado largo) y el general (extremo corto) queda anotada como POR CONFIRMAR', () => {
+    const t = tramo('T09')
+    expect(t.fuenteTrazado).toContain('POR CONFIRMAR')
+    expect(t.fuenteTrazado).toContain('plano de detalle')
+    expect(t.fuenteTrazado).toContain('extremo corto')
+    expect(t.cotaSalida.fuente).toContain('POR CONFIRMAR')
+    expect(t.cotaSalida.fuente).toContain('Efluente')
   })
 })
