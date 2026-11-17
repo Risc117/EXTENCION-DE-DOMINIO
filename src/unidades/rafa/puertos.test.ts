@@ -69,8 +69,8 @@ describe('T16.4.4 · RAFA según el plano de detalle: el eje A-A cruza por la mi
     expect(e.pos[2] - e.tam[2] / 2).toBeCloseTo(s.semiAncho, 9)
     expect(e.tam[2]).toBeCloseTo(datos.efluente.anchoCamara.valor, 9)
     expect(e.tam[0]).toBeCloseTo(2 * s.semiAnchoInterior, 9)
-    // Ninguna pieza de fuera sobresale por los extremos cortos del RAFA (norte y sur).
-    for (const p of piezas.filter((x) => x.forma === 'caja' && !x.id.startsWith('baranda') && !x.id.startsWith('poste'))) {
+    // Ninguna pieza de fuera sobresale por los extremos cortos del RAFA (norte y sur), salvo la vereda y su baranda (T34: huella total de 18.0 m).
+    for (const p of piezas.filter((x) => x.forma === 'caja' && !['baranda', 'poste', 'pasamanos', 'vereda'].some((pre) => x.id.startsWith(pre)))) {
       if (p.forma !== 'caja') continue
       expect(Math.abs(p.pos[0]) + p.tam[0] / 2, p.id).toBeLessThanOrEqual(s.semiLargo + 1e-9)
     }

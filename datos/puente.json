@@ -1,0 +1,59 @@
+{
+  "id": "puente",
+  "fuente": "Interpretación: el DXF (insumos/DFX/RIO PICOY Y CAMINO.dxf) no dibuja un puente; el camino queda interrumpido donde cruza el río. El punto de cruce se calcula con los bordes del camino y las orillas del río de datos/entorno.json; todas las medidas del puente son valores típicos de ejemplo.",
+  "demo": true,
+  "espesorTablero": {
+    "valor": 0.25,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: espesor del tablero de ejemplo.",
+    "demo": true
+  },
+  "joroba": {
+    "valor": 1.2,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: cuánto sube el tablero en el centro sobre la rampa entre las cotas del camino de cada lado (para que quede sobre el agua) de ejemplo.",
+    "demo": true
+  },
+  "alturaBaranda": {
+    "valor": 1.1,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: altura de la baranda de ejemplo.",
+    "demo": true
+  },
+  "separacionPostes": {
+    "valor": 1.5,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: separación máxima entre postes de la baranda de ejemplo.",
+    "demo": true
+  },
+  "ladoPoste": {
+    "valor": 0.1,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: lado de la sección del poste y del pasamanos de ejemplo.",
+    "demo": true
+  },
+  "extensionSobreOrilla": {
+    "valor": 1,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: lo que el tablero sobresale de cada orilla para apoyar en tierra de ejemplo.",
+    "demo": true
+  },
+  "largoEstribo": {
+    "valor": 0.8,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: largo del estribo (a lo largo del camino) de ejemplo.",
+    "demo": true
+  },
+  "profundidadEstribo": {
+    "valor": 0.3,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: cuánto baja el estribo bajo el terreno de ejemplo.",
+    "demo": true
+  },
+  "holguraSobreAgua": {
+    "valor": 0.1,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: distancia mínima entre el fondo del tablero y el agua de ejemplo.",
+    "demo": true
+  }
+}

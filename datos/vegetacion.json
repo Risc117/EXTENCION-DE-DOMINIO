@@ -1,0 +1,114 @@
+{
+  "id": "vegetacion",
+  "fuente": "No está en las fuentes: la vegetación de los alrededores es de ejemplo. Se reparte fuera del cerco (datos/entorno.json), sobre el terreno recortado (datos/terreno.json), sin tapar el río, el camino ni las unidades.",
+  "demo": true,
+  "semilla": {
+    "valor": 21,
+    "fuente": "Semilla fija del reparto (para que la vegetación sea siempre la misma)"
+  },
+  "alcance": {
+    "valor": 150,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: distancia desde el cerco hasta donde se reparte la vegetación de ejemplo.",
+    "demo": true
+  },
+  "margenCerco": {
+    "valor": 4,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: distancia mínima entre la vegetación y el cerco de ejemplo.",
+    "demo": true
+  },
+  "margenRio": {
+    "valor": 3,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: distancia mínima entre la vegetación y las orillas del río de ejemplo.",
+    "demo": true
+  },
+  "margenCamino": {
+    "valor": 3,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: distancia mínima entre la vegetación y los bordes del camino de ejemplo.",
+    "demo": true
+  },
+  "variacionEscala": {
+    "valor": {
+      "minima": 0.7,
+      "maxima": 1.3
+    },
+    "unidad": "adim",
+    "fuente": "No está en las fuentes: variación del tamaño de cada planta, de ejemplo.",
+    "demo": true
+  },
+  "arboles": {
+    "cantidad": {
+      "alta": 90,
+      "baja": 25,
+      "fuente": "No está en las fuentes: cantidad de árboles por calidad, de ejemplo (presupuesto de cuadros por segundo).",
+      "demo": true
+    },
+    "radioCopa": {
+      "valor": 1.8,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: radio de la copa de ejemplo.",
+      "demo": true
+    },
+    "alturaTotal": {
+      "valor": 5,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura total del árbol de ejemplo.",
+      "demo": true
+    },
+    "radioTronco": {
+      "valor": 0.18,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: radio del tronco de ejemplo.",
+      "demo": true
+    },
+    "alturaTronco": {
+      "valor": 1.6,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura del tronco de ejemplo.",
+      "demo": true
+    }
+  },
+  "arbustos": {
+    "cantidad": {
+      "alta": 300,
+      "baja": 80,
+      "fuente": "No está en las fuentes: cantidad de arbustos por calidad, de ejemplo (presupuesto de cuadros por segundo).",
+      "demo": true
+    },
+    "radio": {
+      "valor": 0.8,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: radio del arbusto de ejemplo.",
+      "demo": true
+    },
+    "altura": {
+      "valor": 0.7,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura del arbusto de ejemplo.",
+      "demo": true
+    }
+  },
+  "pasto": {
+    "cantidad": {
+      "alta": 2500,
+      "baja": 600,
+      "fuente": "No está en las fuentes: cantidad de matas de pasto por calidad, de ejemplo (presupuesto de cuadros por segundo).",
+      "demo": true
+    },
+    "altura": {
+      "valor": 0.4,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de la mata de pasto de ejemplo.",
+      "demo": true
+    },
+    "radio": {
+      "valor": 0.25,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: radio de la base de la mata de pasto de ejemplo.",
+      "demo": true
+    }
+  }
+}

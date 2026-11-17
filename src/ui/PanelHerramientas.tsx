@@ -9,6 +9,7 @@ import { PanelCorte } from './PanelCorte'
 import { PanelEntorno } from './PanelEntorno'
 import { PanelLeyenda } from './PanelLeyenda'
 import { PanelPersonal } from './PanelPersonal'
+import { PanelVegetacion } from './PanelVegetacion'
 import { PanelVida } from './PanelVida'
 import { PanelTerreno } from './PanelTerreno'
 import { PanelUnidades } from './PanelUnidades'
@@ -42,6 +43,7 @@ export function PanelHerramientas() {
         <PanelConexiones />
         <PanelEntorno />
         <PanelVida />
+        <PanelVegetacion />
         <PanelPersonal />
         <PanelTerreno />
       </Grupo>

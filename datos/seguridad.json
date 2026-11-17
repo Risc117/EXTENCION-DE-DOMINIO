@@ -1,0 +1,81 @@
+{
+  "id": "seguridad",
+  "fuente": "Seguridad de la planta (T34): la huella de la vereda del RAFA es del plano general; la ducha de emergencia y el lavaojos junto a la caseta de cloración están nombrados en el plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, lista de elementos) pero sin medidas: sus medidas y posiciones son de ejemplo.",
+  "demo": true,
+  "rafa": {
+    "largoTotal": {
+      "valor": 18,
+      "unidad": "m",
+      "fuente": "Aclaración del usuario (16 nov), registrada en tickets/T34.md: huella total del RAFA en el plano general 18.0 × 6.75 m; la estructura mide 15.2 × 5.7 m y el resto del contorno es vereda y baranda de seguridad (largo)",
+      "demo": false
+    },
+    "anchoTotal": {
+      "valor": 6.75,
+      "unidad": "m",
+      "fuente": "Aclaración del usuario (16 nov), registrada en tickets/T34.md: huella total del RAFA en el plano general 18.0 × 6.75 m; la estructura mide 15.2 × 5.7 m y el resto del contorno es vereda y baranda de seguridad (ancho)",
+      "demo": false
+    },
+    "espesorVereda": {
+      "valor": 0.15,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: espesor de la losa de la vereda de ejemplo.",
+      "demo": true
+    },
+    "alturaBaranda": {
+      "valor": 1.1,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura de la baranda de seguridad (1.0 a 1.1 m típicos) de ejemplo.",
+      "demo": true
+    },
+    "separacionPostes": {
+      "valor": 1.5,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: separación máxima entre postes de la baranda de ejemplo.",
+      "demo": true
+    },
+    "grosor": {
+      "valor": 0.06,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: lado de la sección de los postes y pasamanos de ejemplo.",
+      "demo": true
+    }
+  },
+  "emergencia": {
+    "separacionMuro": {
+      "valor": 0.9,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: distancia de la ducha y el lavaojos al muro este de la caseta de ejemplo.",
+      "demo": true
+    },
+    "separacionEntre": {
+      "valor": 1.3,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: distancia entre la ducha y el lavaojos de ejemplo.",
+      "demo": true
+    },
+    "alturaDucha": {
+      "valor": 2.4,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura del cabezal de la ducha de emergencia (2.0 a 2.5 m típicos) de ejemplo.",
+      "demo": true
+    },
+    "radioPlato": {
+      "valor": 0.5,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: radio del plato de piso de la ducha de ejemplo.",
+      "demo": true
+    },
+    "alturaLavaojos": {
+      "valor": 1.05,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura del lavaojos (0.9 a 1.2 m típicos) de ejemplo.",
+      "demo": true
+    },
+    "radioLavaojos": {
+      "valor": 0.2,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: radio de la taza del lavaojos de ejemplo.",
+      "demo": true
+    }
+  }
+}

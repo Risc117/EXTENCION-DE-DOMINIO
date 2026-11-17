@@ -4,8 +4,10 @@ import { cajaEntre as caja } from '../comun/cajas'
 import type { Agua, Pieza } from '../comun/tipos'
 import { disponer } from './disposicion'
 import type { DatosRafa } from './esquema'
+import { seguridad } from '../comun/datosSeguridad'
 import { construirExterior } from './exterior'
 import { alturaInterior, anchoInterior, largoInterior, nivelAgua } from './hidraulica'
+import { construirVereda } from './vereda'
 import { construirInternos } from './internos'
 
 /** Piso, cuatro muros de concreto (opacos; translúcidos solo con "Ver corte"), losa superior con tapas y baranda. */
@@ -46,7 +48,7 @@ function construirCuerpo(d: DatosRafa, corte: boolean): Pieza[] {
 
 /** RAFA completo armado desde datos/rafa.json. `corte` = true vuelve translúcidos los muros para ver adentro. */
 export function construirPiezas(d: DatosRafa, corte = false): Pieza[] {
-  return [...construirCuerpo(d, corte), ...construirInternos(d), ...construirExterior(d)]
+  return [...construirCuerpo(d, corte), ...construirInternos(d), ...construirExterior(d), ...construirVereda(d, seguridad.rafa)]
 }
 
 /** El agua del digestor: sube con el caudal (nivel de ejemplo, ver hidraulica.ts). */

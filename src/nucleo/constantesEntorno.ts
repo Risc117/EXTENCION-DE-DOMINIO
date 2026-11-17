@@ -39,3 +39,6 @@ export const ELEVACION_PAVIMENTO = 0.01
 /** Vías (T16.8.4): desfase (m) hacia arriba de la cinta sobre el terreno donde este no se pudo modificar, y diferencia (m) a partir de la cual una estación se cuenta como sin nivelar. */
 export const DESFASE_VIA_SOBRE_TERRENO = 0.02
 export const TOLERANCIA_VIA_NIVELADA = 0.05
+
+/** Puente (T34): estaciones a lo largo del tablero (más estaciones siguen mejor la joroba y el terreno). */
+export const PUENTE_ESTACIONES = 24

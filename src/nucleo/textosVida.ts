@@ -4,6 +4,12 @@ export const TEXTO_VIDA = {
   ocultar: 'Ocultar vida (pasto y animales)',
 }
 
+/** Vegetación de los alrededores: árboles, arbustos y pasto fuera del cerco (T34). */
+export const TEXTO_VEGETACION = {
+  mostrar: 'Mostrar vegetación de los alrededores',
+  ocultar: 'Ocultar vegetación de los alrededores',
+}
+
 /** Personas y vehículos de la planta (T24.1). */
 export const TEXTO_PERSONAL = {
   mostrar: 'Mostrar personas y vehículos',
