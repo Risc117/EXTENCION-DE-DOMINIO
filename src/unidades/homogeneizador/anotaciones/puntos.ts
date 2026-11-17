@@ -1,5 +1,6 @@
-import { ANGULO_ANCLA_VISIBLE, ANGULO_REBOSE, ESPESOR_ZONA_MEZCLA, PROLONGACION_TUBO } from '../../../nucleo/constantes'
+import { ANGULO_ANCLA_VISIBLE, ANGULO_REBOSE, ESPESOR_ZONA_MEZCLA, FRACCION_VALVULA_INGRESO, PROLONGACION_TUBO } from '../../../nucleo/constantes'
 import { cotaTecho } from '../accesorios/cotas'
+import { direccionPuerto } from '../puertos'
 import type { DatosHomogeneizador } from '../esquema'
 import type { DefEtiqueta } from '../esquemaAnotaciones'
 import type { Vec3 } from '../../comun/tiposAnotaciones'
@@ -7,7 +8,7 @@ import type { Vec3 } from '../../comun/tiposAnotaciones'
 type Objetivo = DefEtiqueta['objetivo']
 
 /**
- * Punto de cada pieza al que apunta la flecha (metros, mismos ejes que geometria.ts: ingreso al oeste, salida al este).
+ * Punto de cada pieza al que apunta la flecha (metros, mismos ejes que geometria.ts: ingreso y salida en la dirección de sus tubos del mapa).
  * `interior` = la pieza está dentro del tanque. `nivel` es el nivel de agua actual.
  */
 export function puntoObjetivo(d: DatosHomogeneizador, objetivo: Objetivo, nivel: number): { punto: Vec3; interior: boolean } {
@@ -20,9 +21,9 @@ export function puntoObjetivo(d: DatosHomogeneizador, objetivo: Objetivo, nivel:
 
   switch (objetivo) {
     case 'ingreso':
-      return { punto: [-afuera, d.ingreso.altura.valor, 0], interior: false }
+      return { punto: alrededor(radioExt + d.ingreso.distanciaRiser.valor * FRACCION_VALVULA_INGRESO, d.ingreso.altura.valor, direccionPuerto(d.ingreso.angulo.valor)), interior: false }
     case 'salida':
-      return { punto: [afuera, d.salida.altura.valor, 0], interior: false }
+      return { punto: alrededor(afuera, d.salida.altura.valor, direccionPuerto(d.salida.angulo.valor)), interior: false }
     case 'rebose':
       return { punto: alrededor(afuera, d.rebose.altura.valor, Math.PI - ANGULO_REBOSE), interior: false }
     case 'agitador':

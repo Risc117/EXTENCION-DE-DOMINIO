@@ -605,11 +605,11 @@
           "y": -32.5
         },
         {
-          "x": -27.6,
-          "y": -26.3
+          "x": -27.47,
+          "y": -25.88
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; el último punto se llevó al pie del tubo vertical de entrada del homogeneizador (0.44 m más allá del extremo del DXF)",
       "cotaSalida": {
         "valor": 2989.82,
         "unidad": "m",
@@ -617,9 +617,9 @@
         "demo": true
       },
       "cotaLlegada": {
-        "valor": 2986.57,
+        "valor": 2986.5,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: pie del tubo vertical de entrada del homogeneizador (fondo 2985.25 + alturaPie 1.25 de datos/homogeneizador.json; derivado y de ejemplo, el perfil no da la cota del tubo enterrado: POR CONFIRMAR)",
         "demo": true
       }
     },
@@ -641,19 +641,19 @@
       },
       "trazado": [
         {
-          "x": -27.1,
-          "y": -16.65
+          "x": -27.2,
+          "y": -16.12
         },
         {
           "x": -26.5,
           "y": -14.6
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; el DXF sale del homogeneizador 1 m fuera de su círculo; sin ajuste",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; el primer punto se llevó al extremo del tubo de salida del homogeneizador (0.54 m antes del extremo del DXF)",
       "cotaSalida": {
-        "valor": 2986.48,
+        "valor": 2986.675,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: eje del tubo de salida del homogeneizador según el perfil (fondo 2985.25 + altura 1.425 de datos/homogeneizador.json; capa HOMOG-TUBERIA, 2986.675)",
         "demo": true
       },
       "cotaLlegada": {

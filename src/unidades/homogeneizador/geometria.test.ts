@@ -32,13 +32,13 @@ describe('construirPiezas (tanque circular)', () => {
     expect(muro.forma === 'anillo' && muro.radioInterior).toBeCloseTo(6, 6)
   })
 
-  it('el ingreso está arriba, sobre el nivel de agua, y la salida abajo en el lado opuesto', () => {
+  it('el ingreso está arriba, sobre el nivel de agua, y la salida abajo; el ingreso sale al sur y la salida al norte, como en el mapa general', () => {
     const ingreso = unica('ingreso')
     const salida = unica('salida')
     expect(ingreso.posicion[1]).toBeGreaterThan(datos.tanque.alturaUtil.valor)
-    expect(salida.posicion[1]).toBeLessThan(1)
-    expect(ingreso.posicion[0]).toBeLessThan(0)
-    expect(salida.posicion[0]).toBeGreaterThan(0)
+    expect(salida.posicion[1]).toBeLessThan(2)
+    expect(ingreso.posicion[2]).toBeGreaterThan(0)
+    expect(salida.posicion[2]).toBeLessThan(0)
   })
 
   it('el rebose queda del lado de la entrada', () => {

@@ -3,8 +3,15 @@ import { TOLERANCIA_MEDIDAS } from '../../nucleo/constantes'
 import { esquemaAccesorios, revisarAccesorios } from './esquemaAccesorios'
 import { esquemaAnotaciones, revisarAnotaciones } from './esquemaAnotaciones'
 import { medida } from '../comun/medida'
+import { positivo } from '../comun/medidas'
 
 const tubo = z.object({ diametro: medida, altura: medida })
+/** Dirección (grados antihorarios desde el este, vista en planta) en que el tubo sale del muro. */
+const angulo = positivo('grados')
+/** Entrada: sube por un tubo vertical a `distanciaRiser` del muro, desde `alturaPie` hasta su eje (T16.3). */
+const ingreso = tubo.extend({ angulo, distanciaRiser: medida, alturaPie: medida })
+/** Salida: `alturaEntradaRafa` es la altura del eje del tubo donde llega a la caja de distribución del RAFA. */
+const salida = tubo.extend({ angulo, alturaEntradaRafa: medida })
 
 const tanque = z
   .object({
@@ -33,8 +40,8 @@ export const esquemaHomogeneizador = z.object({
   nombre: z.string().min(1),
   demo: z.boolean().optional(),
   tanque,
-  ingreso: tubo,
-  salida: tubo,
+  ingreso,
+  salida,
   rebose: tubo,
   agitador: z.object({
     cantidad: medida.refine((m) => m.valor === 1, 'Esta versión admite un solo agitador'),
@@ -45,11 +52,13 @@ export const esquemaHomogeneizador = z.object({
   }),
   accesorios: esquemaAccesorios,
   anotaciones: esquemaAnotaciones,
-}).superRefine((d, ctx) => {
-  const problema = revisarAccesorios(d)
-  if (problema) ctx.addIssue({ code: 'custom', message: problema, path: ['accesorios'] })
-  const problemaNotas = revisarAnotaciones(d)
-  if (problemaNotas) ctx.addIssue({ code: 'custom', message: problemaNotas, path: ['anotaciones'] })
 })
+  .refine((d) => d.ingreso.alturaPie.valor < d.ingreso.altura.valor, 'El pie del tubo vertical debe quedar más bajo que el eje del tubo de entrada')
+  .superRefine((d, ctx) => {
+    const problema = revisarAccesorios(d)
+    if (problema) ctx.addIssue({ code: 'custom', message: problema, path: ['accesorios'] })
+    const problemaNotas = revisarAnotaciones(d)
+    if (problemaNotas) ctx.addIssue({ code: 'custom', message: problemaNotas, path: ['anotaciones'] })
+  })
 
 export type DatosHomogeneizador = z.infer<typeof esquemaHomogeneizador>

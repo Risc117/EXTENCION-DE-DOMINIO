@@ -7,6 +7,7 @@ import {
   RADIO_RIEL,
 } from '../../nucleo/constantes'
 import type { DatosHomogeneizador } from './esquema'
+import { puertos } from './puertos'
 
 type Vec3 = [number, number, number]
 
@@ -32,7 +33,7 @@ const SIN_GIRO: Vec3 = [0, 0, 0]
 /**
  * Convierte las medidas del JSON en piezas 3D (metros, Y hacia arriba).
  * El centro del tanque está en x=0, z=0; y=0 es el fondo útil (sobre la losa de fondo).
- * El ingreso y el rebose van del lado oeste (-x) y la salida en el este (+x).
+ * El ingreso, el rebose y la salida salen por el muro en la dirección de sus tubos del mapa general (datos/homogeneizador.json: `angulo`).
  */
 export function construirPiezas(d: DatosHomogeneizador): Pieza[] {
   const t = d.tanque
@@ -55,9 +56,9 @@ export function construirPiezas(d: DatosHomogeneizador): Pieza[] {
     disco('losa-techo', 'losa-techo', alto + eTecho / 2, radioExt, eTecho),
   ]
 
-  // Tubo horizontal que atraviesa el muro. `fi` es la dirección sobre el muro (0 = +x).
-  const tuboMuro = (id: string, tipo: TipoPieza, fi: number, diametro: number, altura: number): Pieza => {
-    const largo = PROLONGACION_INTERIOR_TUBO + e + PROLONGACION_TUBO
+  // Tubo horizontal que atraviesa el muro. `fi` es la dirección sobre el muro (0 = +x); `fuera` es lo que sale de la cara exterior.
+  const tuboMuro = (id: string, tipo: TipoPieza, fi: number, diametro: number, altura: number, fuera = PROLONGACION_TUBO): Pieza => {
+    const largo = PROLONGACION_INTERIOR_TUBO + e + fuera
     const centro = radioInt - PROLONGACION_INTERIOR_TUBO + largo / 2
     return {
       id, tipo, forma: 'cilindro', radio: diametro / 2, largo,
@@ -65,8 +66,16 @@ export function construirPiezas(d: DatosHomogeneizador): Pieza[] {
       rotacion: [0, -fi, Math.PI / 2],
     }
   }
-  piezas.push(tuboMuro('ingreso', 'ingreso', Math.PI, d.ingreso.diametro.valor, d.ingreso.altura.valor))
-  piezas.push(tuboMuro('salida', 'salida', 0, d.salida.diametro.valor, d.salida.altura.valor))
+  // Entrada: cruza el muro hasta el tubo vertical (el codo del perfil se simplifica a una esquina) que sube desde su pie hasta el eje.
+  const p = puertos(d)
+  const ing = d.ingreso
+  piezas.push(tuboMuro('ingreso', 'ingreso', p.ingreso.direccion, ing.diametro.valor, ing.altura.valor, ing.distanciaRiser.valor))
+  const topeRiser = ing.altura.valor + ing.diametro.valor / 2
+  piezas.push({
+    id: 'ingreso-subida', tipo: 'ingreso', forma: 'cilindro', radio: ing.diametro.valor / 2, largo: topeRiser - ing.alturaPie.valor,
+    posicion: [p.ingreso.pie[0], (ing.alturaPie.valor + topeRiser) / 2, p.ingreso.pie[1]], rotacion: SIN_GIRO,
+  })
+  piezas.push(tuboMuro('salida', 'salida', p.salida.direccion, d.salida.diametro.valor, d.salida.altura.valor))
 
   // Rebose: tramo horizontal, codo de 90° afuera del muro y bajada vertical.
   const fiRebose = Math.PI - ANGULO_REBOSE

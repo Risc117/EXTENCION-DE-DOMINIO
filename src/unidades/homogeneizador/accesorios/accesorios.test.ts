@@ -99,17 +99,17 @@ describe('construirAccesorios', () => {
   it('hay una caja de válvula del lado del ingreso y otra del lado de la salida, sobre el terreno', () => {
     const cajas = de('caja-valvula')
     expect(cajas).toHaveLength(2)
-    expect(cajas.map((c) => Math.sign(c.posicion[0])).sort()).toEqual([-1, 1])
+    expect(cajas.map((c) => c.id).sort()).toEqual(['caja-valvula-ingreso', 'caja-valvula-salida'])
     for (const c of cajas) expect(c.posicion[1] - caja(c).tamano[1] / 2).toBeCloseTo(TECHO)
     expect(de('varilla')).toHaveLength(2)
     expect(de('valvula')).toHaveLength(2)
   })
 
   it('la varilla llega hasta el tubo que maneja', () => {
-    const baja = de('varilla').find((v) => v.posicion[0] > 0)
+    const baja = de('varilla').find((v) => v.id === 'varilla-salida')
     if (!baja) throw new Error('falta la varilla de la salida')
     const v = cilindro(baja)
-    expect(v.posicion[1] - v.largo / 2).toBeCloseTo(0.3)
+    expect(v.posicion[1] - v.largo / 2).toBeCloseTo(1.425)
   })
 
   it('el relleno rodea el muro y el terreno natural rodea al relleno', () => {

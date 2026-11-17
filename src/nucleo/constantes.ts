@@ -2,6 +2,8 @@
 export const PROLONGACION_TUBO = 1.5
 /** Largo (m) que el tubo de ingreso y de salida entra al tanque. */
 export const PROLONGACION_INTERIOR_TUBO = 0.5
+/** Fracción del tramo horizontal de la entrada (de la cara del muro al tubo vertical) donde van su válvula, su caja y su varilla. */
+export const FRACCION_VALVULA_INGRESO = 0.5
 /** Largo (m) del tramo vertical del rebose después del codo de 90°. */
 export const LARGO_BAJADA_REBOSE = 1
 /** Ángulo (radianes) del rebose respecto del ingreso, medido sobre el muro. */

@@ -122,11 +122,14 @@ describe('etiquetas', () => {
     expect(calc('nivel', 1).punta[1]).toBeCloseTo(1)
   })
 
-  it('la flecha apunta a la pieza: la entrada al oeste y la salida al este, a la altura de su tubo', () => {
-    expect(calc('entrada').punta[0]).toBeLessThan(-3.99)
-    expect(calc('entrada').punta[1]).toBeCloseTo(5.1)
-    expect(calc('salida').punta[0]).toBeGreaterThan(3.99)
-    expect(calc('salida').punta[1]).toBeCloseTo(0.3)
+  it('la flecha apunta a la pieza: la entrada al sur y la salida al norte (como sus tubos del mapa), a la altura de su tubo', () => {
+    const fuera = (p: [number, number, number]) => Math.hypot(p[0], p[2])
+    expect(calc('entrada').punta[2]).toBeGreaterThan(3.99)
+    expect(fuera(calc('entrada').punta)).toBeGreaterThan(3.99)
+    expect(calc('entrada').punta[1]).toBeCloseTo(5.01)
+    expect(calc('salida').punta[2]).toBeLessThan(-3.99)
+    expect(fuera(calc('salida').punta)).toBeGreaterThan(3.99)
+    expect(calc('salida').punta[1]).toBeCloseTo(1.425)
   })
 
   it('el texto queda separado de la pieza por el desfase del JSON', () => {

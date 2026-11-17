@@ -16,11 +16,16 @@
   },
   "ingreso": {
     "diametro": { "valor": 0.16, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1: tubería Ø 6\" PVC (DN 160)", "demo": false },
-    "altura": { "valor": 5.1, "unidad": "m", "fuente": "Estimado del plano (5.0 a 5.2 m sobre el fondo, justo sobre el N.A.); confirmar", "demo": true }
+    "altura": { "valor": 5.01, "unidad": "m", "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa HOMOG-TUBERIA: eje del tubo de entrada en la cota 2990.26 (líneas de 2990.16 a 2990.36); 2990.26 − fondo 2985.25 = 5.01 m; cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (como cotaFondo de datos/planta.json)", "demo": false },
+    "angulo": { "valor": 252.6, "unidad": "grados", "fuente": "derivado: dirección (grados antihorarios desde el este, vista en planta) desde el centro del tanque hasta el extremo del tubo del mapa general (capa PTAR-TUBERIA, (−27.6, −26.3) m locales contra el centro (−26.1, −21.5)); el mapa entra por el lado sur-suroeste, no por el oeste", "demo": true },
+    "distanciaRiser": { "valor": 0.6, "unidad": "m", "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa HOMOG-TUBERIA: el tubo vertical queda a 0.60 m de la cara exterior del muro (x 310323.53 contra 310324.13); el codo del dibujo (radio 0.25 al eje) se simplifica a una esquina", "demo": false },
+    "alturaPie": { "valor": 1.25, "unidad": "m", "fuente": "derivado: terreno natural en el centro del tanque (2987.3, datos/planta.json) menos la cobertura de 0.80 m de datos/conexiones.json, menos el fondo 2985.25; el perfil corta el tubo vertical en la cota 2989.40 (símbolo de interrupción) y no da la cota del tubo enterrado: POR CONFIRMAR", "demo": true }
   },
   "salida": {
     "diametro": { "valor": 0.16, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1: tubería Ø 6\" PVC (DN 160)", "demo": false },
-    "altura": { "valor": 0.3, "unidad": "m", "fuente": "Estimado: baja, cerca del fondo (el plano no da la cota); confirmar", "demo": true }
+    "altura": { "valor": 1.425, "unidad": "m", "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa HOMOG-TUBERIA: eje del tubo de salida en la cota 2986.675 (líneas de 2986.60 a 2986.75); 2986.675 − fondo 2985.25 = 1.425 m; cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (como cotaFondo de datos/planta.json)", "demo": false },
+    "angulo": { "valor": 101.6, "unidad": "grados", "fuente": "derivado: dirección (grados antihorarios desde el este, vista en planta) desde el centro del tanque hasta el primer punto del tubo del mapa general (capa PTAR-TUBERIA, (−27.1, −16.65) m locales contra el centro (−26.1, −21.5)); el mapa sale por el lado norte-noroeste, no por el este", "demo": true },
+    "alturaEntradaRafa": { "valor": 1.46, "unidad": "m", "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa RAFA-TUBERIA (rótulo ENTRADA): eje del tubo en la cota 2986.71 hasta la caja de distribución del RAFA, a ≈ 6.6 m del muro; 2986.71 − fondo 2985.25 = 1.46 m: el tubo es casi plano (+0.035 m). Dónde queda esa caja en el mapa: POR CONFIRMAR con el usuario", "demo": false }
   },
   "rebose": {
     "diametro": { "valor": 0.2, "unidad": "m", "fuente": "plano HOMOGENIZADOR_enterrado_v1: Ø 0.20, unidad por confirmar", "demo": true },
