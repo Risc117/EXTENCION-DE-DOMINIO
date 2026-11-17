@@ -5,16 +5,17 @@ import {
   CAMARA_FOV,
   CAMARA_NEAR,
   DISTANCIA_CAMARA,
-  LUZ_ALTURA_FACTOR,
-  LUZ_AMBIENTE,
-  LUZ_DIRECCIONAL,
 } from '../nucleo/constantes'
+import { useCalidad } from '../estado/calidad'
+import { Luminarias } from '../unidades/ambiente'
 import { Biogas } from '../unidades/biogas'
 import { Conexiones, FlujoTuberias } from '../unidades/conexiones'
 import { Entorno } from '../unidades/entorno'
 import { unidades } from '../unidades/registro'
 import { cotaReferencia } from '../unidades/ubicar'
 import { ControlCamara } from './ControlCamara'
+import { Luces } from './Luces'
+import { Sombras } from './Sombras'
 import { encuadre } from './encuadre'
 import { EntornoTerreno } from './terreno'
 import { UnidadColocada } from './UnidadColocada'
@@ -25,10 +26,11 @@ export function Escena() {
   const { objetivo, escala } = encuadre(unidades, null)
   const d = escala * DISTANCIA_CAMARA
   const [ox, , oz] = objetivo
+  const sombras = useCalidad((s) => s.calidad === 'alta')
   return (
-    <Canvas gl={{ localClippingEnabled: true }} camera={{ position: [ox + d, d * CAMARA_ALTURA_FACTOR, oz + d], fov: CAMARA_FOV, near: CAMARA_NEAR, far: escala * CAMARA_FAR_FACTOR }}>
-      <ambientLight intensity={LUZ_AMBIENTE} />
-      <directionalLight position={[ox + escala, escala * LUZ_ALTURA_FACTOR, oz + escala]} intensity={LUZ_DIRECCIONAL} />
+    <Canvas shadows={sombras} gl={{ localClippingEnabled: true }} camera={{ position: [ox + d, d * CAMARA_ALTURA_FACTOR, oz + d], fov: CAMARA_FOV, near: CAMARA_NEAR, far: escala * CAMARA_FAR_FACTOR }}>
+      <Luces objetivo={objetivo} />
+      <Sombras />
       <EntornoTerreno referencia={referencia} unidades={unidades} />
       {unidades.map((u) => (
         <UnidadColocada key={u.id} unidad={u} referencia={referencia} />
@@ -37,6 +39,7 @@ export function Escena() {
       <FlujoTuberias referencia={referencia} />
       <Entorno referencia={referencia} />
       <Biogas referencia={referencia} />
+      <Luminarias referencia={referencia} />
       <ControlCamara unidades={unidades} />
     </Canvas>
   )

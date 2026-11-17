@@ -152,3 +152,10 @@ canvas { touch-action: none; }
 .perfil-hidraulico table { border-collapse: collapse; font-variant-numeric: tabular-nums; }
 .perfil-hidraulico th, .perfil-hidraulico td { padding: 2px 8px; text-align: left; border-bottom: 1px solid var(--color-rejilla); }
 @media (max-width: 700px) { .paneles-centro { display: none; } }
+.panel-hora { display: flex; flex-direction: column; gap: 6px; padding: 4px 0; font-size: 0.9rem; }
+.panel-hora label { display: flex; flex-direction: column; gap: 2px; }
+.panel-hora input { width: 100%; }
+.panel-hora p { margin: 0; }
+.panel-hora__nota { opacity: 0.75; font-size: 0.75rem; }
+.panel-hora button { padding: 6px 12px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }
+.panel-hora button[aria-pressed='false'] { opacity: 0.8; }

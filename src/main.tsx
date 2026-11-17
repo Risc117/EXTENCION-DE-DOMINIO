@@ -5,9 +5,11 @@ import './ui/estilos.css'
 import { App } from './App'
 import { useEstado } from './estado/almacen'
 import { useBombeo } from './estado/bombeo'
+import { useAmbiente } from './estado/ambiente'
 import { useFlujo } from './estado/flujo'
 import { usePerfil } from './estado/perfil'
 import { useSim } from './estado/simulacion'
+import { ambiente } from './unidades/ambiente'
 import { perfilPlanta } from './unidades/conexiones'
 import { unidades } from './unidades/registro'
 
@@ -21,6 +23,7 @@ const flujo = unidades.find((u) => u.flujo)?.flujo
 if (flujo) useFlujo.getState().fijarFlujo(flujo)
 
 usePerfil.getState().publicar(perfilPlanta())
+useAmbiente.getState().publicarSitio({ latitud: ambiente.ubicacion.latitud.valor, mes: ambiente.fecha.mes, dia: ambiente.fecha.dia })
 
 createRoot(document.getElementById('raiz')!).render(
   <StrictMode>

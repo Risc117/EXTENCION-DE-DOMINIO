@@ -108,6 +108,7 @@ export const TEXTO_HERRAMIENTAS = {
   grupoCapas: 'Capas',
   grupoAnotaciones: 'Cotas y etiquetas',
   grupoCalidad: 'Calidad',
+  grupoHora: 'Hora del día',
   siempreActivar: 'Mostrar también de lejos',
   siempreQuitar: 'Mostrar solo al acercarse',
 }

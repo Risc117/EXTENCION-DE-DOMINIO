@@ -1,0 +1,36 @@
+{
+  "id": "ambiente",
+  "fuente": "Ubicación derivada de datos/terreno.json (origen UTM zona 18 sur); luminarias de insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (capa PTAR-LUMINARIA); lo demás, de ejemplo.",
+  "demo": true,
+  "ubicacion": {
+    "latitud": { "valor": -10.9295, "unidad": "grados", "fuente": "Conversión UTM → geográficas (WGS84) del origen de datos/terreno.json: zona 18 sur, este 309340, norte 8791260 (Picoy, Santa Leonor, Huaura)", "demo": false },
+    "longitud": { "valor": -76.7446, "unidad": "grados", "fuente": "Conversión UTM → geográficas (WGS84) del origen de datos/terreno.json: zona 18 sur, este 309340, norte 8791260", "demo": false }
+  },
+  "fecha": {
+    "mes": 11,
+    "dia": 15,
+    "fuente": "Fecha del plano general (15 nov 2026); el hidrograma es de días de simulación, no de calendario, así que el sol usa esta fecha fija",
+    "demo": false
+  },
+  "giroNorte": {
+    "valor": 0,
+    "unidad": "grados",
+    "fuente": "No está en las fuentes como dato: el norte se toma hacia arriba en el plano (eje y local, −z en la escena); la flecha del norte del plano general está dibujada pero no se midió su giro. POR CONFIRMAR.",
+    "demo": true
+  },
+  "luminarias": {
+    "puntos": [
+      { "x": -6.27, "y": -75.29 },
+      { "x": -9.82, "y": -61.59 },
+      { "x": -11.1, "y": -44.48 },
+      { "x": -11.27, "y": -26.56 },
+      { "x": -9.17, "y": -10.12 },
+      { "x": -0.22, "y": 3.22 },
+      { "x": 11.01, "y": 17.63 }
+    ],
+    "fuentePuntos": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-LUMINARIA: círculos de 0.30 m con cruz, a lo largo de la vía interna (x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json)",
+    "alturaPoste": { "valor": 5, "unidad": "m", "fuente": "No está en las fuentes: altura de ejemplo de un poste de alumbrado de planta (4 a 6 m típicos).", "demo": true },
+    "radioPoste": { "valor": 0.08, "unidad": "m", "fuente": "No está en las fuentes: radio de ejemplo del poste (el plano dibuja un círculo de 0.30 m que es la base).", "demo": true },
+    "radioLuz": { "valor": 7, "unidad": "m", "fuente": "No está en las fuentes: radio de ejemplo del círculo de luz en el suelo.", "demo": true }
+  }
+}
