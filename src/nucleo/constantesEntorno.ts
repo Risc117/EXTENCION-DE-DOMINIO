@@ -36,3 +36,6 @@ export const ALCANCE_MAXIMO_NIVELACION = 60
 export const REDONDEO_COTA_PISO = 0.05
 /** Pavimentos a ras (T16.8.3): cuánto (m) sobresale la cara de arriba de la losa sobre la cota del terreno nivelado. */
 export const ELEVACION_PAVIMENTO = 0.01
+/** Vías (T16.8.4): desfase (m) hacia arriba de la cinta sobre el terreno donde este no se pudo modificar, y diferencia (m) a partir de la cual una estación se cuenta como sin nivelar. */
+export const DESFASE_VIA_SOBRE_TERRENO = 0.02
+export const TOLERANCIA_VIA_NIVELADA = 0.05

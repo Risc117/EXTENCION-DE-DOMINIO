@@ -1,9 +1,9 @@
 import { alturaEn, nivelarFuentes, type Cuadricula, type InformeNivel } from '../../nucleo/terreno'
-import { ALCANCE_MAXIMO_NIVELACION, PASO_PERFIL_VIA, PASO_TALUD, UMBRAL_HIDRAULICO } from '../../nucleo/constantesEntorno'
+import { ALCANCE_MAXIMO_NIVELACION, DESFASE_VIA_SOBRE_TERRENO, PASO_PERFIL_VIA, PASO_TALUD, TOLERANCIA_VIA_NIVELADA, UMBRAL_HIDRAULICO } from '../../nucleo/constantesEntorno'
 import { distanciaProtegida } from '../comun/protegido'
 import { terrenoUnidades } from '../comun/terrenoPlanta'
 import { entorno } from './datos'
-import { cotaEnPerfil, fuentePlataforma, fuenteVia, perfilVia, plataformasDe, type PerfilVia } from './nivelacion'
+import { cotaEnPerfil, distanciaPolilinea, fuentePlataforma, fuenteVia, perfilVia, plataformasDe, tramosSinNivelar, type PerfilVia, type TramoSinNivelar } from './nivelacion'
 
 /** Una vía nivelada: su perfil suave y si lo logró. */
 export interface ViaNivelada {
@@ -15,6 +15,10 @@ export interface ViaNivelada {
   pendienteAnclada: number
   /** Cota (m s.n.m.) de la vía en (x, y), según su perfil suave. */
   cota: (x: number, y: number) => number
+  /** Cota (m s.n.m.) a la que se dibuja la cinta: la del perfil, o la del terreno con un pequeño desfase hacia arriba donde el terreno no pudo modificarse (nunca queda bajo el suelo). */
+  cinta: (x: number, y: number) => number
+  /** Rachas de estaciones donde el terreno quedó distinto del perfil (cerca de lo hidráulico, anclada por el RAFA o cruce con otra vía). */
+  sinNivelar: TramoSinNivelar[]
 }
 
 export interface TerrenoNivelado {
@@ -45,7 +49,8 @@ export function terrenoNivelado(salto = 1): TerrenoNivelado {
         { eje: via.eje, ancho: via.ancho.valor, borde: n.borde.valor, paso: PASO_PERFIL_VIA, ventana: n.ventanaSuavizado.valor, pendienteMaxima: n.pendienteMaxima.valor, intactas: n.viaIntacta.unidades, cotaInicio: cruce && anterior ? anterior.cota(inicio.x, inicio.y) : undefined },
         crudo,
       )
-      const nivelada: ViaNivelada = { estaciones: perfil.estaciones, cumple: perfil.cumple, pendienteAnclada: perfil.pendienteAnclada, cota: (x, y) => cotaEnPerfil(perfil, x, y) }
+      const cota = (x: number, y: number) => cotaEnPerfil(perfil, x, y)
+      const nivelada: ViaNivelada = { estaciones: perfil.estaciones, cumple: perfil.cumple, pendienteAnclada: perfil.pendienteAnclada, cota, cinta: cota, sinNivelar: [] }
       vias[id] = nivelada
       anterior = nivelada
       fuentes.push(fuenteVia(id, perfil, via.ancho.valor, n.borde.valor, ALCANCE_MAXIMO_NIVELACION))
@@ -57,6 +62,22 @@ export function terrenoNivelado(salto = 1): TerrenoNivelado {
       paso: PASO_TALUD,
       holgura: Math.max(n.holgura.valor, base.paso * Math.SQRT2),
       umbral: UMBRAL_HIDRAULICO,
+    })
+    // La cinta sigue al perfil, pero nunca queda bajo el terreno; y se anotan las rachas donde el terreno no se pudo llevar al perfil.
+    const terrenoFinal = (x: number, y: number) => alturaEn(cuadricula, x, y) ?? Number.NEGATIVE_INFINITY
+    const holgura = Math.max(n.holgura.valor, base.paso * Math.SQRT2)
+    n.vias.forEach((id, k) => {
+      const via = entorno.vias.find((v) => v.id === id)!
+      const v = vias[id]
+      v.cinta = (x, y) => Math.max(v.cota(x, y), terrenoFinal(x, y) + DESFASE_VIA_SOBRE_TERRENO)
+      v.sinNivelar = tramosSinNivelar(v.estaciones, terrenoFinal, TOLERANCIA_VIA_NIVELADA, (x, y, i) => {
+        if (v.estaciones[i].anclada) return 'anclada al terreno (explanada del RAFA)'
+        if (distanciaProtegida(x, y) < holgura + via.ancho.valor / 2 + n.borde.valor) return 'a menos de la holgura de una unidad, tubería o buzón'
+        const previa = n.vias.slice(0, k).some((o) => { const q = entorno.vias.find((w) => w.id === o)!; return distanciaPolilinea(x, y, q.eje) <= q.ancho.valor / 2 + n.borde.valor + via.ancho.valor / 2 + n.borde.valor })
+        if (previa) return 'cruce con otra vía (manda la primera)'
+        // En el último punto la malla de 3 m ve la vía de un solo lado y no sigue su pendiente exacta.
+        return i === v.estaciones.length - 1 ? 'extremo de la vía (la malla de 3 m no sigue su pendiente exacta)' : 'sin explicar'
+      })
     })
     r = { cuadricula, informe, vias }
     guardados.set(salto, r)

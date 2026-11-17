@@ -22,7 +22,7 @@ const aGeometria = (m: MallaPlana): BufferGeometry => {
 export function Suelos({ referencia }: { referencia: number }) {
   const [via, pavimento, seguridad, caminoColor] = useMemo(() => ['--color-via', '--color-pavimento', '--color-radio-seguridad', '--color-camino'].map(leerColor), [])
   const camino = useMemo(() => aGeometria(cintaEntreMargenes(entorno.camino.margenesA, entorno.camino.margenB, PASO_ENTORNO, alturaNivelada, referencia, ELEVACION_VIA, LARGO_PATRON_RIO, ANCHO_MAXIMO_FRANJA)), [referencia])
-  const cintas = useMemo(() => entorno.vias.map((v) => ({ id: v.id, geometria: aGeometria(cintaVia(v.eje, v.ancho.valor, terrenoNivelado().vias[v.id]?.cota ?? alturaNivelada, referencia, PASO_ENTORNO)) })), [referencia])
+  const cintas = useMemo(() => entorno.vias.map((v) => ({ id: v.id, geometria: aGeometria(cintaVia(v.eje, v.ancho.valor, terrenoNivelado().vias[v.id]?.cinta ?? alturaNivelada, referencia, PASO_ENTORNO)) })), [referencia])
   // Pavimentos a ras: losa delgada con su espesor enterrado bajo el terreno nivelado, sin paredes (T16.8.3).
   const losas = useMemo(() => {
     const losa = (id: string, poligono: { x: number; y: number }[], cotaPiso: number, espesor: number) => {

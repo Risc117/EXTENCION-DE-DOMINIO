@@ -164,3 +164,44 @@ function tramoMasCercano(perfil: PerfilVia, x: number, y: number): { distancia: 
 export function cotaEnPerfil(perfil: PerfilVia, x: number, y: number): number {
   return tramoMasCercano(perfil, x, y).cota
 }
+
+/** Distancia (m) de un punto a una polilínea. */
+export function distanciaPolilinea(x: number, y: number, linea: PuntoPlano[]): number {
+  let minimo = Number.POSITIVE_INFINITY
+  for (let i = 1; i < linea.length; i++) minimo = Math.min(minimo, distanciaASegmento(x, y, linea[i - 1], linea[i]))
+  return minimo
+}
+
+/** Una racha de estaciones de la vía donde el terreno quedó distinto del perfil (no se pudo modificar), con su causa. */
+export interface TramoSinNivelar {
+  /** Índices de la primera y la última estación de la racha. */
+  desde: number
+  hasta: number
+  /** Mayor diferencia (m) entre el terreno y el perfil en la racha. */
+  diferenciaMaxima: number
+  causa: string
+  /** Posición (m locales) de la estación con la mayor diferencia. */
+  x: number
+  y: number
+}
+
+/** Las rachas de estaciones donde el terreno difiere del perfil en más de `tolerancia`; `causaDe` explica por qué (o dice "sin explicar"). */
+export function tramosSinNivelar(estaciones: { x: number; y: number; cota: number }[], terrenoEn: TerrenoEn, tolerancia: number, causaDe: (x: number, y: number, i: number) => string): TramoSinNivelar[] {
+  const tramos: TramoSinNivelar[] = []
+  let actual: TramoSinNivelar | null = null
+  estaciones.forEach((e, i) => {
+    const dif = Math.abs(terrenoEn(e.x, e.y) - e.cota)
+    if (dif <= tolerancia) {
+      actual = null
+      return
+    }
+    if (!actual) {
+      actual = { desde: i, hasta: i, diferenciaMaxima: dif, causa: causaDe(e.x, e.y, i), x: e.x, y: e.y }
+      tramos.push(actual)
+    } else {
+      actual.hasta = i
+      if (dif > actual.diferenciaMaxima) Object.assign(actual, { diferenciaMaxima: dif, causa: causaDe(e.x, e.y, i), x: e.x, y: e.y })
+    }
+  })
+  return tramos
+}
