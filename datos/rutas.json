@@ -1,0 +1,261 @@
+{
+  "id": "rutas",
+  "fuente": "Rutas sacadas de los ejes de las vías y del patio de maniobras de datos/entorno.json (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-VIAS) y de las posiciones de datos/planta.json; el plano no trae personas ni vehículos: velocidades, pausas, tamaños, cantidades y posiciones son de ejemplo.",
+  "demo": true,
+  "tecnico": {
+    "modelo": "tecnico.glb",
+    "tamano": {
+      "valor": 1.75,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: estatura del técnico de ejemplo.",
+      "demo": true
+    },
+    "animacionCaminar": "Walk",
+    "animacionParado": "Interact",
+    "animacionVigilante": "Idle"
+  },
+  "tecnicos": [
+    {
+      "id": "ronda",
+      "nombre": "Ronda de inspección: laboratorio, rejas y RAFA",
+      "tramos": [
+        {
+          "via": "via-interna",
+          "desde": 4
+        }
+      ],
+      "desplazamiento": {
+        "valor": 3,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: distancia de la vereda al eje de la vía de ejemplo.",
+        "demo": true
+      },
+      "velocidad": {
+        "valor": 1.3,
+        "unidad": "m/s",
+        "fuente": "No está en las fuentes: velocidad al caminar de ejemplo.",
+        "demo": true
+      },
+      "paradas": [
+        {
+          "unidad": "laboratorio",
+          "pausa": {
+            "valor": 8,
+            "unidad": "s",
+            "fuente": "No está en las fuentes: pausa en el laboratorio de ejemplo.",
+            "demo": true
+          }
+        },
+        {
+          "unidad": "rejas",
+          "pausa": {
+            "valor": 8,
+            "unidad": "s",
+            "fuente": "No está en las fuentes: pausa en las rejas de ejemplo.",
+            "demo": true
+          }
+        },
+        {
+          "unidad": "rafa",
+          "pausa": {
+            "valor": 8,
+            "unidad": "s",
+            "fuente": "No está en las fuentes: pausa en el RAFA de ejemplo.",
+            "demo": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "bombeo",
+      "nombre": "Ronda de equipos: bombeo, homogeneizador y percolador",
+      "tramos": [
+        {
+          "via": "via-interna",
+          "desde": 4
+        }
+      ],
+      "desplazamiento": {
+        "valor": 3,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: distancia de la vereda al eje de la vía de ejemplo.",
+        "demo": true
+      },
+      "velocidad": {
+        "valor": 1.1,
+        "unidad": "m/s",
+        "fuente": "No está en las fuentes: velocidad al caminar de ejemplo.",
+        "demo": true
+      },
+      "paradas": [
+        {
+          "unidad": "bombeo",
+          "pausa": {
+            "valor": 8,
+            "unidad": "s",
+            "fuente": "No está en las fuentes: pausa en el bombeo de ejemplo.",
+            "demo": true
+          }
+        },
+        {
+          "unidad": "homogeneizador",
+          "pausa": {
+            "valor": 8,
+            "unidad": "s",
+            "fuente": "No está en las fuentes: pausa en el homogeneizador de ejemplo.",
+            "demo": true
+          }
+        },
+        {
+          "unidad": "percolador",
+          "pausa": {
+            "valor": 8,
+            "unidad": "s",
+            "fuente": "No está en las fuentes: pausa en el percolador de ejemplo.",
+            "demo": true
+          }
+        }
+      ]
+    }
+  ],
+  "vehiculos": [
+    {
+      "id": "camioneta",
+      "modelo": "camioneta.glb",
+      "tamano": {
+        "valor": 5,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: largo de la camioneta de ejemplo.",
+        "demo": true
+      },
+      "velocidad": {
+        "valor": 3,
+        "unidad": "m/s",
+        "fuente": "No está en las fuentes: velocidad de la camioneta dentro de la planta de ejemplo.",
+        "demo": true
+      },
+      "espera": {
+        "valor": 5,
+        "unidad": "s",
+        "fuente": "No está en las fuentes: espera de la camioneta fuera de la planta antes de entrar de ejemplo.",
+        "demo": true
+      },
+      "pausaFinal": {
+        "valor": 12,
+        "unidad": "s",
+        "fuente": "No está en las fuentes: tiempo estacionada en el patio de ejemplo.",
+        "demo": true
+      },
+      "tramos": [
+        {
+          "via": "via-interna",
+          "desde": 0,
+          "hasta": 4
+        },
+        {
+          "via": "via-estacionamiento"
+        },
+        {
+          "superficie": "patio"
+        }
+      ]
+    },
+    {
+      "id": "camion",
+      "modelo": "camion.glb",
+      "tamano": {
+        "valor": 7,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: largo del camión de ejemplo.",
+        "demo": true
+      },
+      "velocidad": {
+        "valor": 2,
+        "unidad": "m/s",
+        "fuente": "No está en las fuentes: velocidad del camión dentro de la planta de ejemplo.",
+        "demo": true
+      },
+      "espera": {
+        "valor": 25,
+        "unidad": "s",
+        "fuente": "No está en las fuentes: espera del camión fuera de la planta antes de entrar de ejemplo.",
+        "demo": true
+      },
+      "pausaFinal": {
+        "valor": 18,
+        "unidad": "s",
+        "fuente": "No está en las fuentes: tiempo maniobrando en el patio de ejemplo.",
+        "demo": true
+      },
+      "tramos": [
+        {
+          "via": "via-interna",
+          "desde": 0,
+          "hasta": 4
+        },
+        {
+          "via": "via-estacionamiento"
+        },
+        {
+          "superficie": "patio"
+        }
+      ]
+    }
+  ],
+  "cantidades": {
+    "tecnicos": {
+      "alta": 4,
+      "baja": 2,
+      "fuente": "No está en las fuentes: cantidad de técnicos por calidad, de ejemplo.",
+      "demo": true
+    },
+    "vehiculos": {
+      "alta": 2,
+      "baja": 1,
+      "fuente": "No está en las fuentes: cantidad de vehículos por calidad, de ejemplo.",
+      "demo": true
+    }
+  },
+  "vigilante": {
+    "posicion": {
+      "x": -1.5,
+      "y": -74.7,
+      "fuente": "No está en las fuentes: a 2.9 m del centro de la garita (datos/entorno.json), de ejemplo.",
+      "demo": true
+    },
+    "rumbo": {
+      "valor": 180,
+      "unidad": "grados",
+      "fuente": "No está en las fuentes: rumbo del vigilante de ejemplo (180° = mirando al oeste, hacia la garita).",
+      "demo": true
+    }
+  },
+  "barrera": {
+    "radioApertura": {
+      "valor": 9,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: distancia a la que un vehículo hace subir la pluma de ejemplo.",
+      "demo": true
+    },
+    "anguloAbierta": {
+      "valor": 75,
+      "unidad": "grados",
+      "fuente": "No está en las fuentes: ángulo de la pluma abierta de ejemplo.",
+      "demo": true
+    },
+    "rapidez": {
+      "valor": 60,
+      "unidad": "grados/s",
+      "fuente": "No está en las fuentes: rapidez con la que sube y baja la pluma de ejemplo.",
+      "demo": true
+    }
+  },
+  "faros": {
+    "brillo": {
+      "valor": 3,
+      "unidad": "adim",
+      "fuente": "No está en las fuentes: brillo de los faros encendidos de ejemplo.",
+      "demo": true
+    }
+  }
+}

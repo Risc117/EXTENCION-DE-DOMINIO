@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { BufferGeometry, DoubleSide, Float32BufferAttribute, Quaternion, Vector3 } from 'three'
 import { leerColor } from '../../nucleo/colores'
-import { GROSOR_PLUMA, GROSOR_PORTON, OPACIDAD_CERCO, PASO_ENTORNO } from '../../nucleo/constantesEntorno'
+import { GROSOR_PORTON, OPACIDAD_CERCO, PASO_ENTORNO } from '../../nucleo/constantesEntorno'
 import { alturaNivelada } from './terrenoNivelado'
 import { entorno } from './datos'
 import { panelVertical } from './geometria'
@@ -34,9 +34,9 @@ function Barra({ desde, hasta, alto, grosor, color, referencia }: PropsBarra) {
   )
 }
 
-/** Cerco perimétrico (malla que sigue el terreno), portón de 4.5 m con sus hojas cerradas y la barrera de la garita. */
+/** Cerco perimétrico (malla que sigue el terreno), portón de 4.5 m con sus hojas cerradas (la barrera de la garita, que se levanta, está en la unidad personal). */
 export function Cerco({ referencia }: { referencia: number }) {
-  const [cerco, porton, barrera] = useMemo(() => ['--color-cerco', '--color-porton', '--color-barrera'].map(leerColor), [])
+  const [cerco, porton] = useMemo(() => ['--color-cerco', '--color-porton'].map(leerColor), [])
   const paneles = useMemo(
     () =>
       entorno.cerco.trazos.map((t) => {
@@ -58,7 +58,6 @@ export function Cerco({ referencia }: { referencia: number }) {
       {entorno.cerco.portones.map((p) => (
         <Barra key={p.id} desde={p.desde} hasta={p.hasta} alto={p.altura.valor} grosor={GROSOR_PORTON} color={porton} referencia={referencia} />
       ))}
-      <Barra desde={entorno.barrera.desde} hasta={entorno.barrera.hasta} alto={entorno.barrera.altura.valor} grosor={GROSOR_PLUMA} color={barrera} referencia={referencia} />
     </group>
   )
 }

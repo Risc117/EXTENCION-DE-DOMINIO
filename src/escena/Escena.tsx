@@ -11,6 +11,7 @@ import { Luminarias, Manga, PublicarViento } from '../unidades/ambiente'
 import { Biogas } from '../unidades/biogas'
 import { Conexiones, FlujoTuberias } from '../unidades/conexiones'
 import { Entorno } from '../unidades/entorno'
+import { Personal, Pluma } from '../unidades/personal'
 import { Vida } from '../unidades/vida'
 import { unidades } from '../unidades/registro'
 import { cotaReferencia } from '../unidades/ubicar'
@@ -44,6 +45,8 @@ export function Escena() {
       <Manga referencia={referencia} />
       <PublicarViento />
       <Vida referencia={referencia} />
+      <Pluma referencia={referencia} />
+      <Personal referencia={referencia} />
       <ControlCamara unidades={unidades} />
     </Canvas>
   )

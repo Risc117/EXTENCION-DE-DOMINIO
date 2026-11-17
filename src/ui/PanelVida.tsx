@@ -1,5 +1,5 @@
 import { useVida } from '../estado/vida'
-import { TEXTO_VIDA as T } from '../nucleo/textos'
+import { TEXTO_VIDA as T } from '../nucleo/textosVida'
 
 /** Botón para ver u ocultar el pasto, los animales y las moscas (T24). */
 export function PanelVida() {

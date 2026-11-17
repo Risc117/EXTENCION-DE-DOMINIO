@@ -94,12 +94,6 @@ export const TEXTO_CONEXIONES = {
   ocultarFlujo: 'Ocultar flujo',
 }
 
-/** Vida de la planta: pasto, perro, palomas, aves, garza y moscas (T24). */
-export const TEXTO_VIDA = {
-  mostrar: 'Mostrar vida (pasto y animales)',
-  ocultar: 'Ocultar vida (pasto y animales)',
-}
-
 /** Entorno de la planta: edificios, vías, cerco y árboles. */
 export const TEXTO_ENTORNO = {
   mostrar: 'Mostrar entorno',

@@ -17,3 +17,9 @@ export const MOSCA_ORBITA_RELATIVA = 0.25
 export const MOSCA_DISPERSION = 0.5
 export const MOSCA_VUELTA_MINIMA = 0.6
 export const MOSCA_VUELTA_VARIACION = 1
+/** Animales y personas: segundos del cambio de una animación a otra y nombre del material de los faros de los vehículos. */
+export const DURACION_CAMBIO_ANIMACION = 0.25
+export const MATERIAL_FAROS = 'Headlights'
+
+/** Cada cuántos segundos se revisa quién actúa (día o noche). */
+export const REVISION_PRESENTES_S = 0.5

@@ -6,6 +6,7 @@ import { PanelCalidad } from './PanelCalidad'
 import { PanelConexiones } from './PanelConexiones'
 import { PanelCorte } from './PanelCorte'
 import { PanelEntorno } from './PanelEntorno'
+import { PanelPersonal } from './PanelPersonal'
 import { PanelVida } from './PanelVida'
 import { PanelHora } from './PanelHora'
 import { PanelTerreno } from './PanelTerreno'
@@ -36,6 +37,7 @@ export function PanelHerramientas() {
         <PanelConexiones />
         <PanelEntorno />
         <PanelVida />
+        <PanelPersonal />
         <PanelTerreno />
       </Grupo>
       <Grupo titulo={T.grupoAnotaciones}>

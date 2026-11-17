@@ -37,6 +37,33 @@
       "url": "https://poly.pizza/m/kCLW4c0kGx",
       "obtenido": "2026-11-17",
       "fuente": "Poly Pizza (https://poly.pizza); la página del modelo indica \"Public Domain (CC0)\""
+    },
+    {
+      "archivo": "public/modelos/tecnico.glb",
+      "nombre": "Worker",
+      "autor": "Quaternius",
+      "licencia": "CC0 1.0 (Public Domain)",
+      "url": "https://poly.pizza/m/Yg2bQZO6Hj",
+      "obtenido": "2026-11-17",
+      "fuente": "Poly Pizza (https://poly.pizza); la página del modelo indica \"Public Domain (CC0)\""
+    },
+    {
+      "archivo": "public/modelos/camioneta.glb",
+      "nombre": "Pickup Truck",
+      "autor": "Quaternius",
+      "licencia": "CC0 1.0 (Public Domain)",
+      "url": "https://poly.pizza/m/qn4grQgHm8",
+      "obtenido": "2026-11-17",
+      "fuente": "Poly Pizza (https://poly.pizza); la página del modelo indica \"Public Domain (CC0)\""
+    },
+    {
+      "archivo": "public/modelos/camion.glb",
+      "nombre": "Truck",
+      "autor": "Quaternius",
+      "licencia": "CC0 1.0 (Public Domain)",
+      "url": "https://poly.pizza/m/cXw6oiFtZ8",
+      "obtenido": "2026-11-17",
+      "fuente": "Poly Pizza (https://poly.pizza); la página del modelo indica \"Public Domain (CC0)\""
     }
   ]
 }
