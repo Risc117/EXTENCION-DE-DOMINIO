@@ -101,10 +101,10 @@ describe('geometría y anotaciones', () => {
     expect(g.direccion[2]).toBeLessThan(-0.9)
   })
 
-  it('los 13 buzones del mapa y BZ-1 están, en sus posiciones', () => {
+  it('los 13 buzones del mapa, BZ-1 y el pozo de drenaje BZ-D (T34, de ejemplo) están, en sus posiciones', () => {
     const b = construirBuzones(datos, referencia)
     expect(b.map((x) => x.id).sort()).toEqual(datos.puntos.filter((p) => p.tipo === 'buzon').map((p) => p.id).sort())
-    expect(b.length).toBe(14)
+    expect(b.length).toBe(15)
     const bz2 = b.find((x) => x.id === 'BZ-2')!
     expect(bz2.pos[0]).toBeCloseTo(-21.5, 9)
     expect(bz2.pos[2]).toBeCloseTo(57, 9)

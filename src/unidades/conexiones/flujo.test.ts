@@ -6,7 +6,7 @@ import { cantidadPerlas, construirRutas, puntoEnRuta, velocidadTramo } from './f
 
 describe('campo `caudal` de cada tramo', () => {
   it('todos los tramos lo traen y es uno de los conocidos', () => {
-    for (const t of datos.tramos) expect(['entrada', 'salida', 'mitad', 'lodo', 'dosis'], t.id).toContain(t.caudal)
+    for (const t of datos.tramos) expect(['entrada', 'salida', 'mitad', 'lodo', 'dosis', 'drenaje'], t.id).toContain(t.caudal)
   })
   it('rechaza uno desconocido o ausente', () => {
     const malo = clon()

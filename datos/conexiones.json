@@ -87,7 +87,7 @@
         "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
       },
       "y": {
-        "valor": -57.0,
+        "valor": -57,
         "unidad": "m",
         "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
       }
@@ -145,7 +145,7 @@
         "demo": true
       },
       "x": {
-        "valor": -18.0,
+        "valor": -18,
         "unidad": "m",
         "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
       },
@@ -297,7 +297,7 @@
         "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
       },
       "y": {
-        "valor": 27.0,
+        "valor": 27,
         "unidad": "m",
         "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
       }
@@ -313,12 +313,12 @@
         "demo": true
       },
       "x": {
-        "valor": 15.0,
+        "valor": 15,
         "unidad": "m",
         "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
       },
       "y": {
-        "valor": 10.0,
+        "valor": 10,
         "unidad": "m",
         "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
       }
@@ -339,7 +339,7 @@
         "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
       },
       "y": {
-        "valor": 2.0,
+        "valor": 2,
         "unidad": "m",
         "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-BUZONES, centro del círculo (x, y = UTM − origen (309340, 8791260) de datos/terreno.json)"
       }
@@ -372,6 +372,29 @@
         "valor": 39.5,
         "unidad": "m",
         "fuente": "derivado: punto de aplicación del cloro sobre el tubo de entrada de la cámara de contacto (datos/desinfeccion.json y giro de planta.json)"
+      }
+    },
+    {
+      "id": "BZ-D",
+      "nombre": "Pozo de drenaje BZ-D (con bomba)",
+      "tipo": "buzon",
+      "cotaTapa": {
+        "valor": 2976.7,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado de la escena en el pozo; la posición del pozo es de ejemplo",
+        "demo": true
+      },
+      "x": {
+        "valor": 8,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: posición de ejemplo del pozo de drenaje, junto al borde sur de los lechos de secado (T34); POR CONFIRMAR",
+        "demo": true
+      },
+      "y": {
+        "valor": -13.5,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: posición de ejemplo del pozo de drenaje, junto al borde sur de los lechos de secado (T34); POR CONFIRMAR",
+        "demo": true
       }
     }
   ],
@@ -485,7 +508,7 @@
         },
         {
           "x": -21.5,
-          "y": -57.0
+          "y": -57
         }
       ],
       "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste (impulsión)), eje de las dos líneas paralelas de la tubería",
@@ -521,7 +544,7 @@
       "trazado": [
         {
           "x": -21.5,
-          "y": -57.0
+          "y": -57
         },
         {
           "x": -26.1,
@@ -700,7 +723,7 @@
         },
         {
           "x": -29.9,
-          "y": -9.0,
+          "y": -9,
           "cota": 2983.92
         },
         {
@@ -753,7 +776,7 @@
           "y": 7.49
         },
         {
-          "x": -20.0,
+          "x": -20,
           "y": 8.5,
           "cota": 2984.83
         },
@@ -768,7 +791,7 @@
           "cota": 2982.85
         },
         {
-          "x": -18.0,
+          "x": -18,
           "y": 13.8
         }
       ],
@@ -803,7 +826,7 @@
       },
       "trazado": [
         {
-          "x": -18.0,
+          "x": -18,
           "y": 13.8
         },
         {
@@ -814,7 +837,7 @@
         {
           "x": -15.58,
           "y": 15.16,
-          "cota": 2980.0
+          "cota": 2980
         },
         {
           "x": -13.37,
@@ -1163,7 +1186,7 @@
           "cota": 2975.31
         },
         {
-          "x": 34.0,
+          "x": 34,
           "y": 38.7,
           "cota": 2976.27
         },
@@ -1424,7 +1447,7 @@
           "cota": 2980.84
         },
         {
-          "x": -6.0,
+          "x": -6,
           "y": -1.5,
           "cota": 2976.23
         },
@@ -1474,7 +1497,7 @@
           "y": 44.87
         },
         {
-          "x": 26.0,
+          "x": 26,
           "y": 42.7,
           "cota": 2974.01
         },
@@ -1485,11 +1508,11 @@
         },
         {
           "x": 26.3,
-          "y": 39.0,
+          "y": 39,
           "cota": 2976.09
         },
         {
-          "x": 25.0,
+          "x": 25,
           "y": 34.8,
           "cota": 2975.76
         },
@@ -1505,7 +1528,7 @@
         },
         {
           "x": 18.5,
-          "y": 27.0
+          "y": 27
         }
       ],
       "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería; el primer punto se llevó al extremo del tubo de purga del sedimentador 1 (el DXF arranca 2.7 m antes, bajo el tanque; sobre la misma línea)",
@@ -1570,7 +1593,7 @@
         },
         {
           "x": 18.5,
-          "y": 27.0
+          "y": 27
         }
       ],
       "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería; el primer punto se llevó al extremo del tubo de purga del sedimentador 2 (el DXF arranca 2.2 m antes, bajo el tanque; sobre la misma línea)",
@@ -1606,7 +1629,7 @@
       "trazado": [
         {
           "x": 18.5,
-          "y": 27.0
+          "y": 27
         },
         {
           "x": 17.9,
@@ -1619,8 +1642,8 @@
           "cota": 2975.38
         },
         {
-          "x": 15.0,
-          "y": 10.0
+          "x": 15,
+          "y": 10
         }
       ],
       "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería",
@@ -1655,17 +1678,17 @@
       },
       "trazado": [
         {
-          "x": 15.0,
-          "y": 10.0
+          "x": 15,
+          "y": 10
         },
         {
-          "x": 14.0,
-          "y": 5.0,
+          "x": 14,
+          "y": 5,
           "cota": 2975.52
         },
         {
           "x": 13.3,
-          "y": 2.0
+          "y": 2
         }
       ],
       "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería",
@@ -1701,7 +1724,7 @@
       "trazado": [
         {
           "x": 13.3,
-          "y": 2.0
+          "y": 2
         },
         {
           "x": 12.5,
@@ -1746,11 +1769,11 @@
       "trazado": [
         {
           "x": 31.5,
-          "y": 46.0
+          "y": 46
         },
         {
           "x": 32.2,
-          "y": 45.0,
+          "y": 45,
           "cota": 2977.1
         },
         {
@@ -1789,6 +1812,95 @@
         "valor": 2977.21,
         "unidad": "m",
         "fuente": "derivado: tope de la línea vertical de cloro sobre la tubería de entrada (2976.43 + radio + 0.70, datos/desinfeccion.json)",
+        "demo": true
+      }
+    },
+    {
+      "id": "T30",
+      "caudal": "drenaje",
+      "linea": "agua-residual",
+      "desde": "lechos-secado",
+      "hasta": "BZ-D",
+      "diametro": {
+        "valor": 0.1,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: diámetro de la tubería de drenaje al pozo de ejemplo.",
+        "demo": true
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": 8,
+          "y": -12.7
+        },
+        {
+          "x": 8,
+          "y": -13.5
+        }
+      ],
+      "fuenteTrazado": "No está en el DXF (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf no dibuja el retorno del drenaje): recorrido de ejemplo calculado para no cruzar edificios ni unidades, quedar dentro del cerco y alejarse de la vía interna; decisión del usuario (17 nov): impulsión con bomba desde un pozo junto a los lechos de secado; POR CONFIRMAR con el grupo",
+      "cotaSalida": {
+        "valor": 2975.9,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m; el pozo, la bomba y la impulsión son de ejemplo (el plano no los dibuja) y están POR CONFIRMAR",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2975.9,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m; el pozo, la bomba y la impulsión son de ejemplo (el plano no los dibuja) y están POR CONFIRMAR",
+        "demo": true
+      }
+    },
+    {
+      "id": "T31",
+      "caudal": "drenaje",
+      "linea": "impulsion",
+      "desde": "BZ-D",
+      "hasta": "bombeo",
+      "diametro": {
+        "valor": 0.05,
+        "unidad": "m",
+        "fuente": "No está en las fuentes: diámetro de la impulsión del drenaje de ejemplo.",
+        "demo": true
+      },
+      "material": {
+        "valor": "PVC",
+        "fuente": "No está en las fuentes: material de ejemplo, por confirmar con el usuario",
+        "demo": true
+      },
+      "trazado": [
+        {
+          "x": 8,
+          "y": -13.5,
+          "cota": 2975.9
+        },
+        {
+          "x": 8,
+          "y": -43,
+          "cota": 2979.13
+        },
+        {
+          "x": -3.4,
+          "y": -68,
+          "cota": 2984.85
+        }
+      ],
+      "fuenteTrazado": "No está en el DXF (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf no dibuja el retorno del drenaje): recorrido de ejemplo calculado para no cruzar edificios ni unidades, quedar dentro del cerco y alejarse de la vía interna; decisión del usuario (17 nov): impulsión con bomba desde un pozo junto a los lechos de secado; POR CONFIRMAR con el grupo",
+      "cotaSalida": {
+        "valor": 2975.9,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m; el pozo, la bomba y la impulsión son de ejemplo (el plano no los dibuja) y están POR CONFIRMAR",
+        "demo": true
+      },
+      "cotaLlegada": {
+        "valor": 2984.85,
+        "unidad": "m",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m; el pozo, la bomba y la impulsión son de ejemplo (el plano no los dibuja) y están POR CONFIRMAR",
         "demo": true
       }
     }

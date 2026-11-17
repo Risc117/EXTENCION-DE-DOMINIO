@@ -21,8 +21,8 @@ const punto = z.object({
 const tramo = z.object({
   id: z.string().min(1),
   linea: z.enum(lineas),
-  /** Con qué caudal de la simulación se mueve el agua del tramo (T17): el de entrada a la planta, el de salida del homogeneizador, su mitad (ramales de los sedimentadores), lodo o dosis (lentos y fijos). */
-  caudal: z.enum(['entrada', 'salida', 'mitad', 'lodo', 'dosis']),
+  /** Con qué caudal de la simulación se mueve el agua del tramo (T17): el de entrada a la planta, el de salida del homogeneizador, su mitad (ramales de los sedimentadores), lodo, dosis o drenaje de los lechos (lentos y fijos). */
+  caudal: z.enum(['entrada', 'salida', 'mitad', 'lodo', 'dosis', 'drenaje']),
   /** Id de una unidad de planta.json o de un punto de este archivo. */
   desde: z.string().min(1),
   hasta: z.string().min(1),

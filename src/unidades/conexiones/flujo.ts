@@ -57,7 +57,7 @@ export interface CaudalesLinea {
 
 /** Velocidad visual (m/s de la escena) de las perlas de un tramo: proporcional a su caudal, con topes; 0 si no hay caudal. */
 export function velocidadTramo(caudal: TramoConexion['caudal'], c: CaudalesLinea): number {
-  if (caudal === 'lodo' || caudal === 'dosis') return VELOCIDAD_PROMEDIO * FRACCION_LENTA
+  if (caudal === 'lodo' || caudal === 'dosis' || caudal === 'drenaje') return VELOCIDAD_PROMEDIO * FRACCION_LENTA
   const q = caudal === 'entrada' ? c.entrada : caudal === 'salida' ? c.salida : c.salida / 2
   if (q <= 0 || c.promedio <= 0) return 0
   return Math.min(VELOCIDAD_MAXIMA, Math.max(VELOCIDAD_MINIMA, (VELOCIDAD_PROMEDIO * q) / c.promedio))

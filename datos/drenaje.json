@@ -1,0 +1,31 @@
+{
+  "id": "drenaje",
+  "fuente": "Retorno del drenaje de los lechos de secado al cárcamo (T34). El plano dice que el agua filtrada vuelve al cárcamo, pero con las cotas que usa el visor el cárcamo queda unos 6 m más arriba: decisión del usuario (17 nov), una impulsión con bomba desde un pozo junto a los lechos. Todo es de ejemplo y POR CONFIRMAR con el grupo. El caudal sale del balance de volumen del lodo (lodo húmedo menos lodo deshidratado, de datos/lodosBiogas.json), ignorando la evaporación.",
+  "demo": true,
+  "bomba": {
+    "alturaDinamica": {
+      "valor": 12,
+      "unidad": "m",
+      "fuente": "No está en las fuentes: altura dinámica de la bomba del pozo de drenaje (los ≈ 9 m de desnivel más pérdidas) de ejemplo.",
+      "demo": true
+    },
+    "potencia": {
+      "valor": 0.37,
+      "unidad": "kW",
+      "fuente": "No está en las fuentes: potencia de la bomba del pozo de drenaje de ejemplo.",
+      "demo": true
+    }
+  },
+  "diametroImpulsion": {
+    "valor": 0.05,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: diámetro de la tubería de impulsión del drenaje de ejemplo.",
+    "demo": true
+  },
+  "diametroDrenaje": {
+    "valor": 0.1,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: diámetro de la tubería que lleva el drenaje de los lechos al pozo de ejemplo.",
+    "demo": true
+  }
+}

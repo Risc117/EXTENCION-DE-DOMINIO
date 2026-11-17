@@ -7,6 +7,7 @@ import { publicarCalidad } from './calidadEnVivo'
 import { disponerLinea } from './disposicion'
 import { hidrograma } from './hidrogramaCargado'
 import { publicarDatosLodosBiogas, publicarProduccion } from './lodosBiogasEnVivo'
+import { caudalDrenaje } from './drenaje'
 import { crearLinea, type Linea } from './linea'
 import { esquemaLinea } from './lineaEsquema'
 
@@ -31,6 +32,7 @@ export function crearLineaEnVivo(): (ahoraMs: number, estado: ReturnType<typeof 
   let linea: Linea | null = null
   let reinicios = 0
   let ultimaPublicacion = Number.NEGATIVE_INFINITY
+  const retorno = caudalDrenaje()
   return (ahoraMs, s, segundosSimulados) => {
     if (!s.tanque) return
     if (!linea) {
@@ -44,7 +46,7 @@ export function crearLineaEnVivo(): (ahoraMs: number, estado: ReturnType<typeof 
       linea.reiniciar()
       reinicios = s.reinicios
     }
-    const r = avanzarLinea(linea, hidrograma, s.dia, s.hora, segundosSimulados)
+    const r = avanzarLinea(linea, hidrograma, s.dia, s.hora, segundosSimulados, retorno)
     if (ahoraMs - ultimaPublicacion >= INTERVALO_PUBLICACION_LINEA_MS) {
       ultimaPublicacion = ahoraMs
       useLineaViva.getState().publicarCaudales(r.nodos)

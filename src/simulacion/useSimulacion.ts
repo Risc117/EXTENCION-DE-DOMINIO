@@ -4,6 +4,7 @@ import { useBombeo } from '../estado/bombeo'
 import { useSim } from '../estado/simulacion'
 import { avanzar } from './avanzar'
 import { avanzarCarcamo } from './carcamo'
+import { caudalDrenaje } from './drenaje'
 import { hidrograma } from './hidrogramaCargado'
 import { crearLineaEnVivo } from './lineaEnVivo'
 
@@ -30,6 +31,8 @@ export function useSimulacion() {
     })
 
     const lineaEnVivo = crearLineaEnVivo()
+    // El drenaje de los lechos vuelve al cárcamo: se suma a lo que entra.
+    const retornoDrenaje = caudalDrenaje()
     let cuadro = 0
     let ultimo = performance.now()
     const bucle = (ahora: number) => {
@@ -41,7 +44,7 @@ export function useSimulacion() {
         s.publicar(medidas)
         lineaEnVivo(ahora, s, dtReal * s.velocidad)
         const b = useBombeo.getState()
-        if (b.parametros) b.publicar(avanzarCarcamo(b, b.parametros, medidas.caudalEntrada, dtReal * s.velocidad))
+        if (b.parametros) b.publicar(avanzarCarcamo(b, b.parametros, medidas.caudalEntrada + retornoDrenaje, dtReal * s.velocidad))
       }
       cuadro = requestAnimationFrame(bucle)
     }

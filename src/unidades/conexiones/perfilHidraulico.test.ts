@@ -16,7 +16,8 @@ describe('datos/perfil.json', () => {
   })
   it('incluye todos los tramos de agua residual, impulsión y efluente, menos los gemelos del segundo sedimentador', () => {
     const enCadena = new Set(cadena.cadena.filter((c) => c.tipo === 'tramo').map((c) => (c as { id: string }).id))
-    const esperados = conexiones.tramos.filter((t) => ['agua-residual', 'impulsion', 'efluente'].includes(t.linea)).map((t) => t.id)
+    // El retorno del drenaje de los lechos (T30 y T31, T34) es un ramal que sube al cárcamo: no está en el perfil de la línea de agua.
+    const esperados = conexiones.tramos.filter((t) => ['agua-residual', 'impulsion', 'efluente'].includes(t.linea) && t.caudal !== 'drenaje').map((t) => t.id)
     for (const id of esperados) expect(enCadena.has(id) || cadena.gemelos.tramos.includes(id), id).toBe(true)
     for (const id of cadena.gemelos.tramos) expect(enCadena.has(id), id).toBe(false)
   })
