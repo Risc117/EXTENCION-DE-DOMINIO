@@ -53,8 +53,7 @@
       "anchoUtil": { "valor": 1.82, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 01 y 02 (1.82 m útil); DXF capa FILTRO-COTAS, DIMENSION 1.817", "demo": false },
       "espesorMuro": { "valor": 0.2, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 01 y 02 (muros de 0.20 m); DXF capa FILTRO-COTAS, DIMENSION 0.200", "demo": false },
       "diametroAfluente": { "valor": 0.254, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 01 y 02 (HDPE DN 10\" = 0.254 m)", "demo": false },
-      "diametroSalida": { "valor": 0.05, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 01 y 02 (PVC-SAP Ø 50 mm)", "demo": false },
-      "desplazamientoSur": { "valor": 1.3, "unidad": "m", "fuente": "derivado: insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA: la válvula y la rama corta que entra por el lado oeste del RAFA están a 1.30 m al sur de la mitad de su largo (x local −1.3, de (−28.8, −0.45) m locales de planta); el usuario confirmó (16 nov) que la caja de distribución va a la mitad de su lado oeste. La altura del perfil (2986.71) no cuadra con la caja del plano de detalle (1.11 m sobre la losa): POR CONFIRMAR", "demo": true }
+      "diametroSalida": { "valor": 0.05, "unidad": "m", "fuente": "ESTRUCTURAS2-RAFA_PLOT.pdf, detalle 01 y 02 (PVC-SAP Ø 50 mm)", "demo": false }
     }
   },
   "efluente": {

@@ -10,6 +10,7 @@ import { puertoAfluente } from './puertos'
 
 const datos = esquemaRafa.parse(crudo)
 const s = disponer(datos)
+const c = datos.distribucion.caja
 const piezas = construirPiezas(datos)
 const pieza = (id: string) => piezas.find((p) => p.id === id)!
 const caja = (id: string) => {
@@ -17,59 +18,87 @@ const caja = (id: string) => {
   if (p.forma !== 'caja') throw new Error(`${id} debe ser una caja`)
   return p
 }
+const cilindro = (id: string) => {
+  const p = pieza(id)
+  if (p.forma !== 'cilindro') throw new Error(`${id} debe ser un cilindro`)
+  return p
+}
 const u = planta.unidades.find((x) => x.id === 'rafa')!
-/** Punto del plano de un punto local [x, z] del RAFA (x a lo largo, z a lo ancho, el sur de la escena hacia +z con giro 0). */
+/** Punto del plano de un punto local [x, z] del RAFA (x a lo largo, z a lo ancho). */
 function aPlano([x, z]: [number, number]) {
   const g = (u.giro.valor * Math.PI) / 180
   return { x: u.x.valor + x * Math.cos(g) + z * Math.sin(g), y: u.y.valor + x * Math.sin(g) - z * Math.cos(g) }
 }
 const tramo = (id: string) => conexionesCrudas.tramos.find((t) => t.id === id)!
 
-describe('T16.4 · RAFA: caja de distribución al oeste y lodos al este', () => {
-  it('la caja de distribución va a la mitad del lado oeste (−z), sobre la losa, y no en un extremo', () => {
-    const c = caja('caja-distribucion')
-    expect(c.pos[2]).toBeLessThan(0)
-    expect(c.pos[2] - c.tam[2] / 2).toBeCloseTo(-s.semiAncho, 6)
-    expect(Math.abs(c.pos[0])).toBeLessThan(s.semiLargo / 3)
-    expect(c.pos[0]).toBeCloseTo(-datos.distribucion.caja.desplazamientoSur.valor, 6)
-    expect(c.pos[1] - c.tam[1] / 2).toBeCloseTo(s.yLosa, 6)
+describe('T16.4.4 · RAFA según el plano de detalle: el eje A-A cruza por la mitad del largo', () => {
+  it('la caja de distribución va centrada sobre A-A (x = 0), pegada por fuera al lado oeste, de 1.90 × 1.11 m, sin el desplazamiento de 1.3 m', () => {
+    const b = caja('caja-distribucion')
+    expect(b.pos[0]).toBeCloseTo(0, 9)
+    expect(b.tam[0]).toBeCloseTo(1.9, 9)
+    expect(b.tam[1]).toBeCloseTo(1.11, 9)
+    expect(b.pos[2] + b.tam[2] / 2).toBeCloseTo(-s.semiAncho, 9)
+    expect(b.pos[1] - b.tam[1] / 2).toBeCloseTo(s.yLosa, 9)
+    expect('desplazamientoSur' in c).toBe(false)
   })
 
-  it('el desplazamiento de la caja sale del DXF (válvula y rama a x ≈ −1.3 m) y es derivado y de ejemplo', () => {
-    const m = datos.distribucion.caja.desplazamientoSur
-    expect(m.valor).toBeCloseTo(1.3, 6)
-    expect(m.demo).toBe(true)
-    expect(m.fuente).toContain('.dxf')
-  })
-
-  it('el tubo afluente entra a la caja desde el oeste (a lo largo de z) y termina a 1.5 m de la pared', () => {
-    const t = pieza('tubo-afluente')
-    if (t.forma !== 'cilindro') throw new Error('debe ser un cilindro')
+  it('el tubo afluente va recto sobre A-A: entra a la caja a lo largo de z y termina a 1.5 m de ella', () => {
+    const t = cilindro('tubo-afluente')
     expect(t.eje).toBe('z')
+    expect(t.pos[0]).toBeCloseTo(0, 9)
     const p = puertoAfluente(datos)
-    expect(p[1]).toBeCloseTo(-(s.semiAncho + 1.5), 6)
-    expect(t.pos[2] - t.alto / 2).toBeCloseTo(p[1], 6)
-    expect(t.pos[1]).toBeCloseTo(s.yLosa + datos.distribucion.caja.alto.valor / 2, 6)
+    expect(p[0]).toBeCloseTo(0, 9)
+    expect(p[1]).toBeCloseTo(-(s.semiAncho + c.ancho.valor + 1.5), 9)
+    expect(t.pos[2] - t.alto / 2).toBeCloseTo(p[1], 9)
   })
 
-  it('T08 termina en el extremo del tubo afluente (menos de 10 cm) a la cota de su eje', () => {
-    const t = tramo('T08')
-    const fin = t.trazado[t.trazado.length - 1]
-    const p = aPlano(puertoAfluente(datos))
-    expect(Math.hypot(fin.x - p.x, fin.y - p.y)).toBeLessThan(0.1)
-    expect(t.cotaLlegada.valor).toBeCloseTo(u.cotaFondo.valor + s.yLosa + datos.distribucion.caja.alto.valor / 2, 2)
+  it('de la caja baja un tubo y sigue recto sobre A-A hasta el colector central', () => {
+    const baja = cilindro('tubo-bajada')
+    const sigue = cilindro('tubo-distribucion')
+    expect(baja.pos[0]).toBeCloseTo(0, 9)
+    expect(sigue.pos[0]).toBeCloseTo(0, 9)
+    expect(sigue.eje).toBe('z')
+    expect(sigue.pos[2] + sigue.alto / 2).toBeCloseTo(0, 9)
+    expect(sigue.pos[2] - sigue.alto / 2).toBeCloseTo(baja.pos[2], 9)
+    expect(sigue.pos[1]).toBeCloseTo(s.yPiso + datos.distribucion.colector.alturaSobrePiso.valor, 9)
   })
 
-  it('los lodos salen por el este (+z): las tomas y las dos cajas', () => {
+  it('el efluente va en el lado opuesto (este, +z), centrado sobre A-A, y ya no hay bloque en el extremo corto', () => {
+    const e = caja('camara-efluente')
+    expect(e.pos[0]).toBeCloseTo(0, 9)
+    expect(e.pos[2] - e.tam[2] / 2).toBeCloseTo(s.semiAncho, 9)
+    expect(e.tam[2]).toBeCloseTo(datos.efluente.anchoCamara.valor, 9)
+    expect(e.tam[0]).toBeCloseTo(2 * s.semiAnchoInterior, 9)
+    // Ninguna pieza de fuera sobresale por los extremos cortos del RAFA (norte y sur).
+    for (const p of piezas.filter((x) => x.forma === 'caja' && !x.id.startsWith('baranda') && !x.id.startsWith('poste'))) {
+      if (p.forma !== 'caja') continue
+      expect(Math.abs(p.pos[0]) + p.tam[0] / 2, p.id).toBeLessThanOrEqual(s.semiLargo + 1e-9)
+    }
+    for (let i = 1; i <= datos.efluente.salidas.valor; i++) expect(cilindro(`salida-efluente-${i}`).eje).toBe('z')
+  })
+
+  it('los lodos siguen al este (+z)', () => {
     for (const p of piezas.filter((x) => x.id.startsWith('toma-lodo-'))) expect(p.pos[2]).toBeGreaterThan(s.semiAnchoInterior)
     expect(caja('caja-muestreo').pos[2]).toBeGreaterThan(s.semiAncho)
     expect(caja('caja-descarga').pos[2]).toBeGreaterThan(s.semiAncho)
   })
 
-  it('las etiquetas de los lodos y de la caja de distribución apuntan a su nuevo lado', () => {
+  it('T08 termina en el extremo del tubo afluente (menos de 10 cm) y anota la diferencia con el plano general', () => {
+    const t = tramo('T08')
+    const fin = t.trazado[t.trazado.length - 1]
+    const p = aPlano(puertoAfluente(datos))
+    expect(Math.hypot(fin.x - p.x, fin.y - p.y)).toBeLessThan(0.1)
+    expect(t.cotaLlegada.valor).toBeCloseTo(u.cotaFondo.valor + s.yLosa + c.alto.valor / 2, 2)
+    expect(t.fuenteTrazado).toContain('POR CONFIRMAR')
+    expect(t.fuenteTrazado).toContain('plano de detalle')
+  })
+
+  it('las etiquetas siguen a las piezas: caja y tubo al oeste, efluente y lodos al este', () => {
     const e = (id: string) => construirEtiquetas(datos, 3, 11, 11).find((x) => x.id === id)!
-    for (const id of ['et-tomas', 'et-muestreo', 'et-descarga']) expect(e(id).punta[2], id).toBeGreaterThan(0)
     expect(e('et-caja-distribucion').punta[2]).toBeLessThan(0)
-    expect(Math.abs(e('et-caja-distribucion').punta[0])).toBeLessThan(s.semiLargo / 3)
+    expect(Math.abs(e('et-caja-distribucion').punta[0])).toBeLessThan(1e-9)
+    expect(e('et-efluente').punta[2]).toBeGreaterThan(s.semiAncho)
+    expect(Math.abs(e('et-efluente').punta[0])).toBeLessThan(1e-9)
+    for (const id of ['et-tomas', 'et-muestreo', 'et-descarga']) expect(e(id).punta[2], id).toBeGreaterThan(0)
   })
 })
