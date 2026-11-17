@@ -84,19 +84,20 @@ describe('T16.3 · puertos del homogeneizador (perfil real)', () => {
 
   it('las cajas de válvula y las flechas de las etiquetas siguen a los puertos', () => {
     const fiIngreso = -(datos.ingreso.angulo.valor * Math.PI) / 180
-    const caja = construirCajasValvula(datos).find((c) => c.id === 'caja-valvula-ingreso')!
-    expect(Math.atan2(caja.posicion[2], caja.posicion[0])).toBeCloseTo(Math.atan2(Math.sin(fiIngreso), Math.cos(fiIngreso)), 6)
+    const valvula = construirCajasValvula(datos).find((c) => c.id === 'valvula-ingreso')!
+    expect(Math.atan2(valvula.posicion[2], valvula.posicion[0])).toBeCloseTo(Math.atan2(Math.sin(fiIngreso), Math.cos(fiIngreso)), 6)
     const punto = puntoObjetivo(datos, 'salida', 0).punto
     const fiSalida = -(datos.salida.angulo.valor * Math.PI) / 180
     expect(Math.atan2(punto[2], punto[0])).toBeCloseTo(Math.atan2(Math.sin(fiSalida), Math.cos(fiSalida)), 6)
     expect(punto[1]).toBeCloseTo(datos.salida.altura.valor, 6)
   })
 
-  it('la válvula, la caja y la varilla de la entrada caen sobre su tubo horizontal (no más lejos que el tubo vertical) y la flecha apunta a él', () => {
+  it('la válvula de la entrada cae sobre su tubo horizontal (no más lejos que el tubo vertical), sin caja ni varilla (va por el aire), y la flecha apunta a ella', () => {
     const radioExt = datos.tanque.diametroExterior.valor / 2
     const alcance = radioExt + datos.ingreso.distanciaRiser.valor
     const piezasAcc = construirCajasValvula(datos)
-    for (const id of ['valvula-ingreso', 'caja-valvula-ingreso', 'varilla-ingreso']) {
+    expect(piezasAcc.some((c) => c.id === 'caja-valvula-ingreso' || c.id === 'varilla-ingreso')).toBe(false)
+    for (const id of ['valvula-ingreso']) {
       const a = piezasAcc.find((c) => c.id === id)!
       const r = Math.hypot(a.posicion[0], a.posicion[2])
       expect(r, id).toBeGreaterThan(radioExt)

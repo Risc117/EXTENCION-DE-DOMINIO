@@ -1,7 +1,7 @@
 import { FACTOR_CUERPO_VALVULA, FRACCION_VALVULA_INGRESO } from '../../../nucleo/constantes'
 import type { DatosHomogeneizador } from '../esquema'
 import { direccionPuerto } from '../puertos'
-import { cilindroVertical, cotaTecho, SIN_GIRO } from './cotas'
+import { cilindroVertical, SIN_GIRO } from './cotas'
 import type { PiezaAccesorio } from './tipos'
 
 /**
@@ -10,7 +10,8 @@ import type { PiezaAccesorio } from './tipos'
  */
 export function construirCajasValvula(d: DatosHomogeneizador): PiezaAccesorio[] {
   const c = d.accesorios.cajaValvula
-  const terreno = cotaTecho(d)
+  // El suelo real (el del terreno levantado): no la losa de techo, el tanque sale del suelo.
+  const terreno = d.accesorios.terreno.nivelSuelo.valor
   const radioExt = d.tanque.diametroExterior.valor / 2
   /** La entrada sale del muro solo hasta su tubo vertical: su válvula va sobre ese tramo. La salida usa la distancia del JSON. */
   const distancia = { ingreso: Math.min(c.distanciaAlMuro.valor, d.ingreso.distanciaRiser.valor * FRACCION_VALVULA_INGRESO), salida: c.distanciaAlMuro.valor }
@@ -19,11 +20,14 @@ export function construirCajasValvula(d: DatosHomogeneizador): PiezaAccesorio[] 
     const fi = direccionPuerto(angulo)
     const x0 = radioExt + distancia[nombre]
     const [x, z] = [x0 * Math.cos(fi), x0 * Math.sin(fi)]
-    piezas.push({
-      id: `caja-valvula-${nombre}`, tipo: 'caja-valvula', forma: 'caja', rotacion: SIN_GIRO,
-      tamano: [c.lado.valor, c.alto.valor, c.lado.valor], posicion: [x, terreno + c.alto.valor / 2, z],
-    })
-    piezas.push(cilindroVertical(`varilla-${nombre}`, 'varilla', x, z, altura, terreno + c.alto.valor, c.diametroVarilla.valor / 2))
+    // Un tubo por el aire (la entrada llega más arriba del suelo) no lleva caja ni varilla: solo su válvula.
+    if (altura < terreno) {
+      piezas.push({
+        id: `caja-valvula-${nombre}`, tipo: 'caja-valvula', forma: 'caja', rotacion: SIN_GIRO,
+        tamano: [c.lado.valor, c.alto.valor, c.lado.valor], posicion: [x, terreno + c.alto.valor / 2, z],
+      })
+      piezas.push(cilindroVertical(`varilla-${nombre}`, 'varilla', x, z, altura, terreno + c.alto.valor, c.diametroVarilla.valor / 2))
+    }
     // Cuerpo de la válvula: un cilindro corto que abraza el tubo.
     piezas.push({
       id: `valvula-${nombre}`, tipo: 'valvula', forma: 'cilindro', radio: (c.diametroValvula.valor * FACTOR_CUERPO_VALVULA) / 2,

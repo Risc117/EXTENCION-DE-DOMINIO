@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import crudo from '../../../../datos/homogeneizador.json'
+import { planta } from '../../planta'
 import { esquemaHomogeneizador, type DatosHomogeneizador } from '../esquema'
 import { construirAccesorios } from './index'
 import type { PiezaAccesorio, TipoAccesorio } from './tipos'
@@ -96,13 +97,13 @@ describe('construirAccesorios', () => {
     expect(hongo.posicion[1]).toBeGreaterThan(tubo.posicion[1])
   })
 
-  it('hay una caja de válvula del lado del ingreso y otra del lado de la salida, sobre el terreno', () => {
+  it('la caja de válvula de la salida (tubo enterrado) queda sobre el suelo real; la entrada va por el aire y solo trae su válvula', () => {
     const cajas = de('caja-valvula')
-    expect(cajas).toHaveLength(2)
-    expect(cajas.map((c) => c.id).sort()).toEqual(['caja-valvula-ingreso', 'caja-valvula-salida'])
-    for (const c of cajas) expect(c.posicion[1] - caja(c).tamano[1] / 2).toBeCloseTo(TECHO)
-    expect(de('varilla')).toHaveLength(2)
-    expect(de('valvula')).toHaveLength(2)
+    expect(cajas.map((c) => c.id)).toEqual(['caja-valvula-salida'])
+    const suelo = datos.accesorios.terreno.nivelSuelo.valor
+    for (const c of cajas) expect(c.posicion[1] - caja(c).tamano[1] / 2).toBeCloseTo(suelo)
+    expect(de('varilla').map((v) => v.id)).toEqual(['varilla-salida'])
+    expect(de('valvula').map((v) => v.id).sort()).toEqual(['valvula-ingreso', 'valvula-salida'])
   })
 
   it('la varilla llega hasta el tubo que maneja', () => {
@@ -118,7 +119,13 @@ describe('construirAccesorios', () => {
     if (relleno.forma !== 'anillo' || terreno.forma !== 'anillo') throw new Error('deben ser anillos')
     expect(relleno.radioInterior).toBeCloseTo(3.99)
     expect(terreno.radioInterior).toBeCloseTo(relleno.radioExterior)
-    expect(relleno.posicion[1] + relleno.alto).toBeCloseTo(TECHO)
+    // El relleno y el terreno natural llegan solo hasta el suelo real (el del terreno levantado), no hasta la losa de techo.
+    expect(relleno.posicion[1] + relleno.alto).toBeCloseTo(datos.accesorios.terreno.nivelSuelo.valor)
+    expect(relleno.posicion[1] + relleno.alto).toBeLessThan(TECHO)
+    expect(terreno.posicion[1] + terreno.alto).toBeCloseTo(datos.accesorios.terreno.nivelSuelo.valor)
+    const u = planta.unidades.find((x) => x.id === 'homogeneizador')!
+    expect(Math.abs(u.cotaFondo.valor + datos.accesorios.terreno.nivelSuelo.valor - u.cotaSuperficie.valor)).toBeLessThanOrEqual(0.06)
+    expect(datos.accesorios.terreno.nivelSuelo.demo).toBe(true)
     expect(relleno.posicion[1]).toBeCloseTo(-0.3 - 0.3 - 0.5)
   })
 })

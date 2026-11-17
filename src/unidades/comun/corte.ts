@@ -1,5 +1,6 @@
 import { ESPIRAL } from '../../nucleo/constantes'
 import { OPACIDAD_CANAL } from '../../nucleo/constantesCanales'
+import { planoAMundo, type UbicacionEscena } from '../ubicacion'
 
 export interface PlanoCorte {
   normal: [number, number, number]
@@ -13,6 +14,16 @@ export interface PlanoCorte {
 export function planoCorte(activo: boolean, posicion: number, radio: number): PlanoCorte | null {
   if (!activo) return null
   return { normal: [0, 0, -1], constante: posicion * radio }
+}
+
+/**
+ * Plano del corte en el mundo (el que pide three.js). Por defecto es el eje local de la unidad (gira con ella);
+ * `giroCorte` (rad) lo arma como si la unidad tuviera ese giro, para que quite la misma mitad del mundo que otra unidad.
+ */
+export function planoCorteMundo(activo: boolean, posicion: number, radio: number, ubicacion: UbicacionEscena, giroCorte?: number) {
+  const local = planoCorte(activo, posicion, radio)
+  if (!local) return null
+  return planoAMundo(local, giroCorte === undefined ? ubicacion : { ...ubicacion, giro: giroCorte })
 }
 
 /** Opacidad de los muros y techos con el corte: opacos sin "Ver corte" (undefined) y translúcidos con él. Es el criterio de todas las unidades. */

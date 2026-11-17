@@ -18,7 +18,7 @@ export const esquemaAccesorios = z.object({
   }),
   ventilacion: z.object({ diametroTubo: medida, altura: medida, diametroHongo: medida, alturaHongo: medida, distanciaAlCentro: medida }),
   cajaValvula: z.object({ diametroValvula: medida, lado: medida, alto: medida, diametroVarilla: medida, distanciaAlMuro: medida }),
-  terreno: z.object({ anchoRelleno: medida, anchoTerreno: medida, profundidadBajoSolado: medida }),
+  terreno: z.object({ anchoRelleno: medida, anchoTerreno: medida, profundidadBajoSolado: medida, nivelSuelo: medida }),
 })
 
 export type DatosAccesorios = z.infer<typeof esquemaAccesorios>

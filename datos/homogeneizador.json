@@ -81,7 +81,8 @@
     "terreno": {
       "anchoRelleno": { "valor": 0.8, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
       "anchoTerreno": { "valor": 4, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
-      "profundidadBajoSolado": { "valor": 0.5, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true }
+      "profundidadBajoSolado": { "valor": 0.5, "unidad": "m", "fuente": "Estimado (el plano no lo acota); confirmar", "demo": true },
+      "nivelSuelo": { "valor": 2.05, "unidad": "m", "fuente": "derivado: terreno natural en el centro del tanque (cotaSuperficie 2987.3 de datos/planta.json) menos el fondo 2985.25; el relleno y el terreno de ejemplo llegan solo hasta el suelo real, el tanque sale del suelo ≈ 3.4 m (T16.4.2)", "demo": true }
     }
   },
   "anotaciones": {

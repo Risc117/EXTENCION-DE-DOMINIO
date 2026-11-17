@@ -5,14 +5,14 @@ import { NUMERO_PARTICULAS, RADIO_PARTICULA } from '../../nucleo/constantes'
 import { leerColor } from '../../nucleo/colores'
 import { cantidadParticulas, useCalidad } from '../../estado/calidad'
 import { bufferParticulas } from '../../estado/flujo'
-import { usePlanosCorte } from '../comun/usePlanosCorte'
+import { usePlanosCorteTanque } from './corte'
 
 const apoyo = new Object3D()
 
 /** Partículas del flujo: una sola malla con instancias, movida desde el buffer del estado. */
 export function Particulas({ radioTanque }: { radioTanque: number }) {
   const malla = useRef<InstancedMesh>(null)
-  const planos = usePlanosCorte(radioTanque)
+  const planos = usePlanosCorteTanque(radioTanque)
 
   useFrame(() => {
     const m = malla.current

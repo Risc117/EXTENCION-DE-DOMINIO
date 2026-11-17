@@ -1,12 +1,12 @@
 import { OPACIDAD_AGUA, SEGMENTOS_CILINDRO } from '../../nucleo/constantes'
 import { leerColor } from '../../nucleo/colores'
 import { useSim } from '../../estado/simulacion'
-import { usePlanosCorte } from '../comun/usePlanosCorte'
+import { usePlanosCorteTanque } from './corte'
 
 /** Superficie y masa de agua: un cilindro que crece desde el fondo según el nivel de la simulación. */
 export function Agua({ radio }: { radio: number }) {
   const nivel = useSim((s) => s.nivel)
-  const planos = usePlanosCorte(radio)
+  const planos = usePlanosCorteTanque(radio)
   if (nivel <= 0) return null
   return (
     <mesh position={[0, nivel / 2, 0]} scale={[1, nivel, 1]}>

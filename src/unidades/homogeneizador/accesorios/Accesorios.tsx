@@ -5,7 +5,7 @@ import { leerColor } from '../../../nucleo/colores'
 import { useAccesorios } from '../../../estado/accesorios'
 import { GeometriaAnillo } from '../../comun/Anillo'
 import type { DatosHomogeneizador } from '../esquema'
-import { usePlanosCorte } from '../../comun/usePlanosCorte'
+import { usePlanosCorteTanque } from '../corte'
 import { construirAccesorios } from './index'
 import type { PiezaAccesorio, TipoAccesorio } from './tipos'
 
@@ -60,7 +60,7 @@ function Material({ tipo, planos }: { tipo: TipoAccesorio; planos: Plane[] }) {
 export function Accesorios({ datos }: { datos: DatosHomogeneizador }) {
   const visibles = useAccesorios((s) => s.visibles)
   const piezas = useMemo(() => construirAccesorios(datos), [datos])
-  const planos = usePlanosCorte(datos.tanque.diametroInterior.valor / 2)
+  const planos = usePlanosCorteTanque(datos.tanque.diametroInterior.valor / 2)
   if (!visibles) return null
   return (
     <group>

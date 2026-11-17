@@ -1,13 +1,12 @@
 import type { DatosHomogeneizador } from '../esquema'
-import { cotaTecho } from './cotas'
 import type { PiezaAccesorio } from './tipos'
 
-/** Relleno compactado pegado al muro y terreno natural alrededor, hasta el nivel de la losa de techo. */
+/** Relleno compactado pegado al muro y terreno natural alrededor, hasta el nivel del suelo real (no hasta la losa de techo: el tanque sale del suelo). */
 export function construirTerreno(d: DatosHomogeneizador): PiezaAccesorio[] {
   const t = d.accesorios.terreno
   const radioMuro = d.tanque.diametroExterior.valor / 2
   const fondo = -d.tanque.espesorLosaFondo.valor - d.tanque.espesorSolado.valor - t.profundidadBajoSolado.valor
-  const alto = cotaTecho(d) - fondo
+  const alto = t.nivelSuelo.valor - fondo
   const radioRelleno = radioMuro + t.anchoRelleno.valor
   return [
     { id: 'relleno', tipo: 'relleno', forma: 'anillo', posicion: [0, fondo, 0], radioInterior: radioMuro, radioExterior: radioRelleno, alto },
