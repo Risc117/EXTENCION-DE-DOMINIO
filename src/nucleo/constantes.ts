@@ -9,9 +9,8 @@ export const ANGULO_REBOSE = Math.PI / 6
 /** Radio (m) del riel guía del agitador y espesor (m) del disco de la zona de mezcla. */
 export const RADIO_RIEL = 0.03
 export const ESPESOR_ZONA_MEZCLA = 0.02
-/** Opacidad (0 a 1) del muro, la losa de techo y la zona de mezcla para ver el interior. */
+/** Opacidad (0 a 1) del muro del cárcamo y de la zona de mezcla para ver el interior. */
 export const OPACIDAD_MURO = 0.35
-export const OPACIDAD_TECHO = 0.3
 export const OPACIDAD_ZONA_MEZCLA = 0.3
 /** Diferencia máxima (m) aceptada entre medidas del plano que deben cuadrar. */
 export const TOLERANCIA_MEDIDAS = 0.005

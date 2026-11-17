@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { useCorte } from '../../estado/flujo'
-import { planoCorte, puntosEspiral } from './corte'
+import { OPACIDAD_CANAL } from '../../nucleo/constantesCanales'
+import { opacidadCorte, planoCorte, puntosEspiral } from './corte'
 
 describe('planoCorte', () => {
   it('sin corte no hay plano', () => {
@@ -43,5 +44,13 @@ describe('puntosEspiral', () => {
     expect(Math.hypot(pts[0][0], pts[0][2])).toBeCloseTo(0, 6)
     expect(Math.hypot(pts[99][0], pts[99][2])).toBeCloseTo(1.5, 6)
     for (const p of pts) expect(p[1]).toBe(0)
+  })
+})
+
+describe('opacidadCorte (el mismo criterio de "Ver corte" para todas las unidades)', () => {
+  it('sin corte los muros son opacos y con corte son translúcidos', () => {
+    expect(opacidadCorte(false)).toBeUndefined()
+    expect(opacidadCorte(true)).toBe(OPACIDAD_CANAL)
+    expect(OPACIDAD_CANAL).toBeLessThan(1)
   })
 })

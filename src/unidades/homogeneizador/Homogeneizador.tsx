@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { OPACIDAD_MURO, OPACIDAD_TECHO, OPACIDAD_ZONA_MEZCLA, SEGMENTOS_CILINDRO } from '../../nucleo/constantes'
+import { SEGMENTOS_CILINDRO } from '../../nucleo/constantes'
 import { leerColor } from '../../nucleo/colores'
 import { Accesorios } from './accesorios/Accesorios'
 import { Anotaciones } from './anotaciones/Anotaciones'
@@ -7,8 +7,10 @@ import { Agua } from './Agua'
 import { GeometriaAnillo } from '../comun/Anillo'
 import type { DatosHomogeneizador } from './esquema'
 import { construirPiezas, type TipoPieza } from './geometria'
+import { opacidadPieza } from './opacidad'
 import { Particulas } from './Particulas'
 import { Remolino } from './Remolino'
+import { useOpacidadCorte } from '../comun/useOpacidadCorte'
 import { usePlanosCorte } from '../comun/usePlanosCorte'
 
 const COLOR: Record<TipoPieza, string> = {
@@ -24,21 +26,15 @@ const COLOR: Record<TipoPieza, string> = {
   'zona-mezcla': '--color-zona-mezcla',
 }
 
-/** Piezas semitransparentes para ver el interior. */
-const OPACIDAD: Partial<Record<TipoPieza, number>> = {
-  muro: OPACIDAD_MURO,
-  'losa-techo': OPACIDAD_TECHO,
-  'zona-mezcla': OPACIDAD_ZONA_MEZCLA,
-}
-
 export function Homogeneizador({ datos }: { datos: DatosHomogeneizador }) {
   const piezas = useMemo(() => construirPiezas(datos), [datos])
   const radio = datos.tanque.diametroInterior.valor / 2
   const planos = usePlanosCorte(radio)
+  const opacidadMuros = useOpacidadCorte()
   return (
     <group>
       {piezas.map((p) => {
-        const opacidad = OPACIDAD[p.tipo]
+        const opacidad = opacidadPieza(p.tipo, opacidadMuros)
         return (
           <mesh key={p.id} position={p.posicion} rotation={p.forma === 'cilindro' ? p.rotacion : undefined}>
             {p.forma === 'anillo' ? (

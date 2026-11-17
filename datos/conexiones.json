@@ -97,7 +97,7 @@
       "nombre": "Buzón BZ-3",
       "tipo": "buzon",
       "cotaTapa": {
-        "valor": 2990.96,
+        "valor": 2990.62,
         "unidad": "m",
         "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
         "demo": true
@@ -118,7 +118,7 @@
       "nombre": "Buzón BZ-4",
       "tipo": "buzon",
       "cotaTapa": {
-        "valor": 2989.89,
+        "valor": 2986.89,
         "unidad": "m",
         "fuente": "derivado: cota del terreno aplanado de la escena (datos/terreno.json y planta.json) en el buzón; la tabla del perfil no está en el DXF",
         "demo": true
@@ -577,7 +577,7 @@
         "demo": true
       },
       "cotaLlegada": {
-        "valor": 2990.16,
+        "valor": 2989.82,
         "unidad": "m",
         "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
@@ -611,13 +611,13 @@
       ],
       "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
       "cotaSalida": {
-        "valor": 2990.16,
+        "valor": 2989.82,
         "unidad": "m",
         "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
-        "valor": 2989.85,
+        "valor": 2986.57,
         "unidad": "m",
         "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
@@ -651,13 +651,13 @@
       ],
       "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; el DXF sale del homogeneizador 1 m fuera de su círculo; sin ajuste",
       "cotaSalida": {
-        "valor": 2989.81,
+        "valor": 2986.48,
         "unidad": "m",
         "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
-        "valor": 2989.09,
+        "valor": 2986.09,
         "unidad": "m",
         "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
@@ -687,7 +687,7 @@
         {
           "x": -26.55,
           "y": -13.7,
-          "cota": 2987.56
+          "cota": 2985.39
         },
         {
           "x": -29.9,
@@ -699,9 +699,9 @@
           "y": 0.5
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; POR CONFIRMAR: el DXF detiene el tubo en la cerca (x ≈ −28.8, a media altura del lado oeste) a unos 4.3 m del muro oeste del RAFA, y la caja de distribución de la geometría del RAFA (T11) está en su extremo sur: no se pudo confirmar dónde entra el tubo, no se prolongó",
       "cotaSalida": {
-        "valor": 2989.09,
+        "valor": 2986.09,
         "unidad": "m",
         "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true

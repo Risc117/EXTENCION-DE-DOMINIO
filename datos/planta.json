@@ -194,14 +194,15 @@
         "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa HOMOG-MURO, borde superior del muro (fondo + 5.40 m de alturaTotal); cota = y del dibujo − 8788092.77, calibrado con el eje 2974 a 2994 m de insumos/planos/LUGAR_PROYECTADO_FINAL_MEJORADO-Layout2.pdf (líneas del eje en 288.4 pt y 444.0 pt, 7.78 pt/m; el desfase sale de alinear 6 líneas del perfil entre el PDF y el DXF)"
       },
       "cotaSuperficie": {
-        "valor": 2990.65,
+        "valor": 2987.3,
         "unidad": "m",
-        "fuente": "derivado: cota del piso plano (explanada) alrededor de la unidad = su coronación (queda enterrada hasta el nivel del suelo)"
+        "fuente": "derivado: cota del terreno levantado (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json) en el centro del tanque, redondeada a 0.1 m; el tanque sale del suelo ≈ 3.4 m. POR REVISAR CON EL PERFIL REAL: la coronación medida del perfil (2990.65 m) queda 3.4 m sobre este terreno; antes la explanada subía el suelo hasta esa cota y formaba un montículo ancho (T16.2)",
+        "demo": true
       },
       "radioExplanada": {
-        "valor": 6,
+        "valor": 4.5,
         "unidad": "m",
-        "fuente": "derivado: mitad del diámetro exterior 7.98 m de datos/homogeneizador.json + 2 m de margen",
+        "fuente": "derivado: mitad del diámetro exterior 7.98 m de datos/homogeneizador.json (3.99 m) más 0.5 m de margen (antes + 2 m: 6 m)",
         "demo": true
       }
     },

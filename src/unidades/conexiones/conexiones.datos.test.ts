@@ -150,3 +150,19 @@ describe('los extremos caen en las estructuras', () => {
   })
 })
 
+describe('T16.2 · extremos sueltos', () => {
+  const sueltos = datos.puntos.filter((p) => p.tipo !== 'buzon').map((p) => p.id)
+
+  it('los únicos puntos de la red que no son buzón ni unidad son la entrada de agua, la descarga al río y el punto de aplicación del cloro', () => {
+    expect(sueltos.sort()).toEqual(['descarga-rio', 'entrada-agua', 'punto-cloro'])
+  })
+
+  it('cada uno de esos extremos sueltos es el extremo de un solo tramo y ningún otro tramo termina en el aire', () => {
+    for (const id of sueltos) expect(datos.tramos.filter((t) => t.desde === id || t.hasta === id).length, id).toBe(1)
+  })
+
+  it('el tubo que llega al RAFA se detiene en el DXF a unos 4.3 m de su muro oeste: queda anotado como por confirmar', () => {
+    expect(tramo('T08').fuenteTrazado).toContain('POR CONFIRMAR')
+    expect(tramo('T08').fuenteTrazado).toContain('RAFA')
+  })
+})
