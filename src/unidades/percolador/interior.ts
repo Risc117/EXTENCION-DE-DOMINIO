@@ -33,13 +33,14 @@ export function construirInterior(d: DatosPercolador): Pieza[] {
   }
   const lecho = d.lecho.altura.valor
   const entrada = d.entrada.diametro.valor
+  const yEntrada = d.entrada.altura.valor
   const largoEntrada = s.radioExterior + PROLONGACION_TUBO
   piezas.push(
     { id: 'lecho', forma: 'cilindro', color: '--color-relleno', pos: [0, s.yCamara + lecho / 2, 0], radio: s.radio, alto: lecho },
     { id: 'columna', forma: 'cilindro', color: '--color-muro', pos: [0, (s.yLosa + s.yColumna) / 2, 0], radio: s.radioColumna, alto: s.yColumna - s.yLosa },
-    // La entrada llega enterrada por el oeste, bajo la losa, y sube por la columna central.
-    { id: 'tubo-entrada', forma: 'cilindro', color: '--color-ingreso', pos: [-largoEntrada / 2, -entrada / 2, 0], radio: entrada / 2, alto: largoEntrada, eje: 'x' },
-    { id: 'tubo-subida', forma: 'cilindro', color: '--color-ingreso', pos: [0, (s.yColumna - entrada / 2) / 2, 0], radio: entrada / 2, alto: s.yColumna + entrada / 2 },
+    // La entrada cruza el muro por el oeste a la altura del perfil, dentro de la cámara inferior, y sube por la columna central.
+    { id: 'tubo-entrada', forma: 'cilindro', color: '--color-ingreso', pos: [-largoEntrada / 2, yEntrada, 0], radio: entrada / 2, alto: largoEntrada, eje: 'x' },
+    { id: 'tubo-subida', forma: 'cilindro', color: '--color-ingreso', pos: [0, (s.yColumna + yEntrada - entrada / 2) / 2, 0], radio: entrada / 2, alto: s.yColumna - yEntrada + entrada / 2 },
     caja('canal-central', '--color-solado', [-s.radio, s.radio], [s.yLosa, s.yLosa + d.canal.alto.valor], [-d.canal.ancho.valor / 2, d.canal.ancho.valor / 2]),
   )
   return piezas

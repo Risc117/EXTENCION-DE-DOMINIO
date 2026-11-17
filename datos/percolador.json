@@ -129,6 +129,12 @@
       "valor": "HDPE PN10",
       "fuente": "ESTRUCTURAS2-PERCOLADOR_PLOT.pdf, detalle 01 y 02 (tubería DN 630 HDPE PN10 desde el RAFA)",
       "demo": false
+    },
+    "altura": {
+      "valor": 1.126,
+      "unidad": "m",
+      "fuente": "medido del dibujo del perfil, ±0.2 m aprox. por confirmar. insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa FLUJO-ENTRADA: flecha ENTRADA del percolador sobre el eje del tubo en la cota 2981.866 (x ≈ 310372-310376); 2981.866 − fondo 2980.74 de datos/planta.json = 1.126 m; cota = y del dibujo − 8788092.77, calibrado como cotaFondo de datos/planta.json. Cae dentro de la cámara inferior (0.50 a 1.55 m)",
+      "demo": false
     }
   },
   "canal": {

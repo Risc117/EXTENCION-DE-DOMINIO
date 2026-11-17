@@ -46,7 +46,7 @@ export function construirEtiquetas(d: DatosPercolador, caudalLs: number, caudalM
     dentro(etiquetaDe('et-lecho', 'Lecho de roca', false, [s.radio / 2, s.yCamara + d.lecho.altura.valor / 2, 0], F.lecho)),
     dentro(etiquetaDe('et-columna', 'Columna central con motor', ejemplo(dist.alturaColumnaSobreLecho), [0, s.yColumna, 0], F.columna)),
     etiquetaDe('et-brazos', `Distribuidor rotatorio (${dist.cantidadBrazos.valor} brazos DN ${dn(dist.diametroBrazo.valor)})`, hayEjemplo([dist.vueltasPorMinuto, dist.alturaBrazoSobreLecho]), [s.radioColumna + SEPARACION_PUNTA_BRAZOS_PERCOLADOR, s.yBrazo, 0], F.brazos),
-    etiquetaDe('et-entrada', `Entrada DN ${dn(d.entrada.diametro.valor)} ${d.entrada.material.valor} desde el RAFA (enterrada)`, false, [-s.radioExterior - SEPARACION_PUNTA_ENTRADA_PERCOLADOR, -d.entrada.diametro.valor / 2, 0], F.entrada),
+    etiquetaDe('et-entrada', `Entrada DN ${dn(d.entrada.diametro.valor)} ${d.entrada.material.valor} desde el RAFA`, false, [-s.radioExterior - SEPARACION_PUNTA_ENTRADA_PERCOLADOR, d.entrada.altura.valor, 0], F.entrada),
     etiquetaDe('et-ventanas', resolverTexto('Ventanas de ventilación {valor} × {valor}', c.ladoVentana.valor, false), hayEjemplo([c.cantidadVentanas, c.alturaVentanaSobreLosa]), [0, s.yLosa + c.alturaVentanaSobreLosa.valor, s.radioExterior], F.ventanas),
     dentro(etiquetaDe('et-canal', 'Canal central de recolección', hayEjemplo([d.canal.ancho, d.canal.alto]), [0, s.yLosa, 0], F.canal)),
     etiquetaDe('et-salida', 'Cámara de salida', false, [s.xSalida + sa.ancho.valor / 2, sa.profundidad.valor, 0], F.salida),

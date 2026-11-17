@@ -406,13 +406,13 @@
       "cotaSalida": {
         "valor": 2984.84,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2984.85,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -445,13 +445,13 @@
       "cotaSalida": {
         "valor": 2984.85,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2984.85,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -489,13 +489,13 @@
       "cotaSalida": {
         "valor": 2984.85,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2990.08,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -533,13 +533,13 @@
       "cotaSalida": {
         "valor": 2990.08,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2991.84,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -573,13 +573,13 @@
       "cotaSalida": {
         "valor": 2991.83,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2989.82,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -605,6 +605,11 @@
           "y": -32.5
         },
         {
+          "x": -27.59,
+          "y": -31.88,
+          "cota": 2989.21
+        },
+        {
           "x": -27.47,
           "y": -25.88
         }
@@ -613,7 +618,7 @@
       "cotaSalida": {
         "valor": 2989.82,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
@@ -659,7 +664,7 @@
       "cotaLlegada": {
         "valor": 2986.09,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -703,13 +708,13 @@
       "cotaSalida": {
         "valor": 2986.09,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2983.4,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -746,13 +751,13 @@
       "cotaSalida": {
         "valor": 2983.4,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2981.9,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -781,21 +786,26 @@
           "cota": 2980.11
         },
         {
-          "x": -9.25,
-          "y": 30.85
+          "x": -15.58,
+          "y": 15.16,
+          "cota": 2980.0
+        },
+        {
+          "x": -13.37,
+          "y": 20.74
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; el último punto se cortó en el extremo del tubo de entrada del percolador (1.5 m fuera del muro, sobre la misma línea del DXF); el resto del tubo hasta la columna central es el de la unidad; la cota baja con el terreno (valle de ≈ 1.9 m) y sube hasta el puerto, que queda 1.13 m sobre el suelo plano del percolador",
       "cotaSalida": {
         "valor": 2981.9,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
-        "valor": 2979.94,
+        "valor": 2981.866,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: eje del tubo de entrada del percolador según el perfil (fondo 2980.74 + altura 1.126 de datos/percolador.json; capa FLUJO-ENTRADA, 2981.866)",
         "demo": true
       }
     },
@@ -834,13 +844,13 @@
       "cotaSalida": {
         "valor": 2979.91,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2978.79,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -879,13 +889,13 @@
       "cotaSalida": {
         "valor": 2978.79,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2978.4,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -917,13 +927,13 @@
       "cotaSalida": {
         "valor": 2978.4,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2977.96,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -955,13 +965,13 @@
       "cotaSalida": {
         "valor": 2977.96,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2976.7,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -993,13 +1003,13 @@
       "cotaSalida": {
         "valor": 2977.96,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2976.62,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1031,13 +1041,13 @@
       "cotaSalida": {
         "valor": 2976.7,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2976.68,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1069,13 +1079,13 @@
       "cotaSalida": {
         "valor": 2976.6,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2976.68,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1104,9 +1114,14 @@
           "cota": 2976.41
         },
         {
+          "x": 28.7,
+          "y": 39.23,
+          "cota": 2975.31
+        },
+        {
           "x": 34.0,
           "y": 38.7,
-          "cota": 2975.03
+          "cota": 2976.27
         },
         {
           "x": 34.59,
@@ -1117,7 +1132,7 @@
       "cotaSalida": {
         "valor": 2976.68,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
@@ -1149,17 +1164,17 @@
         {
           "x": 35.25,
           "y": 36.85,
-          "cota": 2975.03
+          "cota": 2977.15
         },
         {
           "x": 34.7,
           "y": 36.15,
-          "cota": 2975.03
+          "cota": 2976.79
         },
         {
           "x": 33.45,
           "y": 34.55,
-          "cota": 2975.04
+          "cota": 2975.98
         },
         {
           "x": 32.4,
@@ -1176,7 +1191,7 @@
       "cotaLlegada": {
         "valor": 2975.06,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1220,13 +1235,13 @@
       "cotaSalida": {
         "valor": 2975.06,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2974.92,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1275,13 +1290,13 @@
       "cotaSalida": {
         "valor": 2974.92,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2974.31,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1314,13 +1329,13 @@
       "cotaSalida": {
         "valor": 2983.4,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2983.4,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1373,13 +1388,13 @@
       "cotaSalida": {
         "valor": 2983.4,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2975.92,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1447,13 +1462,13 @@
       "cotaSalida": {
         "valor": 2976.7,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2975.65,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1511,13 +1526,13 @@
       "cotaSalida": {
         "valor": 2976.6,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2975.65,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1560,13 +1575,13 @@
       "cotaSalida": {
         "valor": 2975.65,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2975.31,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1604,13 +1619,13 @@
       "cotaSalida": {
         "valor": 2975.31,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2975.78,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1648,13 +1663,13 @@
       "cotaSalida": {
         "valor": 2975.78,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       },
       "cotaLlegada": {
         "valor": 2975.89,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
         "demo": true
       }
     },
@@ -1681,17 +1696,27 @@
         {
           "x": 32.2,
           "y": 45.0,
-          "cota": 2975.73
+          "cota": 2977.1
+        },
+        {
+          "x": 32.54,
+          "y": 44.36,
+          "cota": 2975.57
         },
         {
           "x": 33.1,
           "y": 43.3,
-          "cota": 2975.33
+          "cota": 2975.71
         },
         {
           "x": 33.25,
           "y": 41.05,
-          "cota": 2975.07
+          "cota": 2975.3
+        },
+        {
+          "x": 33.73,
+          "y": 40.68,
+          "cota": 2976.51
         },
         {
           "x": 35.27,

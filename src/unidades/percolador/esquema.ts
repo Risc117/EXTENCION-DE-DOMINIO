@@ -30,7 +30,7 @@ export const esquemaPercolador = z
       alturaBrazoSobreLecho: metros,
       vueltasPorMinuto: positivo('rpm'),
     }),
-    entrada: z.object({ diametro: metros, material: texto }),
+    entrada: z.object({ diametro: metros, material: texto, altura: metros }),
     canal: z.object({ ancho: metros, alto: metros }),
     salida: z.object({ ancho: metros, profundidad: metros, ladoCompuerta: metros, diametroTubo: metros, nivelMinimo: metros, nivelMaximo: metros }),
     agua: z.object({ laminaMaxima: metros }),
