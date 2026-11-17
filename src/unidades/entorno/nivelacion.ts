@@ -1,8 +1,8 @@
 import type { FuenteNivel } from '../../nucleo/terreno'
-import { REDONDEO_COTA_PISO } from '../../nucleo/constantesEntorno'
+import { ELEVACION_PAVIMENTO, ENTERRADO_BASE, REDONDEO_COTA_PISO, SEGMENTOS_CIRCULO } from '../../nucleo/constantesEntorno'
 import { TRANSICION_EXPLANADA } from '../../nucleo/terreno'
 import { distanciaProtegida, zonasUnidades } from '../comun/protegido'
-import type { PuntoPlano } from './esquema'
+import type { DatosEntorno, PuntoPlano } from './esquema'
 import { perfilSuave } from './perfilVia'
 
 type TerrenoEn = (x: number, y: number) => number
@@ -26,20 +26,54 @@ function distanciaASegmento(x: number, y: number, a: PuntoPlano, b: PuntoPlano):
   return Math.hypot(x - (a.x + dx * f), y - (a.y + dy * f))
 }
 
-/** Cota de piso derivada: promedio del terreno bajo la planta (o las plantas, si comparten plataforma) (muestras cada `paso` m), redondeado a REDONDEO_COTA_PISO. */
-export function cotaPisoDerivada(poligonos: PuntoPlano[][], terrenoEn: TerrenoEn, paso = 1): number {
+/** Cota de piso en corte: el MÍNIMO del terreno bajo la planta (o las plantas, si comparten plataforma; muestras cada `paso` m), redondeado hacia abajo a REDONDEO_COTA_PISO. */
+export function cotaPisoCorte(poligonos: PuntoPlano[][], terrenoEn: TerrenoEn, paso = 1): number {
   const [xs, ys] = [poligonos.flat().map((p) => p.x), poligonos.flat().map((p) => p.y)]
-  let suma = 0
-  let n = 0
+  let minimo = Number.POSITIVE_INFINITY
   for (let x = Math.min(...xs); x <= Math.max(...xs); x += paso) {
     for (let y = Math.min(...ys); y <= Math.max(...ys); y += paso) {
-      if (poligonos.some((p) => distanciaPoligono(x, y, p) === 0)) {
-        suma += terrenoEn(x, y)
-        n++
-      }
+      if (poligonos.some((p) => distanciaPoligono(x, y, p) === 0)) minimo = Math.min(minimo, terrenoEn(x, y))
     }
   }
-  return Math.round(suma / n / REDONDEO_COTA_PISO) * REDONDEO_COTA_PISO
+  return Math.floor(minimo / REDONDEO_COTA_PISO + 1e-9) * REDONDEO_COTA_PISO
+}
+
+/** Polígono regular de `n` lados inscrito en un círculo (para tratar la rotonda como una plataforma). */
+export function poligonoCirculo(centro: PuntoPlano, radio: number, n = SEGMENTOS_CIRCULO): PuntoPlano[] {
+  return Array.from({ length: n }, (_, i) => ({ x: centro.x + radio * Math.cos((2 * Math.PI * i) / n), y: centro.y + radio * Math.sin((2 * Math.PI * i) / n) }))
+}
+
+export interface PlataformaNivel {
+  id: string
+  tipo: 'pavimento' | 'edificio'
+  poligonos: PuntoPlano[][]
+  cotaPiso: number
+  /** true si la cota es Dato de ejemplo. */
+  demo: boolean
+}
+
+/** Plataformas del entorno, en el orden en que se aplican: primero los pavimentos (estacionamiento y patio juntos, rotonda) y luego los edificios; los que comparten `plataforma` van juntos. */
+export function plataformasDe(d: DatosEntorno): PlataformaNivel[] {
+  const lista: PlataformaNivel[] = []
+  const agregar = (tipo: PlataformaNivel['tipo'], id: string, poligono: PuntoPlano[], cota: { valor: number; demo?: boolean }) => {
+    const existente = lista.find((p) => p.id === id)
+    if (existente) existente.poligonos.push(poligono)
+    else lista.push({ id, tipo, poligonos: [poligono], cotaPiso: cota.valor, demo: cota.demo === true })
+  }
+  for (const s of d.superficies) agregar('pavimento', s.plataforma ?? s.id, s.poligono, s.cotaPiso)
+  for (const r of d.rotondas) agregar('pavimento', r.plataforma ?? r.id, poligonoCirculo(r.centro, r.radio.valor), r.cotaPiso)
+  for (const e of d.edificios) agregar('edificio', e.plataforma ?? e.id, e.poligono, e.cotaPiso)
+  return lista
+}
+
+/** Losa de un pavimento: delgada, con su espesor enterrado bajo el terreno nivelado y la cara de arriba a ras (un centímetro sobre la cota). Sin paredes. */
+export function losaPavimento(cotaPiso: number, espesor: number): { base: number; alto: number } {
+  return { base: cotaPiso - espesor, alto: espesor + ELEVACION_PAVIMENTO }
+}
+
+/** Bloque de un edificio: arranca en su piso (solo una cimentación enterrada) y sube su altura. Sin paredes de relleno bajo el piso. */
+export function bloqueEdificio(cotaPiso: number, altura: number): { base: number; alto: number } {
+  return { base: cotaPiso - ENTERRADO_BASE, alto: ENTERRADO_BASE + altura }
 }
 
 /** Plataforma plana de uno o más edificios: sus plantas más un borde plano de `borde` m, a la cota del piso. */
@@ -62,6 +96,8 @@ export interface ParametrosVia {
   pendienteMaxima: number
   /** Unidades en cuya transición la vía solo se deja intacta donde toca una tubería o un buzón. */
   intactas: string[]
+  /** Cota (m s.n.m.) con que parte la primera estación (la de otra vía con la que se cruza); sin ella parte de la cota suavizada del terreno. */
+  cotaInicio?: number
 }
 
 export interface PerfilVia {
@@ -86,7 +122,12 @@ export function perfilVia(p: ParametrosVia, terrenoEn: TerrenoEn): PerfilVia {
       return d <= u.radio || (p.intactas.includes(u.id) && d <= u.radio + TRANSICION_EXPLANADA && distanciaProtegida(q.x, q.y) < p.ancho / 2)
     }),
   )
-  const { alturas, cumple, pendienteAnclada } = perfilSuave(puntos.map((q) => terrenoEn(q.x, q.y)), p.paso, ancladas, p.ventana, p.pendienteMaxima)
+  const crudas = puntos.map((q) => terrenoEn(q.x, q.y))
+  if (p.cotaInicio !== undefined) {
+    crudas[0] = p.cotaInicio
+    ancladas[0] = true
+  }
+  const { alturas, cumple, pendienteAnclada } = perfilSuave(crudas, p.paso, ancladas, p.ventana, p.pendienteMaxima)
   return { estaciones: puntos.map((q, i) => ({ ...q, cota: alturas[i], anclada: ancladas[i] })), cumple, pendienteAnclada }
 }
 

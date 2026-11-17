@@ -1,14 +1,13 @@
 import { useFrame, useThree } from '@react-three/fiber'
 import { useMemo, useState } from 'react'
 import { leerColor } from '../../nucleo/colores'
-import { DESFASE_ET_EDIFICIO, DISTANCIA_ETIQUETA_ENTORNO, ENTERRADO_BASE } from '../../nucleo/constantesEntorno'
+import { DESFASE_ET_EDIFICIO, DISTANCIA_ETIQUETA_ENTORNO } from '../../nucleo/constantesEntorno'
 import { useAnotaciones } from '../../estado/anotaciones'
-import { alturaNivelada } from './terrenoNivelado'
 import { etiquetaDe } from '../comun/anotar'
 import { etiquetasCercanas } from '../comun/cercania'
 import { Etiqueta } from '../comun/Etiqueta'
 import { entorno } from './datos'
-import { cotasBase } from './geometria'
+import { bloqueEdificio } from './nivelacion'
 import { Losa } from '../comun/Losa'
 
 /** Edificios del plano como prismas sobre su planta, apoyados en el terreno, con su nombre al acercarse. */
@@ -21,16 +20,16 @@ export function Edificios({ referencia }: { referencia: number }) {
   const piezas = useMemo(
     () =>
       entorno.edificios.map((e) => {
-        // El piso es la cota de su plataforma (datos/entorno.json); las paredes bajan hasta el terreno más bajo bajo la planta.
+        // El edificio arranca en su piso (la cota de su plataforma, datos/entorno.json): solo una cimentación enterrada, sin paredes de relleno.
         const piso = e.cotaPiso.valor
-        const base = Math.min(piso, cotasBase(e.poligono, alturaNivelada).base)
         const techo = piso + e.altura.valor
+        const bloque = bloqueEdificio(piso, e.altura.valor)
         const cx = e.poligono.reduce((s, p) => s + p.x, 0) / e.poligono.length
         const cy = e.poligono.reduce((s, p) => s + p.y, 0) / e.poligono.length
         return {
           e,
-          base: base - ENTERRADO_BASE - referencia,
-          alto: techo - base + ENTERRADO_BASE,
+          base: bloque.base - referencia,
+          alto: bloque.alto,
           etiqueta: etiquetaDe(`et-${e.id}`, e.nombre, e.altura.demo === true, [cx, techo - referencia, -cy], DESFASE_ET_EDIFICIO),
         }
       }),

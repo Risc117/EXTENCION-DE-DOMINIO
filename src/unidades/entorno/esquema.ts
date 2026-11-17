@@ -9,9 +9,9 @@ const fuente = z.string().min(1)
 const edificio = z.object({ id: z.string().min(1), nombre: z.string().min(1), poligono, fuentePoligono: fuente, altura: metros, /** Cota (m s.n.m.) de su piso: plataforma plana (T16.8). */ cotaPiso: metros, /** Los edificios con el mismo id comparten una sola plataforma (y la misma cota de piso). */ plataforma: z.string().min(1).optional() })
 const adim = positivo('adim')
 const via = z.object({ id: z.string().min(1), nombre: z.string().min(1), eje: z.array(punto).min(2), fuenteEje: fuente, ancho: metros })
-const superficie = z.object({ id: z.string().min(1), nombre: z.string().min(1), poligono, fuentePoligono: fuente, espesor: metros })
+const superficie = z.object({ id: z.string().min(1), nombre: z.string().min(1), poligono, fuentePoligono: fuente, espesor: metros, /** Cota (m s.n.m.) de su cara de arriba: plataforma a ras del terreno nivelado (T16.8.3). */ cotaPiso: metros, /** Los pavimentos con el mismo id comparten una sola plataforma (y la misma cota). */ plataforma: z.string().min(1).optional() })
 const circulo = z.object({ id: z.string().min(1), nombre: z.string().min(1), centro: punto, radio: metros })
-const rotonda = circulo.extend({ espesor: metros })
+const rotonda = circulo.extend({ espesor: metros, cotaPiso: metros, plataforma: z.string().min(1).optional() })
 const polilinea = z.array(punto).min(2)
 /** Franja entre dos orillas (río o camino): varias líneas de la orilla A y una de la B, tal como están en el DXF. */
 const franja = z.object({ id: z.string().min(1), nombre: z.string().min(1), fuente, margenesA: z.array(polilinea).min(1), margenB: polilinea })
@@ -26,7 +26,7 @@ export const esquemaEntorno = z
     /** Pluma de la barrera: del pivote al extremo. */
     barrera: z.object({ nombre: z.string().min(1), desde: punto, hasta: punto, fuente, altura: metros }),
     /** Nivelación de edificios y vía (T16.8): borde plano, talud H:V, pendiente máxima de la vía (m/m), ventana de suavizado y holgura a lo hidráulico. */
-    nivelacion: z.object({ borde: metros, talud: adim, taludMinimo: adim, pendienteMaxima: adim, ventanaSuavizado: metros, holgura: metros, /** Id de la vía interna que se nivela. */ via: z.string().min(1), viaIntacta: z.object({ unidades: z.array(z.string()), fuente }) }),
+    nivelacion: z.object({ borde: metros, talud: adim, taludMinimo: adim, pendienteMaxima: adim, ventanaSuavizado: metros, holgura: metros, /** Ids de las vías que se nivelan, en orden: la primera es la vía interna; las siguientes parten de la cota de la anterior en el cruce. */ vias: z.array(z.string().min(1)).min(1), viaIntacta: z.object({ unidades: z.array(z.string()), fuente }) }),
     radiosSeguridad: z.array(circulo),
     vias: z.array(via).min(1),
     /** Río Picoy; `sentido` dice hacia dónde corre (de ejemplo mientras no haya flechas en las fuentes). */

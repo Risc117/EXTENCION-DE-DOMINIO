@@ -34,3 +34,5 @@ export const UMBRAL_HIDRAULICO = 0.5
 export const ALCANCE_MAXIMO_NIVELACION = 60
 /** Redondeo (m) de la cota de piso derivada de un edificio. */
 export const REDONDEO_COTA_PISO = 0.05
+/** Pavimentos a ras (T16.8.3): cuánto (m) sobresale la cara de arriba de la losa sobre la cota del terreno nivelado. */
+export const ELEVACION_PAVIMENTO = 0.01
