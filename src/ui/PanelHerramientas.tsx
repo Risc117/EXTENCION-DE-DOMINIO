@@ -5,6 +5,7 @@ import { PanelAnotaciones } from './PanelAnotaciones'
 import { PanelCalidad } from './PanelCalidad'
 import { PanelConexiones } from './PanelConexiones'
 import { PanelCorte } from './PanelCorte'
+import { PanelEntorno } from './PanelEntorno'
 import { PanelTerreno } from './PanelTerreno'
 import { PanelUnidades } from './PanelUnidades'
 
@@ -31,6 +32,7 @@ export function PanelHerramientas() {
       <Grupo titulo={T.grupoCapas}>
         <PanelAccesorios />
         <PanelConexiones />
+        <PanelEntorno />
         <PanelTerreno />
       </Grupo>
       <Grupo titulo={T.grupoAnotaciones}>

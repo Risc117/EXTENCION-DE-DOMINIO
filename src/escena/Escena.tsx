@@ -10,6 +10,7 @@ import {
   LUZ_DIRECCIONAL,
 } from '../nucleo/constantes'
 import { Conexiones, FlujoTuberias } from '../unidades/conexiones'
+import { Entorno } from '../unidades/entorno'
 import { unidades } from '../unidades/registro'
 import { cotaReferencia } from '../unidades/ubicar'
 import { ControlCamara } from './ControlCamara'
@@ -33,6 +34,7 @@ export function Escena() {
       ))}
       <Conexiones referencia={referencia} />
       <FlujoTuberias referencia={referencia} />
+      <Entorno referencia={referencia} />
       <ControlCamara unidades={unidades} />
     </Canvas>
   )

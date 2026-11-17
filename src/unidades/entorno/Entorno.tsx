@@ -1,0 +1,19 @@
+import { useEntorno } from '../../estado/entorno'
+import { Arboles } from './Arboles'
+import { Cerco } from './Cerco'
+import { Edificios } from './Edificios'
+import { Suelos } from './Suelos'
+
+/** Entorno de la planta (T16.5): edificios, vías, cerco con portón y árboles, todo desde datos/entorno.json. El botón "Entorno" lo oculta. */
+export function Entorno({ referencia }: { referencia: number }) {
+  const visible = useEntorno((s) => s.visible)
+  if (!visible) return null
+  return (
+    <group>
+      <Suelos referencia={referencia} />
+      <Edificios referencia={referencia} />
+      <Cerco referencia={referencia} />
+      <Arboles referencia={referencia} />
+    </group>
+  )
+}

@@ -4,7 +4,7 @@ import { unidades } from '../registro'
 import { construirEtiquetas } from './anotaciones'
 import { esquemaConexiones } from './esquema'
 import { construirBuzones, construirFlechas, construirTramos } from './geometria'
-import { alturaTerreno } from './terrenoPlanta'
+import { alturaTerreno } from '../comun/terrenoPlanta'
 import { longitudTramo, perfilTramo } from './trazado'
 import { clon, datos, distancia, referencia } from './ayudaPruebas'
 

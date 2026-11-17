@@ -94,6 +94,12 @@ export const TEXTO_CONEXIONES = {
   ocultarFlujo: 'Ocultar flujo',
 }
 
+/** Entorno de la planta: edificios, vías, cerco y árboles. */
+export const TEXTO_ENTORNO = {
+  mostrar: 'Mostrar entorno',
+  ocultar: 'Ocultar entorno',
+}
+
 /** Cajón de herramientas: un solo cajón plegable con las opciones de vista agrupadas. */
 export const TEXTO_HERRAMIENTAS = {
   titulo: 'Herramientas',

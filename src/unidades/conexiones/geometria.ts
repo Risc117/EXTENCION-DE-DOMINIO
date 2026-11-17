@@ -1,7 +1,7 @@
 import { COLOR_LINEA, LARGO_FLECHA_RADIOS, LARGO_MINIMO_FLECHA, RADIO_FLECHA_RADIOS, RADIO_MINIMO_TUBO, TOLERANCIA_ENTERRADO, type LineaConexion } from '../../nucleo/constantesConexiones'
 import type { Vec3 } from '../comun/tiposAnotaciones'
 import type { DatosConexiones, TramoConexion } from './esquema'
-import { alturaTerreno } from './terrenoPlanta'
+import { alturaTerreno } from '../comun/terrenoPlanta'
 import { cotaEn } from './trazado'
 
 export interface SegmentoTubo {
