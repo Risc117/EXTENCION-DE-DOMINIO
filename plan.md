@@ -220,7 +220,7 @@ Criterios:
 **T14 · Desinfección** (Necesita datos 4.3)
 **T15 · Lecho de secado de lodos** (Necesita datos 4.3)
 **T16 · Tuberías y canales de conexión** (Necesita datos 4.4)
-**T16.1 · Edificios y entorno del plano**: grupo electrógeno, almacén y respuesta de emergencia, garita, oficina, laboratorio, almacén, estacionamiento, portón, muro perimétrico, camino interno, río con corriente y cerco vivo de árboles en sus posiciones del plano.
+**T16.5 · Edificios y entorno del plano**: grupo electrógeno, almacén y respuesta de emergencia, garita, oficina, laboratorio, almacén, estacionamiento, portón, muro perimétrico, camino interno, río con corriente y cerco vivo de árboles en sus posiciones del plano.
 
 Todos con el mismo patrón que T1/T1.2 y T6: JSON con `fuente`, esquema zod, carpeta propia, corte, accesorios con interruptor, cotas y etiquetas definidas en el JSON. Criterios comunes:
 - [ ] Cambiar una medida en el JSON cambia la estructura sin tocar código.
@@ -336,7 +336,7 @@ Leído del PDF (planta y perfil longitudinal 0+030 a 0+260.92, escala 1:1000):
 - **Línea de agua confirmada**: entrada de agua residual → **estación de bombeo EB-1** (cárcamo Ø 3.20 m, 2 bombas 1+1R, caseta de válvulas, línea de impulsión Ø 200) → caja de recepción → pretratamiento (rejas con by-pass, desarenador, Parshall) → homogeneizador → RAFA → filtro percolador → **cámara de reparto** → sedimentador secundario 1 y 2 → **cámara de contacto** con **caseta de cloración** (Cl₂ Ø 1/2") → válvula de retención → salida de agua tratada (0+261) al río.
 - **Lodos**: tuberías Ø 150 (buzones BZ-R, BZ-L1, BZ-L2, BZ-L3) llevan el lodo del RAFA y de los dos sedimentadores **directo a los lechos de secado** (2 celdas). Ya no hace falta preguntarlo.
 - **Biogás**: el plano **no muestra quemador** ni línea de biogás.
-- **Otras construcciones**: garita, barrera, portón de 4.5 m (entrada única vehicular y peatonal), oficina con SS.HH., laboratorio, almacén-taller, estacionamiento y patio de maniobras. Se suman como edificios simples (ticket nuevo T16.1).
+- **Otras construcciones**: garita, barrera, portón de 4.5 m (entrada única vehicular y peatonal), oficina con SS.HH., laboratorio, almacén-taller, estacionamiento y patio de maniobras. Se suman como edificios simples (ticket nuevo T16.5).
 - **Entorno**: un río o quebrada al norte (flechas de sentido de corriente), un camino interno en curva con rotonda, muro de contención de concreto armado (e = 0.30 m) en el perímetro y una fila de árboles (cerco vivo) alrededor. Todo esto entra en el 3D: el río con agua que corre y los árboles reales del plano en vez de árboles al azar.
 - **Buzones** BZ-2 a BZ-10 en la línea de agua, con progresivas cada 20 m: sirven para el perfil hidráulico (T21).
 
@@ -356,7 +356,7 @@ Leído del PDF (planta y perfil longitudinal 0+030 a 0+260.92, escala 1:1000):
 Cristhian entregó una versión nueva. Cambios que ya incorporo al plan:
 
 - **Quemador de biogás (antorcha)** con su radio de seguridad, junto a los lechos de secado, conectado al RAFA por una línea amarilla (biogás). Queda decidido: hay quemador. T20 dibuja la llama (movida por el viento) y el caudal de biogás.
-- **Grupo electrógeno** (con su radio de seguridad) y **almacén y respuesta de emergencia**, en el espacio libre del centro. Entran en T16.1.
+- **Grupo electrógeno** (con su radio de seguridad) y **almacén y respuesta de emergencia**, en el espacio libre del centro. Entran en T16.5.
 - **Flecha del norte** (arriba a la izquierda): ya se puede orientar el sol y el viento. Dato para `ambiente.json`.
 - **Leyenda**: cerco perimétrico, árbol, franja verde, vía interna, vereda peatonal, edificación, unidad de tratamiento. Colores de tuberías: **celeste = agua residual, rojo = efluente tratado, naranja = lodos**, y los buzones BZ, las luminarias y la señalización/barrera (los círculos magenta son radios de seguridad). Esta leyenda se reutiliza tal cual en la leyenda de la web (T25).
 - **Luminarias**: aparecen en el plano; las uso como las luces de noche (T22).
