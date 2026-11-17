@@ -1,6 +1,6 @@
 {
   "id": "leyenda",
-  "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf). Los nombres vienen de esa leyenda; los colores son una decisión de diseño del visor (el plano no define colores para el 3D).",
+  "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf). Los nombres vienen de esa leyenda; los colores son una decisión de diseño del visor (el plano no define colores para el 3D).",
   "demo": false,
   "grupos": [
     {
@@ -12,7 +12,7 @@
           "nombre": "Agua residual",
           "token": "--color-tub-residual",
           "forma": "linea",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): celeste = agua residual"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): celeste = agua residual"
         },
         {
           "id": "impulsion",
@@ -26,21 +26,21 @@
           "nombre": "Efluente tratado",
           "token": "--color-tub-efluente",
           "forma": "linea",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): rojo = efluente tratado"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): rojo = efluente tratado"
         },
         {
           "id": "lodos",
           "nombre": "Lodos",
           "token": "--color-tub-lodos",
           "forma": "linea",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): naranja = lodos"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): naranja = lodos"
         },
         {
           "id": "biogas",
           "nombre": "Biogás",
           "token": "--color-tub-biogas",
           "forma": "linea",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): línea amarilla de biogás del RAFA al quemador"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): línea amarilla de biogás del RAFA al quemador"
         },
         {
           "id": "cloro",
@@ -60,28 +60,28 @@
           "nombre": "Unidad de tratamiento",
           "token": "--color-muro",
           "forma": "cuadro",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): unidad de tratamiento"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): unidad de tratamiento"
         },
         {
           "id": "edificacion",
           "nombre": "Edificación",
           "token": "--color-edificio",
           "forma": "cuadro",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): edificación"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): edificación"
         },
         {
           "id": "via",
           "nombre": "Vía interna y de acceso",
           "token": "--color-via",
           "forma": "linea",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): vía interna"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): vía interna"
         },
         {
           "id": "cerco",
           "nombre": "Cerco perimétrico",
           "token": "--color-cerco",
           "forma": "linea",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): cerco perimétrico"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): cerco perimétrico"
         },
         {
           "id": "porton",
@@ -95,28 +95,28 @@
           "nombre": "Barrera de la garita",
           "token": "--color-barrera",
           "forma": "linea",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): señalización y barrera"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): señalización y barrera"
         },
         {
           "id": "arbol",
           "nombre": "Árbol",
           "token": "--color-arbol-copa",
           "forma": "circulo",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): árbol"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): árbol"
         },
         {
           "id": "franja",
           "nombre": "Franja verde (pasto)",
           "token": "--color-pasto",
           "forma": "cuadro",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): franja verde"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): franja verde"
         },
         {
           "id": "rio",
           "nombre": "Río Picoy",
           "token": "--color-rio",
           "forma": "linea",
-          "fuente": "Nombre \"río Picoy\" de plan.md, sección \"Cristhian entregó una versión nueva\" (insumos/DFX/RIO PICOY Y CAMINO.dxf); color del visor"
+          "fuente": "Nombre \"río Picoy\" de plan.md, sección \"El grupo entregó una versión nueva\" (insumos/DFX/RIO PICOY Y CAMINO.dxf); color del visor"
         },
         {
           "id": "camino",
@@ -130,14 +130,14 @@
           "nombre": "Radio de seguridad",
           "token": "--color-radio-seguridad",
           "forma": "circulo",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): círculos magenta = radios de seguridad"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): círculos magenta = radios de seguridad"
         },
         {
           "id": "luminaria",
           "nombre": "Luminaria",
           "token": "--color-lampara",
           "forma": "circulo",
-          "fuente": "plan.md, sección \"Cristhian entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): luminarias"
+          "fuente": "plan.md, sección \"El grupo entregó una versión nueva\": leyenda del plano general (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf): luminarias"
         }
       ]
     }

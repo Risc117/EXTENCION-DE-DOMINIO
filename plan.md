@@ -1,6 +1,6 @@
 # Plan: de visor del homogeneizador a simulación de la PTAR completa
 
-Fecha: 14 nov 2026 · Para: Cristhian
+Fecha: 14 nov 2026 · Para: el grupo del proyecto
 
 ## 1. Punto de partida
 
@@ -316,7 +316,7 @@ La planta completa es viable con la misma base: la arquitectura ya separa unidad
 
 ## 9. Decisiones tomadas (14 nov 2026)
 
-| Pregunta | Respuesta de Cristhian |
+| Pregunta | Respuesta del grupo |
 | --- | --- |
 | Formato de planos | Hay DWG/DXF y PDF. Se usará DWG/DXF. |
 | Topografía | Curvas de nivel (en el DWG/DXF). |
@@ -353,7 +353,7 @@ Leído del PDF (planta y perfil longitudinal 0+030 a 0+260.92, escala 1:1000):
 
 ## 11. Actualización del plano (versión "LUGAR PROYECTADO FINAL MEJORADO", 15 nov 2026)
 
-Cristhian entregó una versión nueva. Cambios que ya incorporo al plan:
+El grupo entregó una versión nueva. Cambios que ya incorporo al plan:
 
 - **Quemador de biogás (antorcha)** con su radio de seguridad, junto a los lechos de secado, conectado al RAFA por una línea amarilla (biogás). Queda decidido: hay quemador. T20 dibuja la llama (movida por el viento) y el caudal de biogás.
 - **Grupo electrógeno** (con su radio de seguridad) y **almacén y respuesta de emergencia**, en el espacio libre del centro. Entran en T16.5.
