@@ -3,15 +3,16 @@ import crudo from '../../datos/demo.json'
 import type { ParametrosTanque } from '../estado/simulacion'
 import { crearGuion, esquemaGuion, textoConValores, valoresDemo } from './guion'
 import { hidrograma } from './hidrogramaCargado'
+import { valoresPlanta } from './valoresRecorrido'
 
 const tanque: ParametrosTanque = { area: Math.PI * 3.79 ** 2, alturaUtil: 4.9, alturaTotal: 5.4, alturaEjeSalida: 0.3, diametroSalida: 0.16 }
 type Registro = { fuente?: string; pasos: Record<string, unknown>[] }
 const copia = () => structuredClone(crudo) as unknown as Registro
 
 describe('datos/demo.json', () => {
-  it('cumple el esquema y trae los 5 pasos del guion', () => {
+  it('cumple el esquema y trae los 15 pasos del guion (4 de entrada, 5 del tanque y 6 de salida)', () => {
     const pasos = crearGuion(crudo)
-    expect(pasos).toHaveLength(5)
+    expect(pasos).toHaveLength(15)
     for (const p of pasos) expect(p.duracionSegundos).toBeGreaterThan(0)
   })
 
@@ -22,7 +23,7 @@ describe('datos/demo.json', () => {
   })
 
   it('todos los marcadores de los textos se pueden llenar con los datos', () => {
-    const valores = valoresDemo(tanque, hidrograma, 1)
+    const valores = { ...valoresPlanta(), ...valoresDemo(tanque, hidrograma, 1) }
     for (const p of crearGuion(crudo)) {
       expect(textoConValores(p.texto, valores)).not.toMatch(/[{}]/)
       expect(textoConValores(p.titulo, valores)).not.toMatch(/[{}]/)

@@ -1,41 +1,195 @@
 {
-  "fuente": "Guion de la demostración, redactado a partir de los tickets T3, T4 y T5.1 y del plano HOMOGENIZADOR_enterrado_v1. Los textos usan {marcadores} que se llenan con los datos (ej.: {diametroInterior:2} = 2 decimales).",
+  "fuente": "Guion de la demostración: los 5 pasos del tanque vienen de los tickets T3, T4 y T5.1 y del plano HOMOGENIZADOR_enterrado_v1; el recorrido de toda la planta (T27) sigue el orden del tren de tratamiento de la memoria descriptiva (insumos/resumen-memoria.md). Los textos usan {marcadores} que se llenan con los datos (ej.: {diametroInterior:2} = 2 decimales); `foco` es la unidad que se enfoca (sin `foco` = el homogeneizador; null = vista general).",
   "demo": false,
   "pasos": [
+    {
+      "titulo": "Una gota entra a la PTAR de Picoy",
+      "texto": "Vamos a seguir una gota de agua residual del pueblo por toda la planta. La PTAR trata un caudal promedio de {qp:3} L/s, con hasta {qmh:2} L/s en la hora de mayor consumo. En cada estación le quitan algo a la gota antes de que vuelva al río Checras.",
+      "duracionSegundos": 18,
+      "foco": null,
+      "vista": {
+        "acimut": 0.785,
+        "elevacion": 0.7,
+        "distancia": 3.22
+      },
+      "accion": {}
+    },
+    {
+      "titulo": "Las rejas",
+      "texto": "La gota llega por la tubería y pasa primero por las rejas de la cámara de rejas: atrapan trapos, plásticos y otros sólidos grandes que dañarían los equipos.",
+      "duracionSegundos": 14,
+      "foco": "rejas",
+      "vista": {
+        "acimut": 0.6,
+        "elevacion": 0.55,
+        "distancia": 2.6
+      },
+      "accion": {}
+    },
+    {
+      "titulo": "El desarenador",
+      "texto": "Después va al desarenador. Aquí el agua corre despacio y la arena y la grava se asientan en el fondo de sus canales, donde se limpian.",
+      "duracionSegundos": 14,
+      "foco": "desarenador",
+      "vista": {
+        "acimut": 0.9,
+        "elevacion": 0.5,
+        "distancia": 2.6
+      },
+      "accion": {}
+    },
+    {
+      "titulo": "El canal Parshall",
+      "texto": "El canal Parshall mide el caudal: según la altura del agua en su garganta se sabe cuánta agua pasa. Con eso se controla toda la planta.",
+      "duracionSegundos": 14,
+      "foco": "parshall",
+      "vista": {
+        "acimut": 0.5,
+        "elevacion": 0.5,
+        "distancia": 2.6
+      },
+      "accion": {}
+    },
     {
       "titulo": "El tanque homogeneizador",
       "texto": "Es un tanque circular enterrado, de {diametroInterior:2} m de diámetro interior y {alturaUtil:2} m de altura útil. El agua residual entra por la tubería alta y cae sobre la superficie, el agitador del centro la mezcla y sale por la tubería baja hacia RAFA.",
       "duracionSegundos": 20,
-      "vista": { "acimut": 0.785, "elevacion": 0.46, "distancia": 2.8 },
-      "accion": { "dia": 1, "velocidad": 3600, "modoSalida": "constante", "salidaAjuste": null }
+      "vista": {
+        "acimut": 0.785,
+        "elevacion": 0.46,
+        "distancia": 2.8
+      },
+      "accion": {
+        "dia": 1,
+        "velocidad": 3600,
+        "modoSalida": "constante",
+        "salidaAjuste": null
+      }
     },
     {
       "titulo": "Un día de caudales",
       "texto": "El caudal de entrada cambia durante el día, pero la salida es pareja: el promedio del día. Por eso el nivel sube de día, cuando llega más agua, y baja de noche. El tanque amortigua esas diferencias.",
       "duracionSegundos": 28,
-      "vista": { "acimut": 0.4, "elevacion": 0.5, "distancia": 2.2 },
+      "vista": {
+        "acimut": 0.4,
+        "elevacion": 0.5,
+        "distancia": 2.2
+      },
       "accion": {}
     },
     {
       "titulo": "Salida por gravedad",
       "texto": "Si la salida depende solo del nivel, el caudal ya no es parejo: sale más agua cuando el tanque está más lleno. Por eso la salida se regula con una válvula de compuerta. (El coeficiente de descarga es un dato de ejemplo.)",
       "duracionSegundos": 18,
-      "vista": { "acimut": 1.2, "elevacion": 0.35, "distancia": 2.0 },
-      "accion": { "modoSalida": "gravedad" }
+      "vista": {
+        "acimut": 1.2,
+        "elevacion": 0.35,
+        "distancia": 2
+      },
+      "accion": {
+        "modoSalida": "gravedad"
+      }
     },
     {
       "titulo": "Qué pasa si sale poca agua",
       "texto": "Con la salida fija en 2 L/s entra más agua de la que sale: el tanque se llena y rebosa. Mira el aviso en el panel de nivel y caudales.",
       "duracionSegundos": 22,
-      "vista": { "acimut": -1.2, "elevacion": 0.6, "distancia": 2.4 },
-      "accion": { "modoSalida": "constante", "salidaAjuste": 2, "velocidad": 3600 }
+      "vista": {
+        "acimut": -1.2,
+        "elevacion": 0.6,
+        "distancia": 2.4
+      },
+      "accion": {
+        "modoSalida": "constante",
+        "salidaAjuste": 2,
+        "velocidad": 3600
+      }
     },
     {
       "titulo": "Verificación del volumen",
       "texto": "Con los caudales del día {dia:0}, el volumen requerido es de unos {volumenRequerido:0} m³, frente a {volumenUtil:1} m³ de volumen útil. Con el caudal escalado el tanque queda holgado; conviene revisarlo con el grupo o el profesor. Recuerda que esto es un esquema ilustrativo.",
       "duracionSegundos": 18,
-      "vista": { "acimut": 0.785, "elevacion": 0.46, "distancia": 2.8 },
-      "accion": { "salidaAjuste": null, "velocidad": 600 }
+      "vista": {
+        "acimut": 0.785,
+        "elevacion": 0.46,
+        "distancia": 2.8
+      },
+      "accion": {
+        "salidaAjuste": null,
+        "velocidad": 600
+      }
+    },
+    {
+      "titulo": "El RAFA: sin oxígeno",
+      "texto": "Del tanque la gota pasa al RAFA, un reactor anaerobio de flujo ascendente: bacterias que trabajan sin oxígeno comen la materia orgánica. La DBO baja de {dboEntrada:0} a {dboRafa:0} mg/L (se quita el {remocionRafa:0} %). Además producen biogás, unos {biogas:0} m³ por día con el caudal de diseño, que se quema en el quemador, y lodo: {lodoKgDia:1} kg de sólidos por día.",
+      "duracionSegundos": 24,
+      "foco": "rafa",
+      "vista": {
+        "acimut": 0.7,
+        "elevacion": 0.5,
+        "distancia": 2.4
+      },
+      "accion": {}
+    },
+    {
+      "titulo": "El filtro percolador",
+      "texto": "La gota cae gota a gota sobre un lecho de soporte donde vive una película de bacterias que se alimentan de lo que queda. La DBO baja a {dboFinal:0} mg/L.",
+      "duracionSegundos": 16,
+      "foco": "percolador",
+      "vista": {
+        "acimut": -0.6,
+        "elevacion": 0.5,
+        "distancia": 2.4
+      },
+      "accion": {}
+    },
+    {
+      "titulo": "Los sedimentadores secundarios",
+      "texto": "Los pedazos de película que se sueltan del filtro se asientan en los dos sedimentadores secundarios. El agua clara sale por arriba y el lodo se junta en el fondo.",
+      "duracionSegundos": 16,
+      "foco": "sedimentador-1",
+      "vista": {
+        "acimut": 0.8,
+        "elevacion": 0.5,
+        "distancia": 2.6
+      },
+      "accion": {}
+    },
+    {
+      "titulo": "La desinfección",
+      "texto": "Antes de salir, la gota pasa por la cámara de contacto, donde el cloro elimina los microbios (coliformes) que quedan.",
+      "duracionSegundos": 14,
+      "foco": "camara-contacto",
+      "vista": {
+        "acimut": 0.6,
+        "elevacion": 0.5,
+        "distancia": 2.6
+      },
+      "accion": {}
+    },
+    {
+      "titulo": "Los lechos de secado",
+      "texto": "El lodo que se juntó en el RAFA y en los sedimentadores no se bota: se seca al sol en los lechos de secado, que suman {lechosArea:0} m².",
+      "duracionSegundos": 16,
+      "foco": "lechos-secado",
+      "vista": {
+        "acimut": 0.7,
+        "elevacion": 0.5,
+        "distancia": 2.6
+      },
+      "accion": {}
+    },
+    {
+      "titulo": "La gota llega al río",
+      "texto": "La gota sale tratada hacia el río Checras. En total la PTAR quita cerca del {remocionTotal:0} % de la DBO: de {dboEntrada:0} a {dboFinal:0} mg/L. Son valores de diseño de las hojas de cálculo, y lo que ves es un esquema ilustrativo.",
+      "duracionSegundos": 20,
+      "foco": null,
+      "vista": {
+        "acimut": 0,
+        "elevacion": 1.5,
+        "distancia": 3.22
+      },
+      "accion": {}
     }
   ]
 }

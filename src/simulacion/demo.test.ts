@@ -11,6 +11,12 @@ const tanque: ParametrosTanque = { area: Math.PI * 3.79 ** 2, alturaUtil: 4.9, a
 const pasos = crearGuion(crudo)
 const crear = (p = pasos) => crearControlDemo(p, hidrograma)
 
+/** Pasos que van antes del tanque en el recorrido de la planta (la gota entra, rejas, desarenador, Parshall). */
+const ANTES = 4
+const alTanque = (demo: ReturnType<typeof crear>) => {
+  for (let i = 0; i < ANTES; i++) demo.siguiente()
+}
+
 beforeEach(() => {
   useSim.getState().reiniciar()
   useSim.setState({ tanque })
@@ -18,16 +24,28 @@ beforeEach(() => {
 })
 
 describe('demo: iniciar', () => {
-  it('queda activa en el paso 1, cierra la bienvenida, pone la cámara y llena el texto con datos', () => {
+  it('queda activa en el paso 1 (la gota entra, vista general), cierra la bienvenida, pone la cámara y llena el texto con datos', () => {
     crear().iniciar()
     const d = useDemo.getState()
     expect(d.activa).toBe(true)
     expect(d.bienvenida).toBe(false)
     expect(d.paso).toBe(0)
-    expect(d.total).toBe(5)
-    expect(d.texto).toContain('7.58')
+    expect(d.total).toBe(15)
+    expect(d.texto).toContain('6.536')
     expect(d.texto).not.toMatch(/[{}]/)
     expect(useEstado.getState().camara).toEqual(pasos[0].vista)
+    expect(useEstado.getState().foco).toBeNull()
+  })
+
+  it('el paso del tanque enfoca el homogeneizador y llena el texto con los datos del tanque', () => {
+    const demo = crear()
+    demo.iniciar()
+    alTanque(demo)
+    const d = useDemo.getState()
+    expect(d.paso).toBe(ANTES)
+    expect(d.texto).toContain('7.58')
+    expect(useEstado.getState().foco).toBe('homogeneizador')
+    expect(useEstado.getState().camara).toEqual(pasos[ANTES].vista)
   })
 
   it('sin datos del tanque no arranca', () => {
@@ -41,16 +59,17 @@ describe('demo: avance y acciones', () => {
   it('avanza paso a paso con el tiempo y aplica las acciones al estado', () => {
     const demo = crear()
     demo.iniciar()
+    alTanque(demo)
     expect(useSim.getState().velocidad).toBe(3600)
-    demo.avanzar(pasos[0].duracionSegundos - 1)
-    expect(useDemo.getState().paso).toBe(0)
+    demo.avanzar(pasos[ANTES].duracionSegundos - 1)
+    expect(useDemo.getState().paso).toBe(ANTES)
     demo.avanzar(1.5)
-    expect(useDemo.getState().paso).toBe(1)
-    demo.avanzar(pasos[1].duracionSegundos + 0.1)
-    expect(useDemo.getState().paso).toBe(2)
+    expect(useDemo.getState().paso).toBe(ANTES + 1)
+    demo.avanzar(pasos[ANTES + 1].duracionSegundos + 0.1)
+    expect(useDemo.getState().paso).toBe(ANTES + 2)
     expect(useSim.getState().modoSalida).toBe('gravedad')
-    demo.avanzar(pasos[2].duracionSegundos + 0.1)
-    expect(useDemo.getState().paso).toBe(3)
+    demo.avanzar(pasos[ANTES + 2].duracionSegundos + 0.1)
+    expect(useDemo.getState().paso).toBe(ANTES + 3)
     expect(useSim.getState().modoSalida).toBe('constante')
     expect(useSim.getState().salidaAjuste).toBe(2)
     expect(useDemo.getState().transcurrido).toBe(0)
@@ -64,7 +83,7 @@ describe('demo: avance y acciones', () => {
       vistos.add(useDemo.getState().paso)
       demo.avanzar(1)
     }
-    expect([...vistos]).toEqual([0, 1, 2, 3, 4])
+    expect([...vistos]).toEqual(pasos.map((_, i) => i))
     expect(useDemo.getState().activa).toBe(false)
   })
 
@@ -107,7 +126,8 @@ describe('demo: salir', () => {
 
     const demo = crear()
     demo.iniciar()
-    demo.avanzar(pasos[0].duracionSegundos + 1)
+    alTanque(demo)
+    demo.avanzar(pasos[ANTES].duracionSegundos + 1)
     expect(useSim.getState().dia).toBe(1)
     demo.salir()
 
@@ -124,13 +144,19 @@ describe('demo: salir', () => {
     expect(useEstado.getState().camara).toEqual(camaraAntes)
   })
 
-  it('enfoca el homogeneizador mientras dura y devuelve el foco anterior', () => {
-    useEstado.setState({ foco: null })
+  it('enfoca la unidad de cada paso (vista general, rejas, ..., homogeneizador) y devuelve el foco anterior', () => {
+    useEstado.setState({ foco: 'rafa' })
     const demo = crear()
     demo.iniciar()
+    expect(useEstado.getState().foco).toBeNull()
+    demo.siguiente()
+    expect(useEstado.getState().foco).toBe('rejas')
+    demo.siguiente()
+    demo.siguiente()
+    demo.siguiente()
     expect(useEstado.getState().foco).toBe('homogeneizador')
     demo.salir()
-    expect(useEstado.getState().foco).toBeNull()
+    expect(useEstado.getState().foco).toBe('rafa')
   })
 })
 

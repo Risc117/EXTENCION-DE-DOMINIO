@@ -3,8 +3,9 @@ import { INICIO_DEMO, useDemo, type AccionDemo, type PasoDemo, type Respaldo } f
 import { useSim } from '../estado/simulacion'
 import type { Hidrograma } from './hidrograma'
 import { textoConValores, valoresDemo } from './guion'
+import { valoresPlanta } from './valoresRecorrido'
 
-/** La demo cuenta la historia del homogeneizador: la cámara se enfoca en él. */
+/** Unidad que se enfoca en los pasos que no dicen `foco`: la demo empezó contando la historia del homogeneizador. */
 const UNIDAD_DEMO = 'homogeneizador'
 
 function aplicarAccion(a: AccionDemo) {
@@ -54,11 +55,12 @@ export function crearControlDemo(pasos: PasoDemo[], hidro: Hidrograma) {
   const ir = (i: number) => {
     const p = pasos[i]
     aplicarAccion(p.accion)
-    useEstado.setState({ foco: UNIDAD_DEMO })
+    useEstado.setState({ foco: p.foco === undefined ? UNIDAD_DEMO : p.foco })
     useEstado.getState().fijarCamara(p.vista)
     const { tanque, dia } = useSim.getState()
-    const texto = tanque ? textoConValores(p.texto, valoresDemo(tanque, hidro, dia)) : p.texto
-    const titulo = tanque ? textoConValores(p.titulo, valoresDemo(tanque, hidro, dia)) : p.titulo
+    const valores = tanque ? { ...valoresPlanta(), ...valoresDemo(tanque, hidro, dia) } : null
+    const texto = valores ? textoConValores(p.texto, valores) : p.texto
+    const titulo = valores ? textoConValores(p.titulo, valores) : p.titulo
     useDemo.setState({ paso: i, transcurrido: 0, duracion: p.duracionSegundos, titulo, texto })
   }
 

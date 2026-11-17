@@ -9,6 +9,7 @@ const paso = z.object({
   texto: z.string().min(1),
   duracionSegundos: z.number().positive(),
   vista: z.object({ acimut: z.number(), elevacion: z.number(), distancia: z.number().positive() }),
+  foco: z.string().min(1).nullable().optional(),
   accion: z.object({
     dia: z.number().int().positive().optional(),
     velocidad: z.number().positive().optional(),

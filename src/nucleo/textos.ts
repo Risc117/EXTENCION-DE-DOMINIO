@@ -25,8 +25,8 @@ export const TEXTO_AJUSTE = {
 
 /** Demo guiada. */
 export const TEXTO_DEMO = {
-  iniciar: 'Iniciar demo',
-  detener: 'Detener demo',
+  iniciar: 'Iniciar recorrido (demo guiada)',
+  detener: 'Detener recorrido',
   anterior: 'Anterior',
   siguiente: 'Siguiente',
   paso: 'Paso',

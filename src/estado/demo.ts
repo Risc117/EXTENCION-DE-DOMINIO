@@ -16,6 +16,8 @@ export interface PasoDemo {
   texto: string
   duracionSegundos: number
   vista: Camara
+  /** Unidad que se enfoca: sin valor = el homogeneizador; null = vista general de la planta. */
+  foco?: string | null
   accion: AccionDemo
 }
 
