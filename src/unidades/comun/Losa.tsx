@@ -1,6 +1,10 @@
 import { useMemo } from 'react'
 import { ExtrudeGeometry, Shape, Vector2 } from 'three'
-import type { PuntoPlano } from './esquema'
+/** Punto del plano (m locales). */
+interface PuntoPlano {
+  x: number
+  y: number
+}
 
 /** Prisma vertical sobre un polígono del plano: de `base` a `base + alto` (alturas ya en la escena). */
 export function Losa({ poligono, base, alto, color }: { poligono: PuntoPlano[]; base: number; alto: number; color: string }) {

@@ -10,6 +10,7 @@ import { PanelCalidadAgua } from './ui/PanelCalidadAgua'
 import { PanelDemo } from './ui/PanelDemo'
 import { PanelGestos } from './ui/PanelGestos'
 import { PanelHerramientas } from './ui/PanelHerramientas'
+import { PanelLodosBiogas } from './ui/PanelLodosBiogas'
 import { PanelSimulacion } from './ui/PanelSimulacion'
 import { TarjetaUnidad } from './ui/TarjetaUnidad'
 
@@ -31,7 +32,10 @@ export function App() {
       <PanelSimulacion />
       <TarjetaUnidad />
       <DiagramaLinea />
-      <PanelCalidadAgua />
+      <div className="paneles-derecha">
+        <PanelCalidadAgua />
+        <PanelLodosBiogas />
+      </div>
       <Leyenda />
       <Bienvenida />
     </>

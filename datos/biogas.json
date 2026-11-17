@@ -1,0 +1,39 @@
+{
+  "id": "biogas",
+  "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf (capas QUEM-ACERO, QUEM-MURO, QUEM-RADIO5M, QUEM-TUBERIA y las polilíneas amarillas de la capa 0 que unen el RAFA con la antorcha); x, y = UTM − origen (309340, 8791260, zona 18 sur) de datos/terreno.json. Las alturas no están en el plano: son de ejemplo.",
+  "demo": true,
+  "antorcha": {
+    "nombre": "Antorcha (quemador de biogás)",
+    "centro": { "x": 1.45, "y": -23.86 },
+    "fuentePosicion": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capas QUEM-ACERO y QUEM-TUBERIA: círculos concéntricos de la chimenea, junto al rótulo ANTORCHA (QUEMADOR BIOGAS)",
+    "radioChimenea": { "valor": 0.2, "unidad": "m", "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa QUEM-ACERO: círculo de radio 0.20 m", "demo": false },
+    "alturaChimenea": { "valor": 5, "unidad": "m", "fuente": "No está en las fuentes: altura de ejemplo de una chimenea de antorcha de biogás pequeña (4 a 6 m típicos).", "demo": true },
+    "recinto": {
+      "poligono": [
+        { "x": 0.04, "y": -24.05 },
+        { "x": 1.64, "y": -25.26 },
+        { "x": 2.85, "y": -23.67 },
+        { "x": 1.25, "y": -22.46 }
+      ],
+      "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa QUEM-MURO: polilínea cerrada de ≈ 2 m de lado alrededor de la chimenea",
+      "altura": { "valor": 1, "unidad": "m", "fuente": "No está en las fuentes: altura de ejemplo del muro del recinto de la antorcha.", "demo": true }
+    },
+    "radioSeguridad": { "valor": 5, "unidad": "m", "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa QUEM-RADIO5M: círculo de radio 5 m", "demo": false },
+    "llama": {
+      "alturaMaxima": { "valor": 1.5, "unidad": "m", "fuente": "No está en las fuentes: altura de ejemplo de la llama al caudal de diseño de biogás; crece y baja con el caudal.", "demo": true }
+    }
+  },
+  "linea": {
+    "nombre": "Línea de biogás RAFA → antorcha",
+    "trazado": [
+      { "x": -18.02, "y": 2.83 },
+      { "x": -15.2, "y": -3.34 },
+      { "x": -6.24, "y": -18.04 },
+      { "x": -2.54, "y": -20.84 },
+      { "x": 1.29, "y": -23.74 }
+    ],
+    "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf: eje de los pares de polilíneas amarillas de la capa 0 (RAFA hasta (−6.2, −18.0)) y de la capa QUEM-TUBERIA (hasta la antorcha); cada tubo son dos líneas paralelas a 0.10 m",
+    "diametro": { "valor": 0.1, "unidad": "m", "fuente": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf: separación de 0.10 m entre las dos líneas del tubo de biogás (capas 0 y QUEM-TUBERIA)", "demo": false },
+    "alturaSobreTerreno": { "valor": 0.5, "unidad": "m", "fuente": "No está en las fuentes: el plano no dice si va enterrada o aérea; de ejemplo va a 0.5 m sobre el terreno.", "demo": true }
+  }
+}

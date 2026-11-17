@@ -9,6 +9,7 @@ import {
   LUZ_AMBIENTE,
   LUZ_DIRECCIONAL,
 } from '../nucleo/constantes'
+import { Biogas } from '../unidades/biogas'
 import { Conexiones, FlujoTuberias } from '../unidades/conexiones'
 import { Entorno } from '../unidades/entorno'
 import { unidades } from '../unidades/registro'
@@ -35,6 +36,7 @@ export function Escena() {
       <Conexiones referencia={referencia} />
       <FlujoTuberias referencia={referencia} />
       <Entorno referencia={referencia} />
+      <Biogas referencia={referencia} />
       <ControlCamara unidades={unidades} />
     </Canvas>
   )

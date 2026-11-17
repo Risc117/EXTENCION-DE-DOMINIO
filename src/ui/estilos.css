@@ -97,7 +97,7 @@ canvas { touch-action: none; }
 .diagrama-linea__caja small { font-variant-numeric: tabular-nums; opacity: 0.85; }
 .diagrama-linea__caja[aria-pressed='true'] { outline: 2px solid var(--color-etiqueta-linea); font-weight: 700; }
 @media (max-width: 700px) { .tarjeta-unidad { top: auto; bottom: 44px; right: 12px; left: 12px; width: auto; } .diagrama-linea { display: none; } }
-.calidad-agua { position: fixed; right: 12px; bottom: 64px; width: 360px; max-height: 45vh; overflow: auto; padding: 8px 10px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.8rem; }
+.calidad-agua { max-height: 45vh; overflow: auto; padding: 8px 10px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.8rem; }
 .calidad-agua > summary { cursor: pointer; font-weight: 600; }
 .calidad-agua__nota { margin: 6px 0; opacity: 0.8; font-size: 0.75rem; }
 .calidad-agua__parametro h3 { margin: 8px 0 2px; font-size: 0.85rem; }
@@ -114,3 +114,13 @@ canvas { touch-action: none; }
 .calidad-agua th, .calidad-agua td { padding: 2px 6px; text-align: right; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
 .calidad-agua th[scope='row'] { text-align: left; }
 @media (max-width: 700px) { .calidad-agua { display: none; } }
+.lodos-biogas { padding: 8px 10px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.8rem; }
+.lodos-biogas > summary { cursor: pointer; font-weight: 600; }
+.lodos-biogas dl { margin: 6px 0 0; }
+.lodos-biogas__fila { display: flex; justify-content: space-between; gap: 10px; padding: 2px 0; }
+.lodos-biogas dt { opacity: 0.85; }
+.lodos-biogas dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.lodos-biogas__nota { margin: 6px 0 0; opacity: 0.75; font-size: 0.75rem; }
+@media (max-width: 700px) { .lodos-biogas { display: none; } }
+.paneles-derecha { position: fixed; right: 12px; bottom: 64px; width: 360px; max-height: calc(100vh - 140px); display: flex; flex-direction: column; gap: 8px; overflow: auto; }
+@media (max-width: 700px) { .paneles-derecha { display: none; } }

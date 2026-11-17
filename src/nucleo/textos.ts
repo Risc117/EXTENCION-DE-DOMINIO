@@ -170,3 +170,21 @@ export const TEXTO_CALIDAD_AGUA = {
   parametros: { dbo: 'DBO₅ (mg/L)', dqo: 'DQO (mg/L)', sst: 'SST (mg/L)', cf: 'Coliformes (NMP/100 mL)' },
   unidades: { dbo: 'mg/L', dqo: 'mg/L', sst: 'mg/L', cf: 'NMP/100 mL' },
 }
+
+/** Panel de lodos y biogás (T20). */
+export const TEXTO_LODOS_BIOGAS = {
+  titulo: 'Lodos y biogás (por día)',
+  biogas: 'Biogás al quemador',
+  lodoSolidos: 'Lodo del RAFA (sólidos)',
+  lodoHumedo: (porcentaje: number) => `Lodo húmedo (${porcentaje} % de sólidos)`,
+  lodoDeshidratado: (porcentaje: number) => `Lodo deshidratado (${porcentaje} % de sólidos)`,
+  lechos: 'Lechos de secado',
+  sedimentadores: 'Sedimentadores secundarios',
+  sinDato: 'sin dato en las hojas',
+  unidadDia: 'm³/d',
+  unidadHora: 'm³/h',
+  solidosDia: 'kg SST/d',
+  separador: ' · ',
+  lechosValor: (area: string, dias: number) => `${area} m² · ciclo de ${dias} días`,
+  nota: 'Del RAFA, con el caudal en vivo y los valores de la hoja de cálculo. El lodo va a los lechos de secado y el biogás al quemador, según el plano.',
+}

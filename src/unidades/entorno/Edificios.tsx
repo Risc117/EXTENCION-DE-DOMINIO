@@ -9,7 +9,7 @@ import { etiquetasCercanas } from '../comun/cercania'
 import { Etiqueta } from '../comun/Etiqueta'
 import { entorno } from './datos'
 import { cotasBase } from './geometria'
-import { Losa } from './Losa'
+import { Losa } from '../comun/Losa'
 
 /** Edificios del plano como prismas sobre su planta, apoyados en el terreno, con su nombre al acercarse. */
 export function Edificios({ referencia }: { referencia: number }) {

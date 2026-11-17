@@ -7,7 +7,7 @@ import { alturaNivelada, terrenoNivelado } from './terrenoNivelado'
 import { entorno } from './datos'
 import { cintaEntreMargenes } from './franjas'
 import { cintaVia, circuloSobreTerreno, cotasBase, type MallaPlana } from './geometria'
-import { Losa } from './Losa'
+import { Losa } from '../comun/Losa'
 
 const aGeometria = (m: MallaPlana): BufferGeometry => {
   const g = new BufferGeometry()

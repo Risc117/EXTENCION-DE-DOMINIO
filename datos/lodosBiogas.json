@@ -1,0 +1,29 @@
+{
+  "id": "lodosBiogas",
+  "fuente": "insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hojas RAFA (producción de gas y de lodos) y LECHO DE SECADO. Valores de diseño (sin laboratorio).",
+  "demo": false,
+  "biogas": {
+    "produccionEspecifica": { "valor": 0.34, "unidad": "m3/kgDQO", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA, celda C17 (producción específica de gas, por kg de DQO aplicada); decisión del usuario (17 nov): se usa la DQO aplicada, como la hoja", "demo": false }
+  },
+  "lodo": {
+    "rendimiento": { "valor": 0.1, "unidad": "kgSST/kgDQO", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA, celda C98 (coeficiente de sólidos Y, Plodo = Y × carga de DQO aplicada)", "demo": false },
+    "densidadHumedo": { "valor": 1020, "unidad": "kg/m3", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA, celda C100 (densidad del lodo)", "demo": false },
+    "concentracionHumedo": { "valor": 4, "unidad": "%", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA, celda C101 (concentración del lodo, 4 % de sólidos)", "demo": false },
+    "densidadDeshidratado": { "valor": 1050, "unidad": "kg/m3", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja LECHO DE SECADO, celda C16", "demo": false },
+    "concentracionDeshidratado": { "valor": 25, "unidad": "%", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja LECHO DE SECADO, celda C14", "demo": false }
+  },
+  "lechos": {
+    "area": { "valor": 170.1677, "unidad": "m2", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja LECHO DE SECADO, celda H24 (área final de lecho de secado)", "demo": false },
+    "ciclo": { "valor": 42, "unidad": "dias", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja LECHO DE SECADO, celda C22 (período total del ciclo)", "demo": false }
+  },
+  "correccionVolumen": {
+    "fuente": "Corrección del Excel, decisión del usuario (17 nov): la hoja RAFA calcula Vlodo = Plodo / (densidad × Clodo) con Clodo = 4 en lugar de 0.04 (celda G100 = 0.016 m3/d), un factor 100. Con 4 % de sólidos el volumen es Plodo / (1020 × 0.04) = 1.60 m3/d; igual para el lodo deshidratado (25 %). Estos volúmenes son un cálculo corregido: Dato de ejemplo.",
+    "demo": true
+  },
+  "referenciasHoja": {
+    "dqoAplicada": { "valor": 652.69792742, "unidad": "kgDQO/d", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA, celda G56 (carga orgánica aplicada, con Qmed = 564.71 m3/d)", "demo": false },
+    "lodo": { "valor": 65.26979274, "unidad": "kgSST/d", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA, celda G98 (producción de sólidos en el sistema)", "demo": false },
+    "biogas": { "valor": 9.24655397, "unidad": "m3/h", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA, celda G57 (volumen de gas producido)", "demo": false },
+    "caudalDiseno": { "valor": 6.536, "unidad": "L/s", "fuente": "CALCULOS PTAR SANTA LEONOR.xlsx, hoja RAFA, celda C57 (Qmed = 564.71 m3/d = 6.536 L/s)", "demo": false }
+  }
+}

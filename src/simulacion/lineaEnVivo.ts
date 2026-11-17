@@ -6,6 +6,7 @@ import { avanzarLinea } from './avanzarLinea'
 import { publicarCalidad } from './calidadEnVivo'
 import { disponerLinea } from './disposicion'
 import { hidrograma } from './hidrogramaCargado'
+import { publicarDatosLodosBiogas, publicarProduccion } from './lodosBiogasEnVivo'
 import { crearLinea, type Linea } from './linea'
 import { esquemaLinea } from './lineaEsquema'
 
@@ -37,6 +38,7 @@ export function crearLineaEnVivo(): (ahoraMs: number, estado: ReturnType<typeof 
       reinicios = s.reinicios
       useLineaViva.getState().publicarEstructura(estructuraLinea())
       publicarCalidad()
+      publicarDatosLodosBiogas()
     }
     if (s.reinicios !== reinicios) {
       linea.reiniciar()
@@ -46,6 +48,7 @@ export function crearLineaEnVivo(): (ahoraMs: number, estado: ReturnType<typeof 
     if (ahoraMs - ultimaPublicacion >= INTERVALO_PUBLICACION_LINEA_MS) {
       ultimaPublicacion = ahoraMs
       useLineaViva.getState().publicarCaudales(r.nodos)
+      publicarProduccion(r.nodos.rafa?.entrada ?? 0)
     }
   }
 }
