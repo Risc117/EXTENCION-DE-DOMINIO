@@ -1,6 +1,8 @@
 import { useFrame, useThree } from '@react-three/fiber'
 import { useContext, useMemo, useRef, useState } from 'react'
+import { useEstado } from '../../../estado/almacen'
 import { useCorte } from '../../../estado/flujo'
+import { corteEfectivo } from '../../comun/corte'
 import { ContextoUbicacion } from '../../contextoUbicacion'
 import { aLocal } from '../../ubicacion'
 import { quedaCortado, tapaElTanque } from './visibilidad'
@@ -35,7 +37,7 @@ export function useVisibles(candidatos: Candidato[], limites: LimitesTanque, act
     const corte = useCorte.getState()
     const cam = aLocal([camara.position.x, camara.position.y, camara.position.z], ubicacion)
     const ids = candidatos
-      .filter((c) => !quedaCortado(c.anclaje, corte.activo, corte.posicion, limites.radioInterior, ubicacion))
+      .filter((c) => !quedaCortado(c.anclaje, corteEfectivo(corte.activo, corte.soloEnfocada, useEstado.getState().foco, ubicacion.id), corte.posicion, limites.radioInterior, ubicacion))
       .filter((c) => !c.tapable || !tapaElTanque(cam, c.anclaje, limites.radioExterior, limites.yMin, limites.yMax))
       .map((c) => c.id)
     const nueva = ids.join('|')

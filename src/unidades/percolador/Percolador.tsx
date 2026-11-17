@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import escala from '../../../datos/escalaCaudal.json'
 import lineaCruda from '../../../datos/linea.json'
 import { DECIMAS_CAUDAL } from '../../nucleo/constantesCanales'
-import { useCorte } from '../../estado/flujo'
+import { useCorteActivo } from '../comun/useCorteActivo'
 import { useSim } from '../../estado/simulacion'
 import { Estructura } from '../comun/Estructura'
 import { construirCotas, construirEtiquetas } from './anotaciones'
@@ -17,7 +17,7 @@ const contacto = (lineaCruda.nodos.find((n) => n.id === 'percolador') as { reten
 /** Filtro percolador: muro opaco (translúcido con "Ver corte"), brazos que giran con el caudal, agua según el caudal de la simulación. */
 export function Percolador({ datos }: { datos: DatosPercolador }) {
   const decimas = useSim((s) => Math.round(s.caudalEntrada * DECIMAS_CAUDAL))
-  const corte = useCorte((s) => s.activo)
+  const corte = useCorteActivo()
   const caudal = decimas / DECIMAS_CAUDAL
   const piezas = useMemo(() => construirPiezas(datos, corte), [datos, corte])
   const aguas = useMemo(() => construirAguas(datos, caudal, CAUDAL_MAXIMO), [datos, caudal])

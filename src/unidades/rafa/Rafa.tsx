@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import escala from '../../../datos/escalaCaudal.json'
 import { DECIMAS_CAUDAL } from '../../nucleo/constantesCanales'
-import { useCorte } from '../../estado/flujo'
+import { useCorteActivo } from '../comun/useCorteActivo'
 import { useSim } from '../../estado/simulacion'
 import { Estructura } from '../comun/Estructura'
 import { construirCotas, construirEtiquetas } from './anotaciones'
@@ -15,7 +15,7 @@ const CAUDAL_MAXIMO = escala.caudalMaximoHorario.valor
 /** RAFA: muros opacos (translúcidos con "Ver corte"), el agua sube con el caudal de la simulación y los TR de la hoja y del plano se muestran aparte. */
 export function Rafa({ datos }: { datos: DatosRafa }) {
   const decimas = useSim((s) => Math.round(s.caudalEntrada * DECIMAS_CAUDAL))
-  const corte = useCorte((s) => s.activo)
+  const corte = useCorteActivo()
   const caudal = decimas / DECIMAS_CAUDAL
   const piezas = useMemo(() => construirPiezas(datos, corte), [datos, corte])
   const aguas = useMemo(() => construirAguas(datos, caudal, CAUDAL_MAXIMO), [datos, caudal])

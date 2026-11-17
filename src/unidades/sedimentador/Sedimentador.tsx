@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { DECIMAS_CAUDAL } from '../../nucleo/constantesCanales'
 import { SALIDA_VERTEDERO } from '../../nucleo/constantesGotas'
-import { useCorte } from '../../estado/flujo'
+import { useCorteActivo } from '../comun/useCorteActivo'
 import { useSim } from '../../estado/simulacion'
 import { Estructura } from '../comun/Estructura'
 import { GotasCaen } from '../comun/GotasCaen'
@@ -23,7 +23,7 @@ interface Props {
 /** Un sedimentador: muros opacos (translúcidos con "Ver corte"), puente que gira y agua según el caudal que le toca. */
 export function Sedimentador({ datos, fraccion, instancia }: Props) {
   const decimas = useSim((s) => Math.round(s.caudalEntrada * DECIMAS_CAUDAL))
-  const corte = useCorte((s) => s.activo)
+  const corte = useCorteActivo()
   const caudalUnidad = (decimas / DECIMAS_CAUDAL) * fraccion
   const piezas = useMemo(() => construirPiezas(datos, corte, instancia), [datos, corte, instancia])
   const aguas = useMemo(() => construirAguas(datos, caudalUnidad), [datos, caudalUnidad])

@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { TEXTO_HERRAMIENTAS as T } from '../nucleo/textos'
+import { TEXTO_VISTAS as V } from '../nucleo/textosVistas'
 import { PanelAccesorios } from './PanelAccesorios'
 import { PanelAnotaciones } from './PanelAnotaciones'
 import { PanelCalidad } from './PanelCalidad'
@@ -11,6 +12,7 @@ import { PanelPersonal } from './PanelPersonal'
 import { PanelVida } from './PanelVida'
 import { PanelTerreno } from './PanelTerreno'
 import { PanelUnidades } from './PanelUnidades'
+import { PanelVistas } from './PanelVistas'
 
 function Grupo({ titulo, abierto = false, children }: { titulo: string; abierto?: boolean; children: ReactNode }) {
   return (
@@ -28,6 +30,9 @@ export function PanelHerramientas() {
       <summary>{T.titulo}</summary>
       <Grupo titulo={T.grupoUnidades} abierto>
         <PanelUnidades />
+      </Grupo>
+      <Grupo titulo={V.grupo} abierto>
+        <PanelVistas />
       </Grupo>
       <Grupo titulo={T.grupoCorte}>
         <PanelCorte />

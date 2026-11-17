@@ -31,6 +31,9 @@ interface EstadoCorte {
   activo: boolean
   /** Posición del plano, de -1 a 1 (fracción del radio interior). */
   posicion: number
+  /** true = el corte solo se hace en la estructura enfocada (la elegida en "Ir a"); false = en todas. */
+  soloEnfocada: boolean
+  alternarSoloEnfocada: () => void
   alternarCorte: () => void
   fijarPosicionCorte: (v: number) => void
 }
@@ -38,6 +41,8 @@ interface EstadoCorte {
 export const useCorte = create<EstadoCorte>((set) => ({
   activo: false,
   posicion: CORTE_INICIAL,
+  soloEnfocada: false,
+  alternarSoloEnfocada: () => set((s) => ({ soloEnfocada: !s.soloEnfocada })),
   alternarCorte: () => set((s) => ({ activo: !s.activo })),
   fijarPosicionCorte: (posicion) => set({ posicion }),
 }))

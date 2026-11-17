@@ -9,7 +9,7 @@ const UMBRAL_ARRASTRE_PX = 4
 
 /** Pone una unidad en su lugar del plano general y le avisa dónde está. */
 export function UnidadColocada({ unidad, referencia }: { unidad: Unidad; referencia: number }) {
-  const ubicacion = useMemo(() => ({ posicion: posicionEscena(unidad, referencia), giro: giroEscena(unidad), tamano: unidad.tamano }), [unidad, referencia])
+  const ubicacion = useMemo(() => ({ id: unidad.id, posicion: posicionEscena(unidad, referencia), giro: giroEscena(unidad), tamano: unidad.tamano }), [unidad, referencia])
   return (
     <ContextoUbicacion.Provider value={ubicacion}>
       <group

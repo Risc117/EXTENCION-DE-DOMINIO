@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import lineaCruda from '../../../datos/linea.json'
 import { DECIMAS_CAUDAL } from '../../nucleo/constantesCanales'
-import { useCorte } from '../../estado/flujo'
+import { useCorteActivo } from '../comun/useCorteActivo'
 import { useSim } from '../../estado/simulacion'
 import { Estructura } from '../comun/Estructura'
 import { construirCotas, construirEtiquetas } from './anotaciones'
@@ -15,7 +15,7 @@ const FRACCION = destinos[0].fraccion
 /** Cámara de reparto: reparte el caudal en partes iguales a los dos sedimentadores. */
 export function Reparto({ datos }: { datos: DatosReparto }) {
   const decimas = useSim((s) => Math.round(s.caudalEntrada * DECIMAS_CAUDAL))
-  const corte = useCorte((s) => s.activo)
+  const corte = useCorteActivo()
   const caudal = decimas / DECIMAS_CAUDAL
   const piezas = useMemo(() => construirPiezas(datos, corte), [datos, corte])
   const aguas = useMemo(() => construirAguas(datos), [datos])

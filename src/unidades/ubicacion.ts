@@ -2,6 +2,8 @@ export type Vec3 = [number, number, number]
 
 /** Dónde está una unidad en la escena: posición (m) y giro alrededor de la vertical (radianes). */
 export interface UbicacionEscena {
+  /** Id de la unidad (para el corte de solo la estructura enfocada). */
+  id?: string
   posicion: Vec3
   giro: number
   /** Lado mayor (m) de la unidad: sirve para saber cuándo la cámara está cerca. */

@@ -23,6 +23,9 @@ export function planoCorte(activo: boolean, posicion: number, radio: number): Pl
  */
 export const GIRO_CORTE_COMUN = (planta.unidades.find((u) => u.id === 'rafa')!.giro.valor * Math.PI) / 180
 
+/** true si esa unidad se corta: el corte está activo y, si es solo de la estructura enfocada, la unidad es la enfocada. */
+export const corteEfectivo = (activo: boolean, soloEnfocada: boolean, foco: string | null, id: string | undefined): boolean => activo && (!soloEnfocada || (foco !== null && id === foco))
+
 /** Plano del corte en el mundo (el que pide three.js): el mismo para todas las unidades, pasando por el centro de la unidad que lo pide. */
 export function planoCorteMundo(activo: boolean, posicion: number, radio: number, ubicacion: UbicacionEscena): PlanoLocal | null {
   const local = planoCorte(activo, posicion, radio)

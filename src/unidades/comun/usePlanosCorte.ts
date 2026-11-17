@@ -3,6 +3,7 @@ import { Plane, Vector3 } from 'three'
 import { useCorte } from '../../estado/flujo'
 import { ContextoUbicacion } from '../contextoUbicacion'
 import { planoCorteMundo } from './corte'
+import { useCorteActivo } from './useCorteActivo'
 
 const SIN_PLANOS: Plane[] = []
 
@@ -11,7 +12,7 @@ const SIN_PLANOS: Plane[] = []
  * para todas las unidades (ver GIRO_CORTE_COMUN en corte.ts).
  */
 export function usePlanosCorte(radio: number): Plane[] {
-  const activo = useCorte((s) => s.activo)
+  const activo = useCorteActivo()
   const posicion = useCorte((s) => s.posicion)
   const ubicacion = useContext(ContextoUbicacion)
   return useMemo(() => {
