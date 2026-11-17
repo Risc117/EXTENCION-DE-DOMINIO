@@ -7,6 +7,7 @@ import {
   DISTANCIA_CAMARA,
 } from '../nucleo/constantes'
 import { useCalidad } from '../estado/calidad'
+import { useVR } from '../estado/vr'
 import { Luminarias, Manga, PublicarViento } from '../unidades/ambiente'
 import { Biogas } from '../unidades/biogas'
 import { Conexiones, FlujoTuberias } from '../unidades/conexiones'
@@ -18,6 +19,7 @@ import { cotaReferencia } from '../unidades/ubicar'
 import { ControlCamara } from './ControlCamara'
 import { EtiquetasPlanta } from './EtiquetasPlanta'
 import { Luces } from './Luces'
+import { RigVR } from './vr/RigVR'
 import { Sombras } from './Sombras'
 import { encuadre } from './encuadre'
 import { EntornoTerreno } from './terreno'
@@ -30,6 +32,7 @@ export function Escena() {
   const d = escala * DISTANCIA_CAMARA
   const [ox, , oz] = objetivo
   const sombras = useCalidad((s) => s.calidad === 'alta')
+  const vr = useVR((s) => s.activo)
   return (
     <Canvas shadows={sombras} gl={{ localClippingEnabled: true }} camera={{ position: [ox + d, d * CAMARA_ALTURA_FACTOR, oz + d], fov: CAMARA_FOV, near: CAMARA_NEAR, far: escala * CAMARA_FAR_FACTOR }}>
       <Luces objetivo={objetivo} />
@@ -48,8 +51,8 @@ export function Escena() {
       <Vida referencia={referencia} />
       <Pluma referencia={referencia} />
       <Personal referencia={referencia} />
-      <EtiquetasPlanta referencia={referencia} />
-      <ControlCamara unidades={unidades} />
+      {!vr && <EtiquetasPlanta referencia={referencia} />}
+      {vr ? <RigVR referencia={referencia} /> : <ControlCamara unidades={unidades} />}
     </Canvas>
   )
 }

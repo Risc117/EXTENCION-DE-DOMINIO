@@ -1,0 +1,47 @@
+{
+  "id": "vr",
+  "fuente": "No hay datos de VR en las fuentes: las medidas son de ejemplo (valores típicos de un visor tipo Cardboard). El punto de entrada sale de datos/entorno.json (vía interna).",
+  "demo": true,
+  "alturaOjos": {
+    "valor": 1.6,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: altura de los ojos de una persona de pie de ejemplo.",
+    "demo": true
+  },
+  "separacionOjos": {
+    "valor": 0.064,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: separación entre los ojos (típica en adultos, 6.4 cm) de ejemplo.",
+    "demo": true
+  },
+  "tiempoMirada": {
+    "valor": 1.8,
+    "unidad": "s",
+    "fuente": "No está en las fuentes: tiempo que hay que mantener la mirada para actuar de ejemplo.",
+    "demo": true
+  },
+  "anguloSalir": {
+    "valor": 70,
+    "unidad": "grados",
+    "fuente": "No está en las fuentes: ángulo bajo el horizonte desde el que mirar hacia los pies sale de VR de ejemplo.",
+    "demo": true
+  },
+  "distanciaMaxima": {
+    "valor": 60,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: distancia máxima a la que se puede caminar de una vez de ejemplo.",
+    "demo": true
+  },
+  "campoVision": {
+    "valor": 80,
+    "unidad": "grados",
+    "fuente": "No está en las fuentes: campo de visión vertical de cada ojo de ejemplo.",
+    "demo": true
+  },
+  "inicio": {
+    "via": "via-interna",
+    "indice": 0,
+    "haciaIndice": 4,
+    "fuente": "Primer punto de la vía interna (la entrada de la planta, junto al portón) de datos/entorno.json; mira hacia el punto 5 de la misma vía, hacia dentro de la planta."
+  }
+}

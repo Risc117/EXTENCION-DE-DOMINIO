@@ -1,0 +1,13 @@
+.botones-inmersivos { position: fixed; top: 12px; left: 444px; display: flex; gap: 8px; }
+.botones-inmersivos button, .vr__salir { padding: 8px 14px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }
+@media (max-width: 700px) { .botones-inmersivos { left: auto; right: 12px; } }
+.vr { position: fixed; inset: 0; z-index: 20; touch-action: none; user-select: none; }
+.vr__mitad { position: absolute; top: 0; bottom: 0; width: 50%; overflow: hidden; transform: translateZ(0); display: flex; align-items: center; justify-content: center; pointer-events: none; }
+.vr__mitad:nth-of-type(1) { left: 0; }
+.vr__mitad:nth-of-type(2) { right: 0; }
+.vr__punto { fill: var(--color-texto); }
+.vr__anillo-fondo { fill: none; stroke: var(--color-rejilla); stroke-width: 3; }
+.vr__anillo { fill: none; stroke: var(--color-calidad-ok); stroke-width: 3; }
+.vr__ayuda { position: absolute; bottom: 12px; left: 8px; right: 8px; margin: 0; text-align: center; font-size: 0.7rem; opacity: 0.8; color: var(--color-texto); }
+.vr__salir { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; }
+.modo-vr .anotacion { display: none; }

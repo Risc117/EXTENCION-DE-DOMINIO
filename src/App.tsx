@@ -1,5 +1,7 @@
+import { BotonesInmersivos } from './BotonesInmersivos'
 import { Escena } from './escena/Escena'
 import { useEntrada } from './entrada'
+import { useVR } from './estado/vr'
 import { useGuion, useParticulas, useSimulacion } from './simulacion'
 import { AvisoDemo } from './ui/AvisoDemo'
 import { Bienvenida } from './ui/Bienvenida'
@@ -22,32 +24,39 @@ export function App() {
   useSimulacion()
   useParticulas()
   useGuion()
+  const vr = useVR((s) => s.activo)
   return (
     <>
       <Escena />
-      <AvisoDemo />
-      <div className="herramientas">
-        <PanelHerramientas />
-      </div>
-      <PanelDemo />
-      <PanelGestos />
-      <PanelAjusteGestos />
-      <PanelSimulacion />
-      <div className="barra-hora">
-        <PanelHora />
-      </div>
-      <IndicadorViento />
-      <TarjetaUnidad />
-      <div className="paneles-centro">
-        <PanelPerfil />
-        <DiagramaLinea />
-      </div>
-      <div className="paneles-derecha">
-        <PanelCalidadAgua />
-        <PanelLodosBiogas />
-      </div>
-      <Leyenda />
-      <Bienvenida />
+      {/* En VR se esconde toda la interfaz: solo quedan la mira y la tarjeta de cada ojo (BotonesInmersivos). */}
+      {!vr && (
+        <>
+          <AvisoDemo />
+          <div className="herramientas">
+            <PanelHerramientas />
+          </div>
+          <PanelDemo />
+          <PanelGestos />
+          <PanelAjusteGestos />
+          <PanelSimulacion />
+          <div className="barra-hora">
+            <PanelHora />
+          </div>
+          <IndicadorViento />
+          <TarjetaUnidad />
+          <div className="paneles-centro">
+            <PanelPerfil />
+            <DiagramaLinea />
+          </div>
+          <div className="paneles-derecha">
+            <PanelCalidadAgua />
+            <PanelLodosBiogas />
+          </div>
+          <Leyenda />
+          <Bienvenida />
+        </>
+      )}
+      <BotonesInmersivos />
     </>
   )
 }

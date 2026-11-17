@@ -13,6 +13,7 @@ export function UnidadColocada({ unidad, referencia }: { unidad: Unidad; referen
   return (
     <ContextoUbicacion.Provider value={ubicacion}>
       <group
+        userData={{ unidad: unidad.id }}
         position={ubicacion.posicion}
         rotation={[0, ubicacion.giro, 0]}
         onClick={(e) => {
