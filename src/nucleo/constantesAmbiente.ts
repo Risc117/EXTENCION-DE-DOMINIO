@@ -29,3 +29,5 @@ export const MINUTOS_POR_HORA = 60
 export const CIFRAS_RELOJ = 2
 /** Manga de viento: lados del cono. */
 export const SEGMENTOS_MANGA = 12
+/** Hora (0 a 24) en la que arranca el reloj al abrir, al reiniciar y al elegir un día: de mañana, para que el visor abra de día (T35). No es un dato de la planta. */
+export const HORA_INICIAL_SIMULACION = 8

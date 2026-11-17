@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { VELOCIDAD_INICIAL } from '../nucleo/constantes'
+import { HORA_INICIAL_SIMULACION } from '../nucleo/constantesAmbiente'
 
 /** Medidas del tanque que necesita la simulación (las publica quien arma la escena). */
 export interface ParametrosTanque {
@@ -63,7 +64,7 @@ interface EstadoSim extends Medidas {
 
 const inicio = {
   dia: 1,
-  hora: 0,
+  hora: HORA_INICIAL_SIMULACION,
   volumen: 0,
   nivel: 0,
   caudalEntrada: 0,

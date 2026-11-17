@@ -1,16 +1,24 @@
 import { beforeEach, describe, expect, it } from 'vitest'
+import { HORA_INICIAL_SIMULACION } from '../nucleo/constantesAmbiente'
+import { luzDelDia, posicionSol } from '../nucleo/solar'
+import ambiente from '../../datos/ambiente.json'
 import { useSim } from './simulacion'
 
 describe('estado de la simulación', () => {
   beforeEach(() => useSim.getState().reiniciar())
 
-  it('arranca vacío, en el día 1, hora 0 y modo constante', () => {
+  it('arranca vacío, en el día 1, a la hora inicial y en modo constante', () => {
     const s = useSim.getState()
     expect(s.volumen).toBe(0)
-    expect(s.hora).toBe(0)
+    expect(s.hora).toBe(HORA_INICIAL_SIMULACION)
     expect(s.dia).toBe(1)
     expect(s.modoSalida).toBe('constante')
     expect(s.salidaAjuste).toBeNull()
+  })
+
+  it('a la hora inicial es pleno día en Picoy (el visor no abre de noche)', () => {
+    const { elevacion } = posicionSol(ambiente.ubicacion.latitud.valor, ambiente.fecha.mes, ambiente.fecha.dia, HORA_INICIAL_SIMULACION)
+    expect(luzDelDia(elevacion).dia).toBe(1)
   })
 
   it('elegir otro día reinicia la hora, el volumen y el ajuste de salida', () => {
@@ -20,7 +28,7 @@ describe('estado de la simulación', () => {
     s.elegirDia(3)
     const n = useSim.getState()
     expect(n.dia).toBe(3)
-    expect(n.hora).toBe(0)
+    expect(n.hora).toBe(HORA_INICIAL_SIMULACION)
     expect(n.volumen).toBe(0)
     expect(n.salidaAjuste).toBeNull()
   })

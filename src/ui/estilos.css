@@ -125,7 +125,7 @@ canvas { touch-action: none; }
 .paneles-derecha { position: fixed; right: 12px; bottom: 64px; width: 360px; max-height: calc(100vh - 460px); min-height: 80px; display: flex; flex-direction: column; gap: 8px; overflow: auto; }
 .paneles-derecha > * { flex-shrink: 0; }
 @media (max-width: 700px) { .paneles-derecha { display: none; } }
-.paneles-centro { position: fixed; bottom: 44px; left: 50%; transform: translateX(-50%); width: min(760px, calc(100vw - 600px)); display: flex; flex-direction: column; gap: 8px; max-height: 40vh; overflow: auto; }
+.paneles-centro { position: fixed; bottom: 44px; left: 50%; transform: translateX(-50%); width: min(760px, calc(100vw - 760px)); display: flex; flex-direction: column; gap: 8px; max-height: 40vh; overflow: auto; }
 .paneles-centro .diagrama-linea { position: static; transform: none; max-width: none; }
 .perfil-hidraulico { padding: 6px 10px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.8rem; }
 .perfil-hidraulico > summary { cursor: pointer; font-weight: 600; }
@@ -167,7 +167,7 @@ canvas { touch-action: none; }
 .indicador-viento__flecha { stroke: var(--color-texto); stroke-width: 2; }
 .indicador-viento__punta { fill: var(--color-texto); }
 @media (max-width: 700px) { .indicador-viento { right: auto; left: 12px; top: 48px; } }
-.barra-hora { position: fixed; top: 12px; left: 180px; width: 250px; padding: 4px 10px; border-radius: 6px; background: var(--color-panel-fondo); }
+.barra-hora { position: fixed; top: 12px; left: 224px; width: 250px; padding: 4px 10px; border-radius: 6px; background: var(--color-panel-fondo); }
 @media (max-width: 700px) { .barra-hora { top: auto; bottom: 150px; left: 12px; } }
 .ajuste-gestos:not(.ajuste-gestos--plegado) { z-index: 2; }
 .bienvenida__datos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
@@ -190,3 +190,9 @@ canvas { touch-action: none; }
 .leyenda-colores__muestra--linea { height: 4px; }
 .leyenda-colores__muestra--circulo { width: 12px; height: 12px; border-radius: 50%; margin: 0 5px; }
 .panel-corte small { opacity: 0.8; font-size: 0.75rem; }
+/* Pantallas medianas (T35): el botón del recorrido va a la derecha de la hora y el viento baja bajo "Activar gestos", para que nada se encime arriba. */
+@media (min-width: 701px) and (max-width: 1280px) {
+  .panel-demo { left: 506px; transform: none; align-items: flex-start; width: min(420px, calc(100vw - 518px)); }
+  .indicador-viento { top: 56px; right: 12px; }
+  .tarjeta-unidad { top: 128px; }
+}

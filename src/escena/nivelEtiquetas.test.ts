@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { DISTANCIA_INICIAL } from '../nucleo/constantesCamara'
-import { etiquetasDelNivel, largoFlecha, nivelEtiquetas, type ItemEtiqueta } from './nivelEtiquetas'
+import { etiquetasDelNivel, largoEscalonado, largoFlecha, nivelEtiquetas, type ItemEtiqueta } from './nivelEtiquetas'
 
 describe('nivel de las etiquetas según el zoom', () => {
   it('con la cámara en la vista general es "lejos"', () => {
@@ -51,6 +51,24 @@ describe('qué etiquetas salen en cada nivel', () => {
     expect(e.origen[2]).toBe(-5)
     expect(e.origen[1]).toBeCloseTo(4 + largoFlecha(100), 9)
     expect(e.texto).toBe('RAFA')
+  })
+})
+
+describe('etiquetas escalonadas', () => {
+  const fila: ItemEtiqueta[] = Array.from({ length: 7 }, (_, n) => ({ id: `u${n}`, texto: `U${n}`, tipo: 'unidad', punta: [n, 0, 0] }))
+  it('la primera queda a la altura del largo de la flecha y las vecinas, cada una más arriba', () => {
+    const alturas = etiquetasDelNivel(fila, 'lejos', 100).map((e) => e.origen[1])
+    expect(alturas[0]).toBeCloseTo(largoFlecha(100), 9)
+    for (let n = 1; n < 5; n++) expect(alturas[n]).toBeGreaterThan(alturas[n - 1])
+  })
+  it('después del último escalón vuelve a empezar', () => {
+    const alturas = etiquetasDelNivel(fila, 'lejos', 100).map((e) => e.origen[1])
+    expect(alturas[5]).toBeCloseTo(alturas[0], 9)
+    expect(largoEscalonado(10, 6)).toBeCloseTo(largoEscalonado(10, 1), 9)
+  })
+  it('ninguna vecina inmediata queda a la misma altura', () => {
+    const alturas = etiquetasDelNivel(fila, 'lejos', 100).map((e) => e.origen[1])
+    for (let n = 1; n < alturas.length; n++) expect(alturas[n]).not.toBeCloseTo(alturas[n - 1], 6)
   })
 })
 
