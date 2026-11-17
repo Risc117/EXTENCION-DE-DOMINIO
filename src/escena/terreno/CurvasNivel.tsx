@@ -9,10 +9,11 @@ import type { Unidad } from '../../unidades/tipos'
 import { hayDetalleCurvas, radioCamara } from './detalleCurvas'
 import { segmentosCurvas } from './geometriaCurvas'
 import { terrenoModificado } from './superficie'
+import { ventanaVisible } from './ventana'
 
 function crearGeometria(tipos: readonly string[], referencia: number): BufferGeometry {
   const g = new BufferGeometry()
-  g.setAttribute('position', new BufferAttribute(segmentosCurvas(terreno.curvas, tipos, referencia, ELEVACION_CURVAS, terrenoModificado), 3))
+  g.setAttribute('position', new BufferAttribute(segmentosCurvas(terreno.curvas, tipos, referencia, ELEVACION_CURVAS, terrenoModificado, ventanaVisible()), 3))
   return g
 }
 

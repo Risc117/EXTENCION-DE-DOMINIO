@@ -1,14 +1,15 @@
 import { useFrame, useThree } from '@react-three/fiber'
 import { useEffect, useMemo, useRef } from 'react'
 import { Vector2 } from 'three'
-import { ALCANCE_RAYO_TERRENO, INTERVALO_COTA_MS, rayoContraTerreno } from '../../nucleo/terreno'
+import { ALCANCE_RAYO_TERRENO, INTERVALO_COTA_MS, rayoContraTerreno, recortarCuadricula } from '../../nucleo/terreno'
 import { useTerreno } from '../../estado/terreno'
 import { superficieTerreno } from './superficie'
+import { ventanaVisible } from './ventana'
 
 /** Calcula la cota del terreno bajo el mouse y la deja en el estado (la interfaz la muestra). */
 export function CotaPuntero({ referencia }: { referencia: number }) {
   const { gl, camera, raycaster } = useThree()
-  const malla = useMemo(() => superficieTerreno(), [])
+  const malla = useMemo(() => recortarCuadricula(superficieTerreno(), ventanaVisible()), [])
   const fijar = useTerreno((s) => s.fijarPuntero)
   const mouse = useRef<Vector2 | null>(null)
   const ultimo = useRef(0)

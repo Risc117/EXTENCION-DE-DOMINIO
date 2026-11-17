@@ -25,3 +25,6 @@ export const TRANSICION_EXPLANADA = 8
 export const TOLERANCIA_TERRENO_MODIFICADO = 0.3
 /** Explanadas encimadas: potencia del peso al promediar sus cotas; más alta = el piso plano de cada unidad casi no se contagia de las vecinas. */
 export const DOMINIO_PISO_PLANO = 8
+/** Terreno visible (T16.6.1): margen (m) alrededor del río y la planta, y cuánto (m) baja el faldón bajo la cota más baja del borde. */
+export const MARGEN_VENTANA_TERRENO = 30
+export const PROFUNDIDAD_FALDON = 6
