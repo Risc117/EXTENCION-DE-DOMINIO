@@ -1,9 +1,12 @@
-import { useMemo } from 'react'
+import { useFrame, useThree } from '@react-three/fiber'
+import { useMemo, useState } from 'react'
 import { Quaternion, Vector3 } from 'three'
 import { OPACIDAD_ENTERRADO, SEGMENTOS_BUZON, SEGMENTOS_TUBO } from '../../nucleo/constantesConexiones'
 import { leerColor } from '../../nucleo/colores'
 import { useAnotaciones } from '../../estado/anotaciones'
 import { useConexiones } from '../../estado/conexiones'
+import { DISTANCIA_ETIQUETA_TUBERIA } from '../../nucleo/constantesVista'
+import { etiquetasCercanas } from '../comun/cercania'
 import { Etiqueta } from '../comun/Etiqueta'
 import type { Vec3 } from '../comun/tiposAnotaciones'
 import { construirEtiquetas } from './anotaciones'
@@ -32,10 +35,18 @@ function Tubo({ segmento, radio, color }: { segmento: SegmentoTubo; radio: numbe
 export function Conexiones({ referencia }: { referencia: number }) {
   const visibles = useConexiones((s) => s.visibles)
   const verEtiquetas = useAnotaciones((s) => s.etiquetas)
+  const deLejos = useAnotaciones((s) => s.siempre)
+  const camara = useThree((s) => s.camera)
+  const [cercanas, setCercanas] = useState('')
   const tubos = useMemo(() => construirTramos(conexiones, referencia), [referencia])
   const flechas = useMemo(() => construirFlechas(conexiones, referencia), [referencia])
   const buzones = useMemo(() => construirBuzones(conexiones, referencia), [referencia])
   const etiquetas = useMemo(() => construirEtiquetas(conexiones, referencia), [referencia])
+  // Las etiquetas de las tuberías salen solo cerca de la cámara (salvo "mostrar de lejos"); la lista se vuelve a dibujar solo si cambia.
+  useFrame(() => {
+    const ids = etiquetasCercanas([camara.position.x, camara.position.y, camara.position.z], etiquetas, deLejos ? Infinity : DISTANCIA_ETIQUETA_TUBERIA).map((e) => e.id).join('|')
+    if (ids !== cercanas) setCercanas(ids)
+  })
   const colores = useMemo(() => new Map([...new Set([...tubos.map((t) => t.color), '--color-muro'])].map((c) => [c, leerColor(c)])), [tubos])
   if (!visibles) return null
   return (
@@ -53,7 +64,7 @@ export function Conexiones({ referencia }: { referencia: number }) {
           <meshStandardMaterial color={colores.get('--color-muro')!} />
         </mesh>
       ))}
-      {verEtiquetas && etiquetas.map((e) => <Etiqueta key={e.id} etiqueta={e} />)}
+      {verEtiquetas && etiquetas.filter((e) => cercanas.split('|').includes(e.id)).map((e) => <Etiqueta key={e.id} etiqueta={e} />)}
     </group>
   )
 }

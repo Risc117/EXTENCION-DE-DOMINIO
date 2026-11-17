@@ -1,20 +1,19 @@
 import { useMemo } from 'react'
-import { useAnotaciones } from '../../../estado/anotaciones'
 import { useCalidad } from '../../../estado/calidad'
 import type { DatosHomogeneizador } from '../esquema'
 import { cotaTecho } from '../accesorios/cotas'
 import { calcularEtiqueta } from './construirEtiquetas'
 import { construirCotas } from './construirCotas'
 import { Cota } from '../../comun/Cotas'
+import { useAnotacionesVisibles } from '../../comun/useAnotacionesVisibles'
 import { Etiqueta } from '../../comun/Etiqueta'
 import { EtiquetaNivel } from './Etiquetas'
 import { useVisibles, type Candidato, type LimitesTanque } from './useVisibles'
 import { filtrarPorCalidad } from './visibilidad'
 
-/** Cotas (medidas con flechas) y etiquetas (nombres de las piezas), definidas en el JSON. Se ocultan con sus botones. */
+/** Cotas (medidas con flechas) y etiquetas (nombres de las piezas), definidas en el JSON. Salen al acercarse a la estructura y se ocultan con sus botones. */
 export function Anotaciones({ datos }: { datos: DatosHomogeneizador }) {
-  const verCotas = useAnotaciones((s) => s.cotas)
-  const verEtiquetas = useAnotaciones((s) => s.etiquetas)
+  const { cotas: verCotas, etiquetas: verEtiquetas } = useAnotacionesVisibles()
   const calidad = useCalidad((s) => s.calidad)
 
   const limites = useMemo<LimitesTanque>(

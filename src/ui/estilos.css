@@ -61,17 +61,25 @@ canvas { touch-action: none; }
 }
 .panel-simulacion summary { cursor: pointer; font-weight: 600; }
 .panel-simulacion[open] > summary { margin-bottom: 8px; }
-.panel-anotaciones { flex-direction: row; }
-.panel-anotaciones button { flex: 1; }
+.panel-anotaciones__fila { display: flex; gap: 6px; }
+.panel-anotaciones__fila button { flex: 1; }
 .panel-anotaciones button[aria-pressed='false'], .panel-corte button[aria-pressed='false'] { opacity: 0.55; }
 .anotacion { padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; pointer-events: none; user-select: none; background: var(--color-anotacion-fondo); color: var(--color-anotacion-texto); }
 .anotacion--cota { color: var(--color-cota); }
 .anotacion--etiqueta { border: 1px solid var(--color-etiqueta-linea); }
 
 .panel-unidades { display: flex; flex-direction: column; gap: 4px; padding: 8px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.9rem; max-height: 50vh; overflow: auto; }
-.panel-unidades summary { cursor: pointer; font-weight: 600; margin-bottom: 4px; }
 .panel-unidades button { display: block; width: 100%; margin-top: 4px; padding: 5px 10px; border: 0; border-radius: 6px; font: inherit; text-align: left; cursor: pointer; background: var(--color-boton); color: var(--color-boton-texto); }
 .panel-unidades button[aria-pressed='false'] { opacity: 0.75; }
 .panel-unidades button[aria-pressed='true'] { font-weight: 700; }
 .anotacion--marcador { border: 1px solid var(--color-etiqueta-linea); }
 .cota-terreno { margin: 0; font-size: 0.85rem; color: var(--color-texto); }
+/* Cajón de herramientas: un cajón plegable con grupos plegables; las cajas internas no repiten el fondo. */
+.cajon { padding: 8px; border-radius: 6px; background: var(--color-panel-fondo); font-size: 0.9rem; max-height: calc(100vh - 140px); overflow-y: auto; }
+.cajon > summary { cursor: pointer; font-weight: 700; }
+.cajon[open] > summary { margin-bottom: 6px; }
+.cajon__grupo { margin-top: 4px; border-top: 1px solid rgba(255, 255, 255, 0.12); padding-top: 4px; }
+.cajon__grupo > summary { cursor: pointer; font-weight: 600; padding: 2px 0; }
+.cajon__grupo[open] > summary { margin-bottom: 4px; }
+.cajon .panel-corte, .cajon .panel-calidad { padding: 4px 0; background: transparent; }
+.cajon .panel-unidades { padding: 0; background: transparent; max-height: 30vh; }

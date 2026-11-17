@@ -4,9 +4,9 @@ import { SEGMENTOS_CILINDRO } from '../../nucleo/constantes'
 import { OPACIDAD_AGUA_CANAL } from '../../nucleo/constantesCanales'
 import { leerColor } from '../../nucleo/colores'
 import { useAccesorios } from '../../estado/accesorios'
-import { useAnotaciones } from '../../estado/anotaciones'
 import { Cota } from './Cotas'
 import { Etiqueta } from './Etiqueta'
+import { useAnotacionesVisibles } from './useAnotacionesVisibles'
 import type { CotaCalculada, EtiquetaCalculada } from './tiposAnotaciones'
 import { GeometriaAnillo } from './Anillo'
 import { GeometriaCuna } from './GeometriaCuna'
@@ -91,8 +91,7 @@ function MallaAgua({ agua, planos }: { agua: Agua; planos: Plane[] }) {
 export function Estructura({ piezas, aguas, cotas, etiquetas, radioCorte }: Props) {
   const planos = usePlanosCorte(radioCorte)
   const verAccesorios = useAccesorios((s) => s.visibles)
-  const verCotas = useAnotaciones((s) => s.cotas)
-  const verEtiquetas = useAnotaciones((s) => s.etiquetas)
+  const { cotas: verCotas, etiquetas: verEtiquetas } = useAnotacionesVisibles()
   return (
     <group>
       {piezas.filter((p) => verAccesorios || !p.accesorio).map((p) => (

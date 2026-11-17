@@ -92,6 +92,18 @@ export const TEXTO_CONEXIONES = {
   ocultar: 'Ocultar tuberías',
 }
 
+/** Cajón de herramientas: un solo cajón plegable con las opciones de vista agrupadas. */
+export const TEXTO_HERRAMIENTAS = {
+  titulo: 'Herramientas',
+  grupoUnidades: 'Ir a',
+  grupoCorte: 'Corte',
+  grupoCapas: 'Capas',
+  grupoAnotaciones: 'Cotas y etiquetas',
+  grupoCalidad: 'Calidad',
+  siempreActivar: 'Mostrar también de lejos',
+  siempreQuitar: 'Mostrar solo al acercarse',
+}
+
 /** Cotas y etiquetas con flechas (los textos de cada una vienen de datos/homogeneizador.json). */
 export const TEXTO_ANOTACIONES = {
   cotas: 'Cotas',
@@ -101,7 +113,6 @@ export const TEXTO_ANOTACIONES = {
 
 /** Botones para volar a cada unidad. */
 export const TEXTO_UNIDADES = {
-  titulo: 'Ir a',
   general: 'Vista general',
 }
 

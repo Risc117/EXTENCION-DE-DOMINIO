@@ -4,6 +4,8 @@ export type Vec3 = [number, number, number]
 export interface UbicacionEscena {
   posicion: Vec3
   giro: number
+  /** Lado mayor (m) de la unidad: sirve para saber cuándo la cámara está cerca. */
+  tamano?: number
 }
 
 export const SIN_UBICACION: UbicacionEscena = { posicion: [0, 0, 0], giro: 0 }
