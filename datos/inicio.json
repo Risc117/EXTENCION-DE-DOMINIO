@@ -1,0 +1,118 @@
+{
+  "id": "inicio",
+  "fuente": "insumos/resumen-memoria.md (extraído de VM MEMORIA DESCRIPTIVA SANTA LEONOR CON BALANCE MASAS.docx). Los textos de la pantalla de inicio salen de este archivo.",
+  "demo": false,
+  "titulo": "Planta de tratamiento de aguas residuales de Picoy",
+  "queEs": "Visor 3D de la PTAR del pueblo de Picoy, con el agua que entra, recorre el tren de tratamiento y sale hacia el río Checras. El agua, el lodo y el biogás que ves son una ilustración: no son mediciones.",
+  "ubicacion": {
+    "texto": "Pueblo de Picoy, distrito de Santa Leonor, departamento de Lima",
+    "altitud": {
+      "valor": 3011,
+      "unidad": "m s. n. m.",
+      "fuente": "insumos/resumen-memoria.md (extraído de VM MEMORIA DESCRIPTIVA SANTA LEONOR CON BALANCE MASAS.docx), sección Proyecto y lugar (altitud aproximada del pueblo; la PTAR está en una ladera más baja, con cotas de 2 976 a 2 994 en el plano general)",
+      "demo": false
+    },
+    "cuerpoReceptor": "Río Checras",
+    "notas": [
+      "La memoria dice \"provincia de Huaura\" en casi todo el texto y \"Huaral\" en el título y en el objetivo: no se muestra la provincia hasta confirmarla. POR CONFIRMAR."
+    ],
+    "fuente": "insumos/resumen-memoria.md (extraído de VM MEMORIA DESCRIPTIVA SANTA LEONOR CON BALANCE MASAS.docx), sección Proyecto y lugar"
+  },
+  "poblacion": {
+    "base": {
+      "valor": 5872,
+      "unidad": "hab.",
+      "fuente": "insumos/resumen-memoria.md (extraído de VM MEMORIA DESCRIPTIVA SANTA LEONOR CON BALANCE MASAS.docx), sección Proyecto y lugar (población base)",
+      "demo": false
+    },
+    "proyectada": {
+      "valor": 6527,
+      "unidad": "hab.",
+      "fuente": "insumos/resumen-memoria.md (extraído de VM MEMORIA DESCRIPTIVA SANTA LEONOR CON BALANCE MASAS.docx), sección Proyecto y lugar (proyectada al 2047, tasa 0.54 %, método geométrico, 20 años)",
+      "demo": false,
+      "anio": 2047
+    },
+    "notas": [
+      "La memoria cruza el año base (2023 y 2026). POR CONFIRMAR."
+    ]
+  },
+  "caudales": {
+    "qp": {
+      "valor": 6.536,
+      "unidad": "L/s",
+      "fuente": "insumos/resumen-memoria.md (extraído de VM MEMORIA DESCRIPTIVA SANTA LEONOR CON BALANCE MASAS.docx), sección Caudales de diseño (Qp = 564.71 m³/d)",
+      "demo": false,
+      "nombre": "Qp",
+      "descripcion": "caudal promedio"
+    },
+    "qmd": {
+      "valor": 8.496,
+      "unidad": "L/s",
+      "fuente": "insumos/resumen-memoria.md (extraído de VM MEMORIA DESCRIPTIVA SANTA LEONOR CON BALANCE MASAS.docx), sección Caudales de diseño",
+      "demo": false,
+      "nombre": "Qmd",
+      "descripcion": "máximo diario"
+    },
+    "qmh": {
+      "valor": 13.072,
+      "unidad": "L/s",
+      "fuente": "insumos/resumen-memoria.md (extraído de VM MEMORIA DESCRIPTIVA SANTA LEONOR CON BALANCE MASAS.docx), sección Caudales de diseño",
+      "demo": false,
+      "nombre": "Qmh",
+      "descripcion": "máximo horario"
+    },
+    "qmin": {
+      "valor": 3.268,
+      "unidad": "L/s",
+      "fuente": "insumos/resumen-memoria.md (extraído de VM MEMORIA DESCRIPTIVA SANTA LEONOR CON BALANCE MASAS.docx), sección Caudales de diseño",
+      "demo": false,
+      "nombre": "Qmin",
+      "descripcion": "mínimo"
+    }
+  },
+  "tren": [
+    {
+      "id": "rejas",
+      "nombre": "Cámara de rejas",
+      "detalle": "con bypass"
+    },
+    {
+      "id": "desarenador",
+      "nombre": "Desarenador",
+      "detalle": "2 canales"
+    },
+    {
+      "id": "parshall",
+      "nombre": "Canal Parshall"
+    },
+    {
+      "id": "homogeneizador",
+      "nombre": "Tanque homogeneizador"
+    },
+    {
+      "id": "rafa",
+      "nombre": "RAFA",
+      "detalle": "reactor anaerobio de flujo ascendente; retención de 11.02 h"
+    },
+    {
+      "id": "percolador",
+      "nombre": "Filtro percolador"
+    },
+    {
+      "id": "sedimentador",
+      "nombre": "Sedimentador secundario",
+      "detalle": "2 unidades en el plano"
+    },
+    {
+      "id": "desinfeccion",
+      "nombre": "Desinfección",
+      "detalle": "hipoclorito; tanque de contacto de 11.76 m³"
+    },
+    {
+      "id": "lechos-secado",
+      "nombre": "Lecho de secado de lodos",
+      "detalle": "170.17 m²"
+    }
+  ],
+  "fuenteTren": "insumos/resumen-memoria.md (extraído de VM MEMORIA DESCRIPTIVA SANTA LEONOR CON BALANCE MASAS.docx), sección Tren de tratamiento (en orden)"
+}
