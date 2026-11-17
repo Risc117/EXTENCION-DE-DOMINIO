@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import { BufferGeometry, DoubleSide, Float32BufferAttribute } from 'three'
 import { leerColor } from '../../nucleo/colores'
 import { ANCHO_MAXIMO_FRANJA, ELEVACION_VIA, ENTERRADO_BASE, LARGO_PATRON_RIO, PASO_ENTORNO, SEGMENTOS_CIRCULO } from '../../nucleo/constantesEntorno'
-import { alturaTerreno } from '../comun/terrenoPlanta'
+import { alturaNivelada, terrenoNivelado } from './terrenoNivelado'
 import { entorno } from './datos'
 import { cintaEntreMargenes } from './franjas'
 import { cintaVia, circuloSobreTerreno, cotasBase, type MallaPlana } from './geometria'
@@ -20,22 +20,22 @@ const aGeometria = (m: MallaPlana): BufferGeometry => {
 /** Vías (cintas sobre el terreno), camino de acceso, rotonda, estacionamiento, patio de maniobras y radio de seguridad del grupo electrógeno. */
 export function Suelos({ referencia }: { referencia: number }) {
   const [via, pavimento, seguridad, caminoColor] = useMemo(() => ['--color-via', '--color-pavimento', '--color-radio-seguridad', '--color-camino'].map(leerColor), [])
-  const camino = useMemo(() => aGeometria(cintaEntreMargenes(entorno.camino.margenesA, entorno.camino.margenB, PASO_ENTORNO, alturaTerreno, referencia, ELEVACION_VIA, LARGO_PATRON_RIO, ANCHO_MAXIMO_FRANJA)), [referencia])
-  const cintas = useMemo(() => entorno.vias.map((v) => ({ id: v.id, geometria: aGeometria(cintaVia(v.eje, v.ancho.valor, alturaTerreno, referencia, PASO_ENTORNO)) })), [referencia])
+  const camino = useMemo(() => aGeometria(cintaEntreMargenes(entorno.camino.margenesA, entorno.camino.margenB, PASO_ENTORNO, alturaNivelada, referencia, ELEVACION_VIA, LARGO_PATRON_RIO, ANCHO_MAXIMO_FRANJA)), [referencia])
+  const cintas = useMemo(() => entorno.vias.map((v) => ({ id: v.id, geometria: aGeometria(cintaVia(v.eje, v.ancho.valor, v.id === entorno.nivelacion.via ? terrenoNivelado().alturaVia : alturaNivelada, referencia, PASO_ENTORNO)) })), [referencia])
   const losas = useMemo(() => {
     const losa = (id: string, poligono: { x: number; y: number }[], espesor: number) => {
-      const { base, piso } = cotasBase(poligono, alturaTerreno)
+      const { base, piso } = cotasBase(poligono, alturaNivelada)
       return { id, poligono, base: base - ENTERRADO_BASE - referencia, alto: piso + espesor - base + ENTERRADO_BASE }
     }
     const rotondas = entorno.rotondas.map((r) => {
-      const poligono = circuloSobreTerreno(r.centro, r.radio.valor, SEGMENTOS_CIRCULO, alturaTerreno, 0, 0)
+      const poligono = circuloSobreTerreno(r.centro, r.radio.valor, SEGMENTOS_CIRCULO, alturaNivelada, 0, 0)
         .slice(0, -1)
         .map(([x, , z]) => ({ x, y: -z }))
       return losa(r.id, poligono, r.espesor.valor)
     })
     return [...entorno.superficies.map((s) => losa(s.id, s.poligono, s.espesor.valor)), ...rotondas]
   }, [referencia])
-  const anillos = useMemo(() => entorno.radiosSeguridad.map((r) => ({ id: r.id, puntos: circuloSobreTerreno(r.centro, r.radio.valor, SEGMENTOS_CIRCULO, alturaTerreno, referencia, 0.15) })), [referencia])
+  const anillos = useMemo(() => entorno.radiosSeguridad.map((r) => ({ id: r.id, puntos: circuloSobreTerreno(r.centro, r.radio.valor, SEGMENTOS_CIRCULO, alturaNivelada, referencia, 0.15) })), [referencia])
   return (
     <group>
       {cintas.map((c) => (

@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { BufferGeometry, DoubleSide, Float32BufferAttribute, Quaternion, Vector3 } from 'three'
 import { leerColor } from '../../nucleo/colores'
 import { GROSOR_PLUMA, GROSOR_PORTON, OPACIDAD_CERCO, PASO_ENTORNO } from '../../nucleo/constantesEntorno'
-import { alturaTerreno } from '../comun/terrenoPlanta'
+import { alturaNivelada } from './terrenoNivelado'
 import { entorno } from './datos'
 import { panelVertical } from './geometria'
 
@@ -22,7 +22,7 @@ interface PropsBarra {
 function Barra({ desde, hasta, alto, grosor, color, referencia }: PropsBarra) {
   const { pos, giro, largo } = useMemo(() => {
     const [a, b] = [new Vector3(desde.x, 0, -desde.y), new Vector3(hasta.x, 0, -hasta.y)]
-    const suelo = alturaTerreno((desde.x + hasta.x) / 2, (desde.y + hasta.y) / 2) - referencia
+    const suelo = alturaNivelada((desde.x + hasta.x) / 2, (desde.y + hasta.y) / 2) - referencia
     const medio = a.clone().add(b).multiplyScalar(0.5)
     return { pos: new Vector3(medio.x, suelo + alto / 2, medio.z), giro: new Quaternion().setFromUnitVectors(EJE_X, b.clone().sub(a).normalize()), largo: a.distanceTo(b) }
   }, [desde, hasta, alto, referencia])
@@ -40,7 +40,7 @@ export function Cerco({ referencia }: { referencia: number }) {
   const paneles = useMemo(
     () =>
       entorno.cerco.trazos.map((t) => {
-        const m = panelVertical(t, entorno.cerco.altura.valor, alturaTerreno, referencia, PASO_ENTORNO)
+        const m = panelVertical(t, entorno.cerco.altura.valor, alturaNivelada, referencia, PASO_ENTORNO)
         const g = new BufferGeometry()
         g.setAttribute('position', new Float32BufferAttribute(m.posiciones, 3))
         g.setIndex(m.indices)

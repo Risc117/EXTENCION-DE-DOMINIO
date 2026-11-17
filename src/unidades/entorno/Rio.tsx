@@ -4,7 +4,7 @@ import { BufferGeometry, CanvasTexture, DoubleSide, Float32BufferAttribute, Repe
 import { leerColor } from '../../nucleo/colores'
 import { ANCHO_MAXIMO_FRANJA, ELEVACION_RIO, LADO_TEXTURA_RIO, LARGO_PATRON_RIO, PASO_ENTORNO, RAYAS_RIO, VELOCIDAD_RIO } from '../../nucleo/constantesEntorno'
 import { useSim } from '../../estado/simulacion'
-import { alturaTerreno } from '../comun/terrenoPlanta'
+import { alturaNivelada } from './terrenoNivelado'
 import { entorno } from './datos'
 import { cintaEntreMargenes } from './franjas'
 
@@ -39,7 +39,7 @@ function correr(t: CanvasTexture, metros: number): void {
 /** Río Picoy: cinta de agua entre sus dos orillas del DXF, con una textura que corre en el sentido de la corriente (ilustrativo). */
 export function Rio({ referencia }: { referencia: number }) {
   const geometria = useMemo(() => {
-    const m = cintaEntreMargenes(entorno.rio.margenesA, entorno.rio.margenB, PASO_ENTORNO, alturaTerreno, referencia, ELEVACION_RIO, LARGO_PATRON_RIO, ANCHO_MAXIMO_FRANJA)
+    const m = cintaEntreMargenes(entorno.rio.margenesA, entorno.rio.margenB, PASO_ENTORNO, alturaNivelada, referencia, ELEVACION_RIO, LARGO_PATRON_RIO, ANCHO_MAXIMO_FRANJA)
     const g = new BufferGeometry()
     g.setAttribute('position', new Float32BufferAttribute(m.posiciones, 3))
     g.setAttribute('uv', new Float32BufferAttribute(m.uv, 2))

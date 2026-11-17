@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react'
 import { leerColor } from '../../nucleo/colores'
 import { DESFASE_ET_EDIFICIO, DISTANCIA_ETIQUETA_ENTORNO, ENTERRADO_BASE } from '../../nucleo/constantesEntorno'
 import { useAnotaciones } from '../../estado/anotaciones'
-import { alturaTerreno } from '../comun/terrenoPlanta'
+import { alturaNivelada } from './terrenoNivelado'
 import { etiquetaDe } from '../comun/anotar'
 import { etiquetasCercanas } from '../comun/cercania'
 import { Etiqueta } from '../comun/Etiqueta'
@@ -21,7 +21,9 @@ export function Edificios({ referencia }: { referencia: number }) {
   const piezas = useMemo(
     () =>
       entorno.edificios.map((e) => {
-        const { base, piso } = cotasBase(e.poligono, alturaTerreno)
+        // El piso es la cota de su plataforma (datos/entorno.json); las paredes bajan hasta el terreno más bajo bajo la planta.
+        const piso = e.cotaPiso.valor
+        const base = Math.min(piso, cotasBase(e.poligono, alturaNivelada).base)
         const techo = piso + e.altura.valor
         const cx = e.poligono.reduce((s, p) => s + p.x, 0) / e.poligono.length
         const cy = e.poligono.reduce((s, p) => s + p.y, 0) / e.poligono.length

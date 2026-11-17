@@ -11,3 +11,4 @@ export { esquemaTerreno, terrenoEsDemo, type CurvaTerreno, type DatosTerreno } f
 
 /** Terreno ya validado (datos/terreno.json). */
 export const terreno = esquemaTerreno.parse(crudo)
+export { nivelarFuentes, type FuenteNivel, type InformeNivel, type OpcionesNivel } from './nivelacion'

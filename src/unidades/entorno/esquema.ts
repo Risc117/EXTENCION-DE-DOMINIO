@@ -6,7 +6,8 @@ const punto = z.object({ x: z.number().finite(), y: z.number().finite() })
 const poligono = z.array(punto).min(3)
 const fuente = z.string().min(1)
 
-const edificio = z.object({ id: z.string().min(1), nombre: z.string().min(1), poligono, fuentePoligono: fuente, altura: metros })
+const edificio = z.object({ id: z.string().min(1), nombre: z.string().min(1), poligono, fuentePoligono: fuente, altura: metros, /** Cota (m s.n.m.) de su piso: plataforma plana (T16.8). */ cotaPiso: metros })
+const adim = positivo('adim')
 const via = z.object({ id: z.string().min(1), nombre: z.string().min(1), eje: z.array(punto).min(2), fuenteEje: fuente, ancho: metros })
 const superficie = z.object({ id: z.string().min(1), nombre: z.string().min(1), poligono, fuentePoligono: fuente, espesor: metros })
 const circulo = z.object({ id: z.string().min(1), nombre: z.string().min(1), centro: punto, radio: metros })
@@ -24,6 +25,8 @@ export const esquemaEntorno = z
     edificios: z.array(edificio).min(1),
     /** Pluma de la barrera: del pivote al extremo. */
     barrera: z.object({ nombre: z.string().min(1), desde: punto, hasta: punto, fuente, altura: metros }),
+    /** Nivelación de edificios y vía (T16.8): borde plano, talud H:V, pendiente máxima de la vía (m/m), ventana de suavizado y holgura a lo hidráulico. */
+    nivelacion: z.object({ borde: metros, talud: adim, taludMinimo: adim, pendienteMaxima: adim, ventanaSuavizado: metros, holgura: metros, /** Id de la vía interna que se nivela. */ via: z.string().min(1), viaIntacta: z.object({ unidades: z.array(z.string()), fuente }) }),
     radiosSeguridad: z.array(circulo),
     vias: z.array(via).min(1),
     /** Río Picoy; `sentido` dice hacia dónde corre (de ejemplo mientras no haya flechas en las fuentes). */
@@ -36,6 +39,7 @@ export const esquemaEntorno = z
   })
   .refine((d) => new Set(d.edificios.map((e) => e.id)).size === d.edificios.length, 'Hay ids de edificio repetidos')
   .refine((d) => new Set(d.vias.map((v) => v.id)).size === d.vias.length, 'Hay ids de vía repetidos')
+  .refine((d) => d.nivelacion.taludMinimo.valor <= d.nivelacion.talud.valor, 'El talud mínimo no puede ser mayor que el talud')
   .refine((d) => d.arboles.alturaTronco.valor < d.arboles.alturaTotal.valor, 'El tronco debe ser más bajo que el árbol')
 
 export type DatosEntorno = z.infer<typeof esquemaEntorno>

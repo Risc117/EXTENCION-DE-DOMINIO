@@ -27,3 +27,10 @@ export const ANCHO_MAXIMO_FRANJA = 20
 /** Tamaño (px) de la textura de agua y número de rayas de corriente. */
 export const LADO_TEXTURA_RIO = 64
 export const RAYAS_RIO = 7
+/** Nivelación (T16.8): paso (m) del perfil de la vía, paso entre taludes que se prueban, nodos a menos de estos metros de lo hidráulico que nunca se tocan, y hasta dónde (m) llega un talud como máximo. */
+export const PASO_PERFIL_VIA = 1.5
+export const PASO_TALUD = 0.5
+export const UMBRAL_HIDRAULICO = 0.5
+export const ALCANCE_MAXIMO_NIVELACION = 60
+/** Redondeo (m) de la cota de piso derivada de un edificio. */
+export const REDONDEO_COTA_PISO = 0.05

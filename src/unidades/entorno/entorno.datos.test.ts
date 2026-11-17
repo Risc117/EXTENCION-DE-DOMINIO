@@ -73,3 +73,21 @@ describe('río Picoy y camino (T16.5.2)', () => {
     expect(datos.rotondas[0].espesor.valor).toBeGreaterThanOrEqual(0.1)
   })
 })
+
+describe('nivelación (T16.8)', () => {
+  it('trae sus parámetros con fuente y de ejemplo, salvo la holgura de 3 m que pidió el usuario', () => {
+    const n = datos.nivelacion
+    for (const k of ['borde', 'talud', 'taludMinimo', 'pendienteMaxima', 'ventanaSuavizado'] as const) expect(n[k].demo, k).toBe(true)
+    expect(n.holgura.valor).toBe(3)
+    expect(n.holgura.demo).not.toBe(true)
+    expect(n.viaIntacta.unidades).toContain('rafa')
+  })
+  it('rechaza un talud mínimo mayor que el talud y un edificio sin cota de piso', () => {
+    const m = clon()
+    m.nivelacion.taludMinimo.valor = 5
+    expect(esquemaEntorno.safeParse(m).success).toBe(false)
+    const s = clon()
+    delete (s.edificios[0] as { cotaPiso?: unknown }).cotaPiso
+    expect(esquemaEntorno.safeParse(s).success).toBe(false)
+  })
+})

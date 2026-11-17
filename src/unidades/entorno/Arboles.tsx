@@ -2,7 +2,7 @@ import { useLayoutEffect, useMemo, useRef } from 'react'
 import { InstancedMesh, Matrix4 } from 'three'
 import { leerColor } from '../../nucleo/colores'
 import { SEGMENTOS_ARBOL } from '../../nucleo/constantesEntorno'
-import { alturaTerreno } from '../comun/terrenoPlanta'
+import { alturaNivelada } from './terrenoNivelado'
 import { entorno } from './datos'
 
 /** Los árboles del plano (copa y tronco con las medidas del DXF) como dos mallas con instancias. */
@@ -15,7 +15,7 @@ export function Arboles({ referencia }: { referencia: number }) {
   useLayoutEffect(() => {
     const m = new Matrix4()
     posiciones.forEach((p, i) => {
-      const suelo = alturaTerreno(p.x, p.y) - referencia
+      const suelo = alturaNivelada(p.x, p.y) - referencia
       troncos.current?.setMatrixAt(i, m.makeTranslation(p.x, suelo + altTronco / 2, -p.y))
       copas.current?.setMatrixAt(i, m.makeTranslation(p.x, suelo + altTronco + altCopa / 2, -p.y))
     })
