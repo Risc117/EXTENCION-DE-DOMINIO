@@ -15,6 +15,13 @@ npm run typecheck  # revisión de tipos
 npm run build      # crea dist/ para publicar (ver GUIA_PUBLICAR.md)
 ```
 
+## Cómo se maneja
+
+- **Mouse o dedo:** arrastrar gira la planta, la rueda acerca y aleja.
+- **Gestos (opcional, botón "Activar gestos"):** palma abierta para girar, pinza (separar pulgar e índice acerca, juntarlos aleja), puño para pausar; un dedo, dos dedos o tres dedos mantenidos van a la estructura siguiente, a la anterior o a la vista general.
+- **VR y AR:** botones "Ver en VR" (visor tipo Cardboard) y "Ver en AR" (solo en Android compatible).
+- **Demo guiada:** "Iniciar recorrido" sigue una gota por toda la planta.
+
 ## Dónde leer más
 
 - **CLAUDE.md**: reglas del proyecto y contexto para quien continúe (también lo lee Claude Code).
