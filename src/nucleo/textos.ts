@@ -107,6 +107,8 @@ export const TEXTO_UNIDADES = {
 
 /** Terreno con curvas de nivel y cota bajo el mouse. */
 export const TEXTO_TERRENO = {
+  terrenoMostrar: 'Mostrar terreno',
+  terrenoOcultar: 'Ocultar terreno',
   curvasMostrar: 'Mostrar curvas de nivel',
   curvasOcultar: 'Ocultar curvas de nivel',
   cota: 'Cota del terreno',
