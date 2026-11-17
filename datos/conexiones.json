@@ -378,6 +378,7 @@
   "tramos": [
     {
       "id": "T01",
+      "caudal": "entrada",
       "linea": "agua-residual",
       "desde": "entrada-agua",
       "hasta": "bombeo",
@@ -418,6 +419,7 @@
     },
     {
       "id": "T02",
+      "caudal": "entrada",
       "linea": "impulsion",
       "desde": "bombeo",
       "hasta": "BZ-1",
@@ -457,6 +459,7 @@
     },
     {
       "id": "T03",
+      "caudal": "entrada",
       "linea": "impulsion",
       "desde": "BZ-1",
       "hasta": "BZ-2",
@@ -501,6 +504,7 @@
     },
     {
       "id": "T04",
+      "caudal": "entrada",
       "linea": "impulsion",
       "desde": "BZ-2",
       "hasta": "rejas",
@@ -545,6 +549,7 @@
     },
     {
       "id": "T05",
+      "caudal": "entrada",
       "linea": "agua-residual",
       "desde": "parshall",
       "hasta": "BZ-3",
@@ -585,6 +590,7 @@
     },
     {
       "id": "T06",
+      "caudal": "entrada",
       "linea": "agua-residual",
       "desde": "BZ-3",
       "hasta": "homogeneizador",
@@ -626,6 +632,7 @@
     },
     {
       "id": "T07",
+      "caudal": "salida",
       "linea": "agua-residual",
       "desde": "homogeneizador",
       "hasta": "BZ-4",
@@ -666,6 +673,7 @@
     },
     {
       "id": "T08",
+      "caudal": "salida",
       "linea": "agua-residual",
       "desde": "BZ-4",
       "hasta": "rafa",
@@ -726,6 +734,7 @@
     },
     {
       "id": "T09",
+      "caudal": "salida",
       "linea": "agua-residual",
       "desde": "rafa",
       "hasta": "BZ-5",
@@ -779,6 +788,7 @@
     },
     {
       "id": "T10",
+      "caudal": "salida",
       "linea": "agua-residual",
       "desde": "BZ-5",
       "hasta": "percolador",
@@ -827,6 +837,7 @@
     },
     {
       "id": "T11",
+      "caudal": "salida",
       "linea": "agua-residual",
       "desde": "percolador",
       "hasta": "BZ-6",
@@ -872,6 +883,7 @@
     },
     {
       "id": "T12",
+      "caudal": "salida",
       "linea": "agua-residual",
       "desde": "BZ-6",
       "hasta": "camara-reparto",
@@ -917,6 +929,7 @@
     },
     {
       "id": "T13",
+      "caudal": "salida",
       "linea": "agua-residual",
       "desde": "camara-reparto",
       "hasta": "BZ-7",
@@ -955,6 +968,7 @@
     },
     {
       "id": "T14",
+      "caudal": "mitad",
       "linea": "agua-residual",
       "desde": "BZ-7",
       "hasta": "sedimentador-1",
@@ -998,6 +1012,7 @@
     },
     {
       "id": "T15",
+      "caudal": "mitad",
       "linea": "agua-residual",
       "desde": "BZ-7",
       "hasta": "sedimentador-2",
@@ -1041,6 +1056,7 @@
     },
     {
       "id": "T16",
+      "caudal": "mitad",
       "linea": "efluente",
       "desde": "sedimentador-1",
       "hasta": "BZ-8",
@@ -1079,6 +1095,7 @@
     },
     {
       "id": "T17",
+      "caudal": "mitad",
       "linea": "efluente",
       "desde": "sedimentador-2",
       "hasta": "BZ-8",
@@ -1117,6 +1134,7 @@
     },
     {
       "id": "T18",
+      "caudal": "salida",
       "linea": "efluente",
       "desde": "BZ-8",
       "hasta": "camara-contacto",
@@ -1170,6 +1188,7 @@
     },
     {
       "id": "T19",
+      "caudal": "salida",
       "linea": "efluente",
       "desde": "camara-contacto",
       "hasta": "BZ-9",
@@ -1223,6 +1242,7 @@
     },
     {
       "id": "T20",
+      "caudal": "salida",
       "linea": "efluente",
       "desde": "BZ-9",
       "hasta": "BZ-10",
@@ -1273,6 +1293,7 @@
     },
     {
       "id": "T21",
+      "caudal": "salida",
       "linea": "efluente",
       "desde": "BZ-10",
       "hasta": "descarga-rio",
@@ -1328,6 +1349,7 @@
     },
     {
       "id": "T22",
+      "caudal": "lodo",
       "linea": "lodos",
       "desde": "rafa",
       "hasta": "BZ-R",
@@ -1367,6 +1389,7 @@
     },
     {
       "id": "T23",
+      "caudal": "lodo",
       "linea": "lodos",
       "desde": "BZ-R",
       "hasta": "lechos-secado",
@@ -1426,6 +1449,7 @@
     },
     {
       "id": "T24",
+      "caudal": "lodo",
       "linea": "lodos",
       "desde": "sedimentador-1",
       "hasta": "BZ-L1",
@@ -1495,6 +1519,7 @@
     },
     {
       "id": "T25",
+      "caudal": "lodo",
       "linea": "lodos",
       "desde": "sedimentador-2",
       "hasta": "BZ-L1",
@@ -1559,6 +1584,7 @@
     },
     {
       "id": "T26",
+      "caudal": "lodo",
       "linea": "lodos",
       "desde": "BZ-L1",
       "hasta": "BZ-L2",
@@ -1608,6 +1634,7 @@
     },
     {
       "id": "T27",
+      "caudal": "lodo",
       "linea": "lodos",
       "desde": "BZ-L2",
       "hasta": "BZ-L3",
@@ -1652,6 +1679,7 @@
     },
     {
       "id": "T28",
+      "caudal": "lodo",
       "linea": "lodos",
       "desde": "BZ-L3",
       "hasta": "lechos-secado",
@@ -1696,6 +1724,7 @@
     },
     {
       "id": "T29",
+      "caudal": "dosis",
       "linea": "cloro",
       "desde": "caseta-cloracion",
       "hasta": "punto-cloro",

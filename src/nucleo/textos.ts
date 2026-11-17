@@ -90,6 +90,8 @@ export const TEXTO_ACCESORIOS = {
 export const TEXTO_CONEXIONES = {
   mostrar: 'Mostrar tuberías',
   ocultar: 'Ocultar tuberías',
+  mostrarFlujo: 'Mostrar flujo',
+  ocultarFlujo: 'Ocultar flujo',
 }
 
 /** Cajón de herramientas: un solo cajón plegable con las opciones de vista agrupadas. */
