@@ -6,7 +6,7 @@ const punto = z.object({ x: z.number().finite(), y: z.number().finite() })
 const poligono = z.array(punto).min(3)
 const fuente = z.string().min(1)
 
-const edificio = z.object({ id: z.string().min(1), nombre: z.string().min(1), poligono, fuentePoligono: fuente, altura: metros, /** Cota (m s.n.m.) de su piso: plataforma plana (T16.8). */ cotaPiso: metros })
+const edificio = z.object({ id: z.string().min(1), nombre: z.string().min(1), poligono, fuentePoligono: fuente, altura: metros, /** Cota (m s.n.m.) de su piso: plataforma plana (T16.8). */ cotaPiso: metros, /** Los edificios con el mismo id comparten una sola plataforma (y la misma cota de piso). */ plataforma: z.string().min(1).optional() })
 const adim = positivo('adim')
 const via = z.object({ id: z.string().min(1), nombre: z.string().min(1), eje: z.array(punto).min(2), fuenteEje: fuente, ancho: metros })
 const superficie = z.object({ id: z.string().min(1), nombre: z.string().min(1), poligono, fuentePoligono: fuente, espesor: metros })
@@ -39,6 +39,10 @@ export const esquemaEntorno = z
   })
   .refine((d) => new Set(d.edificios.map((e) => e.id)).size === d.edificios.length, 'Hay ids de edificio repetidos')
   .refine((d) => new Set(d.vias.map((v) => v.id)).size === d.vias.length, 'Hay ids de vía repetidos')
+  .refine(
+    (d) => d.edificios.every((a) => !a.plataforma || d.edificios.every((b) => b.plataforma !== a.plataforma || b.cotaPiso.valor === a.cotaPiso.valor)),
+    'Los edificios de una misma plataforma deben tener la misma cota de piso',
+  )
   .refine((d) => d.nivelacion.taludMinimo.valor <= d.nivelacion.talud.valor, 'El talud mínimo no puede ser mayor que el talud')
   .refine((d) => d.arboles.alturaTronco.valor < d.arboles.alturaTotal.valor, 'El tronco debe ser más bajo que el árbol')
 

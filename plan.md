@@ -287,7 +287,7 @@ Criterios de aceptación:
 **T30 · Gestos para toda la planta**: los gestos actuales funcionan en la vista general, más un gesto para ir a la estructura siguiente o anterior.
 **T31 · VR con el celular (visor tipo Cardboard)**: botón "VR", pantalla partida, mirar alrededor con el celular, mira central para moverse y abrir cuadros. Calidad baja automática.
 **T32 · Realidad aumentada en Android**: botón "AR", maqueta de la planta sobre la mesa, tocar para ver cuadros. El botón se oculta si el celular no lo soporta.
-**T33 · Acabado de cliente, rendimiento y publicación** (último): pantalla de inicio, barra de carga, revisión de textos, medir cuadros por segundo con todo prendido, revisar celular y publicar.
+**T33 · Acabado de cliente, rendimiento y publicación** (último): pantalla de inicio, barra de carga, revisión de textos, medir cuadros por segundo con todo prendido, revisar celular y publicar. Pulido pendiente de T16.8: muros de contención en laderas y escalones junto a EB-1 y la impulsión (hoy los taludes llegan a 1:1 y no cumplen los 3 m de holgura a lo hidráulico).
 
 **T34 · Extras pequeños del plano (al final)**
 Objetivo: cerrar detalles menores del plano, sin que bloqueen nada.

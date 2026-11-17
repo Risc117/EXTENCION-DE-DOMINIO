@@ -67,11 +67,12 @@
         "demo": true
       },
       "cotaPiso": {
-        "valor": 2993.45,
+        "valor": 2993,
         "unidad": "m",
-        "fuente": "Derivada: promedio del terreno levantado (insumos/DFX/ZAPATITODECOTAS.dxf, ya aplanado alrededor de las unidades) bajo la planta, redondeado a 0.05 m. No hay cota de piso en los planos: es de ejemplo.",
+        "fuente": "Derivada: promedio del terreno levantado (insumos/DFX/ZAPATITODECOTAS.dxf, ya aplanado alrededor de las unidades) bajo las plantas de la oficina y del almacén-taller juntas, que comparten una sola plataforma por decisión del usuario (17 nov); redondeado a 0.05 m. No hay cota de piso en los planos: es de ejemplo.",
         "demo": true
-      }
+      },
+      "plataforma": "oficina-taller"
     },
     {
       "id": "laboratorio",
@@ -137,11 +138,12 @@
         "demo": true
       },
       "cotaPiso": {
-        "valor": 2992.8,
+        "valor": 2993,
         "unidad": "m",
-        "fuente": "Derivada: promedio del terreno levantado (insumos/DFX/ZAPATITODECOTAS.dxf, ya aplanado alrededor de las unidades) bajo la planta, redondeado a 0.05 m. No hay cota de piso en los planos: es de ejemplo.",
+        "fuente": "Derivada: promedio del terreno levantado (insumos/DFX/ZAPATITODECOTAS.dxf, ya aplanado alrededor de las unidades) bajo las plantas de la oficina y del almacén-taller juntas, que comparten una sola plataforma por decisión del usuario (17 nov); redondeado a 0.05 m. No hay cota de piso en los planos: es de ejemplo.",
         "demo": true
-      }
+      },
+      "plataforma": "oficina-taller"
     },
     {
       "id": "grupo-electrogeno",
@@ -1394,7 +1396,7 @@
       "unidades": [
         "rafa"
       ],
-      "fuente": "Indicación del usuario (17 nov): donde la vía interna cruce la explanada del RAFA no se modifica (se toma como radio más transición). POR CONFIRMAR si debe incluir la transición."
+      "fuente": "Decisión del usuario (17 nov): de la explanada del RAFA cuenta solo el radio de 10 m (piso plano); en su transición (10 a 18 m) la vía se suaviza con su pendiente máxima, salvo donde toca una tubería o un buzón, que no se modifica."
     },
     "via": "via-interna"
   }

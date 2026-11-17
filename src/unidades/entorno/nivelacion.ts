@@ -1,7 +1,7 @@
 import type { FuenteNivel } from '../../nucleo/terreno'
 import { REDONDEO_COTA_PISO } from '../../nucleo/constantesEntorno'
 import { TRANSICION_EXPLANADA } from '../../nucleo/terreno'
-import { zonasUnidades } from '../comun/protegido'
+import { distanciaProtegida, zonasUnidades } from '../comun/protegido'
 import type { PuntoPlano } from './esquema'
 import { perfilSuave } from './perfilVia'
 
@@ -26,14 +26,14 @@ function distanciaASegmento(x: number, y: number, a: PuntoPlano, b: PuntoPlano):
   return Math.hypot(x - (a.x + dx * f), y - (a.y + dy * f))
 }
 
-/** Cota de piso derivada: promedio del terreno bajo la planta (muestras cada `paso` m), redondeado a REDONDEO_COTA_PISO. */
-export function cotaPisoDerivada(poligono: PuntoPlano[], terrenoEn: TerrenoEn, paso = 1): number {
-  const [xs, ys] = [poligono.map((p) => p.x), poligono.map((p) => p.y)]
+/** Cota de piso derivada: promedio del terreno bajo la planta (o las plantas, si comparten plataforma) (muestras cada `paso` m), redondeado a REDONDEO_COTA_PISO. */
+export function cotaPisoDerivada(poligonos: PuntoPlano[][], terrenoEn: TerrenoEn, paso = 1): number {
+  const [xs, ys] = [poligonos.flat().map((p) => p.x), poligonos.flat().map((p) => p.y)]
   let suma = 0
   let n = 0
   for (let x = Math.min(...xs); x <= Math.max(...xs); x += paso) {
     for (let y = Math.min(...ys); y <= Math.max(...ys); y += paso) {
-      if (distanciaPoligono(x, y, poligono) === 0) {
+      if (poligonos.some((p) => distanciaPoligono(x, y, p) === 0)) {
         suma += terrenoEn(x, y)
         n++
       }
@@ -42,13 +42,13 @@ export function cotaPisoDerivada(poligono: PuntoPlano[], terrenoEn: TerrenoEn, p
   return Math.round(suma / n / REDONDEO_COTA_PISO) * REDONDEO_COTA_PISO
 }
 
-/** Plataforma plana de un edificio: su planta más un borde plano de `borde` m, a la cota del piso. */
-export function fuentePlataforma(id: string, poligono: PuntoPlano[], cotaPiso: number, borde: number, alcance: number): FuenteNivel {
-  const [xs, ys] = [poligono.map((p) => p.x), poligono.map((p) => p.y)]
+/** Plataforma plana de uno o más edificios: sus plantas más un borde plano de `borde` m, a la cota del piso. */
+export function fuentePlataforma(id: string, poligonos: PuntoPlano[][], cotaPiso: number, borde: number, alcance: number): FuenteNivel {
+  const [xs, ys] = [poligonos.flat().map((p) => p.x), poligonos.flat().map((p) => p.y)]
   return {
     id,
     caja: { xMin: Math.min(...xs) - alcance, xMax: Math.max(...xs) + alcance, yMin: Math.min(...ys) - alcance, yMax: Math.max(...ys) + alcance },
-    en: (x, y) => ({ distancia: Math.max(0, distanciaPoligono(x, y, poligono) - borde), cota: cotaPiso, libre: true }),
+    en: (x, y) => ({ distancia: Math.max(0, Math.min(...poligonos.map((p) => distanciaPoligono(x, y, p))) - borde), cota: cotaPiso, libre: true }),
   }
 }
 
@@ -60,7 +60,7 @@ export interface ParametrosVia {
   paso: number
   ventana: number
   pendienteMaxima: number
-  /** Unidades cuya explanada completa (radio y transición) la vía no modifica. */
+  /** Unidades en cuya transición la vía solo se deja intacta donde toca una tubería o un buzón. */
   intactas: string[]
 }
 
@@ -72,7 +72,7 @@ export interface PerfilVia {
   pendienteAnclada: number
 }
 
-/** Perfil de la vía: cotas del terreno cada `paso` m, suavizadas, solo cambia la altura (el trazado en planta es el del DXF). Se anclan (quedan a la cota del terreno, sin modificar) las estaciones dentro de la explanada de una unidad, con su transición (POR CONFIRMAR para el RAFA). */
+/** Perfil de la vía: cotas del terreno cada `paso` m, suavizadas, solo cambia la altura (el trazado en planta es el del DXF). Se anclan (quedan a la cota del terreno, sin modificar) las estaciones dentro del piso plano de una unidad (su radio) y, en la transición de las unidades `intactas`, solo las que tocan una tubería o un buzón; el resto de la transición se suaviza. */
 export function perfilVia(p: ParametrosVia, terrenoEn: TerrenoEn): PerfilVia {
   const puntos: PuntoPlano[] = []
   for (let i = 1; i < p.eje.length; i++) {
@@ -80,7 +80,12 @@ export function perfilVia(p: ParametrosVia, terrenoEn: TerrenoEn): PerfilVia {
     const n = Math.max(1, Math.ceil(Math.hypot(b.x - a.x, b.y - a.y) / p.paso))
     for (let k = i === 1 ? 0 : 1; k <= n; k++) puntos.push({ x: a.x + ((b.x - a.x) * k) / n, y: a.y + ((b.y - a.y) * k) / n })
   }
-  const ancladas = puntos.map((q) => zonasUnidades.some((u) => Math.hypot(q.x - u.x, q.y - u.y) <= u.radio + (p.intactas.includes(u.id) ? TRANSICION_EXPLANADA : 0)))
+  const ancladas = puntos.map((q) =>
+    zonasUnidades.some((u) => {
+      const d = Math.hypot(q.x - u.x, q.y - u.y)
+      return d <= u.radio || (p.intactas.includes(u.id) && d <= u.radio + TRANSICION_EXPLANADA && distanciaProtegida(q.x, q.y) < p.ancho / 2)
+    }),
+  )
   const { alturas, cumple, pendienteAnclada } = perfilSuave(puntos.map((q) => terrenoEn(q.x, q.y)), p.paso, ancladas, p.ventana, p.pendienteMaxima)
   return { estaciones: puntos.map((q, i) => ({ ...q, cota: alturas[i], anclada: ancladas[i] })), cumple, pendienteAnclada }
 }
