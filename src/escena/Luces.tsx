@@ -5,6 +5,7 @@ import { leerColor } from '../nucleo/colores'
 import { DISTANCIA_SOL, ESTRELLAS, MAPA_SOMBRAS, SEMILADO_SOMBRAS } from '../nucleo/constantesSolar'
 import { CERCA_SOMBRAS, ELEVACION_MINIMA_LUZ_SOL, FACTOR_LEJOS_SOMBRAS, GENERADOR_ESTRELLAS, FRACCION_CIELO_ESTRELLAS, FRACCION_FAR_ESTRELLAS, LUZ_SOL, SEMILLA_ESTRELLAS, SESGO_SOMBRA, TAMANO_ESTRELLA } from '../nucleo/constantesAmbiente'
 import { direccionAlSol, luzDelDia } from '../nucleo/solar'
+import { useAR } from '../estado/ar'
 import { useCalidad } from '../estado/calidad'
 import { ambiente } from '../unidades/ambiente/datos'
 import { solActual } from '../unidades/ambiente/sol'
@@ -45,6 +46,12 @@ function pintarCielo(scene: Scene, noche: Color, dia: Color, mezcla: number): vo
   scene.background = fondo.copy(noche).lerp(dia, mezcla)
 }
 
+/** En AR no hay cielo ni estrellas: se ve la cámara del celular. */
+function quitarCielo(scene: Scene, p: Points): void {
+  scene.background = null
+  p.visible = false
+}
+
 /** Las estrellas se ven más cuanto más oscuro está el cielo. */
 function ajustarEstrellas(m: PointsMaterial, p: Points, visibilidad: number): void {
   m.opacity = visibilidad
@@ -80,6 +87,10 @@ export function Luces({ objetivo }: { objetivo: [number, number, number] }) {
     const v = direccionAlSol(s, ambiente.giroNorte.valor)
     if (sol.current) apuntarSol(sol.current, objetivo, v, luz.sol * LUZ_SOL, colores.luna, colores.sol, luz.sol)
     if (ambiental.current) ajustar(ambiental.current, luz.ambiente)
+    if (useAR.getState().activo) {
+      quitarCielo(scene, puntos)
+      return
+    }
     pintarCielo(scene, colores.noche, colores.dia, luz.dia)
     ajustarEstrellas(material, puntos, luz.estrellas)
   })

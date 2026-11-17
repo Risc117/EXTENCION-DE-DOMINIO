@@ -1,0 +1,23 @@
+{
+  "id": "ar",
+  "fuente": "No hay datos de AR en las fuentes: las medidas son de ejemplo.",
+  "demo": true,
+  "anchoMaqueta": {
+    "valor": 0.8,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: ancho de la maqueta de la planta sobre la mesa de ejemplo.",
+    "demo": true
+  },
+  "planoCercano": {
+    "valor": 0.01,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: plano cercano de la cámara de AR (para que la maqueta pequeña no se recorte) de ejemplo.",
+    "demo": true
+  },
+  "planoLejano": {
+    "valor": 50,
+    "unidad": "m",
+    "fuente": "No está en las fuentes: plano lejano de la cámara de AR de ejemplo.",
+    "demo": true
+  }
+}
