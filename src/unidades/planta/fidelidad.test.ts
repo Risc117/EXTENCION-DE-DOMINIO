@@ -82,11 +82,11 @@ describe('T9.6 · cotas recalculadas en el lugar nuevo', () => {
     }
   })
 
-  it('RAFA y sedimentadores: fondo = terreno − altura de la hoja; coronación = fondo + altura del plano', () => {
+  it('RAFA: fondo = terreno − altura de la hoja; RAFA y sedimentadores: coronación = fondo + altura del plano (el fondo de los sedimentadores sale del perfil, T16.4)', () => {
     expect(terrenoRedondeado('rafa') - de('rafa').cotaFondo.valor).toBeCloseTo(6.3, 6)
     expect(de('rafa').cotaCoronacion.valor - de('rafa').cotaFondo.valor).toBeCloseTo(7.25, 6)
     for (const id of ['sedimentador-1', 'sedimentador-2']) {
-      expect(terrenoRedondeado(id) - de(id).cotaFondo.valor, id).toBeCloseTo(6.46, 6)
+      expect(de(id).cotaFondo.valor, id).toBeCloseTo(2972.34, 2)
       expect(de(id).cotaCoronacion.valor - de(id).cotaFondo.valor, id).toBeCloseTo(6.8643, 6)
     }
   })

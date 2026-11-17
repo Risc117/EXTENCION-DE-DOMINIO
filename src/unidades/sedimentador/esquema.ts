@@ -2,6 +2,7 @@ import { z } from 'zod'
 import { medida, positivo } from '../comun/medidas'
 
 const metros = positivo('m')
+const grados = positivo('grados')
 const cuenta = medida.refine((m) => Number.isInteger(m.valor) && m.unidad === 'u', 'Debe ser un número entero de unidades')
 /** Tolerancia (m) entre la altura de la tolva de la hoja y la que sale de su ángulo y diámetros. */
 const TOLERANCIA_TOLVA = 0.01
@@ -16,7 +17,9 @@ export const esquemaSedimentador = z
     canal: z.object({ ramales: cuenta, ancho: metros, profundidad: metros, velocidad: positivo('m/s'), laminaPlano: metros }),
     vertedero: z.object({ separacionMuescas: metros, profundidadMuesca: metros, alturaPlaca: metros, anguloMuesca: positivo('grados'), espesorPlaca: metros }),
     camaraCentral: z.object({ diametro: metros, altura: metros, diametroDeflector: metros, espesorDeflector: metros }),
-    tuberias: z.object({ diametroEntrada: metros, diametroSalida: metros, diametroPurga: metros }),
+    tuberias: z.object({ diametroEntrada: metros, diametroSalida: metros, diametroPurga: metros, alturaEntrada: metros }),
+    /** Hacia dónde sale cada tubo de cada instancia (grados antihorarios desde el este, vistos en planta): los dos sedimentadores comparten datos, pero no la dirección de sus tubos. */
+    puertos: z.record(z.string(), z.object({ entrada: grados, salida: grados, purga: grados })),
     accesorios: z.object({
       anchoPuente: metros,
       altoPuente: metros,

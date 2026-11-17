@@ -4,11 +4,12 @@ import { ESPESOR_PARED_CAMARA_CENTRAL, ESPESOR_PASARELA, HOLGURA_AGUA_TOLVA, RAD
 import { cajaEntre as caja } from '../comun/cajas'
 import type { Agua, Pieza } from '../comun/tipos'
 import { disponer } from './disposicion'
+import { direccionPuerto, INSTANCIA_PRIMERA, puertosDe } from './puertos'
 import type { DatosSedimentador } from './esquema'
 import { laminaCanal } from './hidraulica'
 
-/** Sedimentador completo armado desde datos/sedimentador.json (se instancia dos veces). `corte` = true vuelve translúcidos los muros. El puente va aparte (gira). */
-export function construirPiezas(d: DatosSedimentador, corte = false): Pieza[] {
+/** Sedimentador completo armado desde datos/sedimentador.json (se instancia dos veces; `instancia` dice cuál, por la dirección de sus tubos). `corte` = true vuelve translúcidos los muros. El puente va aparte (gira). */
+export function construirPiezas(d: DatosSedimentador, corte = false, instancia = INSTANCIA_PRIMERA): Pieza[] {
   const s = disponer(d)
   const t = d.tolva
   const e = d.tanque.espesorMuro.valor
@@ -17,8 +18,15 @@ export function construirPiezas(d: DatosSedimentador, corte = false): Pieza[] {
   const rLodo = rInf + ((s.radio - rInf) * t.alturaLodo.valor) / t.altura.valor
   const cc = d.camaraCentral
   const yCamara = s.yAgua - cc.altura.valor
-  const yEntrada = -d.tuberias.diametroEntrada.valor / 2
+  const yEntrada = d.tuberias.alturaEntrada.valor
   const largoTubo = s.radioCanalExterior + PROLONGACION_TUBO
+  const pu = puertosDe(d, instancia)
+  /** Tubo horizontal desde `desde` hasta `hasta` m del centro, en la dirección `grados` del puerto. */
+  const radial = (id: string, color: string, grados: number, desde: number, hasta: number, y: number, diametro: number): Pieza => {
+    const fi = direccionPuerto(grados)
+    const centro = (desde + hasta) / 2
+    return { id, forma: 'cilindro', color, pos: [centro * Math.cos(fi), y, centro * Math.sin(fi)], radio: diametro / 2, alto: hasta - desde, eje: 'x', giroY: -fi }
+  }
   const pl = d.vertedero.espesorPlaca.valor
   const a = d.accesorios
   const rMampara = s.radio - a.separacionMampara.valor
@@ -36,9 +44,9 @@ export function construirPiezas(d: DatosSedimentador, corte = false): Pieza[] {
     { id: 'camara-central', forma: 'anillo', color: '--color-losa', pos: [0, yCamara, 0], radioInterior: cc.diametro.valor / 2 - ESPESOR_PARED_CAMARA_CENTRAL, radioExterior: cc.diametro.valor / 2, alto: cc.altura.valor },
     { id: 'deflector', forma: 'cilindro', color: '--color-muro', pos: [0, yCamara - cc.espesorDeflector.valor / 2, 0], radio: cc.diametroDeflector.valor / 2, alto: cc.espesorDeflector.valor },
     { id: 'tubo-alimentacion', forma: 'cilindro', color: '--color-ingreso', pos: [0, (yEntrada + yCamara) / 2, 0], radio: d.tuberias.diametroEntrada.valor / 2, alto: yCamara - yEntrada },
-    { id: 'tubo-entrada', forma: 'cilindro', color: '--color-ingreso', pos: [-largoTubo / 2, yEntrada, 0], radio: d.tuberias.diametroEntrada.valor / 2, alto: largoTubo, eje: 'x' },
-    { id: 'tubo-purga', forma: 'cilindro', color: '--color-lodo', pos: [largoTubo / 2, -d.tuberias.diametroPurga.valor / 2, 0], radio: d.tuberias.diametroPurga.valor / 2, alto: largoTubo, eje: 'x' },
-    { id: 'tubo-salida', forma: 'cilindro', color: '--color-salida', pos: [0, s.yCanalFondo + e + d.tuberias.diametroSalida.valor / 2, s.radioCanalExterior + PROLONGACION_TUBO / 2], radio: d.tuberias.diametroSalida.valor / 2, alto: PROLONGACION_TUBO, eje: 'z' },
+    radial('tubo-entrada', '--color-ingreso', pu.entrada.valor, 0, largoTubo, yEntrada, d.tuberias.diametroEntrada.valor),
+    radial('tubo-purga', '--color-lodo', pu.purga.valor, 0, largoTubo, -d.tuberias.diametroPurga.valor / 2, d.tuberias.diametroPurga.valor),
+    radial('tubo-salida', '--color-salida', pu.salida.valor, s.radioCanalExterior, largoTubo, s.yCanalFondo + e + d.tuberias.diametroSalida.valor / 2, d.tuberias.diametroSalida.valor),
     caja('pasarela', '--color-baranda', [0, s.radioCanalExterior + SOBRESALIDO_PASARELA], [s.yTope + a.altoPuente.valor, s.yTope + a.altoPuente.valor + ESPESOR_PASARELA], [-a.anchoPasarela.valor / 2, a.anchoPasarela.valor / 2], { accesorio: true }),
     caja('escalera', '--color-escalera', [s.radioCanalExterior, s.radioCanalExterior + ESPESOR_PASARELA], [s.yCanalFondo, s.yTope + a.alturaEscalera.valor], [-a.anchoEscalera.valor / 2, a.anchoEscalera.valor / 2], { accesorio: true }),
   ]

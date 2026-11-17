@@ -14,6 +14,6 @@ export function crearUnidadSedimentador(datos: DatosSedimentador, id: string, no
     demo: todasLasMedidas(datos).some((m) => m.demo === true),
     // Con las tuberías de entrada y de purga, que sobresalen del canal.
     tamano: 2 * (s.radioCanalExterior + PROLONGACION_TUBO),
-    Componente: () => <Sedimentador datos={datos} fraccion={fraccion} />,
+    Componente: () => <Sedimentador datos={datos} fraccion={fraccion} instancia={id} />,
   }
 }

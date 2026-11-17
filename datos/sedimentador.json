@@ -162,6 +162,24 @@
       "unidad": "m",
       "fuente": "ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, planta (purga de lodos PVC Ø 6\", hidráulica)",
       "demo": false
+    },
+    "alturaEntrada": {
+      "valor": 2.848,
+      "unidad": "m",
+      "fuente": "derivado: eje del tubo de entrada en la cota 2975.188 del perfil (insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa FLUJO-ENTRADA, flecha ENTRADA del sedimentador; cota = y del dibujo − 8788092.77) menos el fondo 2972.34 de datos/planta.json (que a su vez es derivado y de ejemplo: sale de alinear la salida del perfil, 2978.686, con la del tanque)",
+      "demo": true
+    }
+  },
+  "puertos": {
+    "sedimentador-1": {
+      "entrada": { "valor": 131.4, "unidad": "grados", "fuente": "derivado: dirección (grados antihorarios desde el este, vista en planta) desde el centro del sedimentador hasta donde la línea del DXF (capa PTAR-TUBERIA, tramo T14 de datos/conexiones.json) cruza el círculo de 4.035 m (canal exterior 2.535 + tubería 1.5)", "demo": true },
+      "salida": { "valor": 224.1, "unidad": "grados", "fuente": "derivado: dirección (grados antihorarios desde el este, vista en planta) desde el centro del sedimentador hasta donde la línea del DXF (capa PTAR-TUB-EFLUENTE, tramo T16 de datos/conexiones.json) cruza el círculo de 4.035 m (canal exterior 2.535 + tubería 1.5)", "demo": true },
+      "purga": { "valor": 301.6, "unidad": "grados", "fuente": "derivado: dirección (grados antihorarios desde el este, vista en planta) desde el centro del sedimentador hasta donde la línea del DXF (capa PTAR-TUB-LODOS, tramo T24 de datos/conexiones.json) cruza el círculo de 4.035 m (canal exterior 2.535 + tubería 1.5); es solo el rumbo del tubo, la cota de la purga no está en el perfil: POR CONFIRMAR", "demo": true }
+    },
+    "sedimentador-2": {
+      "entrada": { "valor": 137.4, "unidad": "grados", "fuente": "derivado: dirección (grados antihorarios desde el este, vista en planta) desde el centro del sedimentador hasta donde la línea del DXF (capa PTAR-TUBERIA, tramo T15 de datos/conexiones.json) cruza el círculo de 4.035 m (canal exterior 2.535 + tubería 1.5)", "demo": true },
+      "salida": { "valor": 44.1, "unidad": "grados", "fuente": "derivado: dirección (grados antihorarios desde el este, vista en planta) desde el centro del sedimentador hasta donde la línea del DXF (capa PTAR-TUB-EFLUENTE, tramo T17 de datos/conexiones.json) cruza el círculo de 4.035 m (canal exterior 2.535 + tubería 1.5)", "demo": true },
+      "purga": { "valor": 281.7, "unidad": "grados", "fuente": "derivado: dirección (grados antihorarios desde el este, vista en planta) desde el centro del sedimentador hasta donde la línea del DXF (capa PTAR-TUB-LODOS, tramo T25 de datos/conexiones.json) cruza el círculo de 4.035 m (canal exterior 2.535 + tubería 1.5); es solo el rumbo del tubo, la cota de la purga no está en el perfil: POR CONFIRMAR", "demo": true }
     }
   },
   "accesorios": {

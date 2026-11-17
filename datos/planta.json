@@ -354,15 +354,15 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2971.04,
+        "valor": 2972.34,
         "unidad": "m",
-        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja SEDIMENTADOR SECUNDARIO: altura H = 4.5 m + altura de la tolva HT = 1.96 m (6.46 m)",
+        "fuente": "derivado (T16.4): el perfil del DXF (capa FLUJO-SALIDA y SEDIM-TUBERIA, insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf) pone el eje del tubo de salida en la cota 2978.686; la salida de datos/sedimentador.json queda a 6.3443 m sobre el fondo: fondo = 2978.686 − 6.3443 = 2972.34, igual para los dos sedimentadores. Antes salía del terreno menos la altura de la hoja (2971.04 y 2970.94) y dejaba la salida del perfil sobre el tanque. Por revisar con el perfil real",
         "demo": true
       },
       "cotaCoronacion": {
-        "valor": 2977.9043,
+        "valor": 2979.2043,
         "unidad": "m",
-        "fuente": "derivado (T13): coronación = cota de fondo (derivada del terreno, ver cotaFondo) + altura total del plano 6.8643 m (tolva 1.9643 de la hoja SEDIMENTADOR SECUNDARIO celda G41 + agua 4.50 + borde libre 0.40; insumos/NUEVO PDF/ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, corte A-A). POR REVISAR CON EL PERFIL",
+        "fuente": "derivado (T16.4): cota de fondo (derivada del perfil, ver cotaFondo) + altura total del plano 6.8643 m (tolva 1.9643 de la hoja SEDIMENTADOR SECUNDARIO celda G41 + agua 4.50 + borde libre 0.40); POR REVISAR CON EL PERFIL REAL (el DXF no dibuja los muros del sedimentador)",
         "demo": true
       },
       "cotaSuperficie": {
@@ -398,15 +398,15 @@
         "demo": true
       },
       "cotaFondo": {
-        "valor": 2970.94,
+        "valor": 2972.34,
         "unidad": "m",
-        "fuente": "derivado: no se distingue en el perfil del DXF; coronación = cota del terreno en su posición (insumos/DFX/ZAPATITODECOTAS.dxf vía datos/terreno.json, interpolada y redondeada a 0.1 m) y fondo = coronación − altura de insumos/CALCULO/CALCULOS PTAR SANTA LEONOR.xlsx, hoja SEDIMENTADOR SECUNDARIO: altura H = 4.5 m + altura de la tolva HT = 1.96 m (6.46 m)",
+        "fuente": "derivado (T16.4): el perfil del DXF (capa FLUJO-SALIDA y SEDIM-TUBERIA, insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf) pone el eje del tubo de salida en la cota 2978.686; la salida de datos/sedimentador.json queda a 6.3443 m sobre el fondo: fondo = 2978.686 − 6.3443 = 2972.34, igual para los dos sedimentadores. Antes salía del terreno menos la altura de la hoja (2971.04 y 2970.94) y dejaba la salida del perfil sobre el tanque. Por revisar con el perfil real",
         "demo": true
       },
       "cotaCoronacion": {
-        "valor": 2977.8043,
+        "valor": 2979.2043,
         "unidad": "m",
-        "fuente": "derivado (T13): coronación = cota de fondo (derivada del terreno, ver cotaFondo) + altura total del plano 6.8643 m (tolva 1.9643 de la hoja SEDIMENTADOR SECUNDARIO celda G41 + agua 4.50 + borde libre 0.40; insumos/NUEVO PDF/ESTRUCTURAS2-SEDIMENTADOR _SECUNDARIO.pdf, corte A-A). POR REVISAR CON EL PERFIL",
+        "fuente": "derivado (T16.4): cota de fondo (derivada del perfil, ver cotaFondo) + altura total del plano 6.8643 m (tolva 1.9643 de la hoja SEDIMENTADOR SECUNDARIO celda G41 + agua 4.50 + borde libre 0.40); POR REVISAR CON EL PERFIL REAL (el DXF no dibuja los muros del sedimentador)",
         "demo": true
       },
       "cotaSuperficie": {

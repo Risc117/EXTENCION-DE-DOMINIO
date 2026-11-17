@@ -957,11 +957,16 @@
           "y": 49.5
         },
         {
-          "x": 19.95,
-          "y": 51.3
+          "x": 14.27,
+          "y": 50.32,
+          "cota": 2976.92
+        },
+        {
+          "x": 20.18,
+          "y": 51.34
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; el último punto se llevó al extremo del tubo de entrada del sedimentador 1 (0.24 m más allá del extremo del DXF, sobre la misma línea)",
       "cotaSalida": {
         "valor": 2977.96,
         "unidad": "m",
@@ -969,9 +974,9 @@
         "demo": true
       },
       "cotaLlegada": {
-        "valor": 2976.7,
+        "valor": 2975.188,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: eje del tubo de entrada del sedimentador 1 según el perfil (capa FLUJO-ENTRADA, 2975.188; fondo 2972.34 + alturaEntrada 2.848 de datos/sedimentador.json)",
         "demo": true
       }
     },
@@ -995,11 +1000,16 @@
           "y": 49.5
         },
         {
-          "x": 10.8,
-          "y": 42.8
+          "x": 9.75,
+          "y": 48.24,
+          "cota": 2977.69
+        },
+        {
+          "x": 10.89,
+          "y": 42.35
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUBERIA (celeste), eje de las dos líneas paralelas de la tubería; el último punto se llevó al extremo del tubo de entrada del sedimentador 2 (0.46 m más allá del extremo del DXF, sobre la misma línea)",
       "cotaSalida": {
         "valor": 2977.96,
         "unidad": "m",
@@ -1007,9 +1017,9 @@
         "demo": true
       },
       "cotaLlegada": {
-        "valor": 2976.62,
+        "valor": 2975.188,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: eje del tubo de entrada del sedimentador 2 según el perfil (capa FLUJO-ENTRADA, 2975.188; fondo 2972.34 + alturaEntrada 2.848 de datos/sedimentador.json)",
         "demo": true
       }
     },
@@ -1029,19 +1039,19 @@
       },
       "trazado": [
         {
-          "x": 20.95,
-          "y": 46.45
+          "x": 19.95,
+          "y": 45.5
         },
         {
           "x": 19.1,
           "y": 44.7
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE (rojo), eje de las dos líneas paralelas de la tubería",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE (rojo), eje de las dos líneas paralelas de la tubería; el primer punto se llevó al extremo del tubo de salida del sedimentador 1 (el DXF arranca 1.4 m dentro, en el canal; sobre la misma línea)",
       "cotaSalida": {
-        "valor": 2976.7,
+        "valor": 2978.686,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: eje del tubo de salida del sedimentador 1 según el perfil (capas FLUJO-SALIDA y SEDIM-TUBERIA, 2978.686)",
         "demo": true
       },
       "cotaLlegada": {
@@ -1067,19 +1077,19 @@
       },
       "trazado": [
         {
-          "x": 15.75,
-          "y": 41.45
+          "x": 16.76,
+          "y": 42.43
         },
         {
           "x": 19.1,
           "y": 44.7
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE (rojo), eje de las dos líneas paralelas de la tubería",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-EFLUENTE (rojo), eje de las dos líneas paralelas de la tubería; el primer punto se llevó al extremo del tubo de salida del sedimentador 2 (el DXF arranca 1.4 m dentro, en el canal; sobre la misma línea)",
       "cotaSalida": {
-        "valor": 2976.6,
+        "valor": 2978.686,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: eje del tubo de salida del sedimentador 2 según el perfil (capas FLUJO-SALIDA y SEDIM-TUBERIA, 2978.686)",
         "demo": true
       },
       "cotaLlegada": {
@@ -1415,23 +1425,18 @@
       },
       "trazado": [
         {
-          "x": 22.9,
-          "y": 46.6
-        },
-        {
-          "x": 23.5,
-          "y": 46.1,
-          "cota": 2976.69
-        },
-        {
-          "x": 24.9,
-          "y": 45.0,
-          "cota": 2976.69
+          "x": 24.96,
+          "y": 44.87
         },
         {
           "x": 26.0,
           "y": 42.7,
-          "cota": 2976.63
+          "cota": 2974.01
+        },
+        {
+          "x": 26.29,
+          "y": 39.12,
+          "cota": 2976.11
         },
         {
           "x": 26.3,
@@ -1458,11 +1463,11 @@
           "y": 27.0
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería; el primer punto se llevó al extremo del tubo de purga del sedimentador 1 (el DXF arranca 2.7 m antes, bajo el tanque; sobre la misma línea)",
       "cotaSalida": {
-        "valor": 2976.7,
+        "valor": 2972.26,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: eje del tubo de purga del sedimentador 1 (fondo 2972.34 menos el radio del tubo, 0.08, de datos/sedimentador.json); la cota de la purga no está en el perfil: POR CONFIRMAR",
         "demo": true
       },
       "cotaLlegada": {
@@ -1489,23 +1494,23 @@
       },
       "trazado": [
         {
-          "x": 14.0,
-          "y": 37.8
-        },
-        {
-          "x": 14.4,
-          "y": 36.6,
-          "cota": 2976.6
+          "x": 14.68,
+          "y": 35.67
         },
         {
           "x": 15.3,
           "y": 33.6,
-          "cota": 2976.56
+          "cota": 2973.81
         },
         {
           "x": 16.4,
           "y": 30.7,
-          "cota": 2976.29
+          "cota": 2975.79
+        },
+        {
+          "x": 16.79,
+          "y": 30.07,
+          "cota": 2976.2
         },
         {
           "x": 17.7,
@@ -1522,11 +1527,11 @@
           "y": 27.0
         }
       ],
-      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería",
+      "fuenteTrazado": "insumos/DFX/LUGAR PROYECTADO FINAL MEJORADO.dxf, capa PTAR-TUB-LODOS (naranja), eje de las dos líneas paralelas de la tubería; el primer punto se llevó al extremo del tubo de purga del sedimentador 2 (el DXF arranca 2.2 m antes, bajo el tanque; sobre la misma línea)",
       "cotaSalida": {
-        "valor": 2976.6,
+        "valor": 2972.26,
         "unidad": "m",
-        "fuente": "derivado: cota del terreno aplanado en el punto menos la cobertura de ejemplo de 0.80 m (lo mismo en cada vértice del trazado; a menos de 6 m de un extremo con cota de perfil, la cota pasa linealmente de la del perfil a esa); la tabla del perfil no está en el DXF, por confirmar",
+        "fuente": "derivado: eje del tubo de purga del sedimentador 2 (fondo 2972.34 menos el radio del tubo, 0.08, de datos/sedimentador.json); la cota de la purga no está en el perfil: POR CONFIRMAR",
         "demo": true
       },
       "cotaLlegada": {

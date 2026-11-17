@@ -5,6 +5,7 @@ import { hayEjemplo } from '../comun/medidas'
 import { resolverTexto } from '../comun/texto'
 import type { CotaCalculada, EtiquetaCalculada, Vec3 } from '../comun/tiposAnotaciones'
 import { disponer } from './disposicion'
+import { direccionPuerto, INSTANCIA_PRIMERA, puertosDe } from './puertos'
 import type { DatosSedimentador } from './esquema'
 import { cargaVertedero, laminaCanal, muescas, retencion, volumenPlano } from './hidraulica'
 
@@ -32,8 +33,11 @@ export function construirCotas(d: DatosSedimentador): CotaCalculada[] {
 }
 
 /** Etiquetas de las partes, el caudal de la unidad (Q/2), la carga sobre el vertedero y los dos TR (hoja y plano, aparte). */
-export function construirEtiquetas(d: DatosSedimentador, caudalUnidadLs: number): EtiquetaCalculada[] {
+export function construirEtiquetas(d: DatosSedimentador, caudalUnidadLs: number, instancia = INSTANCIA_PRIMERA): EtiquetaCalculada[] {
   const s = disponer(d)
+  const pu = puertosDe(d, instancia)
+  /** Punto a `radio` m del centro en la dirección del puerto, a la altura `y`. */
+  const sobre = (grados: number, radio: number, y: number): Vec3 => [radio * Math.cos(direccionPuerto(grados)), y, radio * Math.sin(direccionPuerto(grados))]
   const F = DESFASES_ET_SEDIMENTADOR
   const a = d.accesorios
   const cc = d.camaraCentral
@@ -49,8 +53,8 @@ export function construirEtiquetas(d: DatosSedimentador, caudalUnidadLs: number)
     dentro(etiquetaDe('et-camara-central', 'Cámara central', false, [cc.diametro.valor / 2, s.yAgua - cc.altura.valor / 2, 0], F.camaraCentral)),
     dentro(etiquetaDe('et-deflector', 'Deflector', ejemplo(cc.diametroDeflector), [cc.diametroDeflector.valor / 2, yCamara, 0], F.deflector)),
     dentro(etiquetaDe('et-alimentacion', `Alimentación DN ${dn(d.tuberias.diametroEntrada.valor)} desde el percolador`, false, [0, yCamara / 2, 0], F.alimentacion)),
-    etiquetaDe('et-purga', `Purga de lodos DN ${dn(d.tuberias.diametroPurga.valor)} (hidráulica)`, false, [s.radioCanalExterior, -d.tuberias.diametroPurga.valor / 2, 0], F.purga),
-    etiquetaDe('et-salida', `Salida DN ${dn(d.tuberias.diametroSalida.valor)} a desinfección`, false, [0, s.yCanalFondo + p, s.radioCanalExterior], F.salida),
+    etiquetaDe('et-purga', `Purga de lodos DN ${dn(d.tuberias.diametroPurga.valor)} (hidráulica)`, false, sobre(pu.purga.valor, s.radioCanalExterior, -d.tuberias.diametroPurga.valor / 2), F.purga),
+    etiquetaDe('et-salida', `Salida DN ${dn(d.tuberias.diametroSalida.valor)} a desinfección`, false, sobre(pu.salida.valor, s.radioCanalExterior, s.yCanalFondo + p), F.salida),
     etiquetaDe('et-puente', 'Puente barrendero', hayEjemplo([a.anchoPuente, a.altoPuente, a.vueltasPorMinuto]), [-s.radio / 2, s.yTope + a.altoPuente.valor, 0], F.puente),
     etiquetaDe('et-pasarela', 'Pasarela de acceso', ejemplo(a.anchoPasarela), [s.radioMuro, s.yTope + a.altoPuente.valor, 0], F.pasarela),
     etiquetaDe('et-mampara', 'Mampara de natas', hayEjemplo([a.alturaMampara, a.separacionMampara]), [s.radio - a.separacionMampara.valor, s.yAgua, 0], F.mampara),
