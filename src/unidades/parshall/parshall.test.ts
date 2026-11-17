@@ -52,3 +52,11 @@ describe('canaleta Parshall', () => {
     expect(esquemaParshall.safeParse(mala).success).toBe(false)
   })
 })
+
+describe('agua que corre (T17.2)', () => {
+  it('toda el agua lleva la marca de corriente en el sentido +x del flujo', () => {
+    const aguas = construirAguas(esquemaParshall.parse(crudo), 8)
+    expect(aguas.length).toBeGreaterThan(3)
+    for (const a of aguas) expect((a as { corriente?: number }).corriente, a.id).toBe(1)
+  })
+})

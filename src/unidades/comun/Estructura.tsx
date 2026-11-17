@@ -11,6 +11,7 @@ import type { CotaCalculada, EtiquetaCalculada } from './tiposAnotaciones'
 import { GeometriaAnillo } from './Anillo'
 import { GeometriaCuna } from './GeometriaCuna'
 import { GeometriaPrisma } from './GeometriaPrisma'
+import { RayasCorriente } from './RayasCorriente'
 import { usePlanosCorte } from './usePlanosCorte'
 import type { Agua, Inclinacion, Pieza } from './tipos'
 
@@ -56,7 +57,7 @@ function MallaPieza({ pieza, planos }: { pieza: Pieza; planos: Plane[] }) {
   )
 }
 
-function MallaAgua({ agua, planos }: { agua: Agua; planos: Plane[] }) {
+function MallaAguaBase({ agua, planos }: { agua: Agua; planos: Plane[] }) {
   const color = useMemo(() => leerColor('--color-agua'), [])
   if (agua.nivel <= 0) return null
   if (agua.forma === 'cuna') {
@@ -84,6 +85,16 @@ function MallaAgua({ agua, planos }: { agua: Agua; planos: Plane[] }) {
       <meshStandardMaterial color={color} transparent opacity={OPACIDAD_AGUA_CANAL} depthWrite={false} clippingPlanes={planos} />
     </mesh>
     </Inclinada>
+  )
+}
+
+/** El agua y, si lleva la marca de corriente, las rayas que corren sobre ella. */
+function MallaAgua({ agua, planos }: { agua: Agua; planos: Plane[] }) {
+  return (
+    <>
+      <MallaAguaBase agua={agua} planos={planos} />
+      {(agua.forma === 'caja' || agua.forma === 'cuna') && agua.corriente !== undefined && agua.nivel > 0 && <RayasCorriente agua={agua} planos={planos} />}
+    </>
   )
 }
 

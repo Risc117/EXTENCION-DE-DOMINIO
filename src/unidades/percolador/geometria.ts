@@ -40,3 +40,15 @@ export function construirAguas(d: DatosPercolador, caudalLs: number, caudalMaxim
   if (lamina > 0) aguas.push({ forma: 'cilindro', id: 'agua-lecho', centro: [0, 0], radio: s.radio, y0: s.yLecho, nivel: lamina })
   return aguas
 }
+
+/** Puntos (x, z) de donde caen gotas: `porBrazo` repartidos a lo largo de cada brazo, entre la columna y el muro, en las mismas posiciones angulares que los brazos en reposo. */
+export function puntosGotasBrazos(d: DatosPercolador, porBrazo: number): { x: number; z: number }[] {
+  const s = disponer(d)
+  const n = d.distribuidor.cantidadBrazos.valor
+  const largo = s.radio - s.radioColumna - MARGEN_BRAZO_PERCOLADOR
+  return Array.from({ length: n * porBrazo }, (_, i) => {
+    const [brazo, k] = [Math.floor(i / porBrazo), i % porBrazo]
+    const [a, r] = [(2 * Math.PI * brazo) / n, s.radioColumna + ((k + 0.5) * largo) / porBrazo]
+    return { x: r * Math.cos(a), z: r * Math.sin(a) }
+  })
+}

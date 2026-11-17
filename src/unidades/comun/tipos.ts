@@ -67,11 +67,11 @@ export interface PiezaCono extends Base {
 
 export type Pieza = PiezaCaja | PiezaCilindro | PiezaAnillo | PiezaPrisma | PiezaCono
 
-/** Masa de agua que crece desde `y0` hasta `y0 + nivel`. */
+/** Masa de agua que crece desde `y0` hasta `y0 + nivel`. `corriente` (1 = hacia +x, -1 = hacia -x) pone rayas que corren sobre su superficie (T17.2). */
 export type Agua =
-  | { forma: 'caja'; id: string; centro: [number, number]; largo: number; ancho: number; y0: number; nivel: number; inclinacion?: Inclinacion }
+  | { forma: 'caja'; id: string; centro: [number, number]; largo: number; ancho: number; y0: number; nivel: number; inclinacion?: Inclinacion; corriente?: 1 | -1 }
   | { forma: 'cilindro'; id: string; centro: [number, number]; radio: number; y0: number; nivel: number }
   /** Corona circular (canal perimetral): crece desde `y0` hasta `y0 + nivel`. */
   | { forma: 'anillo'; id: string; radioInterior: number; radioExterior: number; y0: number; nivel: number }
   /** Planta de trapecio (canal que se angosta o ensancha), centrada en z = 0, entre x0 y x1. */
-  | { forma: 'cuna'; id: string; x0: number; x1: number; ancho0: number; ancho1: number; y0: number; nivel: number }
+  | { forma: 'cuna'; id: string; x0: number; x1: number; ancho0: number; ancho1: number; y0: number; nivel: number; corriente?: 1 | -1 }

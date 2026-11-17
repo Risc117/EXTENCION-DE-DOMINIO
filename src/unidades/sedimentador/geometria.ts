@@ -6,7 +6,7 @@ import type { Agua, Pieza } from '../comun/tipos'
 import { disponer } from './disposicion'
 import { direccionPuerto, INSTANCIA_PRIMERA, puertosDe } from './puertos'
 import type { DatosSedimentador } from './esquema'
-import { laminaCanal } from './hidraulica'
+import { laminaCanal, muescas } from './hidraulica'
 
 /** Sedimentador completo armado desde datos/sedimentador.json (se instancia dos veces; `instancia` dice cuál, por la dirección de sus tubos). `corte` = true vuelve translúcidos los muros. El puente va aparte (gira). */
 export function construirPiezas(d: DatosSedimentador, corte = false, instancia = INSTANCIA_PRIMERA): Pieza[] {
@@ -71,4 +71,10 @@ export function construirAguas(d: DatosSedimentador, caudalUnidadLs: number): Ag
     aguas.push({ forma: 'anillo', id: 'agua-canal', radioInterior: s.radioMuro, radioExterior: s.radioCanalInterior, y0: s.yCanalFondo + d.tanque.espesorMuro.valor, nivel: lamina })
   }
   return aguas
+}
+
+/** Puntos (x, z) por donde rebalsa el agua: uno por muesca del vertedero (número de la hoja), repartidos en el círculo del muro, un poco hacia afuera. */
+export function puntosVertedero(d: DatosSedimentador, salida = 0): { x: number; z: number }[] {
+  const [n, r] = [muescas(d), disponer(d).radioMuro + salida]
+  return Array.from({ length: n }, (_, i) => ({ x: r * Math.cos((2 * Math.PI * i) / n), z: r * Math.sin((2 * Math.PI * i) / n) }))
 }

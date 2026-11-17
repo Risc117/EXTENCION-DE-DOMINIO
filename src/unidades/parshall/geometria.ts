@@ -78,10 +78,10 @@ export function construirAguas(d: DatosParshall, caudalLs: number): Agua[] {
   const k = d.divergente.subida.valor
   const centro = (a: number, b: number): [number, number] => [(a + b) / 2, 0]
   return [
-    { forma: 'caja', id: 'agua-entrada', centro: centro(s.xInicio, s.xConvergente), largo: s.xConvergente - s.xInicio, ancho: s.anchoEntrada, y0: n, nivel: ho },
-    { forma: 'cuna', id: 'agua-convergente', x0: s.xConvergente, x1: s.xGarganta, ancho0: s.anchoEntrada, ancho1: s.anchoGarganta, y0: n, nivel: ho },
-    { forma: 'caja', id: 'agua-garganta', centro: centro(s.xGarganta, s.xDivergente), largo: s.xDivergente - s.xGarganta, ancho: s.anchoGarganta, y0: 0, nivel: hg },
-    { forma: 'cuna', id: 'agua-divergente', x0: s.xDivergente, x1: s.xSalida, ancho0: s.anchoGarganta, ancho1: s.anchoSalida, y0: 0, nivel: hg },
-    { forma: 'caja', id: 'agua-salida', centro: centro(s.xSalida, s.xFin), largo: s.xFin - s.xSalida, ancho: s.anchoSalida, y0: k, nivel: hg },
+    { forma: 'caja', id: 'agua-entrada', centro: centro(s.xInicio, s.xConvergente), largo: s.xConvergente - s.xInicio, ancho: s.anchoEntrada, y0: n, nivel: ho, corriente: 1 },
+    { forma: 'cuna', id: 'agua-convergente', x0: s.xConvergente, x1: s.xGarganta, ancho0: s.anchoEntrada, ancho1: s.anchoGarganta, y0: n, nivel: ho, corriente: 1 },
+    { forma: 'caja', id: 'agua-garganta', centro: centro(s.xGarganta, s.xDivergente), largo: s.xDivergente - s.xGarganta, ancho: s.anchoGarganta, y0: 0, nivel: hg, corriente: 1 },
+    { forma: 'cuna', id: 'agua-divergente', x0: s.xDivergente, x1: s.xSalida, ancho0: s.anchoGarganta, ancho1: s.anchoSalida, y0: 0, nivel: hg, corriente: 1 },
+    { forma: 'caja', id: 'agua-salida', centro: centro(s.xSalida, s.xFin), largo: s.xFin - s.xSalida, ancho: s.anchoSalida, y0: k, nivel: hg, corriente: 1 },
   ]
 }

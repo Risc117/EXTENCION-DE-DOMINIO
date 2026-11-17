@@ -3,12 +3,14 @@ import { useMemo, useRef } from 'react'
 import type { Group } from 'three'
 import escala from '../../../datos/escalaCaudal.json'
 import { SEGMENTOS_CILINDRO } from '../../nucleo/constantes'
+import { PUNTOS_POR_BRAZO } from '../../nucleo/constantesGotas'
 import { leerColor } from '../../nucleo/colores'
 import { useSim } from '../../estado/simulacion'
+import { GotasCaen } from '../comun/GotasCaen'
 import { usePlanosCorte } from '../comun/usePlanosCorte'
 import { disponer } from './disposicion'
 import type { DatosPercolador } from './esquema'
-import { construirBrazos } from './geometria'
+import { construirBrazos, puntosGotasBrazos } from './geometria'
 import { velocidadGiro } from './hidraulica'
 
 const CAUDAL_PROMEDIO = escala.caudalPromedio.valor
@@ -18,7 +20,9 @@ export function Brazos({ datos }: { datos: DatosPercolador }) {
   const grupo = useRef<Group>(null)
   const brazos = useMemo(() => construirBrazos(datos), [datos])
   const color = useMemo(() => leerColor('--color-impulsion'), [])
-  const planos = usePlanosCorte(disponer(datos).radioExterior)
+  const s = disponer(datos)
+  const planos = usePlanosCorte(s.radioExterior)
+  const gotas = useMemo(() => puntosGotasBrazos(datos, PUNTOS_POR_BRAZO), [datos])
 
   useFrame((_, dt) => {
     const sim = useSim.getState()
@@ -33,6 +37,7 @@ export function Brazos({ datos }: { datos: DatosPercolador }) {
           <meshStandardMaterial color={color} clippingPlanes={planos} />
         </mesh>
       ))}
+      <GotasCaen puntos={gotas} yArriba={s.yBrazo} yAbajo={s.yLecho} />
     </group>
   )
 }
